@@ -1,6 +1,7 @@
 2017-08-07
 
-- Test
+- Created Light Armor Batch. 
+- Created code to apply light armor batch (and ALTER_EFFECT), but HAVE NOT CREATED LIGHT ARMOR FILES YET)
 
 2017-08-05
 
