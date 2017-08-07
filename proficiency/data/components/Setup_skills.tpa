@@ -1,0 +1,3694 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                  SKILLS                 //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////          EE's only         ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+////////////////////////            //////////////////////////
+////////////////////////  General   //////////////////////////
+////////////////////////            //////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               ALCHEMY                   //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//alchemists fire, makeshift
+COPY ~skills/data/skills/itm/alch/b_s011a.itm~ ~override~   //
+	SAY NAME1 @810021
+	SAY NAME2 @810021
+	SAY UNIDENTIFIED_DESC @810022  //
+	SAY IDENTIFIED_DESC @810022  //
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~
+	SAY UNIDENTIFIED_DESC @810023  //
+	SAY IDENTIFIED_DESC @810023  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011b~
+  END
+
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011c.itm~
+	SAY UNIDENTIFIED_DESC @810024  //
+	SAY IDENTIFIED_DESC @810024  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011c~
+  END
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011d.itm~
+	SAY UNIDENTIFIED_DESC @810025  //
+	SAY IDENTIFIED_DESC @810025  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011d~
+  END
+
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011e.itm~
+	SAY UNIDENTIFIED_DESC @810026  //
+	SAY IDENTIFIED_DESC @810026  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011e~
+  END
+
+//Int +1
+COPY ~skills/data/skills/itm/alch/b_s011f.itm~ ~override~   //
+	SAY NAME1 @810021
+	SAY NAME2 @810021
+	SAY UNIDENTIFIED_DESC @810027  //
+	SAY IDENTIFIED_DESC @810027  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011f~
+  END
+
+COPY_EXISTING ~b_s011f.itm~ ~override/b_s011g.itm~
+	SAY UNIDENTIFIED_DESC @810028  //
+	SAY IDENTIFIED_DESC @810028  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011g~
+  END
+
+
+COPY_EXISTING ~b_s011f.itm~ ~override/b_s011h.itm~
+	SAY UNIDENTIFIED_DESC @810029  //
+	SAY IDENTIFIED_DESC @810029  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011h~
+  END
+
+COPY_EXISTING ~b_s011f.itm~ ~override/b_s011i.itm~
+	SAY UNIDENTIFIED_DESC @810030  //
+	SAY IDENTIFIED_DESC @810030  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011i~
+  END
+
+
+COPY_EXISTING ~b_s011f.itm~ ~override/b_s011j.itm~
+	SAY UNIDENTIFIED_DESC @810031  //
+	SAY IDENTIFIED_DESC @810031  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011j~
+  END
+
+
+//Int +2
+COPY ~skills/data/skills/itm/alch/b_s011k.itm~ ~override~   //
+	SAY NAME1 @810021
+	SAY NAME2 @810021
+	SAY UNIDENTIFIED_DESC @810032  //
+	SAY IDENTIFIED_DESC @810032  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011k~
+  END
+
+COPY_EXISTING ~b_s011k.itm~ ~override/b_s011l.itm~
+	SAY UNIDENTIFIED_DESC @810033  //
+	SAY IDENTIFIED_DESC @810033  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011l~
+  END
+
+
+COPY_EXISTING ~b_s011k.itm~ ~override/b_s011m.itm~
+	SAY UNIDENTIFIED_DESC @810034  //
+	SAY IDENTIFIED_DESC @810034  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011m~
+  END
+
+
+COPY_EXISTING ~b_s011k.itm~ ~override/b_s011n.itm~
+	SAY UNIDENTIFIED_DESC @810035  //
+	SAY IDENTIFIED_DESC @810035  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011n~
+  END
+
+
+COPY_EXISTING ~b_s011k.itm~ ~override/b_s011o.itm~
+	SAY UNIDENTIFIED_DESC @810036  //
+	SAY IDENTIFIED_DESC @810036  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011o~
+  END
+
+//Int +3
+COPY ~skills/data/skills/itm/alch/b_s011p.itm~ ~override~   //
+	SAY NAME1 @810021
+	SAY NAME2 @810021
+	SAY UNIDENTIFIED_DESC @810037  //
+	SAY IDENTIFIED_DESC @810037  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011p~
+  END
+
+COPY_EXISTING ~b_s011p.itm~ ~override/b_s011q.itm~
+	SAY UNIDENTIFIED_DESC @810038  //
+	SAY IDENTIFIED_DESC @810038  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011q~
+  END
+
+COPY_EXISTING ~b_s011p.itm~ ~override/b_s011r.itm~
+	SAY UNIDENTIFIED_DESC @810039  //
+	SAY IDENTIFIED_DESC @810039  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011r~
+  END
+
+
+COPY_EXISTING ~b_s011p.itm~ ~override/b_s011s.itm~
+	SAY UNIDENTIFIED_DESC @810040  //
+	SAY IDENTIFIED_DESC @810040  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011s~
+  END
+
+
+COPY_EXISTING ~b_s011p.itm~ ~override/b_s011t.itm~
+	SAY UNIDENTIFIED_DESC @810041  //
+	SAY IDENTIFIED_DESC @810041  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011t~
+  END
+
+//Int +4
+COPY ~skills/data/skills/itm/alch/b_s011u.itm~ ~override~   //
+	SAY NAME1 @810021
+	SAY NAME2 @810021
+	SAY UNIDENTIFIED_DESC @810042  //
+	SAY IDENTIFIED_DESC @810042  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011u~
+  END
+
+COPY_EXISTING ~b_s011u.itm~ ~override/b_s011v.itm~
+	SAY UNIDENTIFIED_DESC @810043 //
+	SAY IDENTIFIED_DESC @810043  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011v~
+  END
+
+
+COPY_EXISTING ~b_s011u.itm~ ~override/b_s011w.itm~
+	SAY UNIDENTIFIED_DESC @810044  //
+	SAY IDENTIFIED_DESC @810044  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011w~
+  END
+
+
+COPY_EXISTING ~b_s011u.itm~ ~override/b_s011x.itm~
+	SAY UNIDENTIFIED_DESC @810045  //
+	SAY IDENTIFIED_DESC @810045  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011x~
+  END
+
+
+COPY_EXISTING ~b_s011u.itm~ ~override/b_s011y.itm~
+	SAY UNIDENTIFIED_DESC @810046  //
+	SAY IDENTIFIED_DESC @810046  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011y~
+  END
+
+//acid, makeshift
+COPY ~skills/data/skills/itm/alch/b_s012a.itm~ ~override~   //
+	SAY NAME1 @810047
+	SAY NAME2 @810047
+	SAY UNIDENTIFIED_DESC @810048  //
+	SAY IDENTIFIED_DESC @810048  //
+
+COPY_EXISTING ~b_s012a.itm~ ~override/b_s012b.itm~
+	SAY UNIDENTIFIED_DESC @810049  //
+	SAY IDENTIFIED_DESC @810049  //
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 12 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 142            //
+      duration = 12
+      STR_VAR resource = EVAL ~ ~
+END
+COPY_EXISTING ~b_s012a.itm~ ~override/b_s012c.itm~
+	SAY UNIDENTIFIED_DESC @810050  //
+	SAY IDENTIFIED_DESC @810050  //
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 12 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 18 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 142            //
+      duration = 18
+END
+COPY_EXISTING ~b_s012a.itm~ ~override/b_s012d.itm~
+	SAY UNIDENTIFIED_DESC @810051  //
+	SAY IDENTIFIED_DESC @810051  //
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 12 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 18 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 24 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 142            //
+      duration = 24
+END
+COPY_EXISTING ~b_s012a.itm~ ~override/b_s012e.itm~
+	SAY UNIDENTIFIED_DESC @810052  //
+	SAY IDENTIFIED_DESC @810052  //
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 12 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 18 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 24 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 12 timing = 4 parameter1 = 0 parameter2 = 65536 duration = 30 dicenumber = 1 dicesize = 4 STR_VAR resource = EVAL ~ ~ END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 142            //
+      duration = 30
+END
+
+//ADD OTHER ITEMS HERE (ACID AND TANGLEFOOT BAG. Probably won't use Quickfreeze)
+/*opcode = 177
+target = 2
+power = 0
+timing = 4
+parameter1 = 5
+parameter2 = 160
+power = 0
+resist_dispel = 2
+duration = 1
+probability1 = 100
+probability2 = 0
+dicenumber = 0
+dicesize = 0
+savingthrow = 0
+savebonus = 0
+header =
+insert_point = 7
+resource = POOL1a10   */
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               ALERTNESS                 //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/spl/b_s041.spl~ ~override~   // +5 D.Traps/Illusion (+0 wis), +1 breath (MAKE WIS DEPENDENT)
+COPY ~skills/data/skills/spl/b_s042.spl~ ~override~   // +5 D.Traps/Illusion (+0 wis), +1 breath, +1AC (4th rank)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////              APPRAISAL                  //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/spl/b_s021.spl~ ~override~   // +5 LORE
+COPY ~skills/data/skills/spl/b_s021a.spl~ ~override~   // Attribute bonus +1 to lore (16+1; 17+2; 18+3; 19++4)
+COPY ~skills/data/skills/spl/b_s021b.spl~ ~override~   // Attribute bonus +1 to lore (16+1; 17+2; 18+3; 19++4)
+COPY ~skills/data/skills/spl/b_s021c.spl~ ~override~   // Attribute bonus +1 to lore (16+1; 17+2; 18+3; 19++4)
+COPY ~skills/data/skills/spl/b_s021d.spl~ ~override~   // Attribute bonus +1 to lore (16+1; 17+2; 18+3; 19++4)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////              ENDURANCE                  //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/spl/b_wind2.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810053  //
+	SAY IDENTIFIED_DESC @810053  //
+
+COPY ~skills/data/skills/spl/b_wind3.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810054  //
+	SAY IDENTIFIED_DESC @810054  //
+
+COPY ~skills/data/skills/spl/b_wind4.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810055  //
+	SAY IDENTIFIED_DESC @810055  //
+
+COPY ~skills/data/skills/spl/b_wind5.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810056  //
+	SAY IDENTIFIED_DESC @810056  //
+
+COPY ~skills/data/skills/spl/b_wind6.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810057  //
+	SAY IDENTIFIED_DESC @810057  //
+
+COPY ~skills/data/skills/spl/b_wind7.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810057  //
+	SAY IDENTIFIED_DESC @810057  //
+
+COPY ~skills/data/skills/spl/b_wind8.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810058  //
+	SAY IDENTIFIED_DESC @810058  //
+
+COPY ~skills/data/skills/spl/b_wind9.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810059  //
+	SAY IDENTIFIED_DESC @810059  //
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                  HEAL                   //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Treat Poison or Disease______________________________________________________________________________
+//
+COPY ~skills/data/skills/spl/b_s101.spl~ ~override~   // treat poison/disease
+	SAY NAME1 @800002
+	SAY UNIDENTIFIED_DESC @800003  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s101~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s101~
+  END
+
+COPY_EXISTING ~b_s101.spl~ ~override/b_s101a.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s101a~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s101a~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79 probability1 = 60 END           //Cure disease %
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 329 probability1 = 70 END           //Cure poison %
+
+COPY_EXISTING_REGEXP GLOB ~b_s101a.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101a~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101a~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s101.spl~ ~override/b_s101b.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s101b~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s101b~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79 probability1 = 65 END           //Cure disease %
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 329 probability1 = 75 END           //Cure poison %
+
+COPY_EXISTING_REGEXP GLOB ~b_s101b.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101b~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101b~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s101.spl~ ~override/b_s101c.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s101c~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s101c~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79 probability1 = 70 END           //Cure disease %
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 329 probability1 = 80 END           //Cure poison %
+
+COPY_EXISTING_REGEXP GLOB ~b_s101c.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101c~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101c~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s101.spl~ ~override/b_s101d.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s101d~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s101d~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79 probability1 = 75 END           //Cure disease %
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 329 probability1 = 85 END           //Cure poison %
+
+COPY_EXISTING_REGEXP GLOB ~b_s101d.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101d~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101d~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s101.spl~ ~override/b_s101e.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s101e~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s101e~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79 probability1 = 80 END           //Cure disease %
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 329 probability1 = 90 END           //Cure poison %
+
+COPY_EXISTING_REGEXP GLOB ~b_s101e.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101e~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101e~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s101.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s101~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+//Treat Wound__________________________________________________________________________________________
+
+COPY ~skills/data/skills/spl/b_s102a.spl~ ~override~   // treat wound
+	SAY NAME1 @800000
+	SAY UNIDENTIFIED_DESC @800001  //
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102b.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102b~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102b~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 dicenumber = 2 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102b.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102b~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102b.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102b~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102c.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102c~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102c~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 dicenumber = 3 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102c.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102c~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102c.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102c~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102d.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102d~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102d~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 dicenumber = 4 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102d.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102d~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102d.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102d~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102e.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102e~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102e~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 dicenumber = 5 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102e.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102e~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102e.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102e~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102f.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102f~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102f~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 1 dicenumber = 1 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102f.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102f~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102f.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102f~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102g.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102g~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102g~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 2 dicenumber = 2 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102g.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102g~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102g.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102g~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102h.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102h~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102h~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 3 dicenumber = 3 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102h.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102h~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102h.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102h~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102i.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102i~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102i~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 4 dicenumber = 4 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102i.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102i~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102i.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102i~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102j.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102j~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102j~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 5 dicenumber = 5 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102j.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102j~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102j.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102j~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102k.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102k~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102k~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 2 dicenumber = 1 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102k.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102k~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102k.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102k~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102l.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102l~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102l~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 4 dicenumber = 2 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102l.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102l~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102l.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102l~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102m.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102m~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102m~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 6 dicenumber = 3 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102m.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102m~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102m.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102m~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102n.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102n~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102n~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 8 dicenumber = 4 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102n.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102n~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102n.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102n~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102o.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102o~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102o~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 10 dicenumber = 5 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102o.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102o~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102o.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102o~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102p.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102p~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102p~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 3 dicenumber = 1 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102p.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102p~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102p.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102p~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102q.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102q~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102q~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 6 dicenumber = 2 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102q.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102q~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102q.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102q~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102r.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102r~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102r~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 9 dicenumber = 3 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102r.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102r~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102r.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102r~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102s.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102s~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102s~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 12 dicenumber = 4 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102s.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102s~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102s~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102t.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102t~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102t~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 15 dicenumber = 5 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102t.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102t~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102t~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102u.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102u~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102u~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 4 dicenumber = 1 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102u.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102u~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102u~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102v.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102v~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102v~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 8 dicenumber = 2 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102v.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102v~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102v~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102w.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102w~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102w~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 12 dicenumber = 3 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102w.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102w~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102w~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102x.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102x~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102x~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 16 dicenumber = 4 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102x.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102x~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102x~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102y.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102y~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102y~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 16 dicenumber = 4 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102y.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102y~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102y~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s102a.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102a~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102a~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+//Selection and scripted use _______________________________________________________________________
+//TO TEST
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               HERBALISM                 //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Antidote
+COPY ~skills/data/skills/itm/herb/b_s111a.itm~ ~override~   //
+	SAY NAME1 @810000
+	SAY NAME2 @810000
+	SAY UNIDENTIFIED_DESC @810001  //
+	SAY IDENTIFIED_DESC @810001  //
+
+COPY_EXISTING ~b_s111a.itm~ ~override/b_s111b.itm~
+	SAY UNIDENTIFIED_DESC @810002  //
+	SAY IDENTIFIED_DESC @810002  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 75
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 75
+  END
+
+  COPY_EXISTING ~b_s111a.itm~ ~override/b_s111c.itm~
+	SAY UNIDENTIFIED_DESC @810003  //
+	SAY IDENTIFIED_DESC @810003  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 80
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 80
+  END
+
+COPY_EXISTING ~b_s111a.itm~ ~override/b_s111d.itm~
+	SAY UNIDENTIFIED_DESC @810004  //
+	SAY IDENTIFIED_DESC @810004  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 85
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 85
+  END
+
+  COPY_EXISTING ~b_s111a.itm~ ~override/b_s111e.itm~
+	SAY UNIDENTIFIED_DESC @810005  //
+	SAY IDENTIFIED_DESC @810005  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 90
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 90
+  END
+
+  COPY_EXISTING ~b_s111a.itm~ ~override/b_s111f.itm~
+	SAY UNIDENTIFIED_DESC @810006  //
+	SAY IDENTIFIED_DESC @810006  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 95
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 95
+  END
+
+//Bandages
+//BAM
+COPY ~skills/data/skills/bam/herb/b_sk112.bam~ ~override~   //
+//Items
+COPY ~skills/data/skills/itm/herb/b_s112a.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810008  //
+	SAY IDENTIFIED_DESC @810008  //
+COPY ~skills/data/skills/itm/herb/b_s112b.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810009  //
+	SAY IDENTIFIED_DESC @810009  //
+COPY ~skills/data/skills/itm/herb/b_s112c.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810010  //
+	SAY IDENTIFIED_DESC @810010  //
+COPY ~skills/data/skills/itm/herb/b_s112d.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810011  //
+	SAY IDENTIFIED_DESC @810011  //
+COPY ~skills/data/skills/itm/herb/b_s112e.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810012  //
+	SAY IDENTIFIED_DESC @810012  //
+
+//Remedy
+COPY ~skills/data/skills/itm/herb/b_s113a.itm~ ~override~   //
+	SAY NAME1 @810013
+	SAY NAME2 @810013
+	SAY UNIDENTIFIED_DESC @810014  //
+	SAY IDENTIFIED_DESC @810014  //
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113b.itm~
+	SAY UNIDENTIFIED_DESC @810015  //
+	SAY IDENTIFIED_DESC @810015  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 65
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 65
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113c.itm~
+	SAY UNIDENTIFIED_DESC @810016  //
+	SAY IDENTIFIED_DESC @810016  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 70
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 70
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113d.itm~
+	SAY UNIDENTIFIED_DESC @810017  //
+	SAY IDENTIFIED_DESC @810017  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 75
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 75
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113e.itm~
+	SAY UNIDENTIFIED_DESC @810018  //
+	SAY IDENTIFIED_DESC @810018  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 80
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 80
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113f.itm~
+	SAY UNIDENTIFIED_DESC @810019  //
+	SAY IDENTIFIED_DESC @810019  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 85
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 85
+  END
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                 HUNTING                 //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/spl/b_s031.spl~ ~override~   // +1 Ranged damage
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               INTIMIDATE                //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/eff/b_s121.eff~ ~override~   // display
+  SAY 0x1c @810064  //Demoralized
+COPY ~skills/data/skills/spl/b_s121a.spl~ ~override~   // 1 rank 0 cha/str
+	SAY NAME1 @810065 
+	SAY NAME2 @810065
+	SAY UNIDENTIFIED_DESC @810066  //
+	SAY IDENTIFIED_DESC @810066  //
+//immune undead
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125E~END
+//immune elementals
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125E~END
+//immune golems
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125D~END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125E~END   //alter to get rid of eff in original eff
+//0 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121E~END
+// +1 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122E~END
+// +2 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123E~END
+// +3 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124E~END
+// +4 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125E~END
+
+//add (121b to 125e) when make cha dependent Will prob need to create spls with additional save penalties. Not sure I can automate that
+COPY_EXISTING ~b_s121a.spl~ ~override/b_s121b.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter2 = 27 STR_VAR resource = EVAL ~B_S125E~END   //alter to get rid of eff in original eff
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                 RUNNING                 //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/spl/b_spri2.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810060  //
+	SAY IDENTIFIED_DESC @810060  //
+
+COPY ~skills/data/skills/spl/b_spri3.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810061  //
+	SAY IDENTIFIED_DESC @810061  //
+
+COPY ~skills/data/skills/spl/b_spri4.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810062  //
+	SAY IDENTIFIED_DESC @810062  //
+
+COPY ~skills/data/skills/spl/b_spri5.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810063  //
+	SAY IDENTIFIED_DESC @810063  //
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               SET SNARES                //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Make Wis Dependent
+COPY ~skills/data/skills/spl/b_s981a.spl~ ~override~   // +10% Set Snares
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               USE POISON                //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Keeping this one simple.  People mod this spl a lot.
+// COPY_EXISTING ~spcl423.spl~ ~override/b_s991.spl~ //copies existing Use Poison ability, in case it's modded
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////                                                               /////////////////
+/////////////////            Use and Select Non-Weapon Proficiencies            /////////////////
+/////////////////                                                               /////////////////
+/////////////////                                                               /////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Initial creature/spell/etc._________________________________________________________________________________________
+//
+  COMPILE ~skills/data/skills/Scripts/b_sk000.baf~ ~override~
+  COMPILE ~skills/data/skills/Scripts/b_sk000.d~ ~override~
+//Effs
+//CLERIC
+//Main Cleric
+COPY ~skills/data/skills/eff/Cleric/b_mxcl01.eff~ ~override~   //
+//Req 2 ranks
+COPY ~skills/data/skills/eff/Cleric/b_mx2r01.eff~ ~override~   //
+//Req 3 ranks
+COPY ~skills/data/skills/eff/Cleric/b_mx3r01.eff~ ~override~   //
+//Req 4 ranks
+COPY ~skills/data/skills/eff/Cleric/b_mx4r01.eff~ ~override~   //
+
+//Main skill spl.
+COPY ~skills/data/skills/Spl/b_sk000.spl~ ~override~   //
+	SAY NAME1 @800004
+	SAY UNIDENTIFIED_DESC @800005  //
+//Main creature
+COPY ~skills/data/skills/cre/b_sk000.cre~ ~override~   //
+
+//Skill Selection Spell/etc._________________________________________________________________________________________
+//
+//Spell to select skills (not main spell)
+COPY ~skills/data/skills/Spl/b_sk01.spl~ ~override~   //
+
+  COMPILE ~skills/data/skills/Scripts/b_sk101.baf~ ~override~
+  COMPILE ~skills/data/skills/Scripts/b_sk101.d~ ~override~
+COPY ~skills/data/skills/cre/b_sk101.cre~ ~override~   // invis creature
+
+
+//Skill Use Stuff____________________________________________________________________________________________________
+//
+
+COPY ~skills/data/skills/Spl/b_sk02.spl~ ~override~   //
+
+  COMPILE ~skills/data/skills/Scripts/b_sk102.baf~ ~override~
+  COMPILE ~skills/data/skills/Scripts/b_sk102.d~ ~override~
+COPY ~skills/data/skills/cre/b_sk102.cre~ ~override~   // invis creature
+
+
+
+ /*
+opcode = 177
+target = 2
+power = 0
+timing = 4
+parameter1 = 5
+parameter2 = 160
+power = 0
+resist_dispel = 2
+duration = 1
+probability1 = 100
+probability2 = 0
+dicenumber = 0
+dicesize = 0
+savingthrow = 0
+savebonus = 0
+header =
+insert_point = 7
+resource = POOL1a10
+
+
+COPY_EXISTING ~b_s102a.spl~ ~override/b_s102y.spl~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s102y~
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 318            //
+      STR_VAR resource = EVAL ~b_s102y~
+  END
+    LPF ALTER_EFFECT
+      INT_VAR match_opcode = 17 parameter1 = 16 dicenumber = 4 END           //
+
+COPY_EXISTING_REGEXP GLOB ~b_s102y.spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 171			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102y~			// resource key
+	++glob_add
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Add Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102y~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+COPY_EXISTING_REGEXP GLOB ~b_s10...*spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_ASCII (fx_off + 0x14) ~b_s102b~			// resource key
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+COPY_EXISTING_REGEXP GLOB ~b_s10...*spl~ ~override~
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		   READ_SHORT 0x1c spell_type
+PATCH_IF  (%spell_type% = 4) BEGIN
+        READ_ASCII      0x0 deathvar
+        READ_LONG 	0x64	ab_off			// Abilities Offset
+	READ_SHORT	0x68	ab_num			// Number of Abilities
+	READ_SHORT	0x6a	fx_off			// Effects Offset
+	READ_SHORT	0x70	glob_fx			// Number of Global Effects
+	SET	glob_add = 0
+
+	INSERT_BYTES (fx_off) 0x30
+	  WRITE_SHORT (fx_off) 172			// Remove Spells
+	  WRITE_BYTE (fx_off + 0x2) 1			// Target Self
+	  WRITE_BYTE (fx_off + 0x4) 0			// Level 1
+	  WRITE_LONG (fx_off + 0x8) 0			//
+	  WRITE_LONG (fx_off + 0xc) 9			// perm
+          WRITE_LONG (fx_off + 0xe) 0                  //10 sec delay
+	  WRITE_BYTE (fx_off + 0x12) 100			// Probability 1
+	  WRITE_EVALUATED_ASCII (fx_off + 0x14) "%deathvar%"			// resource key
+
+	++glob_add
+
+//	INSERT_BYTES (fx_off) 0x30
+//	  WRITE_etc...
+//	++glob_add
+
+	glob_fx += glob_add
+	WRITE_SHORT 0x70 glob_fx			// Increment Number of Global Effects
+	FOR (i = 0; i < ab_num; ++i) BEGIN		// Offset Effect Index for all Abilities
+	  READ_SHORT (ab_off + i * 0x28 + 0x20) fx_idx
+	  WRITE_SHORT (ab_off + i * 0x28 + 0x20) (fx_idx + glob_add)
+	END
+END
+END
+
+
+
+COPY ~skills/data/skills/spl/b_sk101a.spl~ ~override~   // bandage
+	SAY NAME1 @800000
+	SAY UNIDENTIFIED_DESC @800001  //
+COPY ~skills/data/skills/spl/b_sk101b.spl~ ~override~   // bandage
+	SAY NAME1 @800000
+	SAY UNIDENTIFIED_DESC @800001  //
+COPY ~skills/data/skills/spl/b_sk101c.spl~ ~override~   // bandage
+	SAY NAME1 @800000
+	SAY UNIDENTIFIED_DESC @800001  //
+COPY ~skills/data/skills/spl/b_sk101d.spl~ ~override~   // bandage
+	SAY NAME1 @800000
+	SAY UNIDENTIFIED_DESC @800001  //
+COPY ~skills/data/skills/spl/b_sk101e.spl~ ~override~   // bandage
+	SAY NAME1 @800000
+	SAY UNIDENTIFIED_DESC @800001  //
+COPY ~skills/data/skills/bam/b_sk001a.bam~ ~override~   // bam
+COPY ~skills/data/skills/itm/b_sk101a.itm~ ~override~   // bandage
+	SAY NAME1 @800002
+	SAY UNIDENTIFIED_DESC @800003  //
+COPY ~skills/data/skills/itm/b_sk101b.itm~ ~override~   // bandage
+	SAY NAME1 @800002
+	SAY UNIDENTIFIED_DESC @800003  //
+COPY ~skills/data/skills/itm/b_sk101c.itm~ ~override~   // bandage
+	SAY NAME1 @800002
+	SAY UNIDENTIFIED_DESC @800003  //
+COPY ~skills/data/skills/itm/b_sk101d.itm~ ~override~   // bandage
+	SAY NAME1 @800002
+	SAY UNIDENTIFIED_DESC @800003  //
+COPY ~skills/data/skills/itm/b_sk101e.itm~ ~override~   // bandage
+	SAY NAME1 @800002
+	SAY UNIDENTIFIED_DESC @800003  //
+COPY ~skills/data/skills/spl/b_sk102a.spl~ ~override~   // heal
+	SAY NAME1 @800004
+	SAY UNIDENTIFIED_DESC @800005  //
+COPY_EXISTING ~b_sk001b.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_sk001b~
+  END      //
+
+
+
+
+
+
+
+
+
+
+
+//Alarm_______________________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/wiz_1/b_alarm.spl~ 3 1 ~INNATE_ALARM~ //Innate
+	SAY NAME1 @900000
+COMPILE ~Spells/data/new_spells/baf/b_alarm.baf~ ~override~   //script
+COPY ~spells/data/new_spells/itm/b_w101.itm~ ~override~   //itm alarm
+COPY ~spells/data/new_spells/cre/b_w101.cre~ ~override~   //cre alarm
+       SAY 0x8 @900000
+       SAY 0xc @900000
+ADD_SPELL ~Spells/data/new_spells/wiz_1/b_w101.spl~ 2 1 ~WIZARD_ALARM~ //Actual Spell
+	SAY NAME1 @900000
+	SAY UNIDENTIFIED_DESC @900001  //
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~WIZARD_ALARM~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 206            //Not best option.  Better to use 321 and remove previous versions...
+      STR_VAR resource = EVAL ~%spell_res%~
+  END      //One alarm at a time
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////          IWDEE ONLY        ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//IWDEE only spells (modify once SoD patches are released...assuming they add IWDEE opcodes)
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+
+//Protective Shell_______________________________________________________
+//This is SubtleDoctor's spell
+ADD_SPELL ~Spells/data/new_spells/wiz_1/d5_wiab.spl~ 2 1 ~WIZARD_PROTECTIVE_SHELL~ //
+	SAY NAME1 @900002
+	SAY UNIDENTIFIED_DESC @900003  //
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~WIZARD_PROTECTIVE_SHELL~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~    //Doesn't stack with itself
+  LPF CLONE_EFFECT INT_VAR match_opcode = 321 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING ~SPWI408.spl~ ~override~     //stone skin doesn't stack
+  LPF CLONE_EFFECT INT_VAR match_opcode = 321 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+
+//Frost Ray______________________________________________________________
+COPY ~Spells/data/new_spells/Bam/b_frost1.bam~ ~override~
+ADD_PROJECTILE ~Spells/data/new_spells/Pro/b_1c101.pro~
+ADD_SPELL ~Spells/data/new_spells/wiz_1/b_w102.spl~ 2 1 ~WIZARD_FROST_RAY~
+	SAY NAME1 @900004
+	SAY UNIDENTIFIED_DESC @900005
+	WRITE_SHORT 0x098 ~%b_1c101%~
+
+//Repair Undead______________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/wiz_1/b_w103.spl~ 2 1 ~WIZARD_REPAIR_UNDEAD~
+	SAY NAME1 @900006
+	SAY UNIDENTIFIED_DESC @900007
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~WIZARD_REPAIR_UNDEAD~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      STR_VAR resource = EVAL ~%spell_res%~
+  END
+END
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+////////////////////////            //////////////////////////
+////////////////////////  LEVEL 3   //////////////////////////
+////////////////////////            //////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////          ANY VERSION?      ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//Earth Fist_________________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/wiz_3/b_w301.spl~ 2 3 ~WIZARD_EARTH_FIST~
+  SAY NAME1 @1000035
+  SAY UNIDENTIFIED_DESC @1000036
+COPY ~Spells/data/new_spells/itm/b_pr301.itm~ ~override~ // Actual Fist
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////             DIVINE SPELLS               //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////          IWDEE ONLY        ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//IWDEE only spells (modify once SoD patches are released...assuming they add IWDEE opcodes)
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+
+//Forbiddance___________________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_2/b_c201.spl~ 1 2 ~CLERIC_FORBID~
+	SAY NAME1 @1000000
+	SAY UNIDENTIFIED_DESC @1000001  //Not FnP description
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_FORBID~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      STR_VAR resource = EVAL ~%spell_res%~
+  END
+
+//Pacify the Dead______________________________________________________________
+
+ADD_SPELL ~Spells/data/new_spells/cleric_2/b_c202.spl~ 1 2 ~CLERIC_PACIFY_DEAD~
+	SAY NAME1 @1000004
+	SAY UNIDENTIFIED_DESC @1000005  //Not FnP description
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_PACIFY_DEAD~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      parameter1 = 0
+      parameter2 = 2
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 40 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+//add removal
+COPY_EXISTING ~spwi312.spl~ ~override~
+  LPF CLONE_EFFECT INT_VAR match_opcode = 40 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING ~spwish25.spl~ ~override~
+  LPF CLONE_EFFECT INT_VAR match_opcode = 40 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING ~spin146.spl~ ~override~
+  LPF CLONE_EFFECT INT_VAR match_opcode = 40 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING ~spin977.spl~ ~override~
+  LPF CLONE_EFFECT INT_VAR match_opcode = 40 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+COPY_EXISTING ~spwm164.spl~ ~override~
+  LPF CLONE_EFFECT INT_VAR match_opcode = 40 opcode = 321 parameter1 = 0 patameter2 = 0 timing = 0 STR_VAR resource = EVAL ~%spell_res%~ END
+
+//Murderous Command_____________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_3/b_c301.spl~ 1 3 ~CLERIC_MURDER~
+	SAY NAME1 @1000006
+	SAY UNIDENTIFIED_DESC @1000007  //change "Sphere: Charm" to "Sphere: Thought"
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_MURDER~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+
+//Animal Eyes____________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_1/b_c102.spl~ 1 1 ~CLERIC_ANIMAL_EYES~
+	SAY NAME1 @1000008
+	SAY UNIDENTIFIED_DESC @1000009
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_ANIMAL_EYES~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+
+//Frost Fingers____________________________________________________________
+ADD_PROJECTILE ~Spells/data/new_spells/Pro/b_c103.pro~
+ADD_SPELL ~Spells/data/new_spells/cleric_1/b_c103.spl~ 1 1 ~CLERIC_FROST~
+	SAY NAME1 @1000010
+	SAY UNIDENTIFIED_DESC @1000011
+	WRITE_SHORT 0x098 ~%b_c103%~
+
+//Eyes of the Dead_________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_1/b_c104.spl~ 1 1 ~CLERIC_DEAD_EYES~
+	SAY NAME1 @1000012
+	SAY UNIDENTIFIED_DESC @1000013
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_DEAD_EYES~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+
+//Misfire____________________________________________________________________
+COPY ~spells/data/new_spells/eff/b_c501.eff~ ~override~   //eff
+  SAY 0x1c @1000014     //Misfire
+ADD_SPELL ~Spells/data/new_spells/cleric_5/b_c501.spl~ 1 5 ~CLERIC_MISFIRE~
+	SAY NAME1 @1000014
+	SAY UNIDENTIFIED_DESC @1000015
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_MISFIRE~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 321
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+
+
+//Storm Wall_________________________________________________________________
+COPY ~spells/data/new_spells/bam/b_elect1.bam~ ~override~   //bam
+COPY ~spells/data/new_spells/vvc/b_storm1.vvc~ ~override~   //vvc
+COPY ~spells/data/new_spells/cleric_4/b_c401a.spl~ ~override~   //sub-spell
+ADD_PROJECTILE ~Spells/data/new_spells/Pro/b_storm1.pro~   //pro
+ADD_SPELL ~Spells/data/new_spells/cleric_4/b_c401.spl~ 1 4 ~CLERIC_STORM_WALL~
+	SAY NAME1 @1000016
+	SAY UNIDENTIFIED_DESC @1000017
+	WRITE_SHORT 0x098 ~%b_storm1%~
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_STORM_WALL~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 206
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+
+//Dusrupt Undead_________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_1/b_c105.spl~ 1 1 ~CLERIC_DISRUPT_DEAD~
+	SAY NAME1 @1000018
+	SAY UNIDENTIFIED_DESC @1000019
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_DISRUPT_DEAD~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+
+//Ice Blade_________________________________________________________
+COPY ~spells/data/new_spells/bam/moonbla.bam~ ~override~   //bam
+COPY ~spells/data/new_spells/itm/b_iceb1.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb2.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb3.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb4.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb5.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb6.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb7.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb8.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb9.itm~ ~override~   //blade
+COPY ~spells/data/new_spells/itm/b_iceb10.itm~ ~override~   //blade
+ADD_SPELL ~Spells/data/new_spells/cleric_2/b_c203.spl~ 1 2 ~CLERIC_ICEBLADE~
+	SAY NAME1 @1000020
+	SAY UNIDENTIFIED_DESC @1000021
+
+//Assassin Vines_________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_6/b_c601.spl~ 1 6 ~CLERIC_ASSASSIN_VINES~
+	SAY NAME1 @1000022
+	SAY UNIDENTIFIED_DESC @1000023
+
+//Shout__________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_4/b_c403.spl~ 1 4 ~CLERIC_SHOUT~
+	SAY NAME1 @1000030
+	SAY UNIDENTIFIED_DESC @1000031
+LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_SHOUT~
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324
+      STR_VAR resource = EVAL ~%spell_res%~
+     END
+END
+//End of IWDEE only spells
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////          ANY VERSION?      ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//Cloak of Darkness_________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_3/b_c302.spl~ 1 3 ~CLERIC_SHADOW_ARMOR~
+	SAY NAME1 @1000024
+	SAY UNIDENTIFIED_DESC @1000025
+
+//Earth Fist________________________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_3/b_c303.spl~ 1 3 ~CLERIC_EARTH_FIST~
+  SAY NAME1 @1000035
+  SAY UNIDENTIFIED_DESC @1000036
+
+//Smite_____________________________________________________________________
+COPY ~Spells/data/new_spells/eff/b_c106.eff~ ~override~
+ADD_SPELL ~Spells/data/new_spells/cleric_1/b_c106.spl~ 1 1 ~CLERIC_SMITE~
+	SAY NAME1 @1000026
+	SAY UNIDENTIFIED_DESC @1000027
+
+//Shatter_______________________________________________________
+COPY ~Spells/data/new_spells/cleric_2/b_pr201A.spl~ ~override~ // Shatter 2nd
+COPY ~Spells/data/new_spells/cleric_2/b_pr201B.spl~ ~override~ // Shatter   3rd
+COPY ~Spells/data/new_spells/eff/b_pr201A.eff~ ~override~ // Shatter  x dam golem
+COPY ~Spells/data/new_spells/eff/b_pr201B.eff~ ~override~ // Shatter  cast 2
+COPY ~Spells/data/new_spells/eff/b_pr201C.eff~ ~override~ // Shatter  x dam
+COPY ~Spells/data/new_spells/eff/b_pr201D.eff~ ~override~ // Shatter  cast 3
+ADD_SPELL ~Spells/data/new_spells/cleric_2/b_c204.spl~ 1 2 ~CLERIC_SHATTER~
+	SAY NAME1 @1000028
+	SAY UNIDENTIFIED_DESC @1000029
+//Need to copy all elementals, and change their type to monster
+COPY_EXISTING_REGEXP GLOB ~.*\.cre~ ~override~ //copies all cre files
+	PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+		READ_BYTE ~0x272~ ~type~ //reads the byte containing cre type
+		PATCH_IF (~%type%~ = ~145~) BEGIN
+	          WRITE_SHORT 0x271 255
+	          WRITE_BYTE  0x272 145   //I have no idea why I need to do this...
+                END
+         END
+BUT_ONLY_IF_IT_CHANGES
+
+//Waves of Agony__________________________________________________
+ADD_SPELL ~Spells/data/new_spells/cleric_5/b_c502.spl~ 1 5 ~CLERIC_WAVES~
+  SAY NAME1 @1000032
+  SAY UNIDENTIFIED_DESC @1000033
+COPY ~Spells/data/new_spells/cleric_5/b_ILM04a.spl~ ~override~ // Wave of Agony spla
+COPY ~Spells/data/new_spells/cleric_5/b_ILM04b.spl~ ~override~ // etc.
+COPY ~Spells/data/new_spells/eff/b_ILM04.eff~ ~override~ //
+  SAY 0x1c @1000034 //Wracked in Agony
+
+//Remove fatigue   Not needed with Unfailing Endurance...
+//ADD_SPELL ~Spells/data/new_spells/cleric_1/b_c101.spl~ 1 1 ~CLERIC_REMOVE_FATIGUE~
+	SAY NAME1 @1000002
+	SAY UNIDENTIFIED_DESC @1000003
+
+
+//include bgee and bg2ee once SoD is released.  Make a BGT version
+//check for fnp, change "Sphere: Charm" to "Sphere: Thought"
+//Do the same in fnp, so install order doesn't matter
+
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+////////////////////////            //////////////////////////
+////////////////////////   QUEST    //////////////////////////
+////////////////////////            //////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////          ANY VERSION?      ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//Animal
+
+//Animal Horde__________________________________________________________________________________
+COPY ~Spells/data/new_spells/cleric_hla/B_ph01.spl~ ~override~ // Spl
+  SAY NAME1 @1000037
+  SAY UNIDENTIFIED_DESC @1000038
+COPY ~Spells/data/new_spells/eff/b_ani05.eff~ ~override~ // eff that casts the summon
+COPY ~Spells/data/new_spells/cleric_hla/b_ani05.2da~ ~override~ // list of animals
+COPY ~Spells/data/new_spells/itm/b_bear1.itm~ ~override~ // bear claw
+COPY ~Spells/data/new_spells/itm/b_pbear1.itm~ ~override~ // bear claw
+COPY ~Spells/data/new_spells/itm/b_wlf1.itm~ ~override~ // wolf claw
+COPY ~Spells/data/new_spells/itm/b_wlf2.itm~ ~override~ // wolf claw
+COPY ~Spells/data/new_spells/itm/b_cat1.itm~ ~override~ // cat claw
+COPY ~Spells/data/new_spells/cre/b_cat1.cre~ ~override~ // cat
+COPY ~Spells/data/new_spells/cre/b_bear1.cre~ ~override~ // bear
+COPY ~Spells/data/new_spells/cre/b_pbear1.cre~ ~override~ // bear
+COPY ~Spells/data/new_spells/cre/b_wlf.cre~ ~override~ // wolf
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////          IWDEE ONLY        ////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+
+//Death
+
+//Extract Soul__________________________________________________________________________________
+COPY ~Spells/data/new_spells/cleric_hla/B_ph02.spl~ ~override~ // Spl
+  SAY NAME1 @1000039
+  SAY UNIDENTIFIED_DESC @1000040
+COPY ~Spells/data/new_spells/cleric_hla/B_ph02a.spl~ ~override~ // Spl
+COPY ~Spells/data/new_spells/eff/b_ani01.eff~ ~override~ // eff
+COPY ~Spells/data/new_spells/cleric_hla/b_ani01.2da~ ~override~ // 2da
+COPY ~spells/data/new_spells/eff/B_ph02.eff~ ~override~   //eff
+  SAY 0x1c @1000041     //Con Drain
+COPY ~Spells/data/new_spells/itm/b_gho1.itm~ ~override~ // itm
+COPY ~Spells/data/new_spells/itm/b_gho2.itm~ ~override~ // itm
+COPY ~Spells/data/new_spells/cre/b_skmon.cre~ ~override~ // cre
+
+//Destruction
+
+//Implosion_____________________________________________________________________________________
+COPY ~Spells/data/new_spells/cleric_hla/B_ph03.spl~ ~override~ // Spl
+  SAY NAME1 @1000042
+  SAY UNIDENTIFIED_DESC @1000043
+COPY ~Spells/data/new_spells/cleric_hla/B_ph03a.spl~ ~override~ // Spl
+  SAY NAME1 @1000042
+  SAY UNIDENTIFIED_DESC @1000044
+COPY ~Spells/data/new_spells/cleric_hla/B_ph03b.spl~ ~override~ // Spl
+  SAY NAME1 @1000045
+  SAY UNIDENTIFIED_DESC @1000046
+COMPILE ~Spells/data/new_spells/baf/b_implo.baf~ ~override~   //script
+COPY ~Spells/data/new_spells/cre/b_implo.cre~ ~override~ // cre
+
+END
+*/

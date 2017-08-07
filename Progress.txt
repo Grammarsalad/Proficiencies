@@ -1,0 +1,154 @@
+2017-08-05
+
+- Created all spls for heavy armor
+2017-08-06
+
+- Updated med armor batch and created med armor spls.
+
+2017-08-02
+
+- Updated all armors for bgee (text, type and prof)...I think
+- Created heavy armor batch--tested: installs and looks right (test in game)
+
+2017-08-01
+
+- Updated internal descriptions of prof for simple weapons (using REPLACE_TEXTUALLY)
+- " with blades
+- " with great blades
+- " with all up to armors (need more complicated code for that)
+- Updated identified description of above items
+- Started armor stuff.  
+2017-07-31
+
+- Actually starting on mod.  Started code to change simple (melee and ranged) weapons to bastard and longsword prof respectively.  Tested.  Seems good (+/-)
+  (though doesn't distinguish between thrown and melee daggers, nor does it distinguish between heavy and light x-bows...I can make them via READ_ASCII...)
+
+- Reasigned first few weap profs
+
+2017-06-25
+- Still setting up base ability (Use Magical Device)
+2017-06-21
+- Completely changing everything.  
+2016-04-12
+- Treat Injury: 102K to 102Y have their global (Remove ability/Add ability) effects added.  Need to do with A-H    -DONE 
+2016-04-13
+- Added INT and Dex bonuses.  ADD FOR OTHER ATTRIBUTES                                                             -DONE
+2016-04-13
+- Added Int bonuses for cleric                                                                                     -DONE
+- HEAL
+  CREATE SUB ABILTIES                                                                                              -DONE
+2016-04-15
+
+ - Seperate Heal from constructing med items (herbalism?).  Do seperately and have the latter require the former   -DONE
+    Also, HEal will have a chance to treat disease and poison (investigate slow poison opcode)                     -DONE
+    HEAL TREAT ONLY                                                                                                -DONE
+
+- Skill naming scheme: MUST MAKE ALL SKILLS 7 CHARACTERS.  NOT "B_SK###" BUT "B_S###".
+  CREATE MOST SKILLS USING WEIDU WITH NEW NAMING SCHEME                                                            -DONE
+2016-04-16
+- Skill naming scheme: MUST MAKE ALL SKILLS 7 CHARACTERS.  NOT "B_SK###" BUT "B_S###".
+  CREATE MOST SKILLS USING WEIDU WITH NEW NAMING SCHEME                                                            -DONE
+  UPDATE DIALOG TO NEW NAMING SCHEME                                                                               -DONE
+- Skill naming scheme: MUST MAKE ALL SKILLS 7 CHARACTERS.  NOT "B_SK###" BUT "B_S###".
+  CREATE MOST SKILLS USING WEIDU WITH NEW NAMING SCHEME                                                            -DONE
+  UPDATE DIALOG TO NEW NAMING SCHEME                                                                               -DONE
+- HEAL
+  CREATE SUB ABILTIES                                                                                              -DONE
+  CREATE TOKENS                                                                                                    -DONE
+  MODIFY D FILE                                                                                                    -DONE
+- SKILL SELECTION AND USE ABILITY
+  - CREATE FIRST STEP OF ABILITY, WHICH SETS MOST VARIABLES AND GIVES OPTIONS (SUMMONING CRE'S FOR SELECT or USE   -DONE
+  - CREATE SELECTION ABILITY                                                                                       -DONE (OR STARTED)
+  - CREATE USE ABILITY                                                                                             -DONE
+- Add tokens to description tra.  (and note that the ability must be activated when reloading)                     -DONE
+- Seperate Heal from constructing med items (herbalism?).  Do seperately and have the latter require the former    -DONE
+    Also, HEal will have a chance to treat disease and poison (investigate slow poison opcode)                     -DONE
+    HEAL TREAT ONLY                                                                                                -DONE
+    HERBALISM CRAFT                                                                                                -STARTED (WITH CRAFTING IN GENERAL)
+2016-04-18
+- Crafting Herbalism: In dialog check for % effectiveness of concoctions, so can create 'lesser' versions          -DONE
+   at higher ranks
+- Select Alchemy                                                                                                   -DONE
+- Alchemy tokens                                                                                                   -DONE
+2016-04-20
+- Started Alchemy.
+   - Started Makeshift alchemists fire items.  Finish it Make on installation.  Do TRA                             -DONE
+2016-04-25
+- Appraisal:                                                                                                       
+   - Base Skill (+5 lore) Applied each time                                                                        -DONE
+   - Make int dependent                                                                                            -TO DO
+   - Add additional ranks                                                                                          -TO DO
+- UPDATED description
+   - Acid                                                                                                          -TO DO (STARTED) b_s02a)
+   - Tanglefoot bag                                                                                                -TO DO  (started b_s01f)
+   - Make create alchemical items a special ability (first create all items)                                       -TO DO
+2016-04-30
+- Hunting                                                                                                          -DONE
+2016-05-01
+- Mundane
+         - Pick up rock
+               - Base item/Ability                                                                                 -DONE
+         - Sprint (increased movement, costs fatigue)
+               - Base ability                                                                                      -DONE
+
+2016-05-03
+- Second Wind                                                                                                      -DONE
+- Endurance (Recover +10%/rank fatigue per Second Wind use)                                                        -DONE
+2016-05-04
+- Run (improve sprint)                                                                                             -DONE
+- Add do dialog selection                                                                                          -DONE
+2016-10-15
+SKILLS:
+- Appraisal:
+   - Make Appraisal int dependent                                                                                  -DONE
+   - Add additional ranks                                                                                          -DONE
+2016-10-23
+- Added Alertness                                                                                                  -DONE
+2016-10-29
+- Added Use Poison                                                                                                 -DONE
+- Added Set Snares                                                                                                 -DONE
+2016-10-30
+- Started Intimidate: CONTINUE NEXT TIME B_S121A, etc
+
+
+- Mundane
+         - Pick up rock
+               - Base item/Ability                                                                                 -DONE
+               - Make 'convertible' to sling stone                                                                 -TO DO
+               - Specialization ?                                                                                  -TO DO
+         - Sprint (increased movement, costs fatigue)
+               - Base ability                                                                                      -DONE
+               - Incorporate Run skill                                                                             -TO DO
+         - Modify low level magic weapons/equipment
+                - Bracers defend vs. hand to hand attacks                                                          -TO DO
+                - +1 swords made 'sharp' or 'balanced'                                                             -TO DO
+- Monk ---->>Adventurer                                                                                            -TO DO
+       - Design Class                                                                                              -TO DO
+       - Change animation (thief)                                                                                  -TO DO
+       -
+- Add an 'innate ability manager' to the skill ability. (may be an easy cheat, but wth)                            -TO DO
+
+SKILLS:
+- Alertness                                                                                                        -DONE
+   - Make Wis dependent                                                                                            -TO DO
+- Appraisal:
+   - Make Appraisal int dependent                                                                                  -DONE
+   - Add additional ranks                                                                                          -DONE
+- Alchemy UPDATED description
+   - Acid                                                                                                          -TO DO (STARTED) b_s02a)
+   - Tanglefoot bag                                                                                                -TO DO  (started b_s01f)
+   - Make create alchemical items a special ability (first create all items)                                       -TO DO
+   - Make abilities at will, but impose an 'immunity' for some duration (to collect more materials)                -TO DO
+   - Create abilities in magic weapon slot.                 Re                                                     -TO DO
+- Set Snares                                                                                                       
+   - Allow alternate traps based on skill (no failure)                                                             -TO DO
+   - Make Wis Dependent                                                                                            -TO DO
+- Use Poison
+   - Alternate use poison ability (modding ability as an optional component)                                       -TO DO
+   - Maybe even allow alternate poison types (paralysis, etc.)  Might be able to 'craft poison' per day to give    -TO DO
+   
+
+     Self special poison abilities.  Perhaps even be able to affect normally immunne opponents
+
+- Create skeleton in "04. Skills" folder
+- Add Int Bonuses for all classes                                                                                  -TO DO

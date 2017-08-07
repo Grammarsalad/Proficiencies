@@ -1,0 +1,43 @@
+IF
+        Global("B_END","GLOBAL",2)
+THEN
+	RESPONSE #100
+                SetGlobal("B_END","GLOBAL",0)
+		DestroySelf()               //reset all global variables, then destroy self
+END
+
+IF
+        Global("B_END","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("B_SKILLZ_KNOWN","GLOBAL",0)
+                SetGlobal("B_SKILLCHECK","GLOBAL",0)
+                SetGlobal("B_STATMOD","GLOBAL",0)
+                SetGlobal("B_END","GLOBAL",0)
+                SetGlobal("B_STR","GLOBAL",0)
+                SetGlobal("B_DEX","GLOBAL",0)
+                SetGlobal("B_INT","GLOBAL",0)
+                SetGlobal("B_WIS","GLOBAL",0)
+                SetGlobal("B_CHR","GLOBAL",0)
+                SetGlobal("B_CON","GLOBAL",0)
+		DestroySelf()               //reset all global variables, then destroy self
+END
+
+//LETS TALK
+IF
+	True()
+THEN
+	RESPONSE #100
+        ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("B_MAXCL1", "LOCALS", "MAX_SKILLZ"))
+        ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("B_ACTUAL_SKILL", "LOCALS", "ACTUAL_SKILLZ"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("B_ALCH","LOCALS","RANKS_ALCH"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("B_HERB","LOCALS","RANKS_HERB"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("B_HEAL","LOCALS","RANKS_HEAL"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("HEAL_POISON","LOCALS","HEAL_POISON"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("HEAL_DISEASE","LOCALS","HEAL_DISEASE"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("WIS_BONUS_MULTI","LOCALS","WIS_BONUS_MULTI"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("HERB_POISON","LOCALS","HERB_POISON"))
+          ActionOverride(LastSummonerOf(Myself),SetTokenGlobal("HERB_DISEASE","LOCALS","HERB_DISEASE"))
+        ActionOverride(LastSummonerOf(Myself),StartDialogOverride("b_sk102",Myself))
+END
+

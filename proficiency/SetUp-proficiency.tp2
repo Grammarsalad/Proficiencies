@@ -1,0 +1,40 @@
+BACKUP ~skills/backup~
+AUTHOR ~Grammarsalad~
+
+VERSION ~0.01~
+
+
+ALWAYS
+	INCLUDE ~proficiency/lib/alter_effect.tpa~
+
+	INCLUDE ~proficiency/lib/remove_lines.tpa~
+
+	INCLUDE ~proficiency/lib/spell_to_innate.tpa~
+
+	INCLUDE ~proficiency/lib/spell_clone_effects.tpa~
+
+	INCLUDE ~proficiency/lib/bg2fp_effect_batches_fnp.tpa~
+
+END
+//need to keep my options open
+
+// ASK_EVERY_COMPONENT
+
+/* Language Settings */
+AUTO_TRA ~skills/tra/%s~
+LANGUAGE ~English~ ~english~ ~proficiency/tra/english/prof.tra~
+
+//___________________________________________________________________________________
+
+
+BEGIN ~Proficiency~
+
+INCLUDE ~proficiency/data/components/Setup_proficiencies.tpa~
+
+/*
+INCLUDE ~skills/data/components/Setup_mundane.tpa~
+
+INCLUDE ~skills/data/components/Setup_skills.tpa~
+ */
+//COPY ~skills/data/skills/b_skills.itm~ ~override~   //to detect this component
+
