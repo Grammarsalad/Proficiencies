@@ -114,6 +114,32 @@ SKILLS:
 - Added Set Snares                                                                                                 -DONE
 2016-10-30
 - Started Intimidate: CONTINUE NEXT TIME B_S121A, etc
+--------------------------------------------------TO DO-----------------------------------------------------------------------
+- Create files for Light armor prof
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - Mundane
