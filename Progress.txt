@@ -1,3 +1,9 @@
+2017-08-07
+
+- Created Light Armor Batch. 
+- Created code to apply light armor batch (and ALTER_EFFECT), 
+- Create files for Light armor prof
+
 2017-08-05
 
 - Created all spls for heavy armor
@@ -109,6 +115,32 @@ SKILLS:
 - Added Set Snares                                                                                                 -DONE
 2016-10-30
 - Started Intimidate: CONTINUE NEXT TIME B_S121A, etc
+--------------------------------------------------TO DO-----------------------------------------------------------------------
+
+- Change readme to reflect light armor 3 ranks, no pen to missile weap
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 - Mundane
@@ -151,4 +183,4 @@ SKILLS:
      Self special poison abilities.  Perhaps even be able to affect normally immunne opponents
 
 - Create skeleton in "04. Skills" folder
-- Add Int Bonuses for all classes                                                                                  -TO DO
+- Add Int Bonuses for all classes 

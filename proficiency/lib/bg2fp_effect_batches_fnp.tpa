@@ -1880,7 +1880,7 @@ DEFINE_PATCH_MACRO ~cd_immunity_divination~ BEGIN
 END
 */
 
-///CUSTOM BATCH
+///CUSTOM BATCHES
 
 //okay, not all desired effects have 142 display portrait icon.  This needs to change
 // SPECIAL CANTRIP REMOVAL BATCH Need to add more 'Key' batches (to account for all such spells...)
@@ -2296,6 +2296,28 @@ DEFINE_PATCH_MACRO ~b_blood_rage_arrays~ BEGIN
     318, "-10", "-10", "EMO_P", "-10","-10", "same" => 1 // protect spell: generic
   END
   DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_delete BEGIN END // nothing to delete
+END
+// light Armors (Proficiency)  (CHECK THIS JIVES WITH OTHER ARMOR ALTERING MODS)
+DEFINE_PATCH_MACRO ~b_light_armor_arrays~ BEGIN
+  DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_key BEGIN
+    7,  "-10", "-10", "same",  "-10",  "-10", "same" => 1 //
+  END
+  DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_extras BEGIN
+    177, 0, 2, "B_LIT0", 2,"-10", "same" => 1 // Apply spl
+    326, 0, 0, "B_LIT0B", 1,"-10", "same" => 1 // Apply spl - will be 'equal to 0' not 'less than 2'
+    177, 0, 2, "B_LIT1", 2,"-10", "same" => 1 // Apply spl
+    326, 1, 0, "B_LIT1B", 1,"-10", "same" => 1 // Apply spl
+    177, 0, 2, "B_LIT2", 2,"-10", "same" => 1 // Apply spl
+    326, 2, 0, "B_LIT2B", 1,"-10", "same" => 1 // Apply spl
+    177, 0, 2, "B_LIT4", 2,"-10", "same" => 1 // Apply spl
+    326, 4, 0, "B_LIT4B", 1,"-10", "same" => 1 // Apply spl
+    177, 0, 2, "B_LIT5", 2,"-10", "same" => 1 // Apply spl
+    326, 5, 0, "B_LITB", 1,"-10", "same" => 1 // Apply spl
+END
+  DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_delete BEGIN
+    145,  "-10", "-10", "same",  "-10",  "-10", "same" => 2 // Disable spell casting
+    144,  "-10", "-10", "same",  "-10",  "-10", "same" => 2 // Disable buttons
+  END //
 END
 
 // medium Armors (Proficiency)  (CHECK THIS JIVES WITH OTHER ARMOR ALTERING MODS)

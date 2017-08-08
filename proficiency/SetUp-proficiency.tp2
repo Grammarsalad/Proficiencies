@@ -1,4 +1,4 @@
-BACKUP ~skills/backup~
+BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
 VERSION ~0.01~
@@ -27,7 +27,7 @@ LANGUAGE ~English~ ~english~ ~proficiency/tra/english/prof.tra~
 //___________________________________________________________________________________
 
 
-BEGIN ~Proficiency~
+BEGIN ~B_Proficiency~
 
 INCLUDE ~proficiency/data/components/Setup_proficiencies.tpa~
 
