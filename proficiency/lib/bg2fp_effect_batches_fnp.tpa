@@ -2309,11 +2309,6 @@ DEFINE_PATCH_MACRO ~b_light_armor_arrays~ BEGIN
     326, 1, 0, "B_LIT1B", 1,"-10", "same" => 1 // Apply spl
     177, 0, 2, "B_LIT2", 2,"-10", "same" => 1 // Apply spl
     326, 2, 0, "B_LIT2B", 1,"-10", "same" => 1 // Apply spl
-<<<<<<< HEAD
-=======
-    177, 0, 2, "B_LIT3", 2,"-10", "same" => 1 // Apply spl
-    326, 3, 0, "B_LIT3B", 1,"-10", "same" => 1 // Apply spl
->>>>>>> 6092bde644dafe18befcb01c9edd932806abb950
     177, 0, 2, "B_LIT4", 2,"-10", "same" => 1 // Apply spl
     326, 4, 0, "B_LIT4B", 1,"-10", "same" => 1 // Apply spl
     177, 0, 2, "B_LIT5", 2,"-10", "same" => 1 // Apply spl

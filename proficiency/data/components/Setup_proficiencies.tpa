@@ -330,18 +330,12 @@ COPY ~proficiency/data/proficiency/armor/B_LIT2A.SPL~ ~override~   //Applies spl
 COPY ~proficiency/data/proficiency/armor/B_LIT2B.SPL~ ~override~   //Spl that penalizes for proficiency (2 rank)
 COPY ~proficiency/data/proficiency/armor/B_LIT2.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (2 rank)
 //Light Armor (3 prof)
-<<<<<<< HEAD
 /*   Not really needed.  3 ranks elimiates all penalties
-=======
->>>>>>> 6092bde644dafe18befcb01c9edd932806abb950
 COPY ~proficiency/data/proficiency/armor/B_LIT3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
 COPY ~proficiency/data/proficiency/armor/B_LIT3B.SPL~ ~override~   //Spl that penalizes for non-proficiency (3 rank)
 COPY ~proficiency/data/proficiency/armor/B_LIT3.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (3 rank)
-<<<<<<< HEAD
 */
-=======
->>>>>>> 6092bde644dafe18befcb01c9edd932806abb950
 //Light Armor (4 prof)
 COPY ~proficiency/data/proficiency/armor/B_LIT4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
@@ -414,11 +408,7 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT0B~ END //value = 0
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT1B~ END //value = 0
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT2B~ END //value = 2
-<<<<<<< HEAD
 //       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT3B~ END //value = 3  NOT NEEDED
-=======
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT3B~ END //value = 3
->>>>>>> 6092bde644dafe18befcb01c9edd932806abb950
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT4B~ END //value = 4
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT5B~ END //value = 5
      END                                      //END 'light' armor types
