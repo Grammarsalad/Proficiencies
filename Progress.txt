@@ -1,6 +1,7 @@
 2017-08-07
 
 - Created Light Armor Batch. 
+<<<<<<< HEAD
 - Created code to apply light armor batch (and ALTER_EFFECT), 
 - Create files for Light armor prof
 
@@ -116,7 +117,11 @@ SKILLS:
 2016-10-30
 - Started Intimidate: CONTINUE NEXT TIME B_S121A, etc
 --------------------------------------------------TO DO-----------------------------------------------------------------------
+<<<<<<< HEAD
 
+=======
+- Create files for Light armor prof
+>>>>>>> 6092bde644dafe18befcb01c9edd932806abb950
 - Change readme to reflect light armor 3 ranks, no pen to missile weap
 
 
