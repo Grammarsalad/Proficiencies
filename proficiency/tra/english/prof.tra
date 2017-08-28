@@ -31,32 +31,122 @@ Upon using this ability, the character takes a moment to catch <PRO_HISHER> brea
 @700102 = ~Proficiency Type: Sling~
 @700103 = ~Proficiency Type: Quarterstaff~
 @700104 = ~Proficiency Type: Club~
+@700105 = ~Simple~
+@700106 = ~SIMPLE: This weapon class allows the character to use Daggers, Clubs, Slings, Darts and the Staff effectively.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
 //blade wp
 @700200 = ~Proficiency Type: Blade~
 @700201 = ~Proficiency Type: Long Sword~
 @700202 = ~Proficiency Type: Scimitar/Wakizashi/Ninjat≈~
 @700203 = ~Proficiency Type: Katana~
 @700204 = ~Proficiency Type: Short Sword~
+@700205 = ~Sword~
+@700206 = ~SWORD: This weapon class allows the character to use Longswords, Wakizashi, Ninjat-to, Scimitar and Short Swords.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
 //martial arts
+@700300 = ~Martial Arts~
+@700301 = ~MARTIAL ARTS: This weapon class allows the character to use Longswords, Wakizashi, Ninjat-to, Scimitar and Short Swords.
+
+<DOTS1> +1 Melee Defense
+
+<DOTS2> +1 Melee Defense, +1 Ranged Defense
+
+<DOTS3> +2 Melee Defense, +2 Ranged Defense
+
+<DOTS4> +3 Melee Defense, +3 Ranged Defense
+
+<DOTS5> +4 Melee Defense, +4 Ranged Defense~
+
 //axe
 //great swords
 @700500 = ~Proficiency Type: Great Sword~
 @700501 = ~Proficiency Type: Two-handed Sword~
 @700502 = ~Proficiency Type: Bastard Sword~
+@700503 = ~Great Sword~
+@700504 = ~GREAT SWORD: The hallmark of the traditional musclebound warrior is the two-handed sword. This proficiency class allows your character to use these heavy swords to mangle your opponents.  Characters are also proficient with the Bastard Sword.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
 //polearms
 @700600 = ~Proficiency Type: Polearm~
 @700601 = ~Proficiency Type: Halberd~
 @700602 = ~Proficiency Type: Spear~
+@700603 = ~Polearm~
+@700604 = ~POLEARM: These long weapons are often carried by Fighters working as guards. The reach of the weapons allows crowds to be pushed back without much danger to the guard. Polearms include all Halberds and Spears.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
 //blunt
 @700700 = ~Proficiency Type: Blunt~
 @700701 = ~Proficiency Type: Mace~
 @700702 = ~Proficiency Type: War Hammer~
 @700703 = ~Proficiency Type: Flail/Morning Star~
+@700704 = ~Blunt~
+@700705 = ~BLUNT: Use blunt weapons to knock your enemies senseless. They are difficult to use but with skill and practice these weapons are very useful. Proficiency includes Maces, War Hammers, and Flails.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
 //Ranged
 @700800 = ~Proficiency Type: Ranged~
 @700801 = ~Proficiency Type: Longbow~
 @700802 = ~Proficiency Type: Shortbow~
 @700803 = ~Proficiency Type: Crossbow~
+@700804 = ~Ranged~
+@700805 = ~RANGED: This weapon class allows the character to use short bows, crossbows, and longbows, both normal and composite. These weapons allow you to do maximum damage at range.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
 //Armors
 @700900 = ~Requires:~
 @700901 = ~Proficiency Type: Armor (light)
@@ -65,6 +155,22 @@ Requires:~
 Requires:~
 @700903 = ~Proficiency Type: Armor (heavy)
 Requires:~
+@700904 = ~Armor~
+@700905 = ~ARMOR: Proficiency with armor allows characters to wear armor with few hindrances.  
+
+Proficiency (light) (1 slot): 
+
+Proficiency (medium) (2 slots):
+
+Proficiency (heavy) (3 slots):
+
+Proficiency (armor specialization) (4 slots):
+
+Proficiency (armor mastery) (5 slots):~
+
+//Alchemy
+@701000 = ~Alchemy~
+@701001 = ~ALCHEMY: This skill ~
 
 @800000 = ~Treat Injury~
 @800001 = ~Treat Injury

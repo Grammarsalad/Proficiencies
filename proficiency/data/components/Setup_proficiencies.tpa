@@ -16,9 +16,52 @@
 /////////////////////////////////                                   /////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-//TO DO: CHECK WITH OTHER MODS THAT ALTER ITEM PROF/TYPES (Tweaks, fnp, others?  Check subtledoctor's mods)
+//Rename proficiencies, and provide descriptions...
+//BGEE
+ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE ONLY STRINGS
+//Bastard sword--> Simple Weapon Probable stref 25000, 25024 (description)-BGEE
+STRING_SET 25000 @700105
+STRING_SET 25024 @700106
+//Long sword--> Sword Probable stref 25001, 25025 (description)--BGEE
+STRING_SET 25001 @700205
+STRING_SET 25025 @700206
+//Short sword--> Martial Arts Probable stref 25002, 25026 (description)-BGEE
+STRING_SET 25002 @700300
+STRING_SET 25026 @700301
+//Axe--> Axe Probable stref 25003, 25027 (description)-BGEE
+//Two-Handed--> Great Sword Probable stref 25004, 25028 (description)-BGEE
+STRING_SET 25004 @700503
+STRING_SET 25028 @700504
+//Katana--> Polearms Probable stref 25005, 25029 (description)-BGEE
+STRING_SET 25005 @700603
+STRING_SET 25029 @700604
+//Scimitar (etc.)--> Blunt Probable stref 25006, 25030 (description)-BGEE
+STRING_SET 25006 @700704
+STRING_SET 25030 @700705
+//Dagger (etc.)--> Ranged Probable stref 25007, 25031 (description)-BGEE
+STRING_SET 25007 @700804
+STRING_SET 25031 @700805
+//War Hammer --> Armor prob stref 25008, 25032 (description)-BGEE
+STRING_SET 25008 @700904
+STRING_SET 25032 @700905
+//club --> Alchemy stref 25009, 25033 (description)-BGEE
+STRING_SET 25009 @701000
+STRING_SET 25033 @701001
+//Spear --> Endurance stref 25010, 25034 (description)-BGEE
+//Halberd --> Heal stref 25011, 25035 (description)-BGEE
+//Flail --> Herbalism stref 25012, 25036 (description)-BGEE
+//Mace -->??? stref 25013, 25037 (description)-BGEE
+//Staff --> ??? stref 25014, 25038 (description)-BGEE
+//X-Bow --> ??? stref 25015, 25039 (description)-BGEE
+//Longbow --> ??? stref 25016, 25040 (description)-BGEE
+//Short Bow --> ??? stref 25017, 25041 (description)-BGEE
+//Dart --> ??? stref 25018, 25042 (description)-BGEE
+//Sling --> ??? stref 25018, 25042 (description)-BGEE
 
-//TO DO: REPLACE TEXTUALLY RE: PROFICIENCIES
+END//END BGEE ONLY rename prof
+
+//Update Class descriptions (replace textually)
+
 
 //TO DO: Add Usability to All classes (based on proficiencies...)
 
@@ -36,9 +79,10 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
    PATCH_IF (~prof~ = 89)  BEGIN                            //prof in Bastard Swords
                WRITE_BYTE  0x31 93                           //Change prof to 2 hand sword
    END
-//Simple weapons (Daggers, clubs, slings, staves)
+//Simple weapons (Daggers, clubs, slings, staves,darts)
 PATCH_IF    (~itemtype~ = 16)  OR                            //daggers and throwing daggers
             (~itemtype~ = 18)  OR                            //Slings
+            (~itemtype~ = 24)  OR                            //darts
             (~prof~ = 102)  OR                               //prof in staff
             (~prof~ = 115)  BEGIN                            //prof in clubs
                WRITE_BYTE  0x31 89                           //Change prof to bastard sword
@@ -433,7 +477,7 @@ BUT_ONLY
 
 
 //CONTINUE FROM HERE (Old alchemy, heerbalism, healing stuff below)
-
+/*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
@@ -3153,7 +3197,7 @@ COPY_EXISTING ~b_s113a.itm~ ~override/b_s113f.itm~
   END
 
 
-
+*/
 //
 /*
 //EVERYTHING BELOW THIS LINE IS FOR REFERENCE ONLY

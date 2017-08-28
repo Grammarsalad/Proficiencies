@@ -1,0 +1,74 @@
+It doesn't need dummy stats. The basic procedure is:
+- equipping effect: opcode 326, checking whether INT >16 (or whatever), timing mode 1, resource = spellB
+- equipping effect: opcode 177, timing mode 2, targeting EA/anyone
+- .eff file: opcode 232, condition = hp < 102%, timing mode 2, resource = spellA, offsets 0x90 and 0x94 are blank
+- spellA: opcode 326, checking whether INT >16 (or whatever), timing mode 1, resource = spellB 
+- spellB effect1: opcode 321, resource = itself
+- spellB effect2: whatever effect, timing mode 0, duration = 7 seconds
+
+This will create stat-dependent effects that kick in while an item is equipped. As usual, credit goes to Kjeron for helping me figure this out. A side-effect of this hack is that the effects last 1-6 seconds after you unequip the item... not the end of the world. 
+
+Note, this does NOT work with bonus spell slots.
+
+ have a way to allow proficiency selection determine item usability. 
+
+1) Make the item usable by all classes, or some subset as desired. (by patching all items of the desired type)
+2) In the clab, apply a spl with a number of 180 effects (I haven't tried 181, but iirc it doesn't work) for each item of said type. 
+3) also in the clab, apply a spl using 326 tied to the relevant proficiency (or whatever) that applies a spl using effect 321 that removes the first spl. 
+
+I just tested it using 1 rank bastard swrod prof for the second spl and leather armor usability in the fighter clab. I created two fighters, one with bastard sword prof and one without. Only the fighter with bastard sword prof can equip the leather armor. Boom.
+HOW TO MAKE STAT-BASED EFFECTS WITH OPCODE 326
+APPEND ~splprot.2da~ ~D5_INT_EQ%TAB%38%TAB%-1%TAB%1~
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~D5_INT_EQ~ BEGIN
+         SET int_eq_row = %row%
+      END
+   END
+BUT_ONLY
+
+COPY ~IntMod/files/d5LSprof.spl~ ~override~
+COPY ~IntMod/files/d5intspl.spl~ ~override~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %int_eq_row% END
+
+APPEND ~clabfi01.2da~ ~AP_D5INTSPL ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+
+
+HOW TO GIVE KIT EFFECTS TO ALL KITS (including mod-added kits)
+APPEND ~splprot.2da~ ~D5_INT_EQ%TAB%38%TAB%-1%TAB%1~
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~D5_INT_EQ~ BEGIN
+         SET int_eq_row = %row%
+      END
+   END
+BUT_ONLY
+
+COPY ~IntMod/files/d5LSprof.spl~ ~override~
+COPY ~IntMod/files/d5intspl.spl~ ~override~
+    LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %int_eq_row% END
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+   COUNT_2DA_COLS cols
+   COUNT_2DA_ROWS cols rows
+   FOR ( row = 1 ; row < rows ; row = row + 1 ) BEGIN
+      READ_2DA_ENTRY %row% 5 10 clab
+      READ_2DA_ENTRY %row% 8 10 class
+      DEFINE_ASSOCIATIVE_ARRAY d5_kit_clabs BEGIN "%clab%" => "%class%" END
+   END
+BUT_ONLY
+ACTION_PHP_EACH d5_kit_clabs AS yoo => hoo BEGIN
+   ACTION_IF (%hoo% = 2) AND (FILE_EXISTS_IN_GAME ~%yoo%.2da~) BEGIN
+      APPEND ~%yoo%.2da~ ~ABILITY    AP_D5INTSPL ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~
+   END
+END
+APPEND ~clabfi01.2da~ ~ABILITY    AP_D5INTSPL ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****        ****  ~ 
+
