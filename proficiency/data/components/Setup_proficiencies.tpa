@@ -269,6 +269,18 @@ PATCH_IF  (~itemtype~ = 15) OR                                  //bow item
 END
 //Armors(97)   (should Add proficiency to description, And change using unique types...)
 //What about helmets?  What about robes?
+//BG2EE armors 
+//leather 2890, 2891
+//S. Leath 6664, 6666
+//'hide' 22714, 22715, 
+//'chain' 214, 6672
+//'splint' 6677, 6678
+//Elven Chain 6146, 
+//Plate 267, 6669
+//Full Plate 6642, 8731
+//Ankheg plate 6686, 6687
+//Scale 69544, (heavy?)
+//red dragon scale 6141 (heavy?)
  PATCH_IF GAME_IS ~bgee~ BEGIN  //BGEE SPecific armor text
 //'light' armors...bgee
   PATCH_IF (~res_un~ = 29066) OR      // leather
