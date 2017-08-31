@@ -60,20 +60,94 @@ STRING_SET 25033 @701001
 
 END//END BGEE ONLY rename prof
 //BG2EE 
-//B.Sword Description prob 34146
-//L. Sword prob descrip 34147 (etc.)
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN //BGEE ONLY STRINGS
+//Bastard sword--> Simple Weapon //B.Sword Description prob 34146
+//STRING_SET 25000 @700105 //Don't know this num...
+STRING_SET 34146 @700106
+//Long sword--> Sword //L. Sword prob descrip 34147 (etc.)
+//STRING_SET 25001 @700205 //Don't know this num...
+STRING_SET 34147 @700206
+//Short sword--> Martial Arts 
+//STRING_SET 25002 @700300 //Don't know this num...
+STRING_SET 34148 @700301
+//Axe--> Axe Probable stref 34149 (description)
+//Two-Handed--> Great Sword Probable stref 25004, 25028 (description)
+//STRING_SET 25004 @700503 //Don't know this num...
+STRING_SET 34150 @700504
+//Katana--> Polearms Probable stref 25005, 25029 (description)
+//STRING_SET 25005 @700603 //Don't know this num...
+STRING_SET 34151 @700604
+//Scimitar (etc.)--> Blunt Probable stref 25006, 25030 (description)
+//STRING_SET 25006 @700704 //Don't know this num...
+STRING_SET 34152 @700705
+//Dagger (etc.)--> Ranged Probable stref 25007, 25031 (description)
+//STRING_SET 25007 @700804 //Don't know this num...
+STRING_SET 34153 @700805
+//War Hammer --> Armor prob stref 25008, 25032 (description)
+//STRING_SET 25008 @700904 //Don't know this num...
+STRING_SET 34154 @700905
+//club --> Alchemy stref 25009, 25033 (description)
+//STRING_SET 25009 @701000 //Don't know this num...
+STRING_SET 34155 @701001
+//Spear --> Endurance stref 34156 (description)
+//Halberd --> Heal stref 34157 (description)
+//Flail --> Herbalism stref 34158 (description)
+//Mace -->??? stref 34159 (description)
+//Staff --> ??? stref 34160 (description)
+//X-Bow --> ??? stref 34161 (description)
+//Longbow --> ??? stref 34162 (description)
+//Short Bow --> ??? 34163 (description)
+//Dart --> ??? stref 34164
+//Sling --> ??? stref 34165 (description)
+END//END BG2EE ONLY
 
 //IWDEE 
-//B. Sword description 36800
-
+ACTION_IF GAME_IS ~iwdee~ BEGIN //BGEE ONLY STRINGS
+//Bastard sword--> Simple Weapon //B.Sword Description prob 36800
+//STRING_SET 25000 @700105 //Don't know this num...
+STRING_SET 36800 @700106
+//Long sword--> Sword //L. Sword prob descrip 34147 (etc.)
+//STRING_SET 25001 @700205 //Don't know this num...
+STRING_SET 36801 @700206
+//Short sword--> Martial Arts 
+//STRING_SET 25002 @700300 //Don't know this num...
+STRING_SET 36802 @700301
+//Axe--> Axe Probable stref 36803 (description)-
+//Two-Handed--> Great Sword 
+//STRING_SET 25004 @700503 //Don't know this num...
+STRING_SET 36804 @700504
+//Katana--> Polearms Probable stref 36805 (description)
+//STRING_SET 25005 @700603 //Don't know this num...
+STRING_SET 36805 @700604
+//Scimitar (etc.)--> Blunt Probable stref 25006, 25030 (description)
+//STRING_SET 25006 @700704 //Don't know this num...
+STRING_SET 36806 @700705
+//Dagger (etc.)--> Ranged Probable stref 25007, 25031 (description)
+//STRING_SET 25007 @700804 //Don't know this num...
+STRING_SET 36807 @700805
+//War Hammer --> Armor prob stref 25008, 25032 (description)
+//STRING_SET 25008 @700904 //Don't know this num...
+STRING_SET 36808 @700905
+//club --> Alchemy stref 25009, 25033 (description)
+//STRING_SET 25009 @701000 //Don't know this num...
+STRING_SET 36809 @701001
+//Spear --> Endurance stref 36810 (description)
+//Halberd --> Heal stref 36811 (description)
+//Flail --> Herbalism stref 36812 (description)
+//Mace -->??? stref 36813 (description)
+//Staff --> ??? stref 36814 (description)
+//X-Bow --> ??? stref 36815 (description)
+//Longbow --> ??? stref 36816 (description)
+//Short Bow --> ??? 36817 (description)
+//Dart --> ??? stref 36818
+//Sling --> ??? stref 36819 (description)
+END//End IWDEE Only
 //Update Class descriptions (replace textually)
 
 
 //TO DO: Add Usability to All classes (based on proficiencies...)
 
 //TO DO: GIve bonuses/penalties w/ weapons (and armor) based on proficiency (e.g. bleeding, etc.)
-
-
 
 //Change prof by itemtype (etc.)
 COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
