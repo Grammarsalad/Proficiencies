@@ -64,7 +64,7 @@ Upon using this ability, the character takes a moment to catch <PRO_HISHER> brea
 <DOTS5>~
 //martial arts
 @700300 = ~Martial Arts~
-@700301 = ~MARTIAL ARTS: This weapon class allows the character to use Longswords, Wakizashi, Ninjat-to, Scimitar and Short Swords.
+@700301 = ~MARTIAL ARTS: This weapon class allows the character to fight unarmed, and defend themselves against attack.
 
 <DOTS1> +1 Melee Defense
 
@@ -150,13 +150,31 @@ Upon using this ability, the character takes a moment to catch <PRO_HISHER> brea
 //Armors
 @700900 = ~Requires:~
 @700901 = ~Proficiency Type: Armor (light)
+No Ranks: -20% movement, -1 Dex, -5% Stealth, 10% Casting Failure, -2 Casting Time, -1 Missile, -1 Melee
+* -1 Casting Time, Martial Arts
+** -1 Casting Time
+*** No Penalties
+**** 5% Physical and Energy Resistance
+***** 10% Physical and Energy Resistance
 Requires:~
 @700902 = ~Proficiency Type: Armor (medium)
+No Ranks: -40% movement, -2 Dex, -30% Stealth, 20% Casting Failure, -3 Casting Time, -3 Missile, -1 Melee
+* -40% movement, -2 Dex, -30% Stealth, 20% Casting Failure, -3 Casting Time, -3 Missile, -1 Melee
+** -15% Stealth, -1 Casting Time, -2 Missile
+*** -15% Stealth, -1 Missile
+**** -10% Stealth, 10% Physical and Energy Resistance
+***** -5% Stealth, 15% Physical and Energy Resistance
 Requires:~
 @700903 = ~Proficiency Type: Armor (heavy)
+No Ranks: -50% movement, -3 Dex, No Stealth, 100% Casting Failure, -5 Missile, -2 Melee
+* -50% movement, -3 Dex, No Stealth, 100% Casting Failure, -5 Missile, -2 Melee
+** -25% movement, -2 Dex, -50%, 25% Casting Failure, -5 Casting Time, -4 Missile, -1 Melee
+*** -25% movement, -25% Stealth, -3 Casting Time, -2 Missile, -1 Melee
+**** -20% Stealth, -2 Casting Time, -1 missile, 20% Physical and Energy Resistance
+***** -15% Stealth, -1 Casting Time, 25% Physical and Energy Resistance
 Requires:~
 @700904 = ~Armor~
-@700905 = ~ARMOR: Proficiency with armor allows characters to wear armor with few hindrances.  
+@700905 = ~ARMOR: Proficiency with armor allows characters to wear armor with few hindrances.
 
 Proficiency (light) (1 slot): 
 
@@ -171,6 +189,229 @@ Proficiency (armor mastery) (5 slots):~
 //Alchemy
 @701000 = ~Alchemy~
 @701001 = ~ALCHEMY: This skill ~
+//Endurance
+@702000 = ~Endurance~
+@702001 = ~ENDURANCE: This skill ~
+//Heal
+@703000 = ~Heal~
+@703001 = ~HEAL: This skill ~
+//Herbalism
+@704000 = ~Herbalism~
+@704001 = ~HERBALISM: This skill ~
+//Hunting
+@705000 = ~Hunting~
+@705001 = ~HUNTING: This skill ~
+//Magic Implements
+@706000 = ~Magic Implements~
+@706001 = ~MAGIC IMPLEMENTS: This skill ~
+//Mechanics
+@707000 = ~Mechanics~
+@707001 = ~MECHANICS: This skill ~
+//Nature
+@708000 = ~Nature~
+@708001 = ~NATURE: This skill ~
+//Read Magic
+@709000 = ~Read Magic~
+@709001 = ~READ MAGIC: This skill ~
+//Persuasion
+@710000 = ~Persuasion~
+@710001 = ~PERSUASION: This skill ~
+
+//Class descriptions
+
+//Fighter
+
+@720100 = ~May wear any armor and use any weapon.~
+@720101 = ~May wear any armor and use any weapon.
+- Proficiency slots: six at first level
+- Class Skills: Endurance (five slots), Heal (five slots), Herbalism (one slot), Hunting (two slots), Mechanics (three slots), and persuasion (five slots).
+- May achieve Specialization (two slots) in martial arts.
+- May achieve Grand Mastert (five slots) in armor proficiency.~
+
+//Berserker
+
+@720102 = ~Gains one use at level 1 and an additional use every 4 levels thereafter.~
+@720103 = ~Gains one use at level 1 and an additional use every 4 levels thereafter.
+- May gain seven ranks in endurance.~
+@720104 = ~May not Specialize in ranged weapons.~
+@720105 = ~May not Specialize in ranged weapons.
+- Can only gain one rank in Mechanics.~
+
+//Wiz slayer
+
+//Kensai
+
+@720106 = ~bonus to Speed Factor every 4 levels.~
+@720107 = ~bonus to Speed Factor every 4 levels.
+- May achieve Grand Mastery (five slots) in martial arts.~
+@720108 = ~Alignment restricted to any non-chaotic.~
+@720109 = ~Alignment restricted to any non-chaotic.
+- May not gain any ranks in armor proficiency.~
+
+//Dwarven defender
+@720110 = ~May not exceed High Mastery (four slots) in axes and war hammers.~
+@720111 = ~May not exceed High Mastery (four slots) in axes and blunt weapons.~
+
+//Ranger
+@720200 = ~May wear any armor and use any weapon.~
+@720201 = ~May wear any armor and use any weapon.
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (three slots), Endurance (five slots), Heal (five slots), Herbalism (five slots), Hunting (five slots), Implements (one slot), and Nature (five slots).
+- May achieve Specialization (two slots) in martial arts.
+- May achieve Specialization (two slots) in armor proficiency.~
+
+//Archer
+@720202 = ~May achieve Grand Mastery (5 slots) in longbows, shortbows, and crossbows.~
+@720203 = ~May achieve Grand Mastery (5 slots) in ranged weapons.
+- May gain 7 ranks in the Hunting skill.~
+
+//Stalker
+@720204 = ~May not wear armor heavier than studded leather.~
+@720205 = ~May not wear armor heavier than studded leather.
+- May only attain 1 rank in Armor proficiency.~
+
+//Beast Master
+@720206 = ~+15% to Move Silently and Hide In Shadows.~
+@720207 = ~+15% to Move Silently and Hide In Shadows.
+- May gain 7 ranks in the Endurance skill.~
+
+//Paladin
+@720300 = ~May wear any armor and use any weapon.~
+@720301 = ~May wear any armor and use any weapon.
+- Proficiency slots: six at first level.
+- Class Skills: Endurance (five slots), Heal (five slots), Herbalism (two slots), Hunting (two slots), Implements (one slot), and Persuasion (three slots).
+- May achieve Specialization (two slots) in martial arts.
+- May achieve Specialization (three slots) in armor proficiency.~
+
+//Cavalier
+//Not necessary
+
+//Inquisitor
+@720302 = ~Immune to hold and charm.~
+@720303 = ~Immune to hold and charm.
+- May gain five ranks in Persuasion~
+@720304 = ~May not cast priest spells.~
+@720305 = ~May not cast priest spells.
+- May not gain ranks in implements~
+
+//Blackguard
+@720306 = ~May turn undead as a Paladin of the same level.~
+@720307 = ~May turn undead as a Paladin of the same level.
+- May take five ranks in the Herbalism skill.~
+
+//Cleric
+@720400 = ~May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).~
+@720401 = ~May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (seven slots), Endurance (two slots), Heal (seven slots), Herbalism (five slots), Implements (seven slots), Read Magic (seven slots) and Persuasion (two slots).
+- May achieve Mastery (three slots) in armor proficiency.~
+
+//Should be no changes based on kits (for vanilla)
+
+//Druid
+@720500 = ~May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.~
+@720501 = ~May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (seven slots), Endurance (two slots), Heal (seven slots), Herbalism (five slots), Hunting (two slots), Implements (seven slots), Nature (five slots) and Read Magic (seven slots).
+- May achieve Specialization (three slots) in armor proficiency.~
+
+//Shapeshifter
+@720502 = ~May not wear any armor.~
+@720503 = ~May not wear any armor.
+- May not put any ranks in Armor.~
+
+//Avenger
+@720504 = ~May not wear heavier armor than leather.~
+@720505 = ~May not wear heavier armor than leather.
+- May only put one rank in Armor.~
+
+//Mage
+@720600 = ~May only use the following weapons: dagger, quarterstaff, dart, sling.~
+@720601 = ~May only use the following weapons: dagger, quarterstaff, dart, sling.
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (seven slots), Endurance (one slot), Herbalism (three slots), Implements (seven slots) and Read Magic (seven slots).
+- Mages gain one free rank in read magic at 1st level.~
+
+//Thief
+@720700 = ~club, quarterstaff, crossbow, shortbow, dart, sling.~
+@720701 = ~club, quarterstaff, crossbow, shortbow, dart, sling.
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (three slots), Endurance (two slots), Herbalism (five slots), Implements (four slots), Mechanics (five slots), Read Magic (seven ranks) and Persuasion (five slots).
+- May achieve Proficiency (one slot) in martial arts.
+- May achieve Proficiency (two slots) in armor proficiency.~
+
+//Assassin
+@720702 = ~+1 bonus to hit and damage rolls.~
+@720703 = ~+1 bonus to hit and damage rolls.
+- May put seven ranks in Herbalism.~
+
+//Bounty Hunter
+@720704 = ~+15% bonus to Set Traps.~
+@720705 = ~+15% bonus to Set Traps.
+- May put seven ranks in Mechanics.~
+
+//Swashbuckler
+@720706 = ~+1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.~
+@720707 = ~+1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.
+- May put two ranks in Martial Arts.~
+
+//Bard
+@720801 = ~May not equip shields larger than bucklers.~
+@720802 = ~May not equip shields larger than bucklers.
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (three slots), Endurance (two slots), Herbalism (three slots), Implements (four slots), Mechanics (five slots), Read Magic (six ranks) and Persuasion (five slots).
+- May achieve Proficiency (one slot) in martial arts.
+- May achieve Specialization (two slots) in armor proficiency.~
+
+//Blade
+@720803 = ~May place 3 slots in Two-Weapon Style.~
+@720804 = ~May place 3 slots in Two-Weapon Style.
+- May achieve Specialization (two slots) in martial arts.~
+
+//Jester
+@720805 = ~Enemies must save vs. Spell with a +2 bonus or be confused, must save vs. Spell at +2 or be knocked unconscious, and must save vs. Spell or be slowed.~
+@720806 = ~Enemies must save vs. Spell with a +2 bonus or be confused, must save vs. Spell at +2 or be knocked unconscious, and must save vs. Spell or be slowed.
+- May put seven ranks in Persuasion.~
+
+//Skald
+@720807 = ~+1 bonus to hit and damage rolls.~
+@720808 = ~+1 bonus to hit and damage rolls.
+- May put two ranks in Hunting.~
+
+//Sorcerer
+@720901 = ~dagger, quarterstaff, dart, sling.~
+@720902 = ~dagger, quarterstaff, dart, sling.
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (seven slots), Endurance (one slot), Herbalism (three slots), Implements (seven slots), Read Magic (seven ranks) and Persuasion (two slots).~
+
+//D. Disciple
+@720903 = ~1st level: +1 bonus to AC.~
+@720904 = ~1st level: +1 bonus to AC; May put two ranks in Endurance.~
+
+//Monk
+@721000 = ~May only use weapons available to the Thief class (except two-handed).~
+@721001 = ~May only use weapons available to the Thief class (except two-handed).
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (three slots), Endurance (five slots), Heal (five ranks), Herbalism (three slots), Implements (one slot), Read Magic (two ranks) and Persuasion (two slots).
+- May grand mastery Proficiency (five slots) in martial arts.~
+
+//Barbarian
+@721100 = ~May not wear armor heavier than splint mail.~
+@721101 = ~May not wear armor heavier than splint mail.
+- Proficiency slots: six at first level.
+- Class Skills: Endurance (seven slots), Heal (two slots), Hunting (five slots), Nature (three slots) and Persuasion (five slots).
+- May achieve Specialization (two slot) in martial arts.
+- May achieve Specialization (two slots) in armor proficiency.~
+
+//Shaman
+@721200 = ~May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and shortbow.~
+@721201 = ~May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and shortbow.
+- Proficiency slots: six at first level.
+- Class Skills: Alchemy (seven ranks), Endurance (two slots), Heal (seven slots), Herbalism (five slots), Hunting (two slots), Implements (four ranks), Nature (three slots) and Read Magic (seven slots).
+- May achieve Specialization (two slots) in armor proficiency.~
+
+
+
 
 @800000 = ~Treat Injury~
 @800001 = ~Treat Injury

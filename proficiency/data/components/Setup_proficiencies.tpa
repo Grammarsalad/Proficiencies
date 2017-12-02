@@ -2,13 +2,6 @@
 /////////////////       Proficiencies       ////////////////////
 ////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////                                   /////////////////////////////////
@@ -16,8 +9,12 @@
 /////////////////////////////////                                   /////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //Rename proficiencies, and provide descriptions...
+/////////////////////////////////////////////////
 //BGEE
+/////////////////////////////////////////////////
+
 ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE ONLY STRINGS
 //Bastard sword--> Simple Weapon Probable stref 25000, 25024 (description)-BGEE
 STRING_SET 25000 @700105
@@ -48,104 +45,1410 @@ STRING_SET 25032 @700905
 STRING_SET 25009 @701000
 STRING_SET 25033 @701001
 //Spear --> Endurance stref 25010, 25034 (description)-BGEE
+STRING_SET 25010 @702000
+STRING_SET 25034 @702001
 //Halberd --> Heal stref 25011, 25035 (description)-BGEE
+STRING_SET 25011 @703000
+STRING_SET 25035 @703001
 //Flail --> Herbalism stref 25012, 25036 (description)-BGEE
-//Mace -->??? stref 25013, 25037 (description)-BGEE
-//Staff --> ??? stref 25014, 25038 (description)-BGEE
-//X-Bow --> ??? stref 25015, 25039 (description)-BGEE
-//Longbow --> ??? stref 25016, 25040 (description)-BGEE
-//Short Bow --> ??? stref 25017, 25041 (description)-BGEE
-//Dart --> ??? stref 25018, 25042 (description)-BGEE
-//Sling --> ??? stref 25018, 25042 (description)-BGEE
-
+STRING_SET 25012 @704000
+STRING_SET 25036 @704001
+//Mace -->??? stref 25013, 25037 (description)-BGEE  hUNTING
+STRING_SET 25013 @705000
+STRING_SET 25037 @705001
+//Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
+STRING_SET 25014 @706000
+STRING_SET 25038 @706001
+//X-Bow --> ??? stref 25015, 25039 (description)-BGEE    ~Mechanics~
+STRING_SET 25015 @707000
+STRING_SET 25039 @707001
+//Longbow --> ??? stref 25016, 25040 (description)-BGEE  Nature
+STRING_SET 25016 @708000
+STRING_SET 25040 @708001
+//Short Bow --> ??? stref 25017, 25041 (description)-BGEE     Read Magic
+STRING_SET 25017 @709000
+STRING_SET 25041 @709001
+//Dart --> ??? stref 25018, 25042 (description)-BGEE    ~Persuasion~
+STRING_SET 25018 @710000
+STRING_SET 25042 @710001
+//Sling --> ??? stref 25019, 25043 (description)-BGEE
 END//END BGEE ONLY rename prof
-//BG2EE 
+
+/////////////////////////////////////////////////
+//BG2EE EET
+/////////////////////////////////////////////////
+
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN //BGEE ONLY STRINGS
 //Bastard sword--> Simple Weapon //B.Sword Description prob 34146
-//STRING_SET 25000 @700105 //Don't know this num...
+STRING_SET 31113 @700105 //Don't know this num...
 STRING_SET 34146 @700106
 //Long sword--> Sword //L. Sword prob descrip 34147 (etc.)
-//STRING_SET 25001 @700205 //Don't know this num...
+STRING_SET 31114 @700205 //Don't know this num...
 STRING_SET 34147 @700206
-//Short sword--> Martial Arts 
-//STRING_SET 25002 @700300 //Don't know this num...
+//Short sword--> Martial Arts
+STRING_SET 31115 @700300 //Don't know this num...
 STRING_SET 34148 @700301
 //Axe--> Axe Probable stref 34149 (description)
 //Two-Handed--> Great Sword Probable stref 25004, 25028 (description)
-//STRING_SET 25004 @700503 //Don't know this num...
+STRING_SET 31117 @700503 //Don't know this num...
 STRING_SET 34150 @700504
 //Katana--> Polearms Probable stref 25005, 25029 (description)
-//STRING_SET 25005 @700603 //Don't know this num...
+STRING_SET 31118 @700603 //Don't know this num...
 STRING_SET 34151 @700604
 //Scimitar (etc.)--> Blunt Probable stref 25006, 25030 (description)
-//STRING_SET 25006 @700704 //Don't know this num...
+STRING_SET 31119 @700704 //Don't know this num...
 STRING_SET 34152 @700705
 //Dagger (etc.)--> Ranged Probable stref 25007, 25031 (description)
-//STRING_SET 25007 @700804 //Don't know this num...
+STRING_SET 31120 @700804 //Don't know this num...
 STRING_SET 34153 @700805
 //War Hammer --> Armor prob stref 25008, 25032 (description)
-//STRING_SET 25008 @700904 //Don't know this num...
-STRING_SET 34154 @700905
+STRING_SET 31121 @700904 //Don't know this num...
+STRING_SET 34156 @700905
 //club --> Alchemy stref 25009, 25033 (description)
-//STRING_SET 25009 @701000 //Don't know this num...
-STRING_SET 34155 @701001
-//Spear --> Endurance stref 34156 (description)
-//Halberd --> Heal stref 34157 (description)
-//Flail --> Herbalism stref 34158 (description)
-//Mace -->??? stref 34159 (description)
-//Staff --> ??? stref 34160 (description)
-//X-Bow --> ??? stref 34161 (description)
-//Longbow --> ??? stref 34162 (description)
-//Short Bow --> ??? 34163 (description)
-//Dart --> ??? stref 34164
-//Sling --> ??? stref 34165 (description)
+STRING_SET 35445 @701000 //Don't know this num...
+STRING_SET 35442 @701001
+//Spear --> Endurance stref 25010, 25034 (description)-BGEE
+STRING_SET 31122 @702000
+STRING_SET 34157 @702001
+//Halberd --> Heal stref 25011, 25035 (description)-BGEE
+STRING_SET 31123 @703000
+STRING_SET 34158 @703001
+//Flail --> Herbalism stref 25012, 25036 (description)-BGEE
+STRING_SET 31124 @704000
+STRING_SET 34159 @704001
+//Mace -->??? stref 25013, 25037 (description)-BGEE  hUNTING
+STRING_SET 31125 @705000
+STRING_SET 34160 @705001
+//Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
+STRING_SET 31126 @706000
+STRING_SET 34161 @706001
+//X-Bow --> ??? stref 25015, 25039 (description)-BGEE    ~Mechanics~
+STRING_SET 31127 @707000
+STRING_SET 34162 @707001
+//Longbow --> ??? stref 25016, 25040 (description)-BGEE  Nature
+STRING_SET 31128 @708000
+STRING_SET 34163 @708001
+//Short Bow --> ??? stref 25017, 25041 (description)-BGEE     Read Magic
+STRING_SET 31129 @709000
+STRING_SET 34164 @709001
+//Dart --> ??? stref 25018, 25042 (description)-BGEE    ~Persuasion~
+STRING_SET 31130 @710000
+STRING_SET 34165 @710001
+//Sling --> ??? stref 31131, 34166 (description)-BGEE
 END//END BG2EE ONLY
 
-//IWDEE 
+/////////////////////////////////////////////////
+//IWDEE
+/////////////////////////////////////////////////
+
 ACTION_IF GAME_IS ~iwdee~ BEGIN //BGEE ONLY STRINGS
 //Bastard sword--> Simple Weapon //B.Sword Description prob 36800
-//STRING_SET 25000 @700105 //Don't know this num...
+STRING_SET 36799 @700105 //Don't know this num...
 STRING_SET 36800 @700106
 //Long sword--> Sword //L. Sword prob descrip 34147 (etc.)
-//STRING_SET 25001 @700205 //Don't know this num...
-STRING_SET 36801 @700206
+STRING_SET 36801 @700205 //Don't know this num...
+STRING_SET 36802 @700206
 //Short sword--> Martial Arts 
-//STRING_SET 25002 @700300 //Don't know this num...
-STRING_SET 36802 @700301
+STRING_SET 36803 @700300 //Don't know this num...
+STRING_SET 36804 @700301
 //Axe--> Axe Probable stref 36803 (description)-
 //Two-Handed--> Great Sword 
-//STRING_SET 25004 @700503 //Don't know this num...
-STRING_SET 36804 @700504
+STRING_SET 36807 @700503 //Don't know this num...
+STRING_SET 36808 @700504
 //Katana--> Polearms Probable stref 36805 (description)
-//STRING_SET 25005 @700603 //Don't know this num...
-STRING_SET 36805 @700604
+STRING_SET 36809 @700603 //Don't know this num...
+STRING_SET 36810 @700604
 //Scimitar (etc.)--> Blunt Probable stref 25006, 25030 (description)
-//STRING_SET 25006 @700704 //Don't know this num...
-STRING_SET 36806 @700705
+STRING_SET 36811 @700704 //Don't know this num...
+STRING_SET 36812 @700705
 //Dagger (etc.)--> Ranged Probable stref 25007, 25031 (description)
-//STRING_SET 25007 @700804 //Don't know this num...
-STRING_SET 36807 @700805
+STRING_SET 36813 @700804 //Don't know this num...
+STRING_SET 36814 @700805
 //War Hammer --> Armor prob stref 25008, 25032 (description)
-//STRING_SET 25008 @700904 //Don't know this num...
-STRING_SET 36808 @700905
+STRING_SET 36815 @700904 //Don't know this num...
+STRING_SET 36816 @700905
 //club --> Alchemy stref 25009, 25033 (description)
-//STRING_SET 25009 @701000 //Don't know this num...
-STRING_SET 36809 @701001
-//Spear --> Endurance stref 36810 (description)
-//Halberd --> Heal stref 36811 (description)
-//Flail --> Herbalism stref 36812 (description)
-//Mace -->??? stref 36813 (description)
-//Staff --> ??? stref 36814 (description)
-//X-Bow --> ??? stref 36815 (description)
-//Longbow --> ??? stref 36816 (description)
-//Short Bow --> ??? 36817 (description)
-//Dart --> ??? stref 36818
-//Sling --> ??? stref 36819 (description)
+STRING_SET 36817 @701000 //Don't know this num...
+STRING_SET 36818 @701001
+//Spear --> Endurance stref 25010, 25034 (description)-BGEE
+STRING_SET 36819 @702000
+STRING_SET 36820 @702001
+//Halberd --> Heal stref 25011, 25035 (description)-BGEE
+STRING_SET 36821 @703000
+STRING_SET 36822 @703001
+//Flail --> Herbalism stref 25012, 25036 (description)-BGEE
+STRING_SET 37711 @704000
+STRING_SET 37712 @704001
+//Mace -->??? stref 25013, 25037 (description)-BGEE  hUNTING
+STRING_SET 37713 @705000
+STRING_SET 37714 @705001
+//Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
+STRING_SET 37715 @706000
+STRING_SET 37716 @706001
+//X-Bow --> ??? stref 25015, 25039 (description)-BGEE    ~Mechanics~
+STRING_SET 37717 @707000
+STRING_SET 37718 @707001
+//Longbow --> ??? stref 25016, 25040 (description)-BGEE  Nature
+STRING_SET 37719 @708000
+STRING_SET 37720 @708001
+//Short Bow --> ??? stref 25017, 25041 (description)-BGEE     Read Magic
+STRING_SET 37721 @709000
+STRING_SET 37722 @709001
+//Dart --> ??? stref 25018, 25042 (description)-BGEE    ~Persuasion~
+STRING_SET 37723 @710000
+STRING_SET 37724 @710001
+//Sling --> ??? stref 37725, 37726 (description)-BGEE
 END//End IWDEE Only
-//Update Class descriptions (replace textually)
 
+/////////////////////////////////////////////////
+//////      Update Class descriptions      //////
+/////////////////////////////////////////////////
+
+//Mike and Adarnis are awesome
+/*
+ACTION_GET_STRREF 9562 bard_description
+
+OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
+  REPLACE_TEXTUALLY ~The bard is also a rogue~ ~The bard is also a banana~
+END
+STRING_SET_EVALUATE 9562 ~%bard_description%~
+*/
+
+/////////////////////////////////////////////////
+//BGEE
+/////////////////////////////////////////////////
+
+ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE ONLY STRINGS
+/////////////////////////////////////////////////
+//Fighters
+/////////////////////////////////////////////////
+
+ OUTER_SPRINT old @720100//old text
+ OUTER_SPRINT new @720101//new text
+
+ACTION_GET_STRREF 9556 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
+
+STRING_SET_EVALUATE 9556 ~%fighter_description%~
+/////////////////////////////////////////////////
+//Berserkers
+/////////////////////////////////////////////////
+
+ OUTER_SPRINT old1 @720102//old text
+ OUTER_SPRINT new1 @720103//new text
+ OUTER_SPRINT old2 @720104//old text
+ OUTER_SPRINT new2 @720105//new text
+
+ACTION_GET_STRREF 24284 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+END
+
+STRING_SET_EVALUATE 24284 ~%fighter_description%~
+
+/////////////////////////////////////////////////
+//Wizard Slayer
+/////////////////////////////////////////////////
+// STRING_SET 24285 @720003 //wis slayer   No change(?)
+
+/////////////////////////////////////////////////
+//Kensai
+/////////////////////////////////////////////////
+
+ OUTER_SPRINT old1 @720106//old text
+ OUTER_SPRINT new1 @720107//new text
+ OUTER_SPRINT old2 @720108//old text
+ OUTER_SPRINT new2 @720109//new text
+
+ACTION_GET_STRREF 24286 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+END
+
+STRING_SET_EVALUATE 24286 ~%fighter_description%~
+
+/////////////////////////////////////////////////
+//Dwarven defender
+/////////////////////////////////////////////////
+// STRING_SET 31975 @720003 //Dwarven defender   No change(?)
+
+ OUTER_SPRINT old1 @720110//old text
+ OUTER_SPRINT new1 @720111//new text
+
+ACTION_GET_STRREF 31975 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+END
+
+STRING_SET_EVALUATE 31975 ~%fighter_description%~
+
+/////////////////////////////////////////////////
+//Ranger
+/////////////////////////////////////////////////
+ OUTER_SPRINT old @720200//old text
+ OUTER_SPRINT new @720201//new text
+
+ACTION_GET_STRREF 34493 ranger_description
+
+OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
+
+STRING_SET_EVALUATE 34493 ~%ranger_description%~
+
+/////////////////////////////////////////////////
+//Archer
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720202//old text
+ OUTER_SPRINT new1 @720203//new text
+
+ACTION_GET_STRREF 24298 ranger_description
+
+OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24298 ~%ranger_description%~
+
+/////////////////////////////////////////////////
+//Stalker
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720204//old text
+ OUTER_SPRINT new1 @720205//new text
+
+ACTION_GET_STRREF 24299 ranger_description
+
+OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24299 ~%ranger_description%~
+
+/////////////////////////////////////////////////
+//Beast Master
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720204//old text      (same as stalker)
+ OUTER_SPRINT new1 @720205//new text
+ OUTER_SPRINT old2 @720206//old text
+ OUTER_SPRINT new2 @720207//new text
+
+ACTION_GET_STRREF 34490 ranger_description
+
+OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+END
+
+STRING_SET_EVALUATE 34490 ~%ranger_description%~
+
+/////////////////////////////////////////////////
+//Paladin
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720300//old text
+ OUTER_SPRINT new1 @720301//new text
+
+ACTION_GET_STRREF 9558 paladin_description
+
+OUTER_PATCH_SAVE ranger_description ~%paladin_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 9558 ~%paladin_description%~
+
+/////////////////////////////////////////////////
+//Cavaleer 24287 (not needed)
+/////////////////////////////////////////////////
+
+/////////////////////////////////////////////////
+//Inquisitor
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720302//old text
+ OUTER_SPRINT new1 @720303//new text
+ OUTER_SPRINT old2 @720304//old text
+ OUTER_SPRINT new2 @720305//new text
+
+ACTION_GET_STRREF 24288 paladin_description
+
+OUTER_PATCH_SAVE ranger_description ~%paladin_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+END
+
+STRING_SET_EVALUATE 24288 ~%paladin_description%~
+/////////////////////////////////////////////////
+//Undead Hunter  24289 (not needed)
+/////////////////////////////////////////////////
+
+/////////////////////////////////////////////////
+//Blackguard
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720306//old text
+ OUTER_SPRINT new1 @720307//new text
+
+ACTION_GET_STRREF 28606 paladin_description
+
+OUTER_PATCH_SAVE ranger_description ~%paladin_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 28606 ~%paladin_description%~
+
+/////////////////////////////////////////////////
+//Cleric
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720400//old text
+ OUTER_SPRINT new1 @720401//new text
+
+ACTION_GET_STRREF 24230 cleric_description
+
+OUTER_PATCH_SAVE ranger_description ~%cleric_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24230 ~%cleric_description%~
+
+/////////////////////////////////////////////////
+//Druid
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720500//old text
+ OUTER_SPRINT new1 @720501//new text
+
+ACTION_GET_STRREF 9560 druid_description
+
+OUTER_PATCH_SAVE ranger_description ~%druid_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 9560 ~%druid_description%~
+
+/////////////////////////////////////////////////
+//Shapeshifter
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720502//old text
+ OUTER_SPRINT new1 @720503//new text
+
+ACTION_GET_STRREF 24311 druid_description
+
+OUTER_PATCH_SAVE ranger_description ~%druid_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24311 ~%druid_description%~
+
+/////////////////////////////////////////////////
+//Avenger
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720504//old text
+ OUTER_SPRINT new1 @720505//new text
+
+ACTION_GET_STRREF 24312 druid_description
+
+OUTER_PATCH_SAVE ranger_description ~%druid_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24312 ~%druid_description%~
+
+/////////////////////////////////////////////////
+//Mage
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720600//old text
+ OUTER_SPRINT new1 @720601//new text
+
+ACTION_GET_STRREF 9563 mage_description
+
+OUTER_PATCH_SAVE ranger_description ~%mage_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 9563 ~%mage_description%~
+
+//No changes for specialists
+
+/////////////////////////////////////////////////
+//Thief
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720700//old text
+ OUTER_SPRINT new1 @720701//new text
+
+ACTION_GET_STRREF 9561 thief_description
+
+OUTER_PATCH_SAVE ranger_description ~%thief_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 9561 ~%thief_description%~
+
+
+/////////////////////////////////////////////////
+//ASSASSIN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720702//old text
+ OUTER_SPRINT new1 @720703//new text
+
+ACTION_GET_STRREF 24301 thief_description
+
+OUTER_PATCH_SAVE ranger_description ~%thief_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24301 ~%thief_description%~
+
+/////////////////////////////////////////////////
+//BOUNTY HUNTER
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720704//old text
+ OUTER_SPRINT new1 @720705//new text
+
+ACTION_GET_STRREF 24302 thief_description
+
+OUTER_PATCH_SAVE ranger_description ~%thief_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24302 ~%thief_description%~
+
+/////////////////////////////////////////////////
+//SWASHBUCKLER
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720706//old text
+ OUTER_SPRINT new1 @720707//new text
+
+ACTION_GET_STRREF 24303 thief_description
+
+OUTER_PATCH_SAVE ranger_description ~%thief_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24303 ~%thief_description%~
+
+/////////////////////////////////////////////////
+//BARD
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720801//old text
+ OUTER_SPRINT new1 @720802//new text
+
+ACTION_GET_STRREF 9562 bard_description
+
+OUTER_PATCH_SAVE ranger_description ~%bard_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 9562 ~%bard_description%~
+
+/////////////////////////////////////////////////
+//BLADE
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720803//old text
+ OUTER_SPRINT new1 @720804//new text
+
+ACTION_GET_STRREF 24304 bard_description
+
+OUTER_PATCH_SAVE ranger_description ~%bard_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24304 ~%bard_description%~
+
+/////////////////////////////////////////////////
+//JESTER
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720805//old text
+ OUTER_SPRINT new1 @720806//new text
+
+ACTION_GET_STRREF 24305 bard_description
+
+OUTER_PATCH_SAVE ranger_description ~%bard_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24305 ~%bard_description%~
+
+/////////////////////////////////////////////////
+//SKALD
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720807//old text
+ OUTER_SPRINT new1 @720808//new text
+
+ACTION_GET_STRREF 24306 bard_description
+
+OUTER_PATCH_SAVE ranger_description ~%bard_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24306 ~%bard_description%~
+
+/////////////////////////////////////////////////
+//SORCERERS
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720901//old text
+ OUTER_SPRINT new1 @720902//new text
+
+ACTION_GET_STRREF 24233 sorcerers_description
+
+OUTER_PATCH_SAVE ranger_description ~%sorcerers_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24233 ~%sorcerers_description%~
+
+/////////////////////////////////////////////////
+//D. DISCIPLE
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720903//old text
+ OUTER_SPRINT new1 @720904//new text
+
+ACTION_GET_STRREF 31978 sorcerers_description
+
+OUTER_PATCH_SAVE ranger_description ~%sorcerers_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 31978 ~%sorcerers_description%~
+
+/////////////////////////////////////////////////
+//MONK
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721000//old text
+ OUTER_SPRINT new1 @721001//new text
+
+ACTION_GET_STRREF 24234 monk_description
+
+OUTER_PATCH_SAVE ranger_description ~%monk_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24234 ~%monk_description%~
+
+/////////////////////////////////////////////////
+//BARBARIAN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721100//old text
+ OUTER_SPRINT new1 @721101//new text
+
+ACTION_GET_STRREF 24235 barb_description
+
+OUTER_PATCH_SAVE ranger_description ~%barb_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24235 ~%barb_description%~
+
+/////////////////////////////////////////////////
+//SHAMAN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721200//old text
+ OUTER_SPRINT new1 @721201//new text
+
+ACTION_GET_STRREF 32341 sham_description
+
+OUTER_PATCH_SAVE ranger_description ~%sham_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 32341 ~%sham_description%~
+
+//CONTINUE FROM HERE
+
+END  //END BGEE class descriptions
+
+/////////////////////////////////////////////////
+//////         Update profsmax.2da         //////
+/////////////////////////////////////////////////
+
+/////////////////////////////////////////////////
+//////           Update profs.2da          //////
+/////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////
+//////         Update Weapprof.2da         //////
+/////////////////////////////////////////////////
+
+//From SoB
+//PROFICIENCIES FOR MOD CLERICS_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN cleric BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 3 BEGIN		// cleric
+				//	class = 8 OR		// fighter/cleric
+				//	class = 17 BEGIN	// fighter/mage/cleric
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 7  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 2  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					/*
+                                        //fnp usability (need to account for SoB?  Probably give code to SD)
+                                        //Also, think about FnP specialist kits...
+                                        PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW C#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES FOR MOD DRUIDS_______________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN druid BEGIN
+		OUTER_SPRINT $druids("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 11 BEGIN		// druid
+				//	class = 16 BEGIN	// fighter/druid  do seperate
+				SPRINT $druids("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH druids AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 7  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW D#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+	//I know the locations of default kits, so might as well just set them here
+//	SET_2DA_ENTRY value value value newEntry
+//CONTINUE FROM HERE DRUID KITS!!!! (SHIFTER no ranks in armor; avengers only 1 rank)
+
+//__________________________________________________________________________________
+
+
+//PROFICIENCIES FOR MOD WIZARDS_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN wizard BEGIN
+		OUTER_SPRINT $wizards("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 1 BEGIN		// mage
+				//	class = 19 BEGIN	// sorcerer
+				SPRINT $wizards("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH wizards AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 1  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW W#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES FOR MOD SORCERERS_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN wizard BEGIN
+		OUTER_SPRINT $wizards("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 19 BEGIN		// mage
+				//	class = 19 BEGIN	// sorcerer
+				SPRINT $wizards("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH wizards AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 1  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 2  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW W#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+//	SET_2DA_ENTRY value value value newEntry
+//CONTINUE FROM HERE KITS!!!! (DD 2 ranks in endurance)
+//__________________________________________________________________________________
+
+
+//PROFICIENCIES FOR MOD THIEVES_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN thief BEGIN
+		OUTER_SPRINT $thiefs("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 4 BEGIN		// thief
+					//class = 13 OR		// mage/thief
+					//class = 15 BEGIN	// cleric/thief
+				SPRINT $thiefs("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH thiefs AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 1  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW T#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+//	SET_2DA_ENTRY value value value newEntry
+//CONTINUE FROM HERE KITS!!!! (b. hunter 7 ranks mechanics; assassin 7 ranks herbalism)
+//__________________________________________________________________________________
+
+
+//PROFICIENCIES FOR MOD BARDS_______________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN bard BEGIN
+		OUTER_SPRINT $bards("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 5 BEGIN // bard
+				SPRINT $bards("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH bards AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 2  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 6  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW B#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+//	SET_2DA_ENTRY value value value newEntry
+//CONTINUE FROM HERE KITS!!!! (a few)
+//__________________________________________________________________________________
+
+
+//PROFICIENCIES FOR MOD RANGERS_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN ranger BEGIN
+		OUTER_SPRINT $rangers("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 12 BEGIN		// ranger
+				//	class = 18 BEGIN	// cleric/ranger
+				SPRINT $rangers("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH rangers AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 2  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 2  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 2  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 2  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 2  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 2  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW R#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+//	SET_2DA_ENTRY value value value newEntry
+//CONTINUE FROM HERE KITS!!!! (a few)
+//__________________________________________________________________________________
+
+
+
+//PROFICIENCIES FOR MOD PALADINS____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN paladin BEGIN
+		OUTER_SPRINT $paladins("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 6 BEGIN // paladin
+				SPRINT $paladins("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH paladins AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 2  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 2  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 2  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 2  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 2  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 2  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 0  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 2  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW P#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+//__________________________________________________________________________________
+
+
+//PROFICIENCIES FOR MOD FIGHTERS____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN fighter BEGIN
+		OUTER_SPRINT $fighters("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 2 BEGIN		// fighter
+				//	class = 7 OR		// fighter/mage
+				//	class = 9 OR		// fighter/thief
+				//	class = 10 BEGIN	// fighter//mage/thief
+				SPRINT $fighters("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH fighters AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //BASTARDSWORD    -->simple
+					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //LONGSWORD       -->sword
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //SCIMITAR        -->Blunt
+					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //DAGGER          -->Ranged
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 0  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 1  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 0  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //CROSSBOW        -->Mechanics
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Blank
+					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
+					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
+					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
+					/*
+                    //fnp usability (need to account for SoB?  Probably give code to SD)
+                    //Also, think about FnP specialist kits...
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
+					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
+					END
+                                       */
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW F#weapprof 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+/*
+//MIGHT & GUILE KITS________________________________________________________________
+//
+COPY_EXISTING ~weapprof.2da~ ~override~
+	COUNT_2DA_COLS num_cols
+	READ_2DA_ENTRIES_NOW ~r2en_mng~ (num_cols - 1)
+	FOR (col = 3; col < (num_cols - 1); col += 1) BEGIN
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5CORSA~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 2
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5MARKS~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5EARCH~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5SLING~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5SNIPE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5SWASH~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 3
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 2
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5JONGL~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 4
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3
+		END
+	END
+	SET_2DA_ENTRIES_NOW ~s2el_mng~ 1
+BUT_ONLY
+*/
 
 //TO DO: Add Usability to All classes (based on proficiencies...)
+//This is a start.  It gives f/m usability to everybody.  May not need to alter usability, thinking about it...
+//That shoudl be for the equip mod, probably skip this 
+/*
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+  PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+	READ_BYTE    0x1f fighter 												// fighter usability flag
+	READ_BYTE    0x1e c_b
+	READ_BYTE    0x1f c_m_r
+	READ_BYTE    0x20 p_r_t
+	READ_BYTE    0x21 d_m
+	READ_BYTE    0x29 kit1
+	READ_BYTE    0x2B kit2
+	READ_BYTE    0x2D kit3
+	READ_BYTE    0x2F kit4
+	PATCH_IF ((~%fighter%~ BAND ~0b00100000~) = ~0b00000000~) BEGIN 	// if *IS usable* by fighter/mages (excluding scrolls and wands for now)
+		WRITE_BYTE  0x1e (~%c_b%~ BAND ~0b00111111~) 				// make usable by clerics and bards
+		WRITE_BYTE  0x1f (~%c_m_r%~ BAND ~0b00000000~) 			// make usable by a bunch
+		WRITE_BYTE  0x20 (~%p_r_t%~ BAND ~0b10000000~) 			// more bunches (not elves)
+		WRITE_BYTE  0x21 (~%d_m%~ BAND ~0b10011111~) 			// make usable by monks and druids
+		WRITE_BYTE  0x29 (~%kit1%~ BAND ~0b00000000~) 				// make usable by kits
+		WRITE_BYTE  0x2B (~%kit2%~ BAND ~0b00000000~) 				// make usable by kits
+		WRITE_BYTE  0x2D (~%kit3%~ BAND ~0b00000000~) 				// make usable by kits
+		WRITE_BYTE  0x2F (~%kit4%~ BAND ~0b00000000~) 				// make usable by kits
+    END
+  END
+BUT_ONLY_IF_IT_CHANGES
+*/
 
 //TO DO: GIve bonuses/penalties w/ weapons (and armor) based on proficiency (e.g. bleeding, etc.)
 
@@ -342,21 +1645,30 @@ PATCH_IF  (~itemtype~ = 15) OR                                  //bow item
   END  //
 END
 //Armors(97)   (should Add proficiency to description, And change using unique types...)
+
 //What about helmets?  What about robes?
-//BG2EE armors 
-//leather 2890, 2891
-//S. Leath 6664, 6666
-//'hide' 22714, 22715, 
-//'chain' 214, 6672
-//'splint' 6677, 6678
-//Elven Chain 6146, 
-//Plate 267, 6669
-//Full Plate 6642, 8731
-//Ankheg plate 6686, 6687
-//Scale 69544, (heavy?)
-//red dragon scale 6141 (heavy?)
+
  PATCH_IF GAME_IS ~bgee~ BEGIN  //BGEE SPecific armor text
 //'light' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+END    //end magic leathers only
+//non-magic leathers (and unidentified of magic)
   PATCH_IF (~res_un~ = 29066) OR      // leather
            (~res_un~ = 30189) OR      // leather
            (~res_un~ = 2891) OR      // leather
@@ -368,17 +1680,32 @@ END
  SPRINT old @700900//old text (just 'requires')
  SPRINT new @700901//new text (added light prof)
   READ_STRREF 0x50 ~desc~
-  READ_STRREF 0x54 ~desc_id~
 	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
 	REPLACE_TEXTUALLY ~%old%~ ~%new%~
 	END
   SAY_EVALUATED 0x50 ~%new_desc%~
+  END
+
+//'medium' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x54 ~desc_id~
 	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
 	REPLACE_TEXTUALLY ~%old%~ ~%new%~
 	END
   SAY_EVALUATED 0x54 ~%new_desc_id%~
   END
-//'medium' armors...bgee
+  END //end magic only
   PATCH_IF (~res_un~ = 22714) OR      // Hide
            (~res_un~ = 6672) OR      // Chain
            (~res_un~ = 25550) OR      // Chain
@@ -391,17 +1718,33 @@ END
  SPRINT old @700900//old text (just 'requires')
  SPRINT new @700902//new text (added med prof)
   READ_STRREF 0x50 ~desc~
-  READ_STRREF 0x54 ~desc_id~
 	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
 	REPLACE_TEXTUALLY ~%old%~ ~%new%~
 	END
   SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end medium
+
+//'heavy' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x54 ~desc_id~
 	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
 	REPLACE_TEXTUALLY ~%old%~ ~%new%~
 	END
   SAY_EVALUATED 0x54 ~%new_desc_id%~
   END
-//'heavy' armors...bgee
+  END//End magic only 
+
   PATCH_IF (~res_un~ = 267) OR      // plate
            (~res_un~ = 6669) OR     // plate
            (~res_un~ = 29069) OR     // plate
@@ -414,17 +1757,269 @@ END
  SPRINT old @700900//old text (just 'requires')
  SPRINT new @700903//new text (added heavy prof)
   READ_STRREF 0x50 ~desc~
-  READ_STRREF 0x54 ~desc_id~
 	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
 	REPLACE_TEXTUALLY ~%old%~ ~%new%~
 	END
   SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end heavy
+ END //END BGEE TEXT
+
+//bg2ee armor text
+ PATCH_IF GAME_IS ~bg2ee eet~ BEGIN  //BG2EE and eet SPecific armor text
+//BG2EE armors
+//leather 2890, 2891
+//S. Leath 6664, 6666
+//'hide' 22714, 22715, 
+//'chain' 214, 6672
+//'splint' 6677, 6678
+//Elven Chain 6146, 
+//Plate 267, 6669
+//Full Plate 6642, 8731
+//Ankheg plate 6686, 6687
+//Scale 69544, (heavy?)
+//red dragon scale 6141 (heavy?)
+
+//CONTINUE HERE
+
+/* change to detect bg2ee strings
+//'light' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x54 ~desc_id~
 	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
 	REPLACE_TEXTUALLY ~%old%~ ~%new%~
 	END
   SAY_EVALUATED 0x54 ~%new_desc_id%~
   END
- END //END BGEE TEXT
+END    //end magic leathers only
+//non-magic leathers (and unidentified of magic)
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END
+
+//'medium' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END //end magic only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end medium
+
+//'heavy' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END//End magic only 
+
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end heavy
+*/
+ END//end bg2ee/eet specific armor text
+ 
+//iwdee armor text
+ PATCH_IF GAME_IS ~iwdee~ BEGIN  //iwdee SPecific armor text
+
+//CONTINUE HERE
+
+ /* change to detect iwdee strings
+//'light' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+END    //end magic leathers only
+//non-magic leathers (and unidentified of magic)
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END
+
+//'medium' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END //end magic only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end medium
+
+//'heavy' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END//End magic only 
+
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end heavy
+*/
+
+ END//end iwdee specific armor text
 
 END //END all
 BUT_ONLY//But only if it changes
@@ -450,6 +2045,8 @@ BUT_ONLY
 
 //Make proficiency meaningful
 
+//ARMORS
+
 //Light Armor (0 prof)
 COPY ~proficiency/data/proficiency/armor/B_LIT0A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (0 rank)
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %arm_eq% END  //0 ranks 
@@ -466,12 +2063,12 @@ COPY ~proficiency/data/proficiency/armor/B_LIT2A.SPL~ ~override~   //Applies spl
 COPY ~proficiency/data/proficiency/armor/B_LIT2B.SPL~ ~override~   //Spl that penalizes for proficiency (2 rank)
 COPY ~proficiency/data/proficiency/armor/B_LIT2.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (2 rank)
 //Light Armor (3 prof)
-/*   Not really needed.  3 ranks elimiates all penalties
+//   3 ranks elimiates all penalties
 COPY ~proficiency/data/proficiency/armor/B_LIT3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
 COPY ~proficiency/data/proficiency/armor/B_LIT3B.SPL~ ~override~   //Spl that penalizes for non-proficiency (3 rank)
 COPY ~proficiency/data/proficiency/armor/B_LIT3.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (3 rank)
-*/
+
 //Light Armor (4 prof)
 COPY ~proficiency/data/proficiency/armor/B_LIT4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
@@ -544,7 +2141,7 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT0B~ END //value = 0
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT1B~ END //value = 0
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT2B~ END //value = 2
-//       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT3B~ END //value = 3  NOT NEEDED
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT3B~ END //value = 3  
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT4B~ END //value = 4
        LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT5B~ END //value = 5
      END                                      //END 'light' armor types
@@ -567,8 +2164,16 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
  END
 BUT_ONLY
 
+//WEAPONS (see if it is possible to make penalties etc. apply faster, and be removed faster...)
 
-//CONTINUE FROM HERE (Old alchemy, heerbalism, healing stuff below)
+
+//MARTIAL ARTS
+
+
+//NONWEAPON PROFS
+
+
+//CONTINUE FROM HERE (Old alchemy, herbalism, healing stuff below)
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

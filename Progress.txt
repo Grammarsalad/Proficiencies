@@ -1,3 +1,81 @@
+2017-12-01
+
+- Updated armor spls
+
+2017-11-30
+- Outlined prof bonuses and penalties in armor descriptions
+
+
+2017-11-29
+- Weapprof: Wiz proficiencies (not kits...) 
+- Weapprof: Sor proficiencies (not kits...) 
+- Weapprof: Fig proficiencies (not kits...) 
+- Weapprof: Pal proficiencies (not kits...) 
+- Weapprof: Ran proficiencies (not kits...) 
+- Weapprof: Bar proficiencies (not kits...) 
+- Weapprof: Thi proficiencies (not kits...) 
+- Tested and refined armor text patch code
+
+2017-11-28
+- Weapprof: Druid proficiencies (not kits...)
+- BGEE: Thief description (kits)
+- BGEE: Sorcerer and Bard description (kits)
+- BGEE: Monk, Barbarian, and Shaman description (and relevant kits)
+
+2017-11-27
+- Copied over SoB content for weapprof.2da alteration (thanks subtleD!)
+- Weapprof: Cleric proficiencies
+
+2017-11-26
+- BGEE: Cleric, druid and mage descriptions (including kits)
+- BGEE: Thief descriptsion (not kits)
+
+
+2017-11-25
+- BGEE: Ranger kit descriptions 
+- BGEE: Paladin kit descriptions
+
+2017-11-24
+- BGEE: Fighter class descriptions (including kits)
+- BGEE: Ranger base class descriptions (not kits)
+
+2017-11-23
+- As below but in BG2EE and IWDEE
+
+2017-11-22
+- BGEE: Changed spear prof text to endurance
+- BGEE: CHanged spear prof description text to endurance
+- BGEE: Changed halberd prof text to heal
+- BGEE: CHanged halberdprof description text to heal
+- BGEE: Changed flail prof text to herbalism
+- BGEE: CHanged flail prof description text to herbalism
+- BGEE: Changed mace prof text to hunting
+- BGEE: CHanged mace prof description text to hunting
+- BGEE: Changed staff prof text to implements
+- BGEE: CHanged staff prof description text to implements
+- BGEE: Changed xbow prof text to mechanics
+- BGEE: CHanged xbow prof description text to mechanics
+- BGEE: Changed longobw prof text to nature
+- BGEE: CHanged longbow prof description text to nature
+- BGEE: Changed short bow prof text to read magic 
+- BGEE: CHanged s bow prof description text to r magic
+- BGEE: Changed dart prof text to persuasion
+- BGEE: CHanged dart prof description text to persuasion
+
+2017-08-30
+
+- Added text modifiers for IWDEE and BG2EE (descriptions of proficiencies only)
+
+2017-08-26
+
+- Changed short sword strings to Martial Arts (BGEE ONLY)
+- Tested install.  Installs and looks good.
+- Added darts to simple weapon prof
+
+2017-08-12
+
+- Changed a few strings for simple, and sword
+
 2017-08-07
 
 - Created Light Armor Batch. 
@@ -7,6 +85,7 @@
 2017-08-05
 
 - Created all spls for heavy armor
+
 2017-08-06
 
 - Updated med armor batch and created med armor spls.
@@ -24,6 +103,7 @@
 - " with all up to armors (need more complicated code for that)
 - Updated identified description of above items
 - Started armor stuff.  
+
 2017-07-31
 
 - Actually starting on mod.  Started code to change simple (melee and ranged) weapons to bastard and longsword prof respectively.  Tested.  Seems good (+/-)
@@ -33,16 +113,21 @@
 
 2017-06-25
 - Still setting up base ability (Use Magical Device)
+
 2017-06-21
 - Completely changing everything.  
+
 2016-04-12
 - Treat Injury: 102K to 102Y have their global (Remove ability/Add ability) effects added.  Need to do with A-H    -DONE 
+
 2016-04-13
 - Added INT and Dex bonuses.  ADD FOR OTHER ATTRIBUTES                                                             -DONE
+
 2016-04-13
 - Added Int bonuses for cleric                                                                                     -DONE
 - HEAL
   CREATE SUB ABILTIES                                                                                              -DONE
+
 2016-04-15
 
  - Seperate Heal from constructing med items (herbalism?).  Do seperately and have the latter require the former   -DONE
@@ -116,13 +201,7 @@ SKILLS:
 2016-10-30
 - Started Intimidate: CONTINUE NEXT TIME B_S121A, etc
 --------------------------------------------------TO DO-----------------------------------------------------------------------
-<<<<<<< HEAD
 
-=======
-
-
-=======
->>>>>>> 06a212edb830fce1bb73d866a44ac62fae51ca3e
 - Change readme to reflect light armor 3 ranks, no pen to missile weap
 
 
