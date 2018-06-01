@@ -1,6 +1,24 @@
-Unarmed: Fist.itm seems to be hardcoded to add 4 damage to a character, so it seems likely that unarmed combat will never really become a thing for non-monks. Even overriding fist.itm with mfist still shows this effect. As for monks, if the proficiency of mfist is changed from its default, they stop getting the bonus unarmed attacks from clswpbon.2da, but again, that can be simulated (based on monk level or proficiency, so no worries there). Monks don't really benefit from anything other than unarmed specialization in this system, so that is a limitation. That can be partially rectified by having their various mfists give them bonuses based on single weapon prof/fencing proficiency. One potentially interesting idea is to open up some of the other fighting styles to the monk, but modified as per the monk's style of combat. Subtle, this could be a kind of expansion of your toggle-able monk fist component. Basically, the monk could be able to choose between 4 'fighting styles' that correspond to the fighting styles. For lack of better names, they might be able to switch between 'one fist' style, which gives them bonuses based on their fencing proficiency, 'Iron foot style', which gives them bonuses based on their 'two handed' style proficiency, 'flurry of blows' style, which equips a fist item in their off hand, and uses two weapon proficiency, and finally 'defensive style' which equips a shield/fist in the offhand, and gives bonuses based on their shield proficiency. 
+Unarmed: Fist.itm seems to be hardcoded to add 4 damage to a character, so it seems likely that unarmed combat will never really become
+a thing for non-monks. Even overriding fist.itm with mfist still shows this effect. As for monks, if the proficiency of mfist is changed
+from its default, they stop getting the bonus unarmed attacks from clswpbon.2da, but again, that can be simulated (based on monk level
+or proficiency, so no worries there). Monks don't really benefit from anything other than unarmed specialization in this system, so that 
+is a limitation. That can be partially rectified by having their various mfists give them bonuses based on single weapon prof/fencing
+proficiency. One potentially interesting idea is to open up some of the other fighting styles to the monk, but modified as per the 
+monk's style of combat. Subtle, this could be a kind of expansion of your toggle-able monk fist component. Basically, the monk could be
+able to choose between 4 'fighting styles' that correspond to the fighting styles. For lack of better names, they might be able to
+switch between 'one fist' style, which gives them bonuses based on their fencing proficiency, 'Iron foot style', which gives them
+bonuses based on their 'two handed' style proficiency, 'flurry of blows' style, which equips a fist item in their off hand, and uses two
+weapon proficiency, and finally 'defensive style' which equips a shield/fist in the offhand, and gives bonuses based on their shield
+proficiency. 
 
-Armor Proficiency: 1 rank would be 'light armors', 2 ranks 'medium armors' and 3 ranks for 'heavy armors'. As noted above, various classes would receive bonus proficiency points to spend on these at character creation if they so choose. Warrior types would be able to put more than the standard 3 ranks in order to get 'armor specialization' and receive special bonuses when wearing armor. And, proficiency would allow spellcasting in armor. With the additional options available to spell casters, this might make for an interesting choice for 'gish' characters: do I take proficiency in the various magic proficiencies or do I focus on armor? (dual class characters would be even more broken, though...But, at this point I think it's just necessary to ignore dual class. Back when I played the game, I stopped using it a while ago. Those that want to use this now known exploit, will. Their choice) NPC's, both player and non-player alike, should be patched to have at least a minimum proficiency based on their 'standard' array of equipment...
+Armor Proficiency: 1 rank would be 'light armors', 2 ranks 'medium armors' and 3 ranks for 'heavy armors'. As noted above, various
+classes would receive bonus proficiency points to spend on these at character creation if they so choose. Warrior types would be able to 
+put more than the standard 3 ranks in order to get 'armor specialization' and receive special bonuses when wearing armor. And, 
+proficiency would allow spellcasting in armor. With the additional options available to spell casters, this might make for an
+interesting choice for 'gish' characters: do I take proficiency in the various magic proficiencies or do I focus on armor? (dual class 
+characters would be even more broken, though...But, at this point I think it's just necessary to ignore dual class. Back when I played 
+the game, I stopped using it a while ago. Those that want to use this now known exploit, will. Their choice) NPC's, both player and non-
+player alike, should be patched to have at least a minimum proficiency based on their 'standard' array of equipment...
 
 
 
@@ -9,7 +27,8 @@ EXPERIMENT USING CREATURES AS WORKSTATIONS (E.G. A FORGE) TO DO CRAFTING
 
 
 
-I am able to forcecast the spell on myself through dialog, draining gold, where I can check relevant stats, and so give the right items and number of items, and so on.
+I am able to forcecast the spell on myself through dialog, draining gold, where I can check relevant stats, and so give the right items
+and number of items, and so on.
 Unfortunately, going to need a lot of spells for each ability.  Each item needs a spell per possible rank in the skill
 
 Note d and baf files in the test folder in iwd install
@@ -22,6 +41,12 @@ I want to be able to cast at a set level.  will investigate
                   (note: if possible, give an ability to protect from these penalties if later recieves 'training')
   
     Expanded racial access to classes; only real limit so far is gnomish non-illusionists. (though investigate monk animations)
+    
+    Special effects on critical: All healed by any cure spell
+	Knives, swords: Bleeding. damage each round.  
+	Blunt: 'staggered', penalty to ac/attacks
+	Spear: knock down and back (huge+ immune)
+	(check battle brothers for more inspiration)
 
     Mundane mod: General idea to reduce magic dependency/christmas tree characters
 		Ultimate goal is to make it possible to go through the game without a single magic item
