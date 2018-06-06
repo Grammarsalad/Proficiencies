@@ -1,3 +1,11 @@
+# Log
+
+NOTE: Probably going to get rid of herbalism and incorporate it into Alchemy
+
+2018-06-06
+
+- Gave some numbers to ritual prof for classes
+
 2017-12-01
 
 - Updated armor spls
