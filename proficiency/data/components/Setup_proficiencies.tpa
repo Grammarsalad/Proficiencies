@@ -3867,6 +3867,7 @@ BUT_ONLY//But only if it changes
 
 //WEAPONS (see if it is possible to make penalties etc. apply faster, and be removed faster...)
 
+INCLUDE ~%mod_folder%/lib/weap_prof.tpa~
 
 //ARMOR PROF
 INCLUDE ~%mod_folder%/lib/armor_prof.tpa~
