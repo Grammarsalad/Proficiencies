@@ -1,10 +1,12 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.01~
+VERSION ~0.03.00~
 
 
 ALWAYS
+        OUTER_SPRINT ~mod_folder~ ~proficiency~    //Folder Var
+
 	INCLUDE ~proficiency/lib/alter_effect.tpa~
 
 	INCLUDE ~proficiency/lib/remove_lines.tpa~
@@ -14,6 +16,8 @@ ALWAYS
 	INCLUDE ~proficiency/lib/spell_clone_effects.tpa~
 
 	INCLUDE ~proficiency/lib/bg2fp_effect_batches_fnp.tpa~
+
+        INCLUDE ~proficiency/lib/bg2fp_effect_batches_prof.tpa~
 
 END
 //need to keep my options open
@@ -29,7 +33,7 @@ LANGUAGE ~English~ ~english~ ~proficiency/tra/english/prof.tra~
 
 BEGIN ~B_Proficiency~
 
-INCLUDE ~proficiency/data/components/Setup_proficiencies.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_proficiencies.tpa~
 
 /*
 INCLUDE ~skills/data/components/Setup_mundane.tpa~

@@ -53,7 +53,7 @@ STRING_SET 25035 @703001
 //Flail --> Herbalism stref 25012, 25036 (description)-BGEE
 STRING_SET 25012 @704000
 STRING_SET 25036 @704001
-//Mace -->??? stref 25013, 25037 (description)-BGEE  hUNTING
+//Mace -->??? stref 25013, 25037 (description)-BGEE  Nature
 STRING_SET 25013 @705000
 STRING_SET 25037 @705001
 //Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
@@ -72,6 +72,10 @@ STRING_SET 25041 @709001
 STRING_SET 25018 @710000
 STRING_SET 25042 @710001
 //Sling --> ??? stref 25019, 25043 (description)-BGEE
+STRING_SET 25019 @711000
+STRING_SET 25043 @711001
+
+
 END//END BGEE ONLY rename prof
 
 /////////////////////////////////////////////////
@@ -116,7 +120,7 @@ STRING_SET 34158 @703001
 //Flail --> Herbalism stref 25012, 25036 (description)-BGEE
 STRING_SET 31124 @704000
 STRING_SET 34159 @704001
-//Mace -->??? stref 25013, 25037 (description)-BGEE  hUNTING
+//Mace -->??? stref 25013, 25037 (description)-BGEE  Nature
 STRING_SET 31125 @705000
 STRING_SET 34160 @705001
 //Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
@@ -135,6 +139,8 @@ STRING_SET 34164 @709001
 STRING_SET 31130 @710000
 STRING_SET 34165 @710001
 //Sling --> ??? stref 31131, 34166 (description)-BGEE
+STRING_SET 31131 @711000
+STRING_SET 34166 @711001
 END//END BG2EE ONLY
 
 /////////////////////////////////////////////////
@@ -179,7 +185,7 @@ STRING_SET 36822 @703001
 //Flail --> Herbalism stref 25012, 25036 (description)-BGEE
 STRING_SET 37711 @704000
 STRING_SET 37712 @704001
-//Mace -->??? stref 25013, 25037 (description)-BGEE  hUNTING
+//Mace -->??? stref 25013, 25037 (description)-BGEE  Nature 
 STRING_SET 37713 @705000
 STRING_SET 37714 @705001
 //Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
@@ -198,6 +204,8 @@ STRING_SET 37722 @709001
 STRING_SET 37723 @710000
 STRING_SET 37724 @710001
 //Sling --> ??? stref 37725, 37726 (description)-BGEE
+STRING_SET 37725 @711000
+STRING_SET 37726 @711001
 END//End IWDEE Only
 
 /////////////////////////////////////////////////
@@ -225,11 +233,14 @@ ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE ONLY STRINGS
 
  OUTER_SPRINT old @720100//old text
  OUTER_SPRINT new @720101//new text
+// OUTER_SPRINT old1 @720116//old text  //For Item use component
+// OUTER_SPRINT new1 @720117//new text   //7 points, +1/2 levels
 
 ACTION_GET_STRREF 9556 fighter_description
 
 OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old%~ ~%new%~
+//  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~     //For Item use component
 END
 
 STRING_SET_EVALUATE 9556 ~%fighter_description%~
@@ -262,25 +273,34 @@ STRING_SET_EVALUATE 24284 ~%fighter_description%~
 
  OUTER_SPRINT old1 @720106//old text
  OUTER_SPRINT new1 @720107//new text
+
  OUTER_SPRINT old2 @720108//old text
  OUTER_SPRINT new2 @720109//new text
+ OUTER_SPRINT old3 @720110//old text
+ OUTER_SPRINT new3 @720111//new text
+
+ OUTER_SPRINT old4 @720112//old text
+ OUTER_SPRINT new4 @720113//new text
 
 ACTION_GET_STRREF 24286 fighter_description
 
 OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
-  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+//  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~ //For Item use component
+//  REPLACE_TEXTUALLY ~%old3%~ ~%new3%~
+  REPLACE_TEXTUALLY ~%old4%~ ~%new4%~
 END
 
 STRING_SET_EVALUATE 24286 ~%fighter_description%~
+
 
 /////////////////////////////////////////////////
 //Dwarven defender
 /////////////////////////////////////////////////
 // STRING_SET 31975 @720003 //Dwarven defender   No change(?)
 
- OUTER_SPRINT old1 @720110//old text
- OUTER_SPRINT new1 @720111//new text
+ OUTER_SPRINT old1 @720114//old text
+ OUTER_SPRINT new1 @720115//new text
 
 ACTION_GET_STRREF 31975 fighter_description
 
@@ -296,25 +316,31 @@ STRING_SET_EVALUATE 31975 ~%fighter_description%~
 /////////////////////////////////////////////////
  OUTER_SPRINT old @720200//old text
  OUTER_SPRINT new @720201//new text
+ OUTER_SPRINT old1 @720116//old text  May wear helmets
+ OUTER_SPRINT new1 @720212//7 points, +1/3 levels
 
-ACTION_GET_STRREF 34493 ranger_description
+ACTION_GET_STRREF 9557 ranger_description
 
 OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old%~ ~%new%~
+//  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
 END
 
-STRING_SET_EVALUATE 34493 ~%ranger_description%~
+STRING_SET_EVALUATE 9557 ~%ranger_description%~
 
 /////////////////////////////////////////////////
 //Archer
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @720202//old text
  OUTER_SPRINT new1 @720203//new text
+ OUTER_SPRINT old2 @720208//old text
+ OUTER_SPRINT new2 @720209//new text
 
 ACTION_GET_STRREF 24298 ranger_description
 
 OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 24298 ~%ranger_description%~
@@ -340,33 +366,49 @@ STRING_SET_EVALUATE 24299 ~%ranger_description%~
  OUTER_SPRINT new1 @720205//new text
  OUTER_SPRINT old2 @720206//old text
  OUTER_SPRINT new2 @720207//new text
+ OUTER_SPRINT old3 @720210//old text
+ OUTER_SPRINT new3 @720211//new text
 
-ACTION_GET_STRREF 34490 ranger_description
+ACTION_GET_STRREF 24300 ranger_description
 
 OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
   REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+  REPLACE_TEXTUALLY ~%old3%~ ~%new3%~
 END
 
-STRING_SET_EVALUATE 34490 ~%ranger_description%~
+STRING_SET_EVALUATE 24300 ~%ranger_description%~
 
 /////////////////////////////////////////////////
 //Paladin
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @720300//old text
  OUTER_SPRINT new1 @720301//new text
+ OUTER_SPRINT old2 @720116//old text  May wear helmets
+ OUTER_SPRINT new2 @720308//7 points, +1/4 levels
 
 ACTION_GET_STRREF 9558 paladin_description
 
 OUTER_PATCH_SAVE ranger_description ~%paladin_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+//  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 9558 ~%paladin_description%~
 
 /////////////////////////////////////////////////
-//Cavaleer 24287 (not needed)
+//Cavaleer 24287
 /////////////////////////////////////////////////
+ OUTER_SPRINT old @720116//May not use missile weapons
+ OUTER_SPRINT new @720117//
+
+ACTION_GET_STRREF 24287 paladin_description
+
+OUTER_PATCH_SAVE ranger_description ~%paladin_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
+
+STRING_SET_EVALUATE 24287 ~%paladin_description%~
 
 /////////////////////////////////////////////////
 //Inquisitor
@@ -402,19 +444,25 @@ END
 
 STRING_SET_EVALUATE 28606 ~%paladin_description%~
 
+
+
 /////////////////////////////////////////////////
 //Cleric
 /////////////////////////////////////////////////
- OUTER_SPRINT old1 @720400//old text
+ OUTER_SPRINT old1 @720400//old text   non-bladed weapons
  OUTER_SPRINT new1 @720401//new text
+ OUTER_SPRINT old2 @720116//old text  helmets
+ OUTER_SPRINT new2 @720402//new text  profs
 
 ACTION_GET_STRREF 24230 cleric_description
 
 OUTER_PATCH_SAVE ranger_description ~%cleric_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+//  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 24230 ~%cleric_description%~
+
 
 /////////////////////////////////////////////////
 //Druid
@@ -459,15 +507,47 @@ END
 STRING_SET_EVALUATE 24312 ~%druid_description%~
 
 /////////////////////////////////////////////////
+//Totemic Druid
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720506//old text
+ OUTER_SPRINT new1 @720507//new text
+
+ACTION_GET_STRREF 24310 druid_description
+
+OUTER_PATCH_SAVE ranger_description ~%druid_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24310 ~%druid_description%~
+
+/////////////////////////////////////////////////
+//Shaman
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720506//old text
+ OUTER_SPRINT new1 @720507//new text
+
+ACTION_GET_STRREF 32341 druid_description
+
+OUTER_PATCH_SAVE ranger_description ~%druid_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 32341 ~%druid_description%~
+
+
+/////////////////////////////////////////////////
 //Mage
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @720600//old text
  OUTER_SPRINT new1 @720601//new text
+ OUTER_SPRINT old2 @720602//old text
+ OUTER_SPRINT new2 @720603//new text
 
 ACTION_GET_STRREF 9563 mage_description
 
 OUTER_PATCH_SAVE ranger_description ~%mage_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 9563 ~%mage_description%~
@@ -477,6 +557,8 @@ STRING_SET_EVALUATE 9563 ~%mage_description%~
 /////////////////////////////////////////////////
 //Thief
 /////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720700//old text
+ OUTER_SPRINT new1 @720701//new text
  OUTER_SPRINT old1 @720700//old text
  OUTER_SPRINT new1 @720701//new text
 
@@ -522,6 +604,8 @@ STRING_SET_EVALUATE 24302 ~%thief_description%~
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @720706//old text
  OUTER_SPRINT new1 @720707//new text
+ OUTER_SPRINT old1 @720706//old text
+ OUTER_SPRINT new1 @720707//new text
 
 ACTION_GET_STRREF 24303 thief_description
 
@@ -532,15 +616,33 @@ END
 STRING_SET_EVALUATE 24303 ~%thief_description%~
 
 /////////////////////////////////////////////////
+//SHADOWDANCER
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @720712//old text
+ OUTER_SPRINT new1 @720713//new text
+
+ACTION_GET_STRREF 31972 thief_description
+
+OUTER_PATCH_SAVE ranger_description ~%thief_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 31972 ~%thief_description%~
+
+
+/////////////////////////////////////////////////
 //BARD
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @720801//old text
  OUTER_SPRINT new1 @720802//new text
+ OUTER_SPRINT old2 @720809//old text
+ OUTER_SPRINT new2 @720810//new text
 
 ACTION_GET_STRREF 9562 bard_description
 
 OUTER_PATCH_SAVE ranger_description ~%bard_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 9562 ~%bard_description%~
@@ -587,16 +689,20 @@ END
 
 STRING_SET_EVALUATE 24306 ~%bard_description%~
 
+
 /////////////////////////////////////////////////
 //SORCERERS
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @720901//old text
  OUTER_SPRINT new1 @720902//new text
+ OUTER_SPRINT old2 @720905//old text
+ OUTER_SPRINT new2 @720906//new text
 
 ACTION_GET_STRREF 24233 sorcerers_description
 
 OUTER_PATCH_SAVE ranger_description ~%sorcerers_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 24233 ~%sorcerers_description%~
@@ -606,11 +712,14 @@ STRING_SET_EVALUATE 24233 ~%sorcerers_description%~
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @720903//old text
  OUTER_SPRINT new1 @720904//new text
+ OUTER_SPRINT old2 @720907//old text
+ OUTER_SPRINT new2 @720908//new text
 
 ACTION_GET_STRREF 31978 sorcerers_description
 
 OUTER_PATCH_SAVE ranger_description ~%sorcerers_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 31978 ~%sorcerers_description%~
@@ -620,14 +729,36 @@ STRING_SET_EVALUATE 31978 ~%sorcerers_description%~
 /////////////////////////////////////////////////
  OUTER_SPRINT old1 @721000//old text
  OUTER_SPRINT new1 @721001//new text
+ OUTER_SPRINT old2 @721002//old text
+ OUTER_SPRINT new2 @721003//new text
 
 ACTION_GET_STRREF 24234 monk_description
 
 OUTER_PATCH_SAVE ranger_description ~%monk_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 24234 ~%monk_description%~
+
+/////////////////////////////////////////////////
+//DARK MOON MONK
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721004//old text
+ OUTER_SPRINT new1 @721005//new text
+ OUTER_SPRINT old2 @721006//old text
+ OUTER_SPRINT new2 @721007//new text
+
+ACTION_GET_STRREF 31981 monk_description
+
+OUTER_PATCH_SAVE ranger_description ~%monk_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+END
+
+STRING_SET_EVALUATE 31981 ~%monk_description%~
+
+//Sun Soul not needed
 
 /////////////////////////////////////////////////
 //BARBARIAN
@@ -643,39 +774,1767 @@ END
 
 STRING_SET_EVALUATE 24235 ~%barb_description%~
 
-/////////////////////////////////////////////////
-//SHAMAN
-/////////////////////////////////////////////////
- OUTER_SPRINT old1 @721200//old text
- OUTER_SPRINT new1 @721201//new text
-
-ACTION_GET_STRREF 32341 sham_description
-
-OUTER_PATCH_SAVE ranger_description ~%sham_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
-END
-
-STRING_SET_EVALUATE 32341 ~%sham_description%~
-
-//CONTINUE FROM HERE
 
 END  //END BGEE class descriptions
 
 /////////////////////////////////////////////////
 //////         Update profsmax.2da         //////
 /////////////////////////////////////////////////
+COPY_EXISTING ~profsmax.2da~ ~override~
+  SET_2DA_ENTRY_LATER ~profmax~ 3 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 4 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 5 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 6 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 7 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 8 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 9 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 10 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 11 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 12 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 13 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 14 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 15 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 16 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 17 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 18 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 19 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 20 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 21 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 22 2  7   //
+  SET_2DA_ENTRY_LATER ~profmax~ 23 2  7   //
+  SET_2DA_ENTRIES_NOW ~profmax~ 1
+BUT_ONLY
 
 /////////////////////////////////////////////////
 //////           Update profs.2da          //////
 /////////////////////////////////////////////////
+COPY_EXISTING ~profs.2da~ ~override~
+  SET_2DA_ENTRY_LATER ~prof~ 3 1  4   //mage  1st
+  SET_2DA_ENTRY_LATER ~prof~ 3 2  4   //mage  rate
+  SET_2DA_ENTRY_LATER ~prof~ 4 1  8   //fighter  1st
+  SET_2DA_ENTRY_LATER ~prof~ 4 2  2   //fighter  rate
+  SET_2DA_ENTRY_LATER ~prof~ 5 1  6   //cleric  1st
+  SET_2DA_ENTRY_LATER ~prof~ 5 2  3   //cleric  rate
+  SET_2DA_ENTRY_LATER ~prof~ 6 1  6   //thief  1st
+  SET_2DA_ENTRY_LATER ~prof~ 6 2  3   //thief  rate
+  SET_2DA_ENTRY_LATER ~prof~ 7 1  6   //bard  1st
+  SET_2DA_ENTRY_LATER ~prof~ 7 2  2   //bard  rate
+  SET_2DA_ENTRY_LATER ~prof~ 8 1  7   //pally  1st
+  SET_2DA_ENTRY_LATER ~prof~ 8 2  4   //pally  rate
+  SET_2DA_ENTRY_LATER ~prof~ 9 1  7   //druid  1st
+  SET_2DA_ENTRY_LATER ~prof~ 9 2  3   //druid  rate
+  SET_2DA_ENTRY_LATER ~prof~ 10 1  7   //ranger  1st
+  SET_2DA_ENTRY_LATER ~prof~ 10 2  3   //ranger  rate
+  SET_2DA_ENTRY_LATER ~prof~ 11 1  6   //fighter_mage  1st
+  SET_2DA_ENTRY_LATER ~prof~ 11 2  3   //fighter_mage  rate
+  SET_2DA_ENTRY_LATER ~prof~ 12 1  7   //fighter_cleric  1st
+  SET_2DA_ENTRY_LATER ~prof~ 12 2  3   //fighter_cleric  rate
+  SET_2DA_ENTRY_LATER ~prof~ 13 1  7   //fighter_thief  1st
+  SET_2DA_ENTRY_LATER ~prof~ 13 2  3   //fighter_thief  rate
+  SET_2DA_ENTRY_LATER ~prof~ 14 1  6   //fighter_mage_thief  1st
+  SET_2DA_ENTRY_LATER ~prof~ 14 2  3   //fighter_mage_thief  rate
+  SET_2DA_ENTRY_LATER ~prof~ 15 1  5   //mage_thief  1st
+  SET_2DA_ENTRY_LATER ~prof~ 15 2  4   //mage_thief  rate
+  SET_2DA_ENTRY_LATER ~prof~ 16 1  5   //cleric_mage  1st
+  SET_2DA_ENTRY_LATER ~prof~ 16 2  4   //cleric_mage  rate
+  SET_2DA_ENTRY_LATER ~prof~ 17 1  6   //cleric_thief  1st
+  SET_2DA_ENTRY_LATER ~prof~ 17 2  3   //cleric_thief  rate
+  SET_2DA_ENTRY_LATER ~prof~ 18 1  7   //fighter_druid  1st
+  SET_2DA_ENTRY_LATER ~prof~ 18 2  3   //fighter_druid  rate
+  SET_2DA_ENTRY_LATER ~prof~ 19 1  6   //FIGHTER_MAGE_CLERIC  1st
+  SET_2DA_ENTRY_LATER ~prof~ 19 2  4   //FIGHTER_MAGE_CLERIC  rate
+  SET_2DA_ENTRY_LATER ~prof~ 20 1  6   //CLERIC_RANGER  1st
+  SET_2DA_ENTRY_LATER ~prof~ 20 2  3   //CLERIC_RANGER  rate
+  SET_2DA_ENTRY_LATER ~prof~ 21 1  6   //SORCERER  1st
+  SET_2DA_ENTRY_LATER ~prof~ 21 2  3   //SORCERER  rate
+  SET_2DA_ENTRY_LATER ~prof~ 22 1  6   //MONK  1st
+  SET_2DA_ENTRY_LATER ~prof~ 22 2  2   //MONK  rate
+  SET_2DA_ENTRY_LATER ~prof~ 23 1  7   //Shaman  1st
+  SET_2DA_ENTRY_LATER ~prof~ 23 2  3   //Shaman  rate
+  SET_2DA_ENTRIES_NOW ~prof~ 1
+BUT_ONLY
 
 
 
 /////////////////////////////////////////////////
 //////         Update Weapprof.2da         //////
 /////////////////////////////////////////////////
-
 //From SoB
+//Base class and kits
+COPY_EXISTING ~weapprof.2da~ ~override~
+	COUNT_2DA_COLS num_cols
+	READ_2DA_ENTRIES_NOW ~r2en_mng~ (num_cols - 1)
+	FOR (col = 3; col < (num_cols - 1); col += 1) BEGIN
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 5 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 5 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BERSERKER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 5 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 5 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 7 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~DWARVEN_DEFENDER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 4 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 4 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~WIZARD_SLAYER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 5 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 5 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~KENSAI~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 5 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 5 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 5 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BARBARIAN~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 7 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 2 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 3 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~RANGER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 0 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FERALAN~) BEGIN //Archer
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 1 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 1 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 1 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 7 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 7 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 0 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~STALKER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 0 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BEASTMASTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 7 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 0 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BEAST_FRIEND~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 7 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 0 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~PALADIN~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CAVALIER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~INQUISITOR~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 7 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~UNDEAD_HUNTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BLACKGUARD~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 2 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~THIEF~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~ASSASIN~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 7 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BOUNTY_HUNTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 7 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~SWASHBUCKLER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~SHADOWDANCER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BARD~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 6 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 3 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BLADE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 6 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~SKALD~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 6 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~JESTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 6 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 7 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 3 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CLERIC~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~GODTALOS~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~TALOS~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~GODHELM~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~HELM~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~GODLATHANDER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~LATHANDER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~OHTYR~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~OHTEMPUS~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~DRUID~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 0 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 1 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~TOTEMIC_DRUID~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 0 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 1 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~SHAPESHIFTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 0 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 1 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~AVENGER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 0 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 1 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~MONK~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 5 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~DARK_MOON~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 5 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~SUN_SOUL~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 5 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END	
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~SORCERER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 1 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 1 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~DRAGON_DISCIPLE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 4 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 1 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~MAGE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~ABJURER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CONJURER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~DIVINER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~ENCHANTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~ILLUSIONIST~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~INVOKER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~NECROMANCER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~TRANSMUTER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~WILD_MAGE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_MAGE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 5 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 5 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_CLERIC~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_THIEF~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 5 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 5 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 5 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_MAGE_THIEF~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 5 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 5 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~MAGE_THIEF~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CLERIC_MAGE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CLERIC_THIEF~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 1 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_DRUID~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5//LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_DRUID~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 5//LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 5 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_MAGE_CLERIC~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 5 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CLERIC_RANGER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 2 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 7 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 2 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 7 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 1 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 1 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 1 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 1 //2WEAPON
+		END
+          END
+	SET_2DA_ENTRIES_NOW ~s2el_mng~ 1
+BUT_ONLY
+
+
 //PROFICIENCIES FOR MOD CLERICS_____________________________________________________
 //
 	OUTER_SET count = 0
@@ -688,9 +2547,12 @@ END  //END BGEE class descriptions
 		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 3 BEGIN		// cleric
-				//	class = 8 OR		// fighter/cleric
-				//	class = 17 BEGIN	// fighter/mage/cleric
+			PATCH_IF class = 3 OR		// cleric
+					class = 8 OR		// fighter/cleric
+					class = 14 OR       // mage/cleric
+					class = 15 OR		// thief/cleric
+					class = 17 OR 		// fighter/mage/cleric
+					class = 18 BEGIN	// ranger/cleric
 				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
@@ -712,25 +2574,56 @@ END  //END BGEE class descriptions
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 4  //CLUB            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 7  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism Prob going to remove
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting 
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Handle Animal
 					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 2  //DART            -->Persuasion
 					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 7  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					PATCH_IF class = 8 OR //ftr cleric
+					         class = 17 BEGIN //ftr cleric mage
+							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
+									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 2  //hunting
+									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
+									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
+					END		 
+					PATCH_IF class = 14 OR //mg cleric
+					         class = 17 BEGIN //ftr cleric mage
+							         SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 5  //Alchemy
+									 SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //Implements
+									 SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //Spellcraft
+					END		 
+					PATCH_IF class = 15 BEGIN //th cleric
+							         SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
+									 SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //Implements
+									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
+					END		 
+					PATCH_IF class = 18 BEGIN //ran cleric
+							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 2  //simple
+									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //hunting
+									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //H.Animal
+					END		 
 					/*
-                                        //fnp usability (need to account for SoB?  Probably give code to SD)
+                                      //fnp usability (need to account for SoB?  Probably give code to SD)
                                         //Also, think about FnP specialist kits...
-                                        PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
 					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
 					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
 					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
@@ -755,8 +2648,8 @@ END  //END BGEE class descriptions
 		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 11 BEGIN		// druid
-				//	class = 16 BEGIN	// fighter/druid  do seperate
+			PATCH_IF class = 11 OR		// druid
+				     class = 16 BEGIN	// fighter/druid  do seperate
 				SPRINT $druids("%count%") "%label%"
 				++count
 			END
@@ -778,21 +2671,32 @@ END  //END BGEE class descriptions
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 7  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Hunting
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 4  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 6  //FLAIL           -->Herbalism
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Nature 
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 5  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 7  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 4  //SHORTBOW        -->Spellcraft
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 7  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Ritual
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					PATCH_IF class = 16 BEGIN //ftr druid
+							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
+									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
+									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
+									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
+									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
+					END		 
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -827,8 +2731,10 @@ END  //END BGEE class descriptions
 		FOR (row = 3; row < kitlist; ++row) BEGIN
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 1 BEGIN		// mage
-				//	class = 19 BEGIN	// sorcerer
+			PATCH_IF class = 1 OR		// mage
+				  	class = 7 OR	// fighter/mage
+				    class = 10 OR		// ftr/mage/th
+					class = 13 BEGIN		//  mage/th
 				SPRINT $wizards("%count%") "%label%"
 				++count
 			END
@@ -843,28 +2749,73 @@ END  //END BGEE class descriptions
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
 					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
 					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
 					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
 					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 1  //SPEAR           -->Endurance
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 0  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 5  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 0  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 7  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Ritual
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
+					PATCH_IF class = 7 BEGIN //Fighter/mage
+							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
+									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
+									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //axe
+									 SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //greatsword
+									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
+									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
+									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
+									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
+									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //a. handle
+									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
+					END		 
+					PATCH_IF class = 10 BEGIN //ftr/mage/thief
+							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
+									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
+									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //axe
+									 SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //greatsword
+									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
+									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
+									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
+									 SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //herbalism
+									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
+									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
+					END		 
+					PATCH_IF class = 13 BEGIN //M/thief
+							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //simple
+									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //sword
+									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //ranged
+									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 1  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //heal
+									 SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //herb
+									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
+									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
+					END		 
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -909,28 +2860,28 @@ END  //END BGEE class descriptions
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
 					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
+					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
 					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
 					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
 					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 7  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 0  //WARHAMMER       -->Armor   (exceptions, here)
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 4  //CLUB            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 1  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 2  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 1  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 5  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Blank
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -963,9 +2914,8 @@ END  //END BGEE class descriptions
 		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 4 BEGIN		// thief
-					//class = 13 OR		// mage/thief
-					//class = 15 BEGIN	// cleric/thief
+			PATCH_IF class = 4 OR		// thief
+					 class = 9 BEGIN		// ftr/thief
 				SPRINT $thiefs("%count%") "%label%"
 				++count
 			END
@@ -989,19 +2939,33 @@ END  //END BGEE class descriptions
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 1  //WARHAMMER       -->Armor   (exceptions, here)
 					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
+					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 5  //SHORTBOW        -->Read Magic
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
 					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+					PATCH_IF class = 9 BEGIN //Fighter/thief
+							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
+									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
+									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
+									 SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //axe
+									 SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //greatsword
+									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
+									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
+									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
+									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //a. handle
+					END		 
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -1050,27 +3014,27 @@ END  //END BGEE class descriptions
 					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
 					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //LONGSWORD       -->sword
 					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
+					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 1  //AXE             -->Axe
+					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 1  //TWOHANDEDSWORD  -->Great Sword
+					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1  //KATANA          -->Polearm
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
 					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
+					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 1  //MACE            -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 6  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 2  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 6  //SHORTBOW        -->Read Magic
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
 					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 3  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -1104,7 +3068,6 @@ END  //END BGEE class descriptions
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
 			PATCH_IF class = 12 BEGIN		// ranger
-				//	class = 18 BEGIN	// cleric/ranger
 				SPRINT $rangers("%count%") "%label%"
 				++count
 			END
@@ -1130,17 +3093,17 @@ END  //END BGEE class descriptions
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //MACE            -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 3  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Ritual
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -1200,17 +3163,17 @@ END  //END BGEE class descriptions
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 2  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Nature
 					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 4  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
+					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 4  //SLING           -->Blank
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -1242,9 +3205,6 @@ END  //END BGEE class descriptions
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
 			PATCH_IF class = 2 BEGIN		// fighter
-				//	class = 7 OR		// fighter/mage
-				//	class = 9 OR		// fighter/thief
-				//	class = 10 BEGIN	// fighter//mage/thief
 				SPRINT $fighters("%count%") "%label%"
 				++count
 			END
@@ -1273,14 +3233,14 @@ END  //END BGEE class descriptions
 					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Hunting
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 0  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Animal Handling
 					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
 					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
 					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 1  //SLING           -->Ritual
-					SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
-					SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
-					SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
-					SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
+				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
+				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
+				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
 					/*
                     //fnp usability (need to account for SoB?  Probably give code to SD)
                     //Also, think about FnP specialist kits...
@@ -1297,129 +3257,7 @@ END  //END BGEE class descriptions
 		PRETTY_PRINT_2DA
 	BUT_ONLY
 
-/*
-//MIGHT & GUILE KITS________________________________________________________________
-//
-COPY_EXISTING ~weapprof.2da~ ~override~
-	COUNT_2DA_COLS num_cols
-	READ_2DA_ENTRIES_NOW ~r2en_mng~ (num_cols - 1)
-	FOR (col = 3; col < (num_cols - 1); col += 1) BEGIN
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5CORSA~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 2
-		END
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5MARKS~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1
-		END
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5EARCH~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1
-		END
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5SLING~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4
-		END
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5SNIPE~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 4
-		END
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5SWASH~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 3
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 2
-		END
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~D5JONGL~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 4
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3
-		END
-	END
-	SET_2DA_ENTRIES_NOW ~s2el_mng~ 1
-BUT_ONLY
-*/
+
 
 //TO DO: Add Usability to All classes (based on proficiencies...)
 //This is a start.  It gives f/m usability to everybody.  May not need to alter usability, thinking about it...
@@ -1650,6 +3488,7 @@ END
 
  PATCH_IF GAME_IS ~bgee~ BEGIN  //BGEE SPecific armor text
 //'light' armors...bgee
+  READ_LONG 0x0060  res_nil
   PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
   PATCH_IF (~res_un~ = 29066) OR      // leather
            (~res_un~ = 30189) OR      // leather
@@ -1687,6 +3526,7 @@ END    //end magic leathers only
   END
 
 //'medium' armors...bgee
+  READ_LONG 0x0060  res_nil
   PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
   PATCH_IF (~res_un~ = 22714) OR      // Hide
            (~res_un~ = 6672) OR      // Chain
@@ -1725,6 +3565,7 @@ END    //end magic leathers only
   END  //end medium
 
 //'heavy' armors...bgee
+  READ_LONG 0x0060  res_nil
   PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
   PATCH_IF (~res_un~ = 267) OR      // plate
            (~res_un~ = 6669) OR     // plate
@@ -2023,149 +3864,12 @@ END    //end magic leathers only
 
 END //END all
 BUT_ONLY//But only if it changes
-//Make weapons/armor usable by everybody
-
-//Add to splprot  (thanks to subtledoctor for virtually all of this)
-APPEND ~splprot.2da~ ~B_ARMOR_EQ%TAB%97%TAB%-1%TAB%1~  //Armors (equals)
-APPEND ~splprot.2da~ ~B_ARMOR_LS%TAB%97%TAB%-1%TAB%2~  //Armors (less than)
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ARMOR_EQ~ BEGIN
-         SET arm_eq = %row%
-      END
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ARMOR_LS~ BEGIN
-         SET arm_ls = %row%
-      END
-   END
-BUT_ONLY
-
-//Make proficiency meaningful
-
-//ARMORS
-
-//Light Armor (0 prof)
-COPY ~proficiency/data/proficiency/armor/B_LIT0A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (0 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %arm_eq% END  //0 ranks 
-COPY ~proficiency/data/proficiency/armor/B_LIT0B.SPL~ ~override~   //Spl that penalizes for non-proficiency 
-COPY ~proficiency/data/proficiency/armor/B_LIT0.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (0 rank)
-//Light Armor (1 prof)
-COPY ~proficiency/data/proficiency/armor/B_LIT1A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (1 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1 parameter2 = %arm_eq% END  //1 ranks 
-COPY ~proficiency/data/proficiency/armor/B_LIT1B.SPL~ ~override~   //Spl that penalizes for non-proficiency 
-COPY ~proficiency/data/proficiency/armor/B_LIT1.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (1 rank)
-//Light Armor (2 prof)
-COPY ~proficiency/data/proficiency/armor/B_LIT2A.SPL~ ~override~   //Applies spl that penalizes for proficiency (2 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_LIT2B.SPL~ ~override~   //Spl that penalizes for proficiency (2 rank)
-COPY ~proficiency/data/proficiency/armor/B_LIT2.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (2 rank)
-//Light Armor (3 prof)
-//   3 ranks elimiates all penalties
-COPY ~proficiency/data/proficiency/armor/B_LIT3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_LIT3B.SPL~ ~override~   //Spl that penalizes for non-proficiency (3 rank)
-COPY ~proficiency/data/proficiency/armor/B_LIT3.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (3 rank)
-
-//Light Armor (4 prof)
-COPY ~proficiency/data/proficiency/armor/B_LIT4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_LIT4B.SPL~ ~override~   //Spl that penalizes for non-proficiency (4 rank)
-COPY ~proficiency/data/proficiency/armor/B_LIT4.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (4 rank)
-//Light Armor (5 prof)
-COPY ~proficiency/data/proficiency/armor/B_LIT5A.SPL~ ~override~   //Applies spl that penalizes for proficiency (5 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_LIT5B.SPL~ ~override~   //Spl that penalizes for proficiency (5 rank)
-COPY ~proficiency/data/proficiency/armor/B_LIT5.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (5 rank)
-
-//Medium Armor (0-1 prof)
-COPY ~proficiency/data/proficiency/armor/B_MED0A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (0 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% END  //for any value less than 2
-COPY ~proficiency/data/proficiency/armor/B_MED0B.SPL~ ~override~   //Spl that penalizes for non-proficiency (0-1 rank)
-COPY ~proficiency/data/proficiency/armor/B_MED0.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (0-1 rank)
-//Medium Armor (2 prof)
-COPY ~proficiency/data/proficiency/armor/B_MED2A.SPL~ ~override~   //Applies spl that penalizes for proficiency (2 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_MED2B.SPL~ ~override~   //Spl that penalizes for proficiency (2 rank)
-COPY ~proficiency/data/proficiency/armor/B_MED2.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (2 rank)
-//Medium Armor (3 prof)
-COPY ~proficiency/data/proficiency/armor/B_MED3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_MED3B.SPL~ ~override~   //Spl that penalizes for non-proficiency (3 rank)
-COPY ~proficiency/data/proficiency/armor/B_MED3.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (3 rank)
-//Med Armor (4 prof)
-COPY ~proficiency/data/proficiency/armor/B_MED4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_MED4B.SPL~ ~override~   //Spl that penalizes for non-proficiency (4 rank)
-COPY ~proficiency/data/proficiency/armor/B_MED4.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (4 rank)
-//Med Armor (5 prof)
-COPY ~proficiency/data/proficiency/armor/B_MED5A.SPL~ ~override~   //Applies spl that penalizes for proficiency (5 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_MED5B.SPL~ ~override~   //Spl that penalizes for proficiency (5 rank)
-COPY ~proficiency/data/proficiency/armor/B_MED5.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (5 rank)
-
-//Heavy Armor (0-1 prof)
-COPY ~proficiency/data/proficiency/armor/B_HVY0A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (0 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% END  //for any value less than 2
-COPY ~proficiency/data/proficiency/armor/B_HVY0B.SPL~ ~override~   //Spl that penalizes for non-proficiency (0-1 rank)
-COPY ~proficiency/data/proficiency/armor/B_HVY0.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (0-1 rank)
-//Heavy Armor (2 prof)
-COPY ~proficiency/data/proficiency/armor/B_HVY2A.SPL~ ~override~   //Applies spl that penalties
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_HVY2B.SPL~ ~override~   //Spl that applies penalties
-COPY ~proficiency/data/proficiency/armor/B_HVY2.EFF~ ~override~   //Eff that applies spl that penalizes
-//Heavy Armor (3 prof)
-COPY ~proficiency/data/proficiency/armor/B_HVY3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_HVY3B.SPL~ ~override~   //Spl that penalizes for proficiency (3 rank)
-COPY ~proficiency/data/proficiency/armor/B_HVY3.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (3 rank)
-//Heavy Armor (4 prof)
-COPY ~proficiency/data/proficiency/armor/B_HVY4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_HVY4B.SPL~ ~override~   //Spl that penalizes for non-proficiency (4 rank)
-COPY ~proficiency/data/proficiency/armor/B_HVY4.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (4 rank)
-//Heavy Armor (5 prof)
-COPY ~proficiency/data/proficiency/armor/B_HVY5A.SPL~ ~override~   //Applies spl that penalizes for proficiency (5 rank)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% END
-COPY ~proficiency/data/proficiency/armor/B_HVY5B.SPL~ ~override~   //Spl that penalizes for proficiency (5 rank)
-COPY ~proficiency/data/proficiency/armor/B_HVY5.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (5 rank)
-
-//Apply to armors
-COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
- PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
- READ_SHORT 0x1c ~itemtype~                    //check for itemtype
-     PATCH_IF  (~itemtype~ = 60) BEGIN        //'light' armor types
-       LPF cd_apply_batch STR_VAR array_name = b_light_armor_arrays END // light armor prof batch
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT0B~ END //value = 0
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT1B~ END //value = 0
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT2B~ END //value = 2
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT3B~ END //value = 3  
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT4B~ END //value = 4
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT5B~ END //value = 5
-     END                                      //END 'light' armor types
-     PATCH_IF  (~itemtype~ = 62) BEGIN        //'medium' armor types
-       LPF cd_apply_batch STR_VAR array_name = b_medium_armor_arrays END // medium armor prof batch
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% STR_VAR match_resource = ~B_MED0B~ END //values less than 2
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED2B~ END //value = 2
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED3B~ END //value = 3
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED4B~ END //value = 4
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED5B~ END //value = 5
-     END                                      //END 'medium' armor types
-     PATCH_IF  (~itemtype~ = 65) BEGIN        //'heavy' armor types
-       LPF cd_apply_batch STR_VAR array_name = b_heavy_armor_arrays END // heavy armor prof batch
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% STR_VAR match_resource = ~B_HVY0B~ END //values less than 2
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY2B~ END //value = 2
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY3B~ END //value = 3
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY4B~ END //value = 4
-       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY5B~ END //value = 5
-     END                                      //END 'heavy' armor types
- END
-BUT_ONLY
 
 //WEAPONS (see if it is possible to make penalties etc. apply faster, and be removed faster...)
 
+
+//ARMOR PROF
+INCLUDE ~%mod_folder%/lib/armor_prof.tpa~
 
 //MARTIAL ARTS
 
@@ -4920,10 +6624,10 @@ COPY_EXISTING ~b_s113a.itm~ ~override/b_s113f.itm~
 //2.1: Copy over
 //2.1.1: Wand restriction
 //Restrict wiz items
-COPY ~proficiency/data/proficiency/b_wnd01.SPL~ ~override~   //
-COPY ~proficiency/data/proficiency/b_wnd01.SPL~ ~override/b_wnd02.SPL~   //
-COPY ~proficiency/data/proficiency/b_wnd01.SPL~ ~override/b_wnd03.SPL~   //
-COPY ~proficiency/data/proficiency/b_wnd01.SPL~ ~override/b_wnd04.SPL~   //
+COPY ~%mod_folder%/data/proficiency/b_wnd01.SPL~ ~override~   //
+COPY ~%mod_folder%/data/proficiency/b_wnd01.SPL~ ~override/b_wnd02.SPL~   //
+COPY ~%mod_folder%/data/proficiency/b_wnd01.SPL~ ~override/b_wnd03.SPL~   //
+COPY ~%mod_folder%/data/proficiency/b_wnd01.SPL~ ~override/b_wnd04.SPL~   //
 //Now, only excludes wand of fear, WAND02.  (BE SURE TO EXCLUDE WAND02 here)!!!!Need to add all others...
 //Thank you Ardanis and Gwen for this code!!!
 COPY_EXISTING_REGEXP - GLOB ~.*\.itm~ ~override~ // notice the minus sign "-" to prevent actual copying

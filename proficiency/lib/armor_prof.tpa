@@ -1,0 +1,138 @@
+//Add to splprot  (thanks to subtledoctor for virtually all of this)
+APPEND ~splprot.2da~ ~B_ARMOR_EQ%TAB%97%TAB%-1%TAB%1~  //Armors (equals)
+APPEND ~splprot.2da~ ~B_ARMOR_LS%TAB%97%TAB%-1%TAB%2~  //Armors (less than)
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory  
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ARMOR_EQ~ BEGIN
+         SET arm_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ARMOR_LS~ BEGIN
+         SET arm_ls = %row%
+      END
+   END
+BUT_ONLY
+
+//Make proficiency meaningful
+
+//ARMORS
+
+//Light Armor (0 prof)
+COPY ~proficiency/data/proficiency/armor/B_LIT0A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (0 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %arm_eq% END  //0 ranks 
+COPY ~proficiency/data/proficiency/armor/B_LIT0B.SPL~ ~override~   //Spl that penalizes for non-proficiency 
+COPY ~proficiency/data/proficiency/armor/B_LIT0.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (0 rank)
+//Light Armor (1 prof)
+COPY ~proficiency/data/proficiency/armor/B_LIT1A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (1 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1 parameter2 = %arm_eq% END  //1 ranks 
+COPY ~proficiency/data/proficiency/armor/B_LIT1B.SPL~ ~override~   //Spl that penalizes for non-proficiency 
+COPY ~proficiency/data/proficiency/armor/B_LIT1.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (1 rank)
+//Light Armor (2 prof)
+COPY ~proficiency/data/proficiency/armor/B_LIT2A.SPL~ ~override~   //Applies spl that penalizes for proficiency (2 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_LIT2B.SPL~ ~override~   //Spl that penalizes for proficiency (2 rank)
+COPY ~proficiency/data/proficiency/armor/B_LIT2.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (2 rank)
+//Light Armor (3 prof)
+//   3 ranks elimiates all penalties
+COPY ~proficiency/data/proficiency/armor/B_LIT3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_LIT3B.SPL~ ~override~   //Spl that penalizes for non-proficiency (3 rank)
+COPY ~proficiency/data/proficiency/armor/B_LIT3.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (3 rank)
+
+//Light Armor (4 prof)
+COPY ~proficiency/data/proficiency/armor/B_LIT4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_LIT4B.SPL~ ~override~   //Spl that penalizes for non-proficiency (4 rank)
+COPY ~proficiency/data/proficiency/armor/B_LIT4.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (4 rank)
+//Light Armor (5 prof)
+COPY ~proficiency/data/proficiency/armor/B_LIT5A.SPL~ ~override~   //Applies spl that penalizes for proficiency (5 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_LIT5B.SPL~ ~override~   //Spl that penalizes for proficiency (5 rank)
+COPY ~proficiency/data/proficiency/armor/B_LIT5.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (5 rank)
+
+//Medium Armor (0-1 prof)
+COPY ~proficiency/data/proficiency/armor/B_MED0A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (0 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% END  //for any value less than 2
+COPY ~proficiency/data/proficiency/armor/B_MED0B.SPL~ ~override~   //Spl that penalizes for non-proficiency (0-1 rank)
+COPY ~proficiency/data/proficiency/armor/B_MED0.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (0-1 rank)
+//Medium Armor (2 prof)
+COPY ~proficiency/data/proficiency/armor/B_MED2A.SPL~ ~override~   //Applies spl that penalizes for proficiency (2 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_MED2B.SPL~ ~override~   //Spl that penalizes for proficiency (2 rank)
+COPY ~proficiency/data/proficiency/armor/B_MED2.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (2 rank)
+//Medium Armor (3 prof)
+COPY ~proficiency/data/proficiency/armor/B_MED3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_MED3B.SPL~ ~override~   //Spl that penalizes for non-proficiency (3 rank)
+COPY ~proficiency/data/proficiency/armor/B_MED3.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (3 rank)
+//Med Armor (4 prof)
+COPY ~proficiency/data/proficiency/armor/B_MED4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_MED4B.SPL~ ~override~   //Spl that penalizes for non-proficiency (4 rank)
+COPY ~proficiency/data/proficiency/armor/B_MED4.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (4 rank)
+//Med Armor (5 prof)
+COPY ~proficiency/data/proficiency/armor/B_MED5A.SPL~ ~override~   //Applies spl that penalizes for proficiency (5 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_MED5B.SPL~ ~override~   //Spl that penalizes for proficiency (5 rank)
+COPY ~proficiency/data/proficiency/armor/B_MED5.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (5 rank)
+
+//Heavy Armor (0-1 prof)
+COPY ~proficiency/data/proficiency/armor/B_HVY0A.SPL~ ~override~   //Applies spl that penalizes for non-proficiency (0 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% END  //for any value less than 2
+COPY ~proficiency/data/proficiency/armor/B_HVY0B.SPL~ ~override~   //Spl that penalizes for non-proficiency (0-1 rank)
+COPY ~proficiency/data/proficiency/armor/B_HVY0.EFF~ ~override~   //Eff that applies spl that penalizes for non-proficiency (0-1 rank)
+//Heavy Armor (2 prof)
+COPY ~proficiency/data/proficiency/armor/B_HVY2A.SPL~ ~override~   //Applies spl that penalties
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_HVY2B.SPL~ ~override~   //Spl that applies penalties
+COPY ~proficiency/data/proficiency/armor/B_HVY2.EFF~ ~override~   //Eff that applies spl that penalizes
+//Heavy Armor (3 prof)
+COPY ~proficiency/data/proficiency/armor/B_HVY3A.SPL~ ~override~   //Applies spl that penalizes for proficiency (3 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_HVY3B.SPL~ ~override~   //Spl that penalizes for proficiency (3 rank)
+COPY ~proficiency/data/proficiency/armor/B_HVY3.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (3 rank)
+//Heavy Armor (4 prof)
+COPY ~proficiency/data/proficiency/armor/B_HVY4A.SPL~ ~override~   //Applies spl that penalizes for proficiency (4 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_HVY4B.SPL~ ~override~   //Spl that penalizes for non-proficiency (4 rank)
+COPY ~proficiency/data/proficiency/armor/B_HVY4.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (4 rank)
+//Heavy Armor (5 prof)
+COPY ~proficiency/data/proficiency/armor/B_HVY5A.SPL~ ~override~   //Applies spl that penalizes for proficiency (5 rank)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% END
+COPY ~proficiency/data/proficiency/armor/B_HVY5B.SPL~ ~override~   //Spl that penalizes for proficiency (5 rank)
+COPY ~proficiency/data/proficiency/armor/B_HVY5.EFF~ ~override~   //Eff that applies spl that penalizes for proficiency (5 rank)
+
+//Apply to armors
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
+ PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
+ READ_SHORT 0x1c ~itemtype~                    //check for itemtype
+     PATCH_IF  (~itemtype~ = 60) BEGIN        //'light' armor types
+       LPF cd_apply_batch STR_VAR array_name = b_light_armor_arrays END // light armor prof batch
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT0B~ END //value = 0
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT1B~ END //value = 0
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT2B~ END //value = 2
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT3B~ END //value = 3
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT4B~ END //value = 4
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_LIT5B~ END //value = 5
+     END                                      //END 'light' armor types
+     PATCH_IF  (~itemtype~ = 62) BEGIN        //'medium' armor types
+       LPF cd_apply_batch STR_VAR array_name = b_medium_armor_arrays END // medium armor prof batch
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% STR_VAR match_resource = ~B_MED0B~ END //values less than 2
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED2B~ END //value = 2
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED3B~ END //value = 3
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED4B~ END //value = 4
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_MED5B~ END //value = 5
+     END                                      //END 'medium' armor types
+     PATCH_IF  (~itemtype~ = 65) BEGIN        //'heavy' armor types
+       LPF cd_apply_batch STR_VAR array_name = b_heavy_armor_arrays END // heavy armor prof batch
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_ls% STR_VAR match_resource = ~B_HVY0B~ END //values less than 2
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY2B~ END //value = 2
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY3B~ END //value = 3
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY4B~ END //value = 4
+       LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %arm_eq% STR_VAR match_resource = ~B_HVY5B~ END //value = 5
+     END                                      //END 'heavy' armor types
+ END
+BUT_ONLY

@@ -1,10 +1,62 @@
 # Log
 
-NOTE: Probably going to get rid of herbalism and incorporate it into Alchemy
+TO DO: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IWDEE DESCRIPTIONS
 
-2018-06-06
+TO DO: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
 
-- Gave some numbers to ritual prof for classes
+TO DO: FIX PALADIN MOD ADDED WEAPPROF MODIFIERS
+
+
+Verstion 0.03.00
+
+2018-06-13
+
+- Modified Weapprof for Barbarians, Sorcerers.
+
+- Corrected errors in weapprof modifications for mod classes
+
+- Combing through class text modifications (done--Need one more once over before adding for IWDEE and BG2EE)
+
+- Updated Profs.2da
+
+- Updated Profsmax.2da
+
+- Added weapprof for multiclass mod kits
+
+- Tested (with fnp).  Couldn't find any messed up weapprof selections in game, but it looks like some entries were missed...
+   Looks like paladins (at least) were missed.  Don't know why
+2018-06-12
+
+- Renamed Read Magic to Spellcraft
+
+- Added Set Natural Snares to Hunting (in readme only for now)
+
+- Changed Mechanics to add +15% to set snares/rank (in readme only)
+
+- Split Elixirs and Potions between alchemy and herbalism (the latter are consumable, the former are not--all usable by anybody) Readme only
+
+- Proficiency HLA's (in readme only)
+
+- Modified Weapprof for thief kits, bards, clerics, Druids
+
+- Added text change for shadowdancers, and changed weapprof
+
+
+2018-06-08
+
+- Renamed sling to Ritual
+
+- Combing through class text modifications (cont line 693--464 in tra)
+
+- Added proficiencies to Fighters, Paladins, Rangers and Thief base class (test!)
+
+2018-05-05
+
+- Changed text from "hunting" to "nature", as well as description of the skill in the readme
+
+2018-01-08
+
+- split armor arrays from fnp arrays
 
 2017-12-01
 
