@@ -33,16 +33,109 @@ BUT_ONLY
 //alchemists fire, makeshift
 ////////////////////////////////////////////////////////////////
 //Base item
+
+//1 rank
+
 COPY ~%mod_folder%/data/skills/itm/alch/b_s011a.itm~ ~override~   // No int bonus 1 rank
 	SAY NAME1 @810021
 	SAY NAME2 @810021
 	SAY UNIDENTIFIED_DESC @810022  //
 	SAY IDENTIFIED_DESC @810022  //
-	
-COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
-	SAY UNIDENTIFIED_DESC @810023  //
-	SAY IDENTIFIED_DESC @810023  //
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s012a.itm~    //+1 int bonus 1 rank
+SPRINT old @810030//old text
+SPRINT new @810031//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      savebonus = (0 - 1)
+  END
   LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s012a~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s013a.itm~    //+2 int bonus 1 rank
+SPRINT old @810030//old text
+SPRINT new @810032//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      savebonus = (0 - 2)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s013a~
+  END
+ 
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s014a.itm~    //+3 int bonus 1 rank
+SPRINT old @810030//old text
+SPRINT new @810033//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      savebonus = (0 - 3)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014a~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s015a.itm~    //+4 int bonus 1 rank
+SPRINT old @810030//old text
+SPRINT new @810034//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      savebonus = (0 - 4)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s015a~
+  END
+  
+//2 rank  
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
+SPRINT old @810023//old text
+SPRINT new @810024//new text
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
       dicenumber = 2
   END
@@ -51,9 +144,115 @@ COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
       STR_VAR resource = EVAL ~b_s011b~
   END
   
-  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011c.itm~    //No int bonus 3 ranks
-	SAY UNIDENTIFIED_DESC @810024  //
-	SAY IDENTIFIED_DESC @810024  //
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s012b.itm~    //+1 int bonus 2 ranks
+SPRINT old @810023//old text
+SPRINT new @810024//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810031//new text   
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+      savebonus = (0 - 1)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s012b~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s013b.itm~    //+2 int bonus 2 ranks
+SPRINT old @810023//old text
+SPRINT new @810024//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810032//new text   
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+      savebonus = (0 - 2)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s013b~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s014b.itm~    //+3 int bonus 2 ranks
+SPRINT old @810023//old text
+SPRINT new @810024//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810033//new text   
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+      savebonus = (0 - 3)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014b~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s015b.itm~    //+4 int bonus 2 ranks
+SPRINT old @810023//old text
+SPRINT new @810024//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810034//new text   
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+ LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+      savebonus = (0 - 4)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s015b~
+  END
+
+//3 ranks
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011c.itm~    //No int bonus 3 ranks
+SPRINT old @810023//old text
+SPRINT new @810025//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
       dicenumber = 3
@@ -63,9 +262,115 @@ COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
       STR_VAR resource = EVAL ~b_s011c~
   END
   
-  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011d.itm~    //No int bonus 4 ranks
-	SAY UNIDENTIFIED_DESC @810025  //
-	SAY IDENTIFIED_DESC @810025  //
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s012c.itm~    //+1 int bonus 3 ranks
+SPRINT old @810023//old text
+SPRINT new @810025//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810031//new text      
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+      savebonus = (0 - 1)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s012c~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s013c.itm~    //+2 int bonus 3 ranks
+SPRINT old @810023//old text
+SPRINT new @810025//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810032//new text      
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+      savebonus = (0 - 2)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s013c~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s014c.itm~    //+3 int bonus 3 ranks
+SPRINT old @810023//old text
+SPRINT new @810025//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810033//new text      
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+      savebonus = (0 - 3)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014c~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s015c.itm~    //+4 int bonus 3 ranks
+SPRINT old @810023//old text
+SPRINT new @810025//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810034//new text      
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+      savebonus = (0 - 4)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014c~
+  END
+
+//4 ranks
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011d.itm~    //No int bonus 4 ranks
+SPRINT old @810023//old text
+SPRINT new @810026//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
       dicenumber = 4
@@ -75,9 +380,115 @@ COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
       STR_VAR resource = EVAL ~b_s011d~
   END
   
-  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011e.itm~    //No int bonus 5 ranks
-	SAY UNIDENTIFIED_DESC @810026  //
-	SAY IDENTIFIED_DESC @810026  //
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s012d.itm~    //+1 int bonus 4 ranks
+SPRINT old @810023//old text
+SPRINT new @810026//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810031//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+      savebonus = (0 - 1)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s012d~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s013d.itm~    //+2 int bonus 4 ranks
+SPRINT old @810023//old text
+SPRINT new @810026//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810032//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+      savebonus = (0 - 2)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s013d~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s014d.itm~    //+3 int bonus 4 ranks
+SPRINT old @810023//old text
+SPRINT new @810026//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810033//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+      savebonus = (0 - 3)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014d~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s015d.itm~    //+4 int bonus 4 ranks
+SPRINT old @810023//old text
+SPRINT new @810026//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810034//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+      savebonus = (0 - 4)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s015d~
+  END
+  
+//5 ranks
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011e.itm~    //No int bonus 5 ranks
+SPRINT old @810023//old text
+SPRINT new @810027//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
       dicenumber = 5
@@ -87,9 +498,115 @@ COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
       STR_VAR resource = EVAL ~b_s011e~
   END
   
-  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011f.itm~    //No int bonus 6 ranks
-	SAY UNIDENTIFIED_DESC @810027  //
-	SAY IDENTIFIED_DESC @810027  //
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s012e.itm~    //+1 int bonus 5 ranks
+SPRINT old @810023//old text
+SPRINT new @810027//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810031//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+      savebonus = (0 - 1)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s012e~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s013e.itm~    //+2 int bonus 5 ranks
+SPRINT old @810023//old text
+SPRINT new @810027//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810032//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+      savebonus = (0 - 2)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s013e~
+  END
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s014e.itm~    //+3 int bonus 5 ranks
+SPRINT old @810023//old text
+SPRINT new @810027//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810033//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+      savebonus = (0 - 3)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014e~
+  END 
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s015e.itm~    //+4 int bonus 5 ranks
+SPRINT old @810023//old text
+SPRINT new @810027//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810034//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+      savebonus = (0 - 4)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s015e~
+  END 
+  
+//6 ranks
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011f.itm~    //No int bonus 6 ranks
+SPRINT old @810023//old text
+SPRINT new @810028//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
       dicenumber = 6
@@ -99,9 +616,115 @@ COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
       STR_VAR resource = EVAL ~b_s011f~
   END
   
-   COPY_EXISTING ~b_s011a.itm~ ~override/b_s011g.itm~    //No int bonus 7 ranks
-	SAY UNIDENTIFIED_DESC @810027  //
-	SAY IDENTIFIED_DESC @810027  //
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s012f.itm~    //+1 int bonus 6 ranks
+SPRINT old @810023//old text
+SPRINT new @810028//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810031//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 6
+      savebonus = (0 - 1)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s012f~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s013f.itm~    //+2 int bonus 6 ranks
+SPRINT old @810023//old text
+SPRINT new @810028//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810032//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 6
+      savebonus = (0 - 2)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s013f~
+  END
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s014f.itm~    //+3 int bonus 6 ranks
+SPRINT old @810023//old text
+SPRINT new @810028//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810033//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 6
+      savebonus = (0 - 3)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014f~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s015f.itm~    //+4 int bonus 6 ranks
+SPRINT old @810023//old text
+SPRINT new @810028//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810034//new text    
+READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 6
+      savebonus = (0 - 4)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s015f~
+  END
+  
+//7 ranks
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011g.itm~    //No int bonus 7 ranks
+SPRINT old @810023//old text
+SPRINT new @810029//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
       dicenumber = 7
@@ -109,4 +732,100 @@ COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 324            //
       STR_VAR resource = EVAL ~b_s011g~
+  END
+  
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s012g.itm~    //+1 int bonus 7 ranks
+SPRINT old @810023//old text
+SPRINT new @810029//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810031//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 7
+      savebonus = (0 - 1)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s012g~
+  END
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s013g.itm~    //+2 int bonus 7 ranks
+SPRINT old @810023//old text
+SPRINT new @810029//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810032//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 7
+      savebonus = (0 - 2)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s013g~
+  END
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s014g.itm~    //+3 int bonus 7 ranks
+SPRINT old @810023//old text
+SPRINT new @810029//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810033//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 7
+      savebonus = (0 - 3)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s014g~
+  END
+
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s015g.itm~    //+4 int bonus 7 ranks
+SPRINT old @810023//old text
+SPRINT new @810029//new text
+SPRINT old1 @810030//old text
+SPRINT new1 @810034//new text    
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 7
+      savebonus = (0 - 4)
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s015g~
   END
