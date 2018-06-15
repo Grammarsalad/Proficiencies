@@ -8,7 +8,14 @@ TO DO: FIX PALADIN MOD ADDED WEAPPROF MODIFIERS
 
 TO DO: CONTINUE WITH weap_prof.tpa for advanced weapon proficiencies
 
-TO DO: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES
+TO DO: Alchemy: CREATE Spl to craft alchemy items
+
+TO DO: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
+
+
+2018-06-15_2
+
+- Created itm files for alchemy proficiency
 
 Version 0.03.10
 
