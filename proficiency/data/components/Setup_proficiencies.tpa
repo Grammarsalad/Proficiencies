@@ -3877,6 +3877,11 @@ INCLUDE ~%mod_folder%/lib/armor_prof.tpa~
 
 //NONWEAPON PROFS
 
+//ALCHEMY
+
+INCLUDE ~%mod_folder%/lib/alchemy.tpa~
+
+
 
 //CONTINUE FROM HERE (Old alchemy, herbalism, healing stuff below)
 /*

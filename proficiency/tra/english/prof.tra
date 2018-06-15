@@ -622,43 +622,76 @@ o	Cure Disease: 85%
 @810020 = ~Oops!~
 @810021 = ~Alchemist's Fire, Makeshift~
 @810022 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
--  Effects:
-o	2d3 fire damage to the target if hit (+4 to hit).  Save vs. Wand for half damage.
-~
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 2d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 1 rank in Alchemy.~
+
 @810023 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
--  Effects:
-o	4d3 fire damage to the target if hit (+4 to hit).  Save vs. Wand for half damage.
-~
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 4d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 2 ranks in Alchemy.~
 
 @810024 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
--  Effects:
-o	6d3 fire damage to the target if hit (+4 to hit).  Save vs. Wand for half damage.
-~
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 6d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 3 ranks in Alchemy.~
 
 @810025 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
--  Effects:
-o	8d3 fire damage to the target if hit (+4 to hit).  Save vs. Wand for half damage.
-~
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 8d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 4 ranks in Alchemy.~
 
 @810026 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
--  Effects:
-o	10d3 fire damage to the target if hit (+4 to hit).  Save vs. Wand for half damage.
-~
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 10d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 5 ranks in Alchemy.~
+
 @810027 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
--  Effects:
-o	2d3 fire damage to the target if hit (+4 to hit).  Save vs. Wand -1 to avoid damage.
-~
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 12d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 6 ranks in Alchemy.~
+
+
 @810028 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
--  Effects:
-o	4d3 fire damage to the target if hit (+4 to hit).  Save vs. Wand -1 to avoid damage.
-~
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 14d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 7 ranks in Alchemy.~
+
 @810029 = ~Alchemist's Fire, Makeshift
 The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d4 + Intelligence modifier per rank the character has in alchemy.
 -  Effects:

@@ -6,8 +6,27 @@ TO DO: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
 
 TO DO: FIX PALADIN MOD ADDED WEAPPROF MODIFIERS
 
+TO DO: CONTINUE WITH weap_prof.tpa for advanced weapon proficiencies
 
-Verstion 0.03.00
+TO DO: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES
+
+Version 0.03.10
+
+2018-06-15
+
+- Created weap_prof.tpa in lib folder to handle weapon prof boni.
+
+- Created base splprot entries to be applied to weapons ('equal to' for each)
+
+- Created a reference to weap_prof.tpa in proficiencies.tpa component
+
+2018-06-14
+
+- Modified weapprof for mods.  There are still issues...
+
+- Undid above changes because it was messing with other things.  Sensitive code...
+
+Version 0.03.00
 
 2018-06-13
 
@@ -25,6 +44,7 @@ Verstion 0.03.00
 
 - Tested (with fnp).  Couldn't find any messed up weapprof selections in game, but it looks like some entries were missed...
    Looks like paladins (at least) were missed.  Don't know why
+
 2018-06-12
 
 - Renamed Read Magic to Spellcraft

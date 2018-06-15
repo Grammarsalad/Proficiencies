@@ -1,0 +1,112 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               ALCHEMY                   //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//for alchemy use
+APPEND ~splprot.2da~ ~B_ALC_GR%TAB%115%TAB%-1%TAB%3~  //ALchemy weapons (greater than--for greater than 0)
+
+//value found in parameter1 of your 326 effect
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ALC_GR~ BEGIN  //greater than alchemy
+         SET alc_gr = %row%
+      END
+   END
+BUT_ONLY
+//TO DO: ADD NON-USABILITY FOR UNTRAINED CREATURES
+
+//Maybe add an int check to determine which kind of item is created in the spl, so can be created 'Spontaneously'.  
+
+//BEtter idea: if not sufficient ranks in alchemy, play 'oops' text and cause damage to self
+
+//TO DO: DON'T ADD COMPLETELY NEW DESCRIPTIONS, but RATHER REVISE SPECIFIC CHANGE IN NEW ITEM!!!
+
+////////////////////////////////////////////////////////////////
+//alchemists fire, makeshift
+////////////////////////////////////////////////////////////////
+//Base item
+COPY ~%mod_folder%/data/skills/itm/alch/b_s011a.itm~ ~override~   // No int bonus 1 rank
+	SAY NAME1 @810021
+	SAY NAME2 @810021
+	SAY UNIDENTIFIED_DESC @810022  //
+	SAY IDENTIFIED_DESC @810022  //
+	
+COPY_EXISTING ~b_s011a.itm~ ~override/b_s011b.itm~    //No int bonus 2 ranks
+	SAY UNIDENTIFIED_DESC @810023  //
+	SAY IDENTIFIED_DESC @810023  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 2
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011b~
+  END
+  
+  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011c.itm~    //No int bonus 3 ranks
+	SAY UNIDENTIFIED_DESC @810024  //
+	SAY IDENTIFIED_DESC @810024  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 3
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011c~
+  END
+  
+  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011d.itm~    //No int bonus 4 ranks
+	SAY UNIDENTIFIED_DESC @810025  //
+	SAY IDENTIFIED_DESC @810025  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 4
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011d~
+  END
+  
+  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011e.itm~    //No int bonus 5 ranks
+	SAY UNIDENTIFIED_DESC @810026  //
+	SAY IDENTIFIED_DESC @810026  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 5
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011e~
+  END
+  
+  COPY_EXISTING ~b_s011a.itm~ ~override/b_s011f.itm~    //No int bonus 6 ranks
+	SAY UNIDENTIFIED_DESC @810027  //
+	SAY IDENTIFIED_DESC @810027  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 6
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011f~
+  END
+  
+   COPY_EXISTING ~b_s011a.itm~ ~override/b_s011g.itm~    //No int bonus 7 ranks
+	SAY UNIDENTIFIED_DESC @810027  //
+	SAY IDENTIFIED_DESC @810027  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 12            //
+      dicenumber = 7
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 324            //
+      STR_VAR resource = EVAL ~b_s011g~
+  END
