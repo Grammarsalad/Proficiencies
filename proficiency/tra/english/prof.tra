@@ -511,6 +511,8 @@ Proficiency (armor mastery) (5 slots):~
 @800000 = ~Treat Injury~
 @800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max +25% at 5 ranks) + <PRO_HISHER> wisdom bonus (x5).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 70% +5% per rank (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The only exception is if a character has 6 or 7 ranks in Heal.  Such a character can use Treat Injury on a given character once per turn as needed.
 
+Special: At 7 ranks, Treat Injury also works as Treat Affliction
+
 Effect: Heals 10% target's maximum hit point total.
 Chance of Success: 75%~
 //Mod HP%
