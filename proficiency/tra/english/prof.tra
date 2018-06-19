@@ -507,14 +507,18 @@ Proficiency (armor mastery) (5 slots):~
 - May achieve Specialization (two slots) in armor proficiency.~
 
 
-
+//Heal Skill
 @800000 = ~Treat Injury~
-@800001 = ~Treat Injury
-The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> gains a number of uses of this ability equal to the number of healing ranks <PRO_HESHE> has.  <PRO_HESHE> heals 1d6 + wisdom bonus hit points per rank.  This ability is not magical, and it can only help a patient so much; it will only be effective on a single individual once per day.
--  Effects:
-o	Heal: <RANKS_HEAL>d6 + <WIS_BONUS_MULTI>~
+@800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank + <PRO_HISHER> wisdom bonus (x5).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 70% +5% per rank, + your wisdom bonus as a percentage.  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day.
 
-@800002 = ~Treat Poison and Disease~
+Effect: Heals 10% target's maximum hit point total.
+Chance of Success: 75%~
+
+@800002 = ~Treat Injury check failed!~
+
+
+
+//@800002 = ~Treat Poison and Disease~
 @800003 = ~Treat Poison and Disease
 The healer can treat any of <PRO_HISHER> allies that has been recently been affected by poison or disease.  <PRO_HESHE> gains a number of uses of this ability equal to <PRO_HISHER> healing ranks.  This ability is not always effective, however, and it cannot be used to treat a patient more than once per day.  The chance that the healer will successfully treat a poisoned individual is 60%, +5% per rank.  Diseases are much more complicated than poisons, and so the chance of success is less: 50% +5% per rank.  Healers trained in herbalism gain a +5% bonus to these roles.
 -  Effects:
@@ -629,7 +633,8 @@ Damage: 2d3 (save vs. wands for half)
 
 Weight: 1
 
-Special: Only safely usable by characters that have at least 1 rank in Alchemy.~
+Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+Characters without the required skill level have a 50% chance of spilling some alchemist fine on themselves (suffering full damage with no save).~
 
 @810023 = ~2d3~
 
@@ -657,30 +662,32 @@ Special: Only safely usable by characters that have at least 1 rank in Alchemy.~
 
 @810047 = ~Acid, Makeshift~
 @810048 = ~Acid, Makeshift
-The alchemist can create vials of acid that burn on contact.  When <PRO_HESHE> throws this vial at a target, it does acid damage equal to 1d4.  The acid burns for a number of rounds equal the number of ranks the alchemist has in the alchemy skill.
--  Effects:
-o	1d4 acid damage.  The acid burns for an additional round (doing the same damage) if a save vs. Wand is not made.
-~
-@810049 = ~Acid, Makeshift
-The alchemist can create vials of acid that burn on contact.  When <PRO_HESHE> throws this vial at a target, it does acid damage equal to 1d4.  The acid burns for a number of rounds equal the number of ranks the alchemist has in the alchemy skill.
--  Effects:
-o	1d4 acid damage.  The acid burns for two additional rounds (doing the same damage) if a save vs. Wand is not made.
-~
-@810050 = ~Acid, Makeshift
-The alchemist can create vials of acid that burn on contact.  When <PRO_HESHE> throws this vial at a target, it does acid damage equal to 1d4.  The acid burns for a number of rounds equal the number of ranks the alchemist has in the alchemy skill.
--  Effects:
-o	1d4 acid damage.  The acid burns for three additional rounds (doing the same damage) if a save vs. Wand is not made.
-~
-@810051 = ~Acid, Makeshift
-The alchemist can create vials of acid that burn on contact.  When <PRO_HESHE> throws this vial at a target, it does acid damage equal to 1d4.  The acid burns for a number of rounds equal the number of ranks the alchemist has in the alchemy skill.
--  Effects:
-o	1d4 acid damage.  The acid burns for four additional rounds (doing the same damage) if a save vs. Wand is not made.
-~
-@810052 = ~Acid, Makeshift
-The alchemist can create vials of acid that burn on contact.  When <PRO_HESHE> throws this vial at a target, it does acid damage equal to 1d4.  The acid burns for a number of rounds equal the number of ranks the alchemist has in the alchemy skill.
--  Effects:
-o	1d4 acid damage.  The acid burns for five additional rounds (doing the same damage) if a save vs. Wand is not made.
-~
+Acid burns, and can cause a lot of damage if left to burn over a period of time.  Like alchemist fire, acid is carefully packed it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open covering the target with burning acid.  When hit, a target takes 1d4 + the creator's intelligence modifier of acid damage for a number of rounds equal to the number of ranks the crafter has in alchemy.  Each round after the first, the target can save vs. wands to prevent further damage.
+STATISTICS:
+
+Damage: 1d4/round (save vs. wands each round to avoid damage)
+
+Duration: 1 round
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+Characters without the required skill level have a 50% chance of spilling some acid on themselves (suffering full damage with no save).~
+
+@810049 = ~1d4~
+@810050 = ~1d4+1~
+@810051 = ~1d4+2~
+@810052 = ~1d4+3~
+@810053 = ~1d4+4~
+@810054 = ~1 round~
+@810055 = ~2 rounds max~
+@810056 = ~3 rounds max~
+@810057 = ~4 rounds max~
+@810058 = ~5 rounds max~
+@810059 = ~6 rounds max~
+@810060 = ~7 rounds max~
+
+/*
 @810053 = ~Second Wind
 Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is reduced to 40%.  This ability cannot be used in combat.
 ~
@@ -708,7 +715,7 @@ Upon using this ability, the character takes a moment to catch <PRO_HISHER> brea
 ~
 @810060 = ~Sprint
 Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.~
-
+ */
 @810061 = ~Sprint
 Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.
 Because of your skill in running, you tire at 1/3 the rate from sprinting.~

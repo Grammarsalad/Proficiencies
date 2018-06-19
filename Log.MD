@@ -12,6 +12,20 @@ TO DO: Alchemy: CREATE Spl to craft alchemy items
 
 TO DO: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
 
+TO DO: HEAL NOTIFICATION FOR IWDEE IN HEAL.TPA! LINE 81
+
+
+Version 0.03.20
+
+2018-06-18
+
+- Created basic treat wound spl, and tested it (well, pretty much tested it--not extensively--it works)
+
+2018-06-16
+
+- Changed splprot entry for alchemy to less than, as characters with less than the required proficiency will have a chance to suffer for equippint alch items
+
+- Created alchemy acid and alch fire items and necessary spells (not creation spells, though)
 
 2018-06-15_2
 

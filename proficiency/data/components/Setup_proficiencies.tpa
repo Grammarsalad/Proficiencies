@@ -3882,6 +3882,9 @@ INCLUDE ~%mod_folder%/lib/armor_prof.tpa~
 INCLUDE ~%mod_folder%/lib/alchemy.tpa~
 
 
+//Heal
+
+INCLUDE ~%mod_folder%/lib/heal.tpa~
 
 //CONTINUE FROM HERE (Old alchemy, herbalism, healing stuff below)
 /*
