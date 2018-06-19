@@ -1,6 +1,7 @@
 # Proficiencies
 
 *Italics*
+
 ![image](https://path.png)
 
 * Bullets 
