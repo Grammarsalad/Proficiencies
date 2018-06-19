@@ -12,9 +12,14 @@ TO DO: Alchemy: CREATE Spl to craft alchemy items
 
 TO DO: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
 
-TO DO: HEAL NOTIFICATION FOR IWDEE IN HEAL.TPA! LINE 81
+Version 0.03.21
 
-TEST
+- Verified same heal strfef in IWDEE and BG2EE
+
+- 
+
+2018-06-19
+
 Version 0.03.20
 
 2018-06-18

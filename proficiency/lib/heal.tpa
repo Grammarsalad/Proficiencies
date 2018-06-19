@@ -64,30 +64,37 @@ BUT_ONLY
 ////////////////////////////////////////////////////////////////
 //Treat Wound___________________________________________________
 ////////////////////////////////////////////////////////////////
-COPY ~%mod_folder%/data/skills/spl/heal/b_s102a.spl~ ~override~   // treat wound 1 rank, no wis
+
+//Base spell (also 1 rank,no wis)
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102A.spl~ ~override~   // treat wound 1 rank, no wis
 	SAY NAME1 @800000
 	SAY UNIDENTIFIED_DESC @800001  //
 LPF ALTER_EFFECT     //Failure notification
       INT_VAR match_opcode = 139  match_parameter1    = 0          //  failure notification
-      parameter1 = RESOLVE_STR_REF (@800002)    //Treat Injury check failed!
+      parameter1 = RESOLVE_STR_REF (@800018)    //Treat Injury check failed!
 END
-ACTION_IF GAME_IS ~bg2ee~ BEGIN
+ACTION_IF GAME_IS ~bg2ee iwdee eet~ BEGIN
  COPY_EXISTING ~b_s102a.spl~ ~override~
   LPF ALTER_EFFECT     //healed notification
       INT_VAR match_opcode = 139  match_parameter1    = 25810          //
-      parameter1 = 14022    // BG2EE notification
+      parameter1 = 14022    // all same notification
   END
 END
-/* COME BACK TO THIS
-ACTION_IF GAME_IS ~iwdee~ BEGIN
- COPY_EXISTING ~b_s102a.spl~ ~override~
-  LPF ALTER_EFFECT     //healed notification
-      INT_VAR match_opcode = 139  match_parameter1    = 25810          //
-      parameter1 = 14022    // BG2EE notification
-  END
-END
-*/
-COPY_EXISTING ~b_s102a.spl~ ~override/b_s102b.spl~  //1 rank, +1 wis
+
+//1 rank (cont)
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102B.spl~  //1 rank, +1 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800003//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
 LPF ALTER_EFFECT     // remove and add
       INT_VAR match_opcode = 172            //
       STR_VAR resource = ~B_S102B~    //
@@ -97,16 +104,702 @@ LPF ALTER_EFFECT     // remove and add
       STR_VAR resource = ~B_S102B~    //
 END
 LPF ALTER_EFFECT     // Healing
-      INT_VAR match_opcode = 17   parameter1 = 15  probability1  = 76       //
+      INT_VAR match_opcode = 17   parameter1 = 15 //    probability1  = 75
+END
+/* // Not needed
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810        // BGEE version      probability1  = 75
 END
 LPF ALTER_EFFECT     // Healing notification
-      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 76       // BGEE version
-END
-LPF ALTER_EFFECT     // Healing notification
-      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 76       // BG2EE version
+      INT_VAR match_opcode = 139   match_parameter1 = 14022         // BG2EE EET IWDEE version     probability1  = 75
 END
 LPF ALTER_EFFECT     // failure notification
-      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800002)  probability2  = 77       // will this work???  It seems to
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)         // will this work???  It seems to    probability2  = 76
+END
+*/ //not needed
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102C.spl~  //1 rank, +2 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800004//new text
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102C~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102C~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 20 //    probability1  = 75
+END
+/* // Not needed
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810        // BGEE version      probability1  = 75
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022         // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)         // will this work???  It seems to    probability2  = 76
+END
+*/ //not needed
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102D.spl~  //1 rank, +3 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800005//new text 25%
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102D~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102D~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 //    probability1  = 75
+END
+/* // Not needed
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810        // BGEE version      probability1  = 75
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022         // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)         // will this work???  It seems to    probability2  = 76
+END
+*/ //not needed
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102E.spl~  //1 rank, +4 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800006//new text 30%
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102E~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102E~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 //    probability1  = 75
+END
+/* // Not needed
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810        // BGEE version      probability1  = 75
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022         // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)         // will this work???  It seems to    probability2  = 76
+END
+*/ //not needed
+
+//2 rank
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102F.spl~  //2 rank, no wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800003//new text  15% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800014//new text 80% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102F~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102F~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 15 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 79      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 79  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102G.spl~  //2 rank, +1 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800004//new text  20% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800014//new text 80% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102G~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102G~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 20 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 79      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 79  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102H.spl~  //2 rank, +2 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800005//new text  25% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800014//new text 80% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102H~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102H~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 79      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 79  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102I.spl~  //2 rank, +3 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800006//new text  30% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800014//new text 80% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102I~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102I~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 79      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 79  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102J.spl~  //2 rank, +4 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800006//new text  35% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800014//new text 80% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102J~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102J~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 79      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 79  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // will this work???  It seems to
+END
+
+// 3 ranks
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102K.spl~  //3 rank, no wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800004//new text  20% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800015//new text 85% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102K~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102K~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 20 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 84      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 84  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // will this work???  It seems to
 END
 
 
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102L.spl~  //3 rank, +1 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800005//new text  25% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800015//new text 85% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102L~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102L~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 84      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 84  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102M.spl~  //3 rank, +2 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800006//new text  30% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800015//new text 85% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102M~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102M~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 84      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 84  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102N.spl~  //3 rank, +3 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800007//new text  35% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800015//new text 85% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102N~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102N~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 84      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 84  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102O.spl~  //3 rank, +4 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800008//new text  40% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800015//new text 85% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102O~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102O~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 40 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 84      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 84  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // will this work???  It seems to
+END
+
+// 4 ranks
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102P.spl~  //4 rank, no wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800005//new text  25% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800016//new text 90% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102P~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102P~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 89      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 89  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102Q.spl~  //4 rank, +1 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800006//new text  30% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800016//new text 90% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102Q~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102Q~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 89      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 89  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102R.spl~  //4 rank, +2 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800007//new text  35% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800016//new text 90% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102R~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102R~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 89      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 89  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102S.spl~  //4 rank, +3 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800008//new text  40% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800016//new text 90% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102S~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102S~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 40 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 89      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 89  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // will this work???  It seems to
+END
+
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102T.spl~  //4 rank, +4 wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800009//new text  45% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800016//new text 90% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102T~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102T~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 45 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 89      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 89  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // will this work???  It seems to
+END
+
+// 5 ranks
+COPY_EXISTING ~B_S102A.spl~ ~override/B_S102U.spl~  //5 rank, no wis
+//Modify description
+SPRINT old @800002//old text
+SPRINT new @800006//new text  30% hp healed
+SPRINT old1 @800013//old text
+SPRINT new1 @800017//new text 95% success
+   READ_LONG 0x50 "valid"
+   PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+   READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+	END
+   SAY_EVALUATED 0x50 ~%new_desc%~
+   END  //
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 172            //
+      STR_VAR resource = ~B_S102U~    //
+END
+LPF ALTER_EFFECT     // remove and add
+      INT_VAR match_opcode = 171            //
+      STR_VAR resource = ~B_S102U~    //
+END
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 94//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 25810  probability1  = 94      // BGEE version
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = 14022  probability1  = 94  // BG2EE EET IWDEE version     probability1  = 75
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 95      // will this work???  It seems to
+END
