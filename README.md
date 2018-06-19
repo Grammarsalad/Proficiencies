@@ -8,45 +8,45 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 
 #### **Fighter** 
 
-First Level: 8 Proficiency Points 
-Rate of Increase: 1/2 Levels
+##### First Level: 8 Proficiency Points 
+##### Rate of Increase: 1/2 Levels
 
 #### **Ranger** 
 
-First Level: 7 Proficiency Points 
-Rate of Increase: +1/3 Levels
+##### First Level: 7 Proficiency Points 
+##### Rate of Increase: +1/3 Levels
 
 #### **Paladin**
 
-First Level: 7 Proficiency Points 
-Rate of Increase: +1/4 Levels
+##### First Level: 7 Proficiency Points 
+##### Rate of Increase: +1/4 Levels
 
 #### **Thief** 
 
-First Level: 6 Proficiency Points 
-Rate of Increase: +1/3 Levels
+##### First Level: 6 Proficiency Points 
+##### Rate of Increase: +1/3 Levels
 
 #### **Bard**
 
-First Level: 6 Proficiency Points 
-Rate of Increase: +1/2 Levels
+##### First Level: 6 Proficiency Points 
+##### Rate of Increase: +1/2 Levels
 
 #### **Cleric**
 
-First Level: 6 Proficiency Points 
-Rate of Increase: +1/3 Levels
+##### First Level: 6 Proficiency Points 
+##### Rate of Increase: +1/3 Levels
 
 #### **Druid**
 
-First Level: 7 Proficiency Points 
-Rate of Increase: +1/3 Levels
+##### First Level: 7 Proficiency Points 
+##### Rate of Increase: +1/3 Levels
 
 #### **Shaman**
 
-First Level: 7 Proficiency Points 
-Rate of Increase: +1/3 Levels
+##### First Level: 7 Proficiency Points 
+##### Rate of Increase: +1/3 Levels
 
 #### **Monk**
 
-First Level: 6 Proficiency Points 
-Rate of Increase: +1/2 Levels
+##### First Level: 6 Proficiency Points 
+##### Rate of Increase: +1/2 Levels
