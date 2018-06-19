@@ -17,14 +17,14 @@ This mod aims to expand the proficiency system in Infinity Engine games, allowin
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
 
  
-Class | 1st Level | Rate 
---- | --- | --- | 
-Fighter | 8 | 1/2 lev
-Ranger | 7 | 1/3 lev 
-Paladin | 7 | 1/4 lev 
-Thief | 6 | 1/3 lev 
-Bard | 6 | 1/2 lev 
-Cleric | 6 | 1/3 lev 
-Druid | 7 | 1/3 lev 
-Shaman | 7 | 1/3 lev 
-Monk | 6 | 1/2 lev 
+| Class | 1st Level | Rate | 
+| :---: | :---: | :---: | 
+| Fighter | 8 | 1/2 lev |
+| Ranger | 7 | 1/3 lev | 
+| Paladin | 7 | 1/4 lev | 
+| Thief | 6 | 1/3 lev | 
+| Bard | 6 | 1/2 lev | 
+| Cleric | 6 | 1/3 lev | 
+| Druid | 7 | 1/3 lev | 
+| Shaman | 7 | 1/3 lev | 
+| Monk | 6 | 1/2 lev | 
