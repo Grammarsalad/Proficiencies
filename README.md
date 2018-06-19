@@ -19,62 +19,11 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 Class | 1st Level | Rate 
 --- | --- | --- | 
 Fighter | 8 | 1/2 lev
---- | --- | --- | 
 Ranger | 7 | 1/3 lev 
-
-
-#### **Fighter** 
-
-- **First Level**: 8 Proficiency Points	
-
-- **Rate of Increase**: 1/2 Levels 
-
-#### **Ranger** 
-
-- **First Level**: 7 Proficiency Points	
-
-- **Rate of Increase**: 1/3 Levels 
-
-#### **Paladin**
-
-- **First Level**: 7 Proficiency Points	
-
-- **Rate of Increase**: 1/4 Levels 
-
-#### **Thief** 
-
-- **First Level**: 6 Proficiency Points	
-
-- **Rate of Increase**: 1/3 Levels 
-
-#### **Bard**
-
-- **First Level**: 6 Proficiency Points	
-
-- **Rate of Increase**: 1/2 Levels 
-
-
-#### **Cleric**
-
-- **First Level**: 6 Proficiency Points	
-
-- **Rate of Increase**: 1/3 Levels 
-
-#### **Druid**
-
-- **First Level**: 7 Proficiency Points	
-
-- **Rate of Increase**: 1/3 Levels 
-
-#### **Shaman**
-
-- **First Level**: 7 Proficiency Points	
-
-- **Rate of Increase**: 1/3 Levels 
-
-#### **Monk**
-
-- **First Level**: 6 Proficiency Points	
-
-- **Rate of Increase**: 1/2 Levels 
-
+Paladin | 7 | 1/4 lev 
+Thief | 6 | 1/3 lev 
+Bard | 6 | 1/2 lev 
+Cleric | 6 | 1/3 lev 
+Druid | 7 | 1/3 lev 
+Shaman | 7 | 1/3 lev 
+Monk | 6 | 1/2 lev 
