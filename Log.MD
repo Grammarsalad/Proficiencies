@@ -14,9 +14,9 @@ TO DO: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for
 
 Version 0.03.21
 
-- Verified same heal strfef in IWDEE and BG2EE
+- Verified same heal strref in IWDEE and BG2EE
 
-- 
+- Created more heal spls (up to heal 5)
 
 2018-06-19
 
