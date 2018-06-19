@@ -19,6 +19,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 Class | 1st Level | Rate 
 --- | --- | --- | 
 Fighter | 8 | 1/2 lev 
+Ranger | 7 | 1/3 lev 
 
 
 #### **Fighter** 
