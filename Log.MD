@@ -4,19 +4,30 @@ TO DO: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IW
 
 TO DO: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
 
-TO DO: FIX PALADIN MOD ADDED WEAPPROF MODIFIERS
+TO DO 1: FIX PALADIN MOD ADDED WEAPPROF MODIFIERS
 
-TO DO: CONTINUE WITH weap_prof.tpa for advanced weapon proficiencies
+TO DO 2: CONTINUE WITH weap_prof.tpa for advanced weapon proficiencies
 
-TO DO: Alchemy: CREATE Spl to craft alchemy items
+TO DO 3: Alchemy: CREATE Spl to craft alchemy items
 
-TO DO: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
+TO DO 4: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
+
+TO DO 5: Update readme for Treat Injury
+
+TO DO 6: Recreate Heal spls to be sensitive to wis (probably just need 1 spl per prof...)
+
+Version 0.03.22
+
+- Changed Treat Wound to max at 5 ranks, in terms of healing percentage.  Also, 7 ranks Treat Injury also treats affliction
+
+- Finished up to Heal 5, but see above TO DO 6
+
 
 Version 0.03.21
 
 - Verified same heal strref in IWDEE and BG2EE
 
-- Created more heal spls (up to heal 5)
+- Created more heal spls (up to heal 5, no wis)
 
 2018-06-19
 
