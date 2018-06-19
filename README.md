@@ -6,9 +6,9 @@
 
 * Bullets 
 
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+| Attempt | #1 | #2 |
+| :---: | :---: | :---: |
+| Seconds | 301 | 283 |
 
 
 This mod aims to expand the proficiency system in Infinity Engine games, allowing characters to do things like treat injuries and antitoxins with varying degrees of effectiveness.  But this mod does not merely add ‘non-weapon proficiencies’.  This is a top down revision of the proficiency system that allows characters to do things with their weapons previously impossible without specific magical weapons.  Skilled characters can stun enemies with their blunt weapons, cause grievous bleeding wounds with their bladed weapons, and so on. 
