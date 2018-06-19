@@ -8,7 +8,8 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 
 #### **Fighter** 
 
-##### First Level: 8 Proficiency Points ##### Rate of Increase: 1/2 Levels
+##### First Level: 8 Proficiency Points 
+ Rate of Increase: 1/2 Levels #####
 
 #### **Ranger** 
 
