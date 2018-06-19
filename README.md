@@ -6,20 +6,47 @@ This mod aims to expand the proficiency system in Infinity Engine games, allowin
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
 
 
-#### **Fighter** First Level: 8 +1/2 Levels
+#### **Fighter** 
 
-#### **Ranger** First Level: 7 +1/3 Levels
+First Level: 8 Proficiency Points 
+Rate of Increase: 1/2 Levels
 
-#### **Paladin** First Level: 7 +1/4 Levels
+#### **Ranger** 
 
-#### **Thief** First Level: 6 +1/3 Levels
+First Level: 7 Proficiency Points 
+Rate of Increase: +1/3 Levels
 
-#### **Bard** First Level: 6 +1/2 Levels
+#### **Paladin**
 
-#### **Cleric** First Level: 6 +1/3 Levels
+First Level: 7 Proficiency Points 
+Rate of Increase: +1/4 Levels
 
-#### **Druid** First Level: 7 +1/3 Levels
+#### **Thief** 
 
-#### **Shaman** First Level: 7 +1/3 Levels
+First Level: 6 Proficiency Points 
+Rate of Increase: +1/3 Levels
 
-#### **Monk** First Level: 6 +1/2 Levels
+#### **Bard**
+
+First Level: 6 Proficiency Points 
+Rate of Increase: +1/2 Levels
+
+#### **Cleric**
+
+First Level: 6 Proficiency Points 
+Rate of Increase: +1/3 Levels
+
+#### **Druid**
+
+First Level: 7 Proficiency Points 
+Rate of Increase: +1/3 Levels
+
+#### **Shaman**
+
+First Level: 7 Proficiency Points 
+Rate of Increase: +1/3 Levels
+
+#### **Monk**
+
+First Level: 6 Proficiency Points 
+Rate of Increase: +1/2 Levels
