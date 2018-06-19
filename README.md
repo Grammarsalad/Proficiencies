@@ -1,7 +1,7 @@
 # Proficiencies
 
-* Italics *
-![image](https://argent77.github.io/DjinniCompanion/images/AfaaqPortrait.png)
+*Italics*
+![image](https://path.png)
 
 * Bullets 
 
