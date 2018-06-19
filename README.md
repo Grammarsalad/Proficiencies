@@ -4,7 +4,7 @@ This mod aims to expand the proficiency system in Infinity Engine games, allowin
 
 **Proficiency Points by Class**
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
-
+###
 **Fighter** First Level: 8 +1/2 Levels
 
 **Ranger** First Level: 7 +1/3 Levels
