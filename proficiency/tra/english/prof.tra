@@ -511,38 +511,32 @@ Proficiency (armor mastery) (5 slots):~
 @800000 = ~Treat Injury~
 @800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max +25% at 5 ranks) + <PRO_HISHER> wisdom bonus (x5).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 70% +5% per rank (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The only exception is if a character has 6 or 7 ranks in Heal.  Such a character can use Treat Injury on a given character once per turn as needed.
 
-Special: At 7 ranks, Treat Injury also works as Treat Affliction
+Special: At 7 ranks, Treat Injury also works as Treat Affliction.~
 
-Effect: Heals 10% target's maximum hit point total.
-Chance of Success: 75%~
-//Mod HP%
-@800002 = ~Heals 10%~
-@800003 = ~Heals 15%~
-@800004 = ~Heals 20%~
-@800005 = ~Heals 25%~
-@800006 = ~Heals 30%~
-@800007 = ~Heals 35%~
-@800008 = ~Heals 40%~
-@800009 = ~Heals 45%~
-@800010 = ~Heals 50%~
-@800011 = ~Heals 55%~
-@800012 = ~Heals 60%~
 
-//Mod chance of success
-@800013 = ~75%~
-@800014 = ~80%~
-@800015 = ~85%~
-@800016 = ~90%~
-@800017 = ~95%~
+
 //Treat Injury failed!
 
 @800018 = ~Treat Injury check failed!~
+
+@800019 = ~Treat Affliction~
+@800020 = ~In their travels, the healer collects various natural medicines that they can use treat anyallies that have recently been afflicted with various negative effects.  <PRO_HESHE> gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.  This ability is not always effective, however, and an inexperienced healer cannot heal the afflictions that a well trained practitioner can heal.  Additionally, whether successful or not, a given character cannot benefit from an application of Treat Affliction more than once in a day.  The afflictions that can be treated, the initial chance of success, and the ranks required to treat a given affliction are outlined below.  Healers trained in herbalism gain a +5% bonus to these checks.  Characters gain +5% per rank to these checks and they add their Wisdom Bonus (x5) to these checks as well. All percentages cap at 95%.  The number in parentheses denotes the minimum chance for success when a character can first treat the affliction:
+1 Rank: 
+Treat Intoxication: 80% (85%)
+Treat Blindness/Deafness: 60% (65%)
+2 Ranks:
+Slow Poison: 50% (60%)
+3 Ranks:
+Treat Disease: 40% (55%)
+4 Ranks: 
+Remove Paralysis: 40% (60%)
+5 Ranks:
+Cure Feeblemindedness, Fear: 20% (45%)
+7 Ranks:
+Revive the (recently) deceased: 0% (35%)~
+
 /*
-@800003 = ~Treat Poison and Disease
-The healer can treat any of <PRO_HISHER> allies that has been recently been affected by poison or disease.  <PRO_HESHE> gains a number of uses of this ability equal to <PRO_HISHER> healing ranks.  This ability is not always effective, however, and it cannot be used to treat a patient more than once per day.  The chance that the healer will successfully treat a poisoned individual is 60%, +5% per rank.  Diseases are much more complicated than poisons, and so the chance of success is less: 50% +5% per rank.  Healers trained in herbalism gain a +5% bonus to these roles.
--  Effects:
-o	Slow Poison: <HEAL_POISON>%
-o	Cure disease: <HEAL_DISEASE>%~
+
 
 @800004 = ~Use or Select a Non-Weapon Proficiency~
 @800005 = ~Use or Select a Non-Weapon Proficiency

@@ -14,7 +14,15 @@ TO DO 4: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell f
 
 TO DO 5: Update readme for Treat Injury
 
-TO DO 6: Recreate Heal spls to be sensitive to wis (probably just need 1 spl per prof...)
+TO DO 7: Treat Injury sensitive to Proficiency???
+
+Version 0.03.23
+
+2018-06-20
+
+- Created base spell for treat affliction (b_s101) has every cure with minimum success percentage.  Need to break into levels for base skill with 0 wis (if that's how I'm doing it--not sure)
+
+- Recreated Heal spls to be sensitive to wis
 
 Version 0.03.22
 
