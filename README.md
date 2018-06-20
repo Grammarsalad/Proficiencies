@@ -50,7 +50,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | -  Kensai | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
-| -  Dwarven Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 |
+| -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 |
 | -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 7 |
 | -  Hospitaller° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 2 |
 | -  Savage° | 5 | 0 | 3 | 0 | 0 | 5 | 5 | 5 | 0 |
