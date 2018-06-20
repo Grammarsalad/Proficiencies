@@ -22,6 +22,8 @@ TO DO 9: Add HP bonus to Endurance proficiency
 
 TO DO 10: Spellcraft to treat magical afflictions(?) 
 
+TO DO 11: Give Kensai 7 ranks in weapon use (make that meaningful)
+
 Version 0.03.23
 
 2018-06-20
