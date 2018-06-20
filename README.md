@@ -20,7 +20,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 
 ### Proficiency Overview
 | Proficiency | Weapons | Short Description |
-| --- | :---: | --- |  
+| --- | :---: | ---: |  
 | Simple | Club, Dagger, Staff, Sling, Dart | Repair and Construct; Varies |
 | Sword | Longsword, Short Sword, Wakizashi, Ninja-to, Scimitar | Repair and Construct; Bleeding |
 
