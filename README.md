@@ -89,4 +89,4 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Class/Kit | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Fighter | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Barbarian | 0 | 7 | 5 | 1 | 2 | 0 | 0 | 2 | 5 | 0 | 5 |
+| - Barbarian | 0 | 7 | 2 | 3 | 5 | 0 | 0 | 3 | 5 | 0 | 5 |
