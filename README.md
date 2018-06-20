@@ -86,6 +86,6 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 #### Non-Weapon Proficiencies
 
 
-| Class/Kit | Alch | End | Heal | Herb | Hunt | Implements | Mech | A. Handling | Persuasion | S. Craft | Ritual |
+| Class/Kit | Alch | End | Heal | Herb | Hunt | Implements | Mech | A. Handling | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Fighter | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
