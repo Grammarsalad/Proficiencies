@@ -18,6 +18,8 @@ TO DO 7: Treat Injury sensitive to Proficiency???
 
 TO DO 8: Add shields to Armor Prof
 
+TO DO 9: Add HP bonus to Endurance proficiency
+
 Version 0.03.23
 
 2018-06-20
