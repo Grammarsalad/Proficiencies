@@ -20,7 +20,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 
 ### Proficiency Overview
 | Proficiency | Equipment | Short Description |
-| --- | :---: | :--- |  
+| --- | --- | :--- |  
 | Simple | Club, Dagger, Staff, Sling, Dart | Repair and Construct; Combat Bonuses; Varies |
 | Sword | Longsword, Short Sword, Wakizashi, Ninja-to, Scimitar | Repair and Construct; Combat Bonuses; Bleeding |
 | Martial Arts | Unarmed, Touch Spells | Defense Bonuses (unarmored), Combat Bonuses (unarmed; Touch Spells) |
