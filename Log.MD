@@ -20,6 +20,8 @@ TO DO 8: Add shields to Armor Prof
 
 TO DO 9: Add HP bonus to Endurance proficiency
 
+TO DO 10: Spellcraft to treat magical afflictions(?) 
+
 Version 0.03.23
 
 2018-06-20
