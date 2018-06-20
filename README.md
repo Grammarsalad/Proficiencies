@@ -19,10 +19,19 @@ This mod aims to expand the proficiency system in Infinity Engine games, allowin
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
 
 ### Proficiency Overview
-| Proficiency | Weapons | Short Description |
+| Proficiency | Equipment | Short Description |
 | --- | :---: | :--- |  
-| Simple | Club, Dagger, Staff, Sling, Dart | Repair and Construct; Varies |
-| Sword | Longsword, Short Sword, Wakizashi, Ninja-to, Scimitar | Repair and Construct; Bleeding |
+| Simple | Club, Dagger, Staff, Sling, Dart | Repair and Construct; Combat Bonuses; Varies |
+| Sword | Longsword, Short Sword, Wakizashi, Ninja-to, Scimitar | Repair and Construct; Combat Bonuses; Bleeding |
+| Martial Arts | Unarmed, Touch Spells | Defense Bonuses (unarmored), Combat Bonuses (unarmed; Touch Spells) |
+| Axe | Axe, Throwing Axe | Repair and Construct; Combat Bonuses; Bleeding |
+| Greatsword | Bastard Sword, Two-Handed Sword | Repair and Construct; Combat Bonuses; Bleeding |
+| Polearm | Halberd, Spear | Repair and Construct; Combat Bonuses; Knockback |
+| Blunt | Mace, Hammer, Morning Star, Flail | Repair and Construct; Combat Bonuses; Daze |
+| Ranged | Longbow, Shortbow, Crossbow | Repair and Construct; Combat Bonuses; Bleeding |
+| Armor | Armors (all) | Repair and Construct; Defensive Bonuses; Effective use of Armor and Shields |
+| Alchemy | Acid, A. Fire, Tanglefoot, etc. | Construct Unique Items; Craft Elixirs |
+| Endurance |  | Recover Stamina and HP; Bonus Hit Points |
 
 ### Proficiency points by class 
 | Class | 1st Level | Rate | Multiclass | 1st Level | Rate |
