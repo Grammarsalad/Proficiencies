@@ -23,7 +23,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | --- | --- | :--- |  
 | Simple | Club, Dagger, Staff, Sling, Dart | Repair and Construct; Combat Bonuses; Varies |
 | Sword | Longsword, Short Sword, Wakizashi, Ninja-to, Scimitar | Repair and Construct; Combat Bonuses; Bleeding |
-| Martial Arts | Unarmed, Touch Spells | Defense Bonuses (unarmored), Combat Bonuses (unarmed; Touch Spells) |
+| Martial Arts | Unarmed, Unarmored, Touch Spells | Defense Bonuses (unarmored), Combat Bonuses (unarmed; Touch Spells) |
 | Axe | Axe, Throwing Axe | Repair and Construct; Combat Bonuses; Bleeding |
 | Greatsword | Bastard Sword, Two-Handed Sword | Repair and Construct; Combat Bonuses; Bleeding |
 | Polearm | Halberd, Spear | Repair and Construct; Combat Bonuses; Knockback |
@@ -32,6 +32,15 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Armor | Armors (all) | Repair and Construct; Defensive Bonuses; Effective use of Armor and Shields |
 | Alchemy | Acid, A. Fire, Tanglefoot, etc. | Construct Unique Items; Craft Elixirs |
 | Endurance |  | Recover Stamina and HP; Bonus Hit Points |
+| Heal |  | Treat Injury; Treat Affliction; Cure Bonus |
+| Herbalism | Treatments, Remedies | Craft Medical Items; Craft Potions; Use Poison |
+| Hunting | Ranged Items | Craft Ammunition; Ranged Bonuses; Skill Bonuses |
+| Implements | Wands | Use wands; Recharge Wands; Craft Wands |
+| Mechanics | Mechanical Items | Craft and Use Mechanical Items; Skill Bonuses; Set Traps |
+| Animal Handling |  | Calm and Charm Beasts; Keep and Train Companions |
+| Persuasion |  | Conversation Options; Demoralize Opponent; Feint |
+| Spellcraft | Scrolls | Use and Create Scrolls |
+| Ritual | Varies | Varies by Class and Kit |
 
 ### Proficiency points by class 
 | Class | 1st Level | Rate | Multiclass | 1st Level | Rate |
