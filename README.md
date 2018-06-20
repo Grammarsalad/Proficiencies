@@ -42,11 +42,11 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 ### Proficiency Maximums by Class and Kit
 #### Weapon Proficiencies
 
-| Attempt | #1 | #2 |
+| Class/Kit | Simple | Sword |
 | :---: | :---: | :---: |
-| Seconds | 301 | 283 |
+| Fighter | 5 | 5 |
 
 
 | Class/Kit | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Ranged | Armor | Description |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |  
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | Dagger, Club, Dart, Staff |
