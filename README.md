@@ -38,3 +38,9 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | 1st Level | 3rd Level | 6th Level | 9th Level | Level 10+ |
 | :---: | :---: | :---: | :---: | :---: | 
 | 2 | 3 | 4 | 5 | 7 |
+
+### Proficiency Maximums by Class and Kit
+#### Weapon Proficiencies
+
+| Class/Kit | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Ranged | Armor | Description | 
+| Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | Dagger, Club, Dart, Staff |
