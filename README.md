@@ -19,16 +19,16 @@ This mod aims to expand the proficiency system in Infinity Engine games, allowin
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
 
  
-| Class | 1st Level | Rate || Class | 1st Level | Rate |
-| :---: | :---: | :---: || :---: | :---: | :---: | 
-| Fighter | 8 | 1/2 lev || Fighter/Mage | 6 | 1/3 lev |
-| Ranger | 7 | 1/3 lev | | Fighter/Cleric | 7 | 1/3 lev |
-| Paladin | 7 | 1/4 lev | | Fighter/Thief | 7 | 1/3 lev |
-| Thief | 6 | 1/3 lev | | Fighter/Mage/Thief | 6 | 1/3 lev |
-| Bard | 6 | 1/2 lev | | Mage/Thief | 6 | 1/4 lev |
-| Cleric | 6 | 1/3 lev | | Cleric/Mage | 5 | 1/4 lev |
-| Druid | 7 | 1/3 lev | | Cleric/Thief | 6 | 1/3 lev |
-| Shaman | 7 | 1/3 lev | | Fighter/Druid | 7 | 1/3 lev |
-| Monk | 6 | 1/2 lev | | Fighter/Mage/Cleric | 6 | 1/4 lev |
-| Wizard | 4 | 1/4 lev | | Cleric/Ranger | 6 | 1/4 lev |
+| Class | 1st Level | Rate | Class | 1st Level | Rate |
+| :---: | :---: | :---: | :---: | :---: | :---: | 
+| Fighter | 8 | 1/2 lev | Fighter/Mage | 6 | 1/3 lev |
+| Ranger | 7 | 1/3 lev | Fighter/Cleric | 7 | 1/3 lev |
+| Paladin | 7 | 1/4 lev | Fighter/Thief | 7 | 1/3 lev |
+| Thief | 6 | 1/3 lev | Fighter/Mage/Thief | 6 | 1/3 lev |
+| Bard | 6 | 1/2 lev | Mage/Thief | 6 | 1/4 lev |
+| Cleric | 6 | 1/3 lev | Cleric/Mage | 5 | 1/4 lev |
+| Druid | 7 | 1/3 lev | Cleric/Thief | 6 | 1/3 lev |
+| Shaman | 7 | 1/3 lev | Fighter/Druid | 7 | 1/3 lev |
+| Monk | 6 | 1/2 lev | Fighter/Mage/Cleric | 6 | 1/4 lev |
+| Wizard | 4 | 1/4 lev | Cleric/Ranger | 6 | 1/4 lev |
 | Sorcerer | 6 | 1/3 lev | 
