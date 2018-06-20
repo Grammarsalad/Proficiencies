@@ -83,3 +83,9 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 
 ° New (optional) kit
 
+#### Non-Weapon Proficiencies
+
+
+| Class/Kit | Alchemy | Endurance | Heal | Herbalism | Hunting | Implements | Mechanics | A. Handling | Persuasion | Spellcraft | Ritual |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
+| Fighter | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
