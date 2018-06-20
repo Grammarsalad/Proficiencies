@@ -41,6 +41,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Persuasion |  | Conversation Options; Demoralize Opponent; Feint |
 | Spellcraft | Scrolls | Use and Create Scrolls |
 | Ritual | Varies | Varies by Class and Kit |
+| Fighting Styles | Varies | Unchanged |
 
 ### Proficiency points by class 
 | Class | 1st Level | Rate | Multiclass | 1st Level | Rate |
