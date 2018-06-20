@@ -18,6 +18,12 @@ This mod aims to expand the proficiency system in Infinity Engine games, allowin
 ## **Proficiency Tables**
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
 
+### Proficiency Overview
+| Proficiency | Weapons | Short Description |
+| --- | :---: | --- |  
+| Simple | Club, Dagger, Staff, Sling, Dart | Repair and Construct; Varies |
+| Sword | Longsword, Short Sword, Wakizashi, Ninja-to, Scimitar | Repair and Construct; Bleeding |
+
 ### Proficiency points by class 
 | Class | 1st Level | Rate | Multiclass | 1st Level | Rate |
 | --- | :---: | :---: | --- | :---: | :---: | 
