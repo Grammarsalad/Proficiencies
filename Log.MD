@@ -16,6 +16,8 @@ TO DO 5: Update readme for Treat Injury
 
 TO DO 7: Treat Injury sensitive to Proficiency???
 
+TO DO 8: Add shields to Armor Prof
+
 Version 0.03.23
 
 2018-06-20
