@@ -22,11 +22,14 @@ TO DO 9: Add HP bonus to Endurance proficiency
 
 TO DO 10: Spellcraft to treat magical afflictions(?) 
 
-TO DO 11: Give Kensai 7 ranks in weapon use (make that meaningful) See online Readme for numerous changes to Kensai
+TO DO 11: Make 7 weapon proficiency meaningful.
+
+2018-06-20
+
+- Made Substantial Changes to Kensai
 
 Version 0.03.23
 
-2018-06-20
 
 - Created base spell for treat affliction (b_s101) has every cure with minimum success percentage.  Need to break into levels for base skill with 0 wis (if that's how I'm doing it--not sure)
 
