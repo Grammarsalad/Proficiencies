@@ -15,10 +15,10 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 This mod aims to expand the proficiency system in Infinity Engine games, allowing characters to do things like treat injuries and antitoxins with varying degrees of effectiveness.  But this mod does not merely add ‘non-weapon proficiencies’.  This is a top down revision of the proficiency system that allows characters to do things with their weapons previously impossible without specific magical weapons.  Skilled characters can stun enemies with their blunt weapons, cause grievous bleeding wounds with their bladed weapons, and so on. 
 
-## **Proficiency Points by Class**
+## **Proficiency Tables**
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
 
- 
+### Proficiency points by class 
 | Class | 1st Level | Rate | Class | 1st Level | Rate |
 | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Fighter | 8 | 1/2 lev | Fighter/Mage | 6 | 1/3 lev |
@@ -32,3 +32,9 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Monk | 6 | 1/2 lev | Fighter/Mage/Cleric | 6 | 1/4 lev |
 | Wizard | 4 | 1/4 lev | Cleric/Ranger | 6 | 1/4 lev |
 | Sorcerer | 6 | 1/3 lev | 
+
+### Max Rank by Level
+
+| 1st Level | 3rd Level | 6th Level | 9th Level | Level 10+ |
+| :---: | :---: | :---: | :---: | :---: | 
+| 2 | 3 | 4 | 5 | 7 |
