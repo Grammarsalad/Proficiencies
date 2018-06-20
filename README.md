@@ -51,4 +51,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Kensai | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | Dwarven Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 |
+| Warmain* | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 7 |
+
+* New (optional) kit
 
