@@ -246,6 +246,7 @@ Proficiency (armor mastery) (5 slots):~
 
 @720106 = ~bonus to Speed Factor every 4 levels.~
 @720107 = ~bonus to Speed Factor every 4 levels.
+- May achieve Superiority (7 slots) in all non-ranged Weapons.
 - May achieve Grand Mastery (five slots) in martial arts.
 - May gain five ranks in Ritual~
 @720108 = ~May not wear any armor.~
@@ -256,6 +257,10 @@ Proficiency (armor mastery) (5 slots):~
 @720113 = ~May not wear gauntlets or bracers.
 - May not gain any ranks in armor proficiency.
 - May not gain any ranks in ranged weapons.
+- May not gain any ranks in heal.
+- May not gain any ranks in herbalism.
+- May not gain any ranks in hunting.
+- May not gain any ranks in mechanics.
 - May not gain any ranks in animal handling.~
 
 //Dwarven defender
