@@ -94,7 +94,10 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Kensai | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 5 |
 | - W. Slayer | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | - Defender | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Warmain | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Hospitaller | 0 | 5 | 7 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Savage | 0 | 7 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 7 |
-| - Marksman | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Warmain° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Hospitaller° | 0 | 5 | 7 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Savage° | 0 | 7 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 7 |
+| - Marksman° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
+
+
+° New (optional) kit
