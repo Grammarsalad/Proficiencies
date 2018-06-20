@@ -46,3 +46,9 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Class/Kit | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Ranged | Armor |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
+| Barbarian | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
+| Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
+| Kensai | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
+| Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
+| Dwarven Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 |
+
