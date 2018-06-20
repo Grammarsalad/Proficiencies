@@ -20,7 +20,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 
 ### Proficiency points by class 
 | Class | 1st Level | Rate | Multiclass | 1st Level | Rate |
-| :---: | :---: | :---: | :---: | :---: | :---: | 
+| --- | :---: | :---: | :---: | --- | :---: | 
 | Fighter | 8 | 1/2 lev | Fighter/Mage | 6 | 1/3 lev |
 | Ranger | 7 | 1/3 lev | Fighter/Cleric | 7 | 1/3 lev |
 | Paladin | 7 | 1/4 lev | Fighter/Thief | 7 | 1/3 lev |
