@@ -73,7 +73,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | -  Barbarian | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
-| -  Kensai | 7 | 7 | 5 | 7 | 7 | 7 | 7 | 7 | 0 |
+| -  Kensai | 7 | 7 | 5 | 7 | 7 | 7 | 7 | 0 | 0 |
 | -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 |
 | -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 7 |
