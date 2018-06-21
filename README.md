@@ -101,3 +101,51 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 
 
 ° New (optional) kit
+
+## **Proficiency Descriptions**
+Characters can now learn something other than how to fight better.  Characters can spend proficiency points in other proficiencies referred to as Non-Weapon Proficiencies (though often just called “skills”).  Non-Weapon Proficiencies are associated with various attributes, and often that ability influences how effective the character is with the skill.  Skill Attribute are as follows: 
+
+
+| Ability Score | Bonus |
+| :---: | :---: | 
+| 16 | +1 or +5% |
+| 17 | +2 or +10% |
+| 18 | +3 or +15% |
+| 19+ | +4 or +20% |
+
+### Non-Weapon Proficiency Descriptions
+**Proficiency Name** (Ability associated with proficiency)
+**Requirements**: Proficiencies themselves do not have requirements, but certain uses of a given skill will have requirements.  For example, generally only spellcasters can make use of alchemy to create potions.  
+
+Description text, and outline of Proficiency uses.
+
+**Proficiency Use**
+Outlines a particular use of a given proficiency.
+
+**Alchemy** (Intelligence) 
+**Requirements**: Concoct Elixir: Spellcaster or Concoct Elixir HLA
+
+Alchemy involves advanced training in the handling of magical or quasi-magical substances that often have harmful or surprising effects.  
+**Craft Alchemical Items**
+Given time, magical skill and materials, an alchemist can concoct magical elixirs, which emulate spells. (see the section below on concoct elixir for details).
+
+Even on the road, and without exotic materials, however, they always have a trick—or a bomb—up their sleeve that they can use in a pinch.  Alchemists collect various regents in their travels and can use these regents to create 1 alchemical item per day per rank they have in Alchemy.  These creations are unstable and do not last longer than 8 hours.  Additionally, only characters trained in alchemy can use them. All effects can be avoided or lessened with a save vs. rod/staff/wand, though the save has a penalty equal to the Alchemists’ intelligence bonus.  The items that the alchemist can create, and the number of ranks that are required for creation are as follows:
+
+| Alchemical item | Requirements | Damage | Other |
+| --- | :---: | --- | --- |
+| Acid, Makeshift | 1 Rank | 1d4+ Int Bonus acid per round (save neg) | Burns for 1 round/rank |
+| Alchemist’s Fire, Makeshift | 1 Rank | 2d3 fire/rank 5’ rad (save ½) |  |
+| CONTINUE |  |  |  |
+
+_Acid, Makeshift_: Acid burns, and can cause a lot of damage if left to burn over a period of time.  Like alchemist fire, acid is carefully packed it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open covering the target with burning acid.  When hit, a target takes 1d4 + the creator's intelligence modifier of acid damage for a number of rounds equal to the number of ranks the crafter has in alchemy.  Each round after the first, the target can save vs. wands to prevent further damage.
+STATISTICS:
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+
+Characters without the required skill level have a 50% chance of spilling some acid on themselves (suffering full damage with no save).
+
+
+
+
