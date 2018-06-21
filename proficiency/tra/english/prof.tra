@@ -514,9 +514,9 @@ Proficiency (armor mastery) (5 slots):~
 
 //Heal Skill
 @800000 = ~Treat Injury~
-@800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max +25% at 5 ranks) + <PRO_HISHER> wisdom bonus (x5).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 70% +5% per rank (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The only exception is if a character has 6 or 7 ranks in Heal.  Such a character can use Treat Injury on a given character once per turn as needed.
+@800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank.  Additionally, <PRO_HESHE> can heal her Wisdom Modifier (x2).  This ability is not magical, and there is only so much Treat Injury can do.  A given creature will not benefit from further uses of Treat Injury for the rest of the day. The only exception is if a character has 6 or 7 ranks in Heal.  Such a character can use Treat Injury on a given character if they have already been treated by a less skilled healer.
 
-Special: At 7 ranks, Treat Injury also works as Treat Affliction.~
+Additionally, characters treated with this skill find their natural healing rate increased (at increasing rates depending on the number of ranks of the healer).~
 
 
 
@@ -525,8 +525,12 @@ Special: At 7 ranks, Treat Injury also works as Treat Affliction.~
 @800018 = ~Treat Injury check failed!~
 
 @800019 = ~Treat Affliction~
-@800020 = ~In their travels, the healer collects various natural medicines that they can use treat anyallies that have recently been afflicted with various negative effects.  <PRO_HESHE> gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.  This ability is not always effective, however, and an inexperienced healer cannot heal the afflictions that a well trained practitioner can heal.  Additionally, whether successful or not, a given character cannot benefit from an application of Treat Affliction more than once in a day.  The afflictions that can be treated, the initial chance of success, and the ranks required to treat a given affliction are outlined below.  Healers trained in herbalism gain a +5% bonus to these checks.  Characters gain +5% per rank to these checks and they add their Wisdom Bonus (x5) to these checks as well. All percentages cap at 95%.  The number in parentheses denotes the minimum chance for success when a character can first treat the affliction:
-1 Rank: 
+@800020 = ~In their travels, the healer collects various natural medicines that they can use treat any allies that have recently been afflicted with various negative effects.  <PRO_HESHE> gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.  This ability is not always effective, however, and an inexperienced healer cannot heal the afflictions that a well trained practitioner can heal.  Whether successful or not, a given character cannot benefit from an application of Treat Affliction more than once in a day.  The afflictions that can be treated, the initial chance of success, and the ranks required to treat a given affliction are outlined below.  
+Also, recipients are healed by 2 points per Wisdom bonus of the Healer.
+
+Characters gain +5% bonus per rank, and healers trained in herbalism gain a +5% bonus to these checks.  All percentages cap at 95%.  The number in parentheses denotes the minimum chance for success when a character can first treat the affliction:
+
+1 Rank:
 Treat Intoxication: 80% (85%)
 Treat Blindness/Deafness: 60% (65%)
 2 Ranks:
@@ -536,7 +540,9 @@ Treat Disease: 40% (55%)
 4 Ranks: 
 Remove Paralysis: 40% (60%)
 5 Ranks:
-Cure Feeblemindedness, Fear: 20% (45%)
+Cure Fear, or other strong emotion: 20% (45%)
+6 Ranks:
+Cure Feeblemindedness 15% (45%)
 7 Ranks:
 Revive the (recently) deceased: 0% (35%)~
 

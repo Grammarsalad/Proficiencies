@@ -24,6 +24,12 @@ TO DO 10: Spellcraft to treat magical afflictions(?)
 
 TO DO 11: Make 7 weapon proficiency meaningful.
 
+Version 0.03.24
+
+2018-06-21
+
+- Changed Treat Injury (and design for treat affliction)
+
 2018-06-20
 
 - Made Substantial Changes to Kensai

@@ -45,7 +45,6 @@
 //for heal use
 APPEND ~splprot.2da~ ~B_WIS_GR%TAB%39%TAB%-1%TAB%3~  //Wisdom Greater than
 APPEND ~splprot.2da~ ~B_WIS_EQ%TAB%39%TAB%-1%TAB%1~  //Wisdom equal to
-APPEND ~splprot.2da~ ~B_WIS_LS%TAB%39%TAB%-1%TAB%2~  //Wisdom Less than
 APPEND ~splprot.2da~ ~B_HEA_EQ%TAB%99%TAB%-1%TAB%1~  //Heal (halberd) equal to
 
 //value found in parameter1 of your 326 effect
@@ -77,17 +76,6 @@ COPY_EXISTING ~splprot.2da~ ~override~
    READ_2DA_ENTRIES_NOW rows cols // read all file into memory
    FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
       READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_LS~ BEGIN  //wisdom less than
-         SET wis_ls = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_HEA_EQ~ BEGIN  //wisdom equal to
          SET hea_eq = %row%
       END
@@ -105,31 +93,74 @@ BUT_ONLY
 COPY ~%mod_folder%/data/skills/spl/heal/B_S102.spl~ ~override~   //
 	SAY NAME1 @800000
 	SAY UNIDENTIFIED_DESC @800001  //
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %wis_ls% STR_VAR match_resource = ~B_S102B~ END  //wis less than 16, cast at 1 lev (B_S102B.spl)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102C~ END  //wis equal to 16, cast at 100 lev (B_S102C.spl)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 17 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102D~ END  //wis equal to 17, cast at 110 lev (B_S102D.spl)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102E~ END  //wis equal to 18, cast at 120 lev (B_S102E.spl)
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %wis_gr% STR_VAR match_resource = ~B_S102F~ END  //wis greater than 18, cast at 130 lev (B_S102F.spl)
+//Ranks
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1021~ END  //1 rank heal, cast B_S1021.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1022~ END  //2 rank heal, cast B_S1022.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1023~ END  //3 rank heal, cast B_S1023.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1024~ END  //4 rank heal, cast B_S1024.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1025~ END  //5 rank heal, cast B_S1025.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1026~ END  //6 rank heal, cast B_S1026.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1027~ END  //7 rank heal, cast B_S1027.spl
+//Wis
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102A~ END  //wis equal to 16, Heal +2
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 17 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102B~ END  //wis equal to 17, Heal +4
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102C~ END  //wis equal to 18, Heal +6
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %wis_gr% STR_VAR match_resource = ~B_S102D~ END  //wis greater than 18, Heal +8
 
-COPY ~%mod_folder%/data/skills/spl/heal/B_S102B.spl~ ~override~   //Casts B_S102A at 1st level
-COPY ~%mod_folder%/data/skills/spl/heal/B_S102C.spl~ ~override~   //Casts B_S102A at 100 level
-COPY ~%mod_folder%/data/skills/spl/heal/B_S102D.spl~ ~override~   //Casts B_S102A at 110 level
-COPY ~%mod_folder%/data/skills/spl/heal/B_S102E.spl~ ~override~   //Casts B_S102A at 120 level
-COPY ~%mod_folder%/data/skills/spl/heal/B_S102F.spl~ ~override~   //Casts B_S102A at 130 level
+//The Spells: Rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1021.spl~ ~override~   //1 rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1022.spl~ ~override~   //2 rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1023.spl~ ~override~   //3 rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1024.spl~ ~override~   //4 rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1025.spl~ ~override~   //5 rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1026.spl~ ~override~   //6 rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1027.spl~ ~override~   //7 rank
 
 
-COPY ~%mod_folder%/data/skills/spl/heal/B_S102A.spl~ ~override~   // treat wound 1 rank
-LPF ALTER_EFFECT     //Failure notification
-      INT_VAR match_opcode = 139  match_parameter1    = 0          //  failure notification
-      parameter1 = RESOLVE_STR_REF (@800018)    //Treat Injury check failed!
-END
+//bg2ee iwdee eet text notification
 ACTION_IF GAME_IS ~bg2ee iwdee eet~ BEGIN
- COPY_EXISTING ~b_s102a.spl~ ~override~
+ COPY_EXISTING ~B_S1021.spl~ ~override~
   LPF ALTER_EFFECT     //healed notification
       INT_VAR match_opcode = 139  match_parameter1    = 25810          //
       parameter1 = 14022    // all same notification
   END
-END
+ COPY_EXISTING ~B_S1022.spl~ ~override~
+  LPF ALTER_EFFECT     //healed notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810          //
+      parameter1 = 14022    // all same notification
+  END
+ COPY_EXISTING ~B_S1023.spl~ ~override~
+  LPF ALTER_EFFECT     //healed notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810          //
+      parameter1 = 14022    // all same notification
+  END
+ COPY_EXISTING ~B_S1024.spl~ ~override~
+  LPF ALTER_EFFECT     //healed notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810          //
+      parameter1 = 14022    // all same notification
+  END
+ COPY_EXISTING ~B_S1025.spl~ ~override~
+  LPF ALTER_EFFECT     //healed notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810          //
+      parameter1 = 14022    // all same notification
+  END
+ COPY_EXISTING ~B_S1026.spl~ ~override~
+  LPF ALTER_EFFECT     //healed notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810          //
+      parameter1 = 14022    // all same notification
+  END
+ COPY_EXISTING ~B_S1027.spl~ ~override~
+  LPF ALTER_EFFECT     //healed notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810          //
+      parameter1 = 14022    // all same notification
+  END
+END    //end bg2ee iwdee eet text notification
+
+//The Spells: Wis
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102A.spl~ ~override~   //Wis 16 +2
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102B.spl~ ~override~   //Wis 17 +4
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102C.spl~ ~override~   //Wis 18 +6
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102D.spl~ ~override~   //Wis 19+ +8
 
 //CONTINUE
 
@@ -140,12 +171,12 @@ END
 //Rank 2: Poison
 //Rank 3: Disease
 //Rank 4: Hold, paralysis
-//Rank 5: Feeblemindedness, Confusion, fear, insanity
-//Rank 6:
+//Rank 5: Fear, strong emotion
+//Rank 6: Feeblemindedness
 //Rank 7: Small chance to revive a recently dead character(?)
 
 
-COPY ~skills/data/skills/spl/b_s101.spl~ ~override~   //
+COPY ~%mod_folder%/data/skills/spl/b_s101.spl~ ~override~   //   WIS BONI WILL NOT INCREASE LIKLIHOOD, ONLY HEAL A SET NUMBER OF HP NEED TO REVISE SUCCESS PERCENTAGE...
 	SAY NAME1 @800019
 	SAY UNIDENTIFIED_DESC @800020  //
 
