@@ -80,6 +80,15 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | -  Hospitaller° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 2 |
 | -  Savage° | 5 | 0 | 3 | 0 | 0 | 5 | 5 | 5 | 1 |
 | -  Marksman° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 7 | 2 |
+| Ranger | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
+| - Archer | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 7 | 1 |
+| - B. Master | 2 | 0 | 2 | 0 | 0 | 2 | 2 | 0 | 1 |
+| - Stalker | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
+| Paladin | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
+| - U. Hunter | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
+| - Cavalier | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 |
+| - Inquisitor | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 |
+| - B. Guard | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
 
 ° New (optional) kit
 
@@ -98,7 +107,16 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Hospitaller° | 0 | 5 | 7 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | - Savage° | 0 | 7 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 7 |
 | - Marksman° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-
+| Ranger | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
+| - Archer | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
+| - B. Master | 3 | 7 | 5 | 5 | 7 | 1 | 0 | 5 | 0 | 0 | 0 |
+| - Stalker | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
+| Paladin | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - U. Hunter | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - Cavalier | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - Inquisitor | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 7 | 0 | 4 |
+| - B. Guard | 0 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| Thief | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
 
 ° New (optional) kit
 
