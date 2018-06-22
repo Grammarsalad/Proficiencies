@@ -2,6 +2,8 @@
 
 NOTE 1: Seriously thinking about renaming Animal Handling to "Nature"
 
+NOTE 2: Thinking about giving the Thief 5 max ranks in alchemy
+
 TO DO 1: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IWDEE DESCRIPTIONS
 
 TO DO 2: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
