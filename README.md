@@ -73,15 +73,15 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | -  Barbarian | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
 | -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
-| -  Kensai | 7 | 7 | 5 | 7 | 7 | 7 | 7 | 0 | 0 |
+| -  Kensai | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 0 | 0 |
 | -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
 | -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 |
-| -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 7 |
+| -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 5 |
 | -  Hospitaller° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 2 |
 | -  Savage° | 5 | 0 | 3 | 0 | 0 | 5 | 5 | 5 | 1 |
-| -  Marksman° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 7 | 2 |
+| -  Marksman° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 5 | 2 |
 | Ranger | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
-| - Archer | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 7 | 1 |
+| - Archer | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 5 | 1 |
 | - B. Master | 2 | 0 | 2 | 0 | 0 | 2 | 2 | 0 | 1 |
 | - Stalker | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
 | Paladin | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
@@ -103,18 +103,18 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Warriors | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Fighter | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Barbarian | 0 | 7 | 2 | 3 | 5 | 0 | 0 | 3 | 5 | 0 | 5 |
-| - Berserker | 0 | 7 | 5 | 1 | 2 | 0 | 1 | 2 | 5 | 0 | 1 |
+| - Barbarian | 0 | 5 | 2 | 3 | 5 | 0 | 0 | 3 | 5 | 0 | 5 |
+| - Berserker | 0 | 5 | 5 | 1 | 2 | 0 | 1 | 2 | 5 | 0 | 1 |
 | - Kensai | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 5 |
 | - W. Slayer | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | - Defender | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | - Warmain° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Hospitaller° | 0 | 5 | 7 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Savage° | 0 | 7 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 7 |
+| - Hospitaller° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Savage° | 0 | 7 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 5 |
 | - Marksman° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | Ranger | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - Archer | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
-| - B. Master | 3 | 7 | 5 | 5 | 7 | 1 | 0 | 5 | 0 | 0 | 0 |
+| - B. Master | 3 | 7 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - Stalker | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
 | Paladin | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 | - U. Hunter | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
