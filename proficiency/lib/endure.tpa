@@ -1,0 +1,55 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////              ENDURANCE                  //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/spl/b_wind2.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810053  //
+	SAY IDENTIFIED_DESC @810053  //
+
+COPY ~skills/data/skills/spl/b_wind3.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810054  //
+	SAY IDENTIFIED_DESC @810054  //
+
+COPY ~skills/data/skills/spl/b_wind4.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810055  //
+	SAY IDENTIFIED_DESC @810055  //
+
+COPY ~skills/data/skills/spl/b_wind5.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810056  //
+	SAY IDENTIFIED_DESC @810056  //
+
+COPY ~skills/data/skills/spl/b_wind6.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810057  //
+	SAY IDENTIFIED_DESC @810057  //
+
+COPY ~skills/data/skills/spl/b_wind7.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810057  //
+	SAY IDENTIFIED_DESC @810057  //
+
+COPY ~skills/data/skills/spl/b_wind8.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810058  //
+	SAY IDENTIFIED_DESC @810058  //
+
+COPY ~skills/data/skills/spl/b_wind9.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @7
+	SAY NAME2 @7
+	SAY UNIDENTIFIED_DESC @810059  //
+	SAY IDENTIFIED_DESC @810059  //
