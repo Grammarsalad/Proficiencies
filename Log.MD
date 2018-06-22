@@ -28,6 +28,22 @@ TO DO 11: Spellcraft to treat magical afflictions(?)
 
 TO DO 12: Make 7 weapon proficiency meaningful.
 
+2018-06-22
+
+- Got rid of 7 prof (except Implements and Read Magic/Spellcraft.  Need to investigate if 7 pips is a thing (in readme and Setup_proficiencies.tpa)
+
+- Added stuff to alchemy.tpa
+
+- Added endure.tpa to lib folder
+
+- Added herb.tpa to lib folder
+
+- Added hunt.tpa to lib folder
+
+- Added mech.tpa to lib folder
+
+- Added talky.tpa to lib folder
+
 Version 0.03.24
 
 2018-06-21
