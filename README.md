@@ -110,7 +110,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Defender | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | - Warmain° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | - Hospitaller° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Savage° | 0 | 7 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 5 |
+| - Savage° | 0 | 5 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 5 |
 | - Marksman° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
 | Ranger | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - Archer | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
