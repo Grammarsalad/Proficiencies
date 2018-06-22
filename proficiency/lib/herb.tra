@@ -1,0 +1,165 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               HERBALISM                 //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Antidote
+COPY ~skills/data/skills/itm/herb/b_s111a.itm~ ~override~   //
+	SAY NAME1 @810000
+	SAY NAME2 @810000
+	SAY UNIDENTIFIED_DESC @810001  //
+	SAY IDENTIFIED_DESC @810001  //
+
+COPY_EXISTING ~b_s111a.itm~ ~override/b_s111b.itm~
+	SAY UNIDENTIFIED_DESC @810002  //
+	SAY IDENTIFIED_DESC @810002  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 75
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 75
+  END
+
+  COPY_EXISTING ~b_s111a.itm~ ~override/b_s111c.itm~
+	SAY UNIDENTIFIED_DESC @810003  //
+	SAY IDENTIFIED_DESC @810003  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 80
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 80
+  END
+
+COPY_EXISTING ~b_s111a.itm~ ~override/b_s111d.itm~
+	SAY UNIDENTIFIED_DESC @810004  //
+	SAY IDENTIFIED_DESC @810004  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 85
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 85
+  END
+
+  COPY_EXISTING ~b_s111a.itm~ ~override/b_s111e.itm~
+	SAY UNIDENTIFIED_DESC @810005  //
+	SAY IDENTIFIED_DESC @810005  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 90
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 90
+  END
+
+  COPY_EXISTING ~b_s111a.itm~ ~override/b_s111f.itm~
+	SAY UNIDENTIFIED_DESC @810006  //
+	SAY IDENTIFIED_DESC @810006  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 11            //
+      probability1 = 95
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 95
+  END
+
+//Bandages
+//BAM
+COPY ~skills/data/skills/bam/herb/b_sk112.bam~ ~override~   //
+//Items
+COPY ~skills/data/skills/itm/herb/b_s112a.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810008  //
+	SAY IDENTIFIED_DESC @810008  //
+COPY ~skills/data/skills/itm/herb/b_s112b.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810009  //
+	SAY IDENTIFIED_DESC @810009  //
+COPY ~skills/data/skills/itm/herb/b_s112c.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810010  //
+	SAY IDENTIFIED_DESC @810010  //
+COPY ~skills/data/skills/itm/herb/b_s112d.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810011  //
+	SAY IDENTIFIED_DESC @810011  //
+COPY ~skills/data/skills/itm/herb/b_s112e.itm~ ~override~   //
+	SAY NAME1 @810007
+	SAY NAME2 @810007
+	SAY UNIDENTIFIED_DESC @810012  //
+	SAY IDENTIFIED_DESC @810012  //
+
+//Remedy
+COPY ~skills/data/skills/itm/herb/b_s113a.itm~ ~override~   //
+	SAY NAME1 @810013
+	SAY NAME2 @810013
+	SAY UNIDENTIFIED_DESC @810014  //
+	SAY IDENTIFIED_DESC @810014  //
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113b.itm~
+	SAY UNIDENTIFIED_DESC @810015  //
+	SAY IDENTIFIED_DESC @810015  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 65
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 65
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113c.itm~
+	SAY UNIDENTIFIED_DESC @810016  //
+	SAY IDENTIFIED_DESC @810016  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 70
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 70
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113d.itm~
+	SAY UNIDENTIFIED_DESC @810017  //
+	SAY IDENTIFIED_DESC @810017  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 75
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 75
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113e.itm~
+	SAY UNIDENTIFIED_DESC @810018  //
+	SAY IDENTIFIED_DESC @810018  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 80
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 80
+  END
+COPY_EXISTING ~b_s113a.itm~ ~override/b_s113f.itm~
+	SAY UNIDENTIFIED_DESC @810019  //
+	SAY IDENTIFIED_DESC @810019  //
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 79            //
+      probability1 = 85
+  END
+  LPF ALTER_EFFECT
+      INT_VAR match_opcode = 240            //
+            probability1 = 85
+  END
