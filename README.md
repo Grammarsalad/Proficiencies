@@ -89,6 +89,8 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Cavalier | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 |
 | - Inquisitor | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 |
 | - B. Guard | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
+
+
 | Rogues | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Ranged | Armor |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Thief | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
@@ -119,6 +121,8 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Cavalier | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 | - Inquisitor | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 7 | 0 | 4 |
 | - B. Guard | 0 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+
+
 | Rogues | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Thief | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
