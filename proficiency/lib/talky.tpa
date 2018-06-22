@@ -1,0 +1,123 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////               INTIMIDATE                //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/eff/b_s121.eff~ ~override~   // display
+  SAY 0x1c @810064  //Demoralized
+COPY ~skills/data/skills/spl/b_s121a.spl~ ~override~   // 1 rank 0 cha/str
+	SAY NAME1 @810065 
+	SAY NAME2 @810065
+	SAY UNIDENTIFIED_DESC @810066  //
+	SAY IDENTIFIED_DESC @810066  //
+//immune undead
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S121E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S122E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S123E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S124E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 1 STR_VAR resource = EVAL ~B_S125E~END
+//immune elementals
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S121E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S122E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S123E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S124E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 9 STR_VAR resource = EVAL ~B_S125E~END
+//immune golems
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S121E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S122E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S123E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S124E~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125D~END
+  LPF ALTER_EFFECT INT_VAR match_opcode = 1 opcode = 324 parameter2 = 27 STR_VAR resource = EVAL ~B_S125E~END   //alter to get rid of eff in original eff
+//0 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S121E~END
+// +1 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S122E~END
+// +2 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S123E~END
+// +3 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S124E~END
+// +4 cha
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125A~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125B~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125C~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125D~END
+  LPF CLONE_EFFECT INT_VAR match_opcode = 215 opcode = 324 timing = 0 parameter1 = 0 parameter2 = 0 duration = 120 savingthrow = 0 STR_VAR resource = EVAL ~B_S125E~END
+
+//add (121b to 125e) when make cha dependent Will prob need to create spls with additional save penalties. Not sure I can automate that
+COPY_EXISTING ~b_s121a.spl~ ~override/b_s121b.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 0 parameter2 = 27 STR_VAR resource = EVAL ~B_S125E~END   //alter to get rid of eff in original eff
