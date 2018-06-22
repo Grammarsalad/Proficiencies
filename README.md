@@ -94,6 +94,10 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Rogues | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Ranged | Armor |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Thief | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
+| - Assassin | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
+| - Swashbuckler | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 1 | 1 |
+| - B. Hunter | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
+| - S. Dancer | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
 
 ° New (optional) kit
 
@@ -122,10 +126,16 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Inquisitor | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 | - B. Guard | 0 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 
+° New (optional) kit
 
 | Rogues | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| Thief | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
+| Thief          | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - Assassin     | 5 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - Swashbuckler | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - B. Hunter    | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - S. Dancer    | 3 | 2 | 1 | 5 | 0 | 4 | 0 | 0 | 5 | 5 | 0 |
+| - Thug°        | 0 | 4 | 1 | 0 | 0 | 0 | 2 | 0 | 5 | 0 | 0 |
 
 ° New (optional) kit
 
