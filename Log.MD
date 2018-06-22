@@ -1,28 +1,30 @@
 # Log
 
-TO DO: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IWDEE DESCRIPTIONS
+NOTE 1: Seriously thinking about renaming Animal Handling to "Nature"
 
-TO DO: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
+TO DO 1: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IWDEE DESCRIPTIONS
 
-TO DO 1: FIX PALADIN MOD ADDED WEAPPROF MODIFIERS
+TO DO 2: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
 
-TO DO 2: CONTINUE WITH weap_prof.tpa for advanced weapon proficiencies
+TO DO 3: FIX PALADIN MOD ADDED WEAPPROF MODIFIERS
 
-TO DO 3: Alchemy: CREATE Spl to craft alchemy items
+TO DO 4: CONTINUE WITH weap_prof.tpa for advanced weapon proficiencies
 
-TO DO 4: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
+TO DO 5: Alchemy: CREATE Spl to craft alchemy items
 
-TO DO 5: Update readme for Treat Injury
+TO DO 6: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
 
-TO DO 7: Treat Injury sensitive to Proficiency???
+TO DO 7: Update readme for Treat Injury
 
-TO DO 8: Add shields to Armor Prof
+TO DO 8: Treat Injury sensitive to Proficiency???
 
-TO DO 9: Add HP bonus to Endurance proficiency
+TO DO 9: Add shields to Armor Prof
 
-TO DO 10: Spellcraft to treat magical afflictions(?) 
+TO DO 10: Add HP bonus to Endurance proficiency
 
-TO DO 11: Make 7 weapon proficiency meaningful.
+TO DO 11: Spellcraft to treat magical afflictions(?) 
+
+TO DO 12: Make 7 weapon proficiency meaningful.
 
 Version 0.03.24
 
