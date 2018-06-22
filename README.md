@@ -146,6 +146,24 @@ Special: Only safely usable by characters that have at least 1 rank in Alchemy.
 
 Characters without the required skill level have a 50% chance of spilling some acid on themselves (suffering full damage with no save).
 
+_Alchemist's Fire, Makeshift_: The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+Weight: 1
+Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+Characters without the required skill level have a 50% chance of spilling some alchemist fine on themselves (suffering full damage with no save).
+
+CONTINUE
+
+**Heal** (Wisdom) 
+**Requirement**: Cure Bonus: Ability to cast any Cure Wounds or regeneration spell.  
+
+This skill represents training in the medical arts.  Individuals trained in healing are able to quickly diagnose and treat various injuries and sicknesses, whether caused by blade, poison or disease.  This skill is most commonly taken by clerics and priests.  While they can invoke the power of their faith to heal the sick and wounded, they often also study the more mundane, but natural sciences to heal their flock so they do not bother their deity with lesser illnesses and wounds.  Warriors’ violent occupation also leads them to study the healing arts.  Occasionally, characters from other professions will learn this skill, though they are typically not as skilled in the healing arts as a priest or warrior.  
+This skill has a natural synergy with herbalism, and herbalists are able to create more effective remedies if they are trained healers (see the herbalism skill for details).  Conversely, healers trained in herbalism are more effective at treating afflictions.  
+
+**Treat Injury**
+The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank.  Additionally, <PRO_HESHE> can heal her Wisdom Modifier (x2).  This ability is not magical, and there is only so much Treat Injury can do.  A given creature will not benefit from further uses of Treat Injury for the rest of the day. The only exception is if a character has 6 or 7 ranks in Heal.  Such a character can use Treat Injury on a given character if they have already been treated by a less skilled healer.
+Additionally, characters treated with this skill find their natural healing rate increased (at increasing rates depending on the number of ranks of the healer).
+
 
 
 
