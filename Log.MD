@@ -1,5 +1,8 @@
 # Log
 
+2018-06-22
+ Copy over Log, readme.md, alchemy.tpa, endure.tpa, herb.tpa, hunt.tpa, mech.tpa, talky.tpa and Setup_proficiencies.tpa to home build.
+
 NOTE 1: Seriously thinking about renaming Animal Handling to "Nature"
 
 NOTE 2: Thinking about giving the Thief 5 max ranks in alchemy
