@@ -119,7 +119,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Paladin | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 | - U. Hunter | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 | - Cavalier | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - Inquisitor | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 7 | 0 | 4 |
+| - Inquisitor | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 | - B. Guard | 0 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 
 
