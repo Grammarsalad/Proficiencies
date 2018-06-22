@@ -114,7 +114,7 @@ Characters can now learn something other than how to fight better.  Characters c
 | 19+ | +4 or +20% |
 
 ### Non-Weapon Proficiency Descriptions
-**Proficiency Name** (Ability associated with proficiency)
+#### **Proficiency Name** (Ability associated with proficiency)
 **Requirements**: Proficiencies themselves do not have requirements, but certain uses of a given skill will have requirements.  For example, generally only spellcasters can make use of alchemy to create potions.  
 
 Description text, and outline of Proficiency uses.
@@ -122,7 +122,7 @@ Description text, and outline of Proficiency uses.
 **Proficiency Use**
 Outlines a particular use of a given proficiency.
 
-**Alchemy** (Intelligence) 
+#### **Alchemy** (Intelligence) 
 **Requirements**: Concoct Elixir: Spellcaster or Concoct Elixir HLA
 
 Alchemy involves advanced training in the handling of magical or quasi-magical substances that often have harmful or surprising effects.  
@@ -154,7 +154,7 @@ Characters without the required skill level have a 50% chance of spilling some a
 
 CONTINUE
 
-**Heal** (Wisdom) 
+#### **Heal** (Wisdom) 
 **Requirement**: Cure Bonus: Ability to cast any Cure Wounds or regeneration spell.  
 
 This skill represents training in the medical arts.  Individuals trained in healing are able to quickly diagnose and treat various injuries and sicknesses, whether caused by blade, poison or disease.  This skill is most commonly taken by clerics and priests.  While they can invoke the power of their faith to heal the sick and wounded, they often also study the more mundane, but natural sciences to heal their flock so they do not bother their deity with lesser illnesses and wounds.  Warriors’ violent occupation also leads them to study the healing arts.  Occasionally, characters from other professions will learn this skill, though they are typically not as skilled in the healing arts as a priest or warrior.  
