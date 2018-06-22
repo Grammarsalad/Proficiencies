@@ -98,6 +98,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Swashbuckler | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 1 | 1 |
 | - B. Hunter | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
 | - S. Dancer | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
+| - Delver° | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
 
 ° New (optional) kit
 
@@ -126,7 +127,6 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Inquisitor | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 | - B. Guard | 0 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 
-° New (optional) kit
 
 | Rogues | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
@@ -135,7 +135,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Swashbuckler | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
 | - B. Hunter    | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
 | - S. Dancer    | 3 | 2 | 1 | 5 | 0 | 4 | 0 | 0 | 5 | 5 | 0 |
-| - Thug°        | 0 | 4 | 1 | 0 | 0 | 0 | 2 | 0 | 5 | 0 | 0 |
+| - Delver°      | 3 | 2 | 5 | 5 | 0 | 5 | 5 | 0 | 0 | 5 | 0 |
 
 ° New (optional) kit
 
