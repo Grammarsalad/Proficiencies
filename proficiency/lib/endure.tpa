@@ -53,3 +53,36 @@ COPY ~skills/data/skills/spl/b_wind9.spl~ ~override~   // Endurance revised Seco
 	SAY NAME2 @7
 	SAY UNIDENTIFIED_DESC @810059  //
 	SAY IDENTIFIED_DESC @810059  //
+	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                 RUNNING                 //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+COPY ~skills/data/skills/spl/b_spri2.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810060  //
+	SAY IDENTIFIED_DESC @810060  //
+
+COPY ~skills/data/skills/spl/b_spri3.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810061  //
+	SAY IDENTIFIED_DESC @810061  //
+
+COPY ~skills/data/skills/spl/b_spri4.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810062  //
+	SAY IDENTIFIED_DESC @810062  //
+
+COPY ~skills/data/skills/spl/b_spri5.spl~ ~override~   // Endurance revised Second Wind
+        SAY NAME1 @5
+	SAY NAME2 @5
+	SAY UNIDENTIFIED_DESC @810063  //
+	SAY IDENTIFIED_DESC @810063  //
+
