@@ -514,10 +514,14 @@ Proficiency (armor mastery) (5 slots):~
 
 //Heal Skill
 @800000 = ~Treat Injury~
-@800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank.  Additionally, <PRO_HESHE> can heal her Wisdom Modifier (x2).  This ability is not magical, and there is only so much Treat Injury can do.  A given creature will not benefit from further uses of Treat Injury for the rest of the day. The only exception is if a character has 6 or 7 ranks in Heal.  Such a character can use Treat Injury on a given character if they have already been treated by a less skilled healer.
+@800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max +25% at 5 ranks) + <PRO_HISHER> wisdom bonus (x5).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 60% +5% per rank, plus your Wisdom Bonus (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The exception is that a character can always be helped by any healer with more skill than there previous healer.
 
-Additionally, characters treated with this skill find their natural healing rate increased (at increasing rates depending on the number of ranks of the healer).~
-
+Special: Accelerated Healing rate:
+1 rank: 1 hit point per 16 turns
+2 ranks: 1 hit point per 8 turns
+3 ranks: 1 hit point per 4 turns
+4 ranks: 1 hit point per 2 turns
+5 ranks: 1 hit point per turn.~
 
 
 //Treat Injury failed!

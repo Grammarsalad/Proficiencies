@@ -1,9 +1,7 @@
 # Log
 
-2018-06-22
- Copy over Log, readme.md, alchemy.tpa, endure.tpa, herb.tpa, hunt.tpa, mech.tpa, talky.tpa and Setup_proficiencies.tpa to home build.
 
-NOTE 1: Seriously thinking about renaming Animal Handling to "Nature"
+NOTE 1: Seriously thinking about renaming Animal Handling to "Nature" to incorporate other natty like things, like natural snares and toher good stuff
 
 NOTE 2: Thinking about giving the Thief 5 max ranks in alchemy
 
@@ -29,7 +27,13 @@ TO DO 10: Add HP bonus to Endurance proficiency
 
 TO DO 11: Spellcraft to treat magical afflictions(?) 
 
-TO DO 12: Make 7 weapon proficiency meaningful.
+TO DO 12: Make 7 weapon proficiency meaningful if possible-INVESTIGATE!
+
+TO DO 13: Complete revision of Treat Injury.
+
+TO DO 14: Comment out all of the stuff from the newly added tpa's (as of 2018-06-22), so mod will install.
+
+Version 0.03.25
 
 2018-06-22
 
@@ -46,6 +50,8 @@ TO DO 12: Make 7 weapon proficiency meaningful.
 - Added mech.tpa to lib folder
 
 - Added talky.tpa to lib folder
+
+- Completely redid Treat Injury (up to 2 ranks).  Was able to account for both wisdom *and* heal proficiency.
 
 Version 0.03.24
 
