@@ -5,6 +5,8 @@ NOTE 1: Seriously thinking about renaming Animal Handling to "Nature" to incorpo
 
 NOTE 2: Thinking about giving the Thief 5 max ranks in alchemy
 
+NOTE 3: SHOULD HEAL GIVE A BONUS TO INFLICT/CAUSE WOUND SPELLS?  I"M SERIOUSLY THINKING "YES"
+
 TO DO 1: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IWDEE DESCRIPTIONS
 
 TO DO 2: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
@@ -34,6 +36,20 @@ TO DO 13: TEST TREAT AFFLICTION
 TO DO 14: Comment out all of the stuff from the newly added tpa's (as of 2018-06-22), so mod will install.
 
 TO DO 15: ADD 7 PROF BACK IN  NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!
+
+TO DO 16: TAKE A FRESH LOOK AT TREAT INJURY AND TREAT AFFLICTION... There MAY be Target issues (i.e. 'self' vs. 'pre-target')
+
+Version 0.03.27
+
+2018-06-24
+
+- Treat injury/Affliction seems to not be consistantly working in different engines.  TI seems to work in BGEE but not IWDEE (2.5)
+  Have to revisit at a later date.
+  
+- I think I fixed Treat Injury, at least.  I'm still concerned about Treat Affliction.  Need to take another look at it, but not now...
+
+- Included Cure Bonus for Heal.  That one, I think, at least should work fine...
+
 
 Version 0.03.26
 
