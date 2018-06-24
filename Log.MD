@@ -39,6 +39,14 @@ TO DO 15: ADD 7 PROF BACK IN  NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!
 
 TO DO 16: TAKE A FRESH LOOK AT TREAT INJURY AND TREAT AFFLICTION... There MAY be Target issues (i.e. 'self' vs. 'pre-target')
 
+TO DO 17: Make second wind match the description.  
+
+2018-06-24
+
+Version 0.04.00
+
+-Started Endurance
+
 Version 0.03.27
 
 2018-06-24

@@ -3856,11 +3856,11 @@ INCLUDE ~%mod_folder%/lib/armor_prof.tpa~
 //Will break, so.
 /*
 INCLUDE ~%mod_folder%/lib/alchemy.tpa~
-
+*/
 //Endurance
 
 INCLUDE ~%mod_folder%/lib/endure.tpa~
-*/
+
 //Heal
 
 INCLUDE ~%mod_folder%/lib/heal.tpa~

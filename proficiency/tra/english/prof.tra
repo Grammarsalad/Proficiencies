@@ -527,6 +527,17 @@ Special: Accelerated Healing rate:
 4 ranks: 1 hit point per 2 turns
 5 ranks: 1 hit point per turn.~
 
+//2 additional hit points healed!
+@800002 = ~2 additional hit points healed!~
+
+@800003 = ~4 additional hit points healed!~
+
+@800004 = ~6 additional hit points healed!~
+
+@800005 = ~8 additional hit points healed!~
+
+@800006 = ~10 additional hit points healed!~
+
 //Treat Affliction check successful!
 @800015 = ~Treat Affliction check successful!~
 
@@ -721,6 +732,11 @@ Characters without the required skill level have a 50% chance of spilling some a
 @810059 = ~6 rounds max~
 @810060 = ~7 rounds max~
 
+@820000 = ~Second Wind~
+@820001 = ~Second Wind~
+Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% +10% per rank <PRO_HESHE> has in Endurance, plus <PRO_HISHER> constitution modifier to <PRO_HISHER> hit point total.  Additionally, <PRO_HISHER> fatigue level is reduced by 50% +10% per rank (maximum 100%)<PRO_HESHE> has in endurance.  This ability cannot be used in combat.
+
+<PRO_HESHE> can use this ability one time per day.  <PRO_HESHE> can use this ability one additional time per day if <PRO_HESHE> has 3 ranks in Endurance and <PRO_HESHE> can use this ability a third time if <PRO_HESHE> has 5 ranks in Endurance.~
 /*
 @810053 = ~Second Wind
 Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is reduced to 40%.  This ability cannot be used in combat.

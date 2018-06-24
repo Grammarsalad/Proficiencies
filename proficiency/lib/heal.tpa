@@ -1297,3 +1297,352 @@ LPF ALTER_EFFECT     // failure notification
       INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 90      // failure strref
 END
 
+////////////////////////////////////////////////////////////////
+//Cure Bonus___________________________________________________
+////////////////////////////////////////////////////////////////
+//Base spells
+//1 Rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S103A.spl~ ~override~   //
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800002)    //2 additional hit points healed!
+END
+
+//2 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103B.spl~     // 4 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 4    //4 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800003)    //4 additional hit points healed!
+END
+
+//3 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103C.spl~     // 6 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 6   //6additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800004)    //6 additional hit points healed!
+END
+
+//4 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103D.spl~     // 8 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 8   //8 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800005)    //8 additional hit points healed!
+END
+
+//5 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103E.spl~     // 10 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 10   //10 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800006)    //10 additional hit points healed!
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Innates
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//Innates
+ACTION_IF  FILE_EXISTS_IN_GAME ~SPIN200.spl~ BEGIN     //
+COPY_EXISTING ~SPIN200.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+END
+ACTION_IF  FILE_EXISTS_IN_GAME ~SPIN101.spl~ BEGIN     //
+COPY_EXISTING ~SPIN101.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+END
+
+ACTION_IF  FILE_EXISTS_IN_GAME ~SPIN958.spl~ BEGIN     //
+COPY_EXISTING ~SPIN958.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+END
+
+ACTION_IF  FILE_EXISTS_IN_GAME ~BDCAELA3.spl~ BEGIN     //
+COPY_EXISTING ~BDCAELA3.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Light wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//Cure Light wounds
+COPY_EXISTING ~SPPR103.spl~ ~override~     // Cure Light Wounds
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Moderate wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//Cure Moderate wounds
+//Need to check if it is present...
+ ACTION_IF (FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_CURE_MODERATE_WOUNDS~)) BEGIN  //
+  LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_CURE_MODERATE_WOUNDS~   //May be mod added
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+ END //
+//SR CMW
+ACTION_IF  FILE_EXISTS_IN_GAME ~dvimhere.mrk~ BEGIN
+ ACTION_IF  FILE_EXISTS_IN_GAME ~SPPR215.spl~ BEGIN  //Maybe that component not installed???
+COPY_EXISTING ~SPPR215.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+  END //maybe that component not installed
+END  //End SR
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Medium Wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR315.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Serious Wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR401.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Critical Wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR502.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Mass Cure
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR514.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+
