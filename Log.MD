@@ -17,9 +17,9 @@ TO DO 5: Alchemy: CREATE Spl to craft alchemy items
 
 TO DO 6: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
 
-TO DO 7: Update readme for Treat Injury
+TO DO 7: ADD CURE BONUS FOR HEAL
 
-TO DO 8: Treat Injury sensitive to Proficiency???
+TO DO 8:
 
 TO DO 9: Add shields to Armor Prof
 
@@ -27,11 +27,28 @@ TO DO 10: Add HP bonus to Endurance proficiency
 
 TO DO 11: Spellcraft to treat magical afflictions(?) 
 
-TO DO 12: Make 7 weapon proficiency meaningful if possible-INVESTIGATE!
+TO DO 12: Make 7 weapon proficiency meaningful if possible-INVESTIGATE! POSSIBLE (NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!  ALSO NEED TO CHANGE UI CHAR CREATION
 
-TO DO 13: Complete revision of Treat Injury.
+TO DO 13: TEST TREAT AFFLICTION
 
 TO DO 14: Comment out all of the stuff from the newly added tpa's (as of 2018-06-22), so mod will install.
+
+TO DO 15: ADD 7 PROF BACK IN  NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!
+
+Version 0.03.26
+
+
+2018-06-23
+
+- Commented out include for inclomplete and crashy skill tpas
+
+- Completed revision of Treat Injury.
+
+- Completed Treat Affliction  (phew!)
+
+- Made Treat Injury sensitive to Proficiency
+
+- Updated readme for Treat Injury
 
 Version 0.03.25
 
