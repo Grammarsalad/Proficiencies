@@ -199,8 +199,31 @@ This skill represents training in the medical arts.  Individuals trained in heal
 This skill has a natural synergy with herbalism, and herbalists are able to create more effective remedies if they are trained healers (see the herbalism skill for details).  Conversely, healers trained in herbalism are more effective at treating afflictions.  
 
 **Treat Injury**
-The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank.  Additionally, <PRO_HESHE> can heal her Wisdom Modifier (x2).  This ability is not magical, and there is only so much Treat Injury can do.  A given creature will not benefit from further uses of Treat Injury for the rest of the day. The only exception is if a character has 6 or 7 ranks in Heal.  Such a character can use Treat Injury on a given character if they have already been treated by a less skilled healer.
-Additionally, characters treated with this skill find their natural healing rate increased (at increasing rates depending on the number of ranks of the healer).
+The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max 30% at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 50% +5% per rank, plus your Wisdom Bonus (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The exception is that a character can always potentially be helped by any healer with more skill than a previous healer.
+
+**Effect**: Heals 5% of target's max hit points, +5% per rank.
+**Chance of Success**: 50%, +5% per rank, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+**Special**: Accelerated Healing rate:
+1 rank: 1 hit point per 16 turns
+2 ranks: 1 hit point per 8 turns
+3 ranks: 1 hit point per 4 turns
+4 ranks: 1 hit point per 2 turns
+5 ranks: 1 hit point per turn.
+
+**Treat Affliction**
+In their travels, the healer collects various natural medicines that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 3 ranks in Heal, <PRO_HESHE> gains the ability to Treat Afflictions.  <PRO_HESHE> can gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.
+
+To use Treat Affliction, the heal must make a healing check (see success rate below).  If <PRO_HESHE> succeeds, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 3 ranks in Heal.  If <PROHESHE> has 4 ranks in Heal, <PRO_HESHE> can also remove any disease from the target.  Finally, if <PRO_HESHE> possesses 5 ranks in Heal, <PRO_HESHE> removes any paralysis or hold effect from the target.
+  
+Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 20% +5% per rank in healing. Characters trained in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism.
+
+**Chance of Success**: 20%, +5% per rank in Heal, + 5% per rank in Herbalism.
+**Effect**: 
+3 Ranks: Treat Intoxication, Poison, Blindness and Deafness.
+4 Ranks: Treat Diseases.
+5 Ranks: Treat Paralysis and Hold.
+
+
 
 
 
