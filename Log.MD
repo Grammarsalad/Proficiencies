@@ -41,6 +41,8 @@ TO DO 16: TAKE A FRESH LOOK AT TREAT INJURY AND TREAT AFFLICTION... There MAY be
 
 TO DO 17: Make second wind match the description.  
 
+TO DO 18: Decide on a proper description...
+
 2018-06-24
 
 Version 0.04.00
