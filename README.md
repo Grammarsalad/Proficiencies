@@ -192,8 +192,25 @@ Characters without the required skill level have a 50% chance of spilling some a
 
 CONTINUE
 
+**Brew Concoction**
+Spell casters, and (if special conditions are met) other characters, can use this skill to brew concoctions.  Concoctions are similar to potions in that they are magic liquids that can be used by anybody.  However, drinking them is not generally recommended as they often have explosive properties.  
+
+**Endurance** (Constitution)
+**Requirements**: None
+
+Endurance represents training to withstand heavy exertion and physical punishment.  It is probably *the* quintessential proficiency of warriors, though a smattering of other classes can specialize in endurance.  Characters trained in endurance can go farther, faster, and for longer periods than others.  This nonweapon proficiency allows characters to take a ‘break’ to recover hit points and stamina.  In addition, characters receive bonus maximum hit points equal to the number of ranks they possess in Endurance for each of their first five levels.  
+
+**Second Wind**
+Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% +10% per rank <PRO_HESHE> has in Endurance, plus <PRO_HISHER> constitution modifier to <PRO_HISHER> hit point total.  Additionally, <PRO_HISHER> fatigue level is reset to zero.  At 4 ranks, the character can purge their body of deleterious poisons and at 5 ranks they can purge their body of disease when they use Second Wind if they make a successful save vs. death.  This ability cannot be used in combat unless a character has attained 7 ranks in Endurance.
+
+<PRO_HESHE> can use this ability one time per day.  <PRO_HESHE> can use this ability one additional time per day if <PRO_HESHE> has 3 ranks in Endurance and <PRO_HESHE> can use this ability a third time if <PRO_HESHE> has 6 ranks in Endurance.     
+
+**Bonus Hit Points**
+Characters receive a number of bonus hit points equal to the number of ranks they have in Endurance x their level, up to 5th level.  
+
+
 ### **Heal** (Wisdom) 
-**Requirement**: Cure Bonus: Ability to cast any Cure Wounds or regeneration spell.  
+**Requirement**: Cure Bonus: Ability to cast any Cure spell.  
 
 This skill represents training in the medical arts.  Individuals trained in healing are able to quickly diagnose and treat various injuries and sicknesses, whether caused by blade, poison or disease.  This skill is most commonly taken by clerics and priests.  While they can invoke the power of their faith to heal the sick and wounded, they often also study the more mundane, but natural sciences to heal their flock so they do not bother their deity with lesser illnesses and wounds.  Warriors’ violent occupation also leads them to study the healing arts.  Occasionally, characters from other professions will learn this skill, though they are typically not as skilled in the healing arts as a priest or warrior.  
 This skill has a natural synergy with herbalism, and herbalists are able to create more effective remedies if they are trained healers (see the herbalism skill for details).  Conversely, healers trained in herbalism are more effective at treating afflictions.  
@@ -223,6 +240,8 @@ Treating such afflictions is tricky, however, and the treatment is not always ef
 4 Ranks: Treat Diseases.
 5 Ranks: Treat Paralysis and Hold.
 
+**Cure Bonus**
+Healers that can also cast cure spells (any spell with the word “cure” in its title, except Cure Disease) are more capable if they are also trained in healing.  Specifically, they cure an additional 2 points of damage for every rank they possess in in Heal. 
 
 
 
