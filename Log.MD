@@ -21,7 +21,7 @@ TO DO 6: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell f
 
 TO DO 7: ADD CURE BONUS FOR HEAL
 
-TO DO 8:
+TO DO 8: Armor proficiency should assume normal armor rules as a default.  Also, should give more (passive) bonuses
 
 TO DO 9: Add shields to Armor Prof
 
