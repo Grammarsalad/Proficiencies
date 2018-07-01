@@ -28,20 +28,20 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Greatsword | Bastard Sword, Two-Handed Sword | Repair and Construct; Combat Bonuses; Bleeding |
 | Polearm | Halberd, Spear | Repair and Construct; Combat Bonuses; Knockback |
 | Blunt | Mace, Hammer, Morning Star, Flail | Repair and Construct; Combat Bonuses; Daze |
-| Ranged | Longbow, Shortbow, Crossbow | Repair and Construct; Combat Bonuses; Bleeding |
+| Bows/X-bows | Longbow, Shortbow, Crossbow | Repair and Construct; Combat Bonuses; Bleeding |
 | Armor | Armors (all) | Repair and Construct; Defensive Bonuses; Effective use of Armor and Shields |
-| Alchemy | Acid, A. Fire, Tanglefoot, etc. | Construct Unique Items; Craft Elixirs |
 | Endurance |  | Recover Stamina and HP; Bonus Hit Points |
 | Heal |  | Treat Injury; Treat Affliction; Cure Bonus |
 | Herbalism | Treatments, Remedies | Craft Medical Items; Craft Potions; Use Poison |
-| Hunting | Ranged Items | Craft Ammunition; Ranged Bonuses; Skill Bonuses |
+| Alchemy | Acid, A. Fire, Tanglefoot, etc. | Construct Unique Items; Craft Concoctions |
 | Implements | Wands | Use wands; Recharge Wands; Craft Wands |
 | Mechanics | Mechanical Items | Craft and Use Mechanical Items; Skill Bonuses; Set Traps |
 | Animal Handling |  | Calm and Charm Beasts; Keep and Train Companions |
 | Persuasion |  | Conversation Options; Demoralize Opponent; Feint |
 | Spellcraft | Scrolls | Use and Create Scrolls |
 | Ritual | Varies | Varies by Class and Kit |
-| Fighting Styles | Varies | Unchanged |
+| Standard Fighting Styles | Varies | Unchanged |
+| Ranged Fighting Style | Ranged Items | Craft Ammunition; Ranged Bonuses; Skill Bonuses |
 
 ### Proficiency points by class 
 | Class | 1st Level | Rate | Multiclass | 1st Level | Rate |
@@ -68,37 +68,37 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 #### Weapon Proficiencies
 
 
-| Warriors | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Ranged | Armor |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
-| -  Barbarian | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 |
-| -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
-| -  Kensai | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 0 | 0 |
-| -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 |
-| -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 |
-| -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 5 |
-| -  Hospitaller° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 2 |
-| -  Savage° | 5 | 0 | 3 | 0 | 0 | 5 | 5 | 5 | 1 |
-| -  Marksman° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 5 | 2 |
-| Ranger | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
-| - Archer | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 5 | 1 |
-| - B. Master | 2 | 0 | 2 | 0 | 0 | 2 | 2 | 0 | 1 |
-| - Stalker | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
-| Paladin | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
-| - U. Hunter | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
-| - Cavalier | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 |
-| - Inquisitor | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 |
-| - B. Guard | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
+| Warriors | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Bow | Armor | Ranged |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |  
+| Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
+| -  Barbarian | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
+| -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 0 |
+| -  Kensai | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 0 | 0 | 0 |
+| -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
+| -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 | 0 |
+| -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 5 | 3 |
+| -  Hospitaller° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 2 | 3 |
+| -  Savage° | 5 | 0 | 3 | 0 | 0 | 5 | 5 | 5 | 1 | 3 |
+| -  Marksman° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 5 | 2 | 5 |
+| Ranger | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
+| - Archer | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 5 | 1 | 5 |
+| - B. Master | 2 | 0 | 2 | 0 | 0 | 2 | 2 | 0 | 1 | 3 |
+| - Stalker | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
+| Paladin | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
+| - U. Hunter | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
+| - Cavalier | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 | 0 |
+| - Inquisitor | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 | 3 |
+| - B. Guard | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 
 
-| Rogues | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Ranged | Armor |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| Thief | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
-| - Assassin | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
-| - Swashbuckler | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 1 | 1 |
-| - B. Hunter | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
-| - S. Dancer | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
-| - Delver° | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 |
+| Rogues | Simple | Sword | Martial Arts | Axe | Greatsword | Polearm | Blunt | Bow | Armor | Ranged |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
+| Thief | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+| - Assassin | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+| - Swashbuckler | 2 | 2 | 2 | 0 | 0 | 0 | 2 | 1 | 1 | 1 |
+| - B. Hunter | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+| - S. Dancer | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+| - Delver° | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
 
 ° New (optional) kit
 
@@ -201,9 +201,20 @@ Spell casters, and (if special conditions are met) other characters, can use thi
 Endurance represents training to withstand heavy exertion and physical punishment.  It is probably *the* quintessential proficiency of warriors, though a smattering of other classes can specialize in endurance.  Characters trained in endurance can go farther, faster, and for longer periods than others.  This nonweapon proficiency allows characters to take a ‘break’ to recover hit points and stamina.  In addition, characters receive bonus maximum hit points equal to the number of ranks they possess in Endurance for each of their first five levels.  
 
 **Second Wind**
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% +10% per rank <PRO_HESHE> has in Endurance, plus <PRO_HISHER> constitution modifier to <PRO_HISHER> hit point total.  Additionally, <PRO_HISHER> fatigue level is reset to zero.  At 4 ranks, the character can purge their body of deleterious poisons and at 5 ranks they can purge their body of disease when they use Second Wind if they make a successful save vs. death.  This ability cannot be used in combat unless a character has attained 7 ranks in Endurance.
+Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% +10% per rank <PRO_HESHE> has in Endurance (max +50% at 5 ranks), plus <PRO_HISHER> constitution modifier to <PRO_HISHER> hit point total.  Additionally, <PRO_HISHER> fatigue level is reset to zero.
 
-<PRO_HESHE> can use this ability one time per day.  <PRO_HESHE> can use this ability one additional time per day if <PRO_HESHE> has 3 ranks in Endurance and <PRO_HESHE> can use this ability a third time if <PRO_HESHE> has 6 ranks in Endurance.     
+At 6 ranks, the character can try to purge their body of deleterious poisons.  <PRO_HISHER> chance of success is 10% per rank <PRO_HESHE> has in Endurance plus <PRO_HISHER> Constitution modifier.
+
+At 7 ranks, the character can try to purge their body of disease when they use Second Wind. <PRO_HISHER> chance of success is 5% per rank <PRO_HESHE> has in Endurance plus <PRO_HISHER> Constitution modifier.
+
+This ability cannot be used in combat unless a character has attained 7 ranks in Endurance.
+
+**Effect**: Heals 25% of target's max hit points, +10% per rank, plus Constitution Modifier.
+
+**Chance of Success**: 
+Poison (6 ranks) 10% per rank + Constitution Modifier.
+Disease (7 ranks) 5% per rank + Constitution Modifier.
+   
 
 **Bonus Hit Points**
 Characters receive a number of bonus hit points equal to the number of ranks they have in Endurance x their level, up to 5th level.  
