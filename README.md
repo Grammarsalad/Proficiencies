@@ -121,11 +121,11 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Archer | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - B. Master | 3 | 7 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - Stalker | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
-| Paladin | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - U. Hunter | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - Cavalier | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - Inquisitor | 0 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - B. Guard | 0 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| Paladin | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - U. Hunter | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - Cavalier | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - Inquisitor | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - B. Guard | 4 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
 
 
 | Rogues | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
