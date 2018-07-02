@@ -125,21 +125,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//for alchemy use
-APPEND ~splprot.2da~ ~B_ALC_LS%TAB%115%TAB%-1%TAB%2~  //ALchemy weapons (less than--for greater than 0)
-
-//value found in parameter1 of your 326 effect
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ALC_LS~ BEGIN  //less than alchemy
-         SET alc_ls = %row%
-      END
-   END
-BUT_ONLY
 //TO DO: ADD NON-USABILITY FOR UNTRAINED CREATURES
 
 //Maybe add an int check to determine which kind of item is created in the spl, so can be created 'Spontaneously'.  

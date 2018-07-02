@@ -62,9 +62,9 @@ Upon using this ability, the character takes a moment to catch <PRO_HISHER> brea
 <DOTS4>
 
 <DOTS5>~
-//martial arts
-@700300 = ~Martial Arts~
-@700301 = ~MARTIAL ARTS: This weapon class allows the character to fight unarmed, and defend themselves against attack.
+//Miscellaneous
+@700300 = ~Miscellaneous~
+@700301 = ~MISCELLANEOUS: The Miscellaneous Weapon Proficiency covers odd, unusual, or exotic items and attack forms.  Thus, it covers unarmed attacks, spell attacks that require a to hit roll, thrown alchemical items, stones, natural weapons, and anything else not specifically covered by another weapon proficiency.
 
 <DOTS1> +1 Melee Defense
 
@@ -129,13 +129,13 @@ Upon using this ability, the character takes a moment to catch <PRO_HISHER> brea
 
 <DOTS5>~
 
-//Ranged
-@700800 = ~Proficiency Type: Ranged~
+//Bows and Crossbows
+@700800 = ~Proficiency Type: Bows/Crossbows~
 @700801 = ~Proficiency Type: Longbow~
 @700802 = ~Proficiency Type: Shortbow~
 @700803 = ~Proficiency Type: Crossbow~
-@700804 = ~Ranged~
-@700805 = ~RANGED: This weapon class allows the character to use short bows, crossbows, and longbows, both normal and composite. These weapons allow you to do maximum damage at range.
+@700804 = ~Bows/Crossbows~
+@700805 = ~BOWS/CROSSBOWS: This weapon class allows the character to use short bows, crossbows, and longbows, both normal and composite. These weapons allow you to do maximum damage at range.
 
 <DOTS1>
 
@@ -198,9 +198,9 @@ Proficiency (armor mastery) (5 slots):~
 //Herbalism
 @704000 = ~Herbalism~
 @704001 = ~HERBALISM: This skill ~
-//Nature
-@705000 = ~Hunting~
-@705001 = ~HUNTING: This skill ~
+//Ranged Fighting Style
+@705000 = ~Ranged~
+@705001 = ~RANGED: This skill ~
 //Magic Implements
 @706000 = ~Magic Implements~
 @706001 = ~MAGIC IMPLEMENTS: This skill ~
@@ -464,7 +464,6 @@ Proficiency (armor mastery) (5 slots):~
 @720811 = ~Disadvantages:~
 @720812 = ~Disadvantages:
 - May only put two ranks in Persuasion.~
-
 
 //Sorcerer
 @720901 = ~dagger, quarterstaff, dart, sling.~
@@ -733,36 +732,30 @@ Characters without the required skill level have a 50% chance of spilling some a
 @810060 = ~7 rounds max~
 
 @820000 = ~Second Wind~
-@820001 = ~Second Wind~
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% +10% per rank <PRO_HESHE> has in Endurance, plus <PRO_HISHER> constitution modifier to <PRO_HISHER> hit point total.  Additionally, <PRO_HISHER> fatigue level is reduced by 50% +10% per rank (maximum 100%)<PRO_HESHE> has in endurance.  This ability cannot be used in combat.
+@820001 = ~Second Wind
+Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% +10% per rank <PRO_HESHE> has in Endurance (max +50% at 5 ranks), plus <PRO_HISHER> constitution modifier to <PRO_HISHER> hit point total.  Additionally, <PRO_HISHER> fatigue level is reset to zero.
 
-<PRO_HESHE> can use this ability one time per day.  <PRO_HESHE> can use this ability one additional time per day if <PRO_HESHE> has 3 ranks in Endurance and <PRO_HESHE> can use this ability a third time if <PRO_HESHE> has 5 ranks in Endurance.~
+At 6 ranks, the character can try to purge their body of deleterious poisons.  <PRO_HISHER> chance of success is 10% per rank <PRO_HESHE> has in Endurance plus <PRO_HISHER> Constitution modifier.
+
+At 7 ranks, the character can try to purge their body of disease when they use Second Wind. <PRO_HISHER> chance of success is 5% per rank <PRO_HESHE> has in Endurance plus <PRO_HISHER> Constitution modifier.
+
+This ability cannot be used in combat unless a character has attained 7 ranks in Endurance.
+
+Effect: Heals 25% of target's max hit points, +10% per rank, plus Constitution Modifier.
+
+Chance of Success: 
+Poison (6 ranks) 10% per rank + Constitution Modifier.
+Disease (7 ranks) 5% per rank + Constitution Modifier.~
+
+This ability can be used one time per day.  It can be used an additional time if the character has 3 ranks in Endurance and <PRO_HESHE> can use this ability a third time if <PRO_HESHE> has 6 ranks in Endurance.~
+
+@820002 = ~Any Poisons Purged!~
+@820003 = ~Poisons not Purged!~
+
+@820004 = ~Any Diseases Purged!~
+@820005 = Diseases not Purged!~
+
 /*
-@810053 = ~Second Wind
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is reduced to 40%.  This ability cannot be used in combat.
-~
-@810054 = ~Second Wind
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is reduced to 30%.  This ability cannot be used in combat.
-~
-
-@810055 = ~Second Wind
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is reduced to 20%.  This ability cannot be used in combat.
-~
-@810056 = ~Second Wind
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is reduced to 10%.  This ability cannot be used in combat.
-~
-
-@810057 = ~Second Wind
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is completely eliminated.  This ability cannot be used in combat.
-~
-
-@810058 = ~Second Wind
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 35% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is completely eliminated.  This ability cannot be used in combat.
-~
-
-@810059 = ~Second Wind
-Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 45% of <PRO_HISHER> hit point total, and <PRO_HISHER> fatigue level is completely eliminated.  This ability cannot be used in combat.
-~
 @810060 = ~Sprint
 Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.~
  */

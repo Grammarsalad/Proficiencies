@@ -6,53 +6,463 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-COPY ~%mod_folder%/data/skills/spl/endure/b_wind2.spl~ ~override~   // Endurance revised Second Wind
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+////////////////////Second Wind
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+COPY ~%mod_folder%/data/skills/spl/endure/B_S201.spl~ ~override~   // Endurance Second Wind
         SAY NAME1 @820000
 	SAY NAME2 @820000
 	SAY UNIDENTIFIED_DESC @820001  //
 	SAY IDENTIFIED_DESC @820001  //
+//Wis
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %con_ls% STR_VAR match_resource = ~B_S102A~ END  //con less than 16  prof20=0
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %con_eq% STR_VAR match_resource = ~B_S102B~ END  //con equal to 16  prof20=1
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 17 parameter2 = %con_eq% STR_VAR match_resource = ~B_S102C~ END  //con equal to 17 prof20=2
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %con_eq% STR_VAR match_resource = ~B_S102D~ END  //con equal to 18 prof20=3
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %con_gr% STR_VAR match_resource = ~B_S102E~ END  //con greater than 18  prof20=4
+//Ranks
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2011~ END  //1 rank heal, cast B_S2011.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2012~ END  //2 rank heal, cast B_S2012.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2013~ END  //3 rank heal, cast B_S2013.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2014~ END  //4 rank heal, cast B_S2014.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2015~ END  //5 rank heal, cast B_S2015.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2016~ END  //6 rank heal, cast B_S2016.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2017~ END  //7 rank heal, cast B_S2017.spl
+
+//The Spells: Rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S2011.spl~ ~override~   //1 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW01~ resource = ~B_WND01~ END  //no con (prof20 =0), cast B_WND01.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW02~ resource = ~B_WND02~ END  //16 con (prof20 =1), cast B_WND02.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW03~ resource = ~B_WND03~ END  //17 con (prof20 =2), cast B_WND03.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW04~ resource = ~B_WND04~ END  //18 con (prof20 =3), cast B_WND04.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW05~ resource = ~B_WND05~ END  //>18 con (prof20 =4), cast B_WND05.spl
+
+COPY_EXISTING ~B_S2011.spl~ ~override/B_S2012.spl~     //2 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND01~ resource = ~B_WND06~ END  //prof20=0, cast B_WND06
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND02~ resource = ~B_WND07~ END  //prof20=1, cast B_WND07
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND03~ resource = ~B_WND08~ END  //prof20=2, cast B_WND08
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND04~ resource = ~B_WND09~ END  //prof20=3, cast B_WND09
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND05~ resource = ~B_WND10~ END  //prof20=4, cast B_WND10
+
+COPY_EXISTING ~B_S2011.spl~ ~override/B_S2013.spl~     //3 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND01~ resource = ~B_WND11~ END  //prof20=0, cast B_WND11
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND02~ resource = ~B_WND12~ END  //prof20=1, cast B_WND12
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND03~ resource = ~B_WND13~ END  //prof20=2, cast B_WND13
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND04~ resource = ~B_WND14~ END  //prof20=3, cast B_WND14
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND05~ resource = ~B_WND15~ END  //prof20=4, cast B_WND15
+
+COPY_EXISTING ~B_S2011.spl~ ~override/B_S2014.spl~     //4 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND01~ resource = ~B_WND16~ END  //prof20=0,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND02~ resource = ~B_WND17~ END  //prof20=1,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND03~ resource = ~B_WND18~ END  //prof20=2,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND04~ resource = ~B_WND19~ END  //prof20=3,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND05~ resource = ~B_WND20~ END  //prof20=4,  cast resource
+
+COPY_EXISTING ~B_S2011.spl~ ~override/B_S2015.spl~     //5 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND01~ resource = ~B_WND21~ END  //prof20=0,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND02~ resource = ~B_WND22~ END  //prof20=1,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND03~ resource = ~B_WND23~ END  //prof20=2,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND04~ resource = ~B_WND24~ END  //prof20=3,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND05~ resource = ~B_WND25~ END  //prof20=4,  cast resource
+
+COPY_EXISTING ~B_S2011.spl~ ~override/B_S2016.spl~     //6 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND01~ resource = ~B_WND26~ END  //prof20=0,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND02~ resource = ~B_WND27~ END  //prof20=1,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND03~ resource = ~B_WND28~ END  //prof20=2,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND04~ resource = ~B_WND29~ END  //prof20=3,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND05~ resource = ~B_WND30~ END  //prof20=4,  cast resource
+
+COPY_EXISTING ~B_S2011.spl~ ~override/B_S2017.spl~     //7 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND01~ resource = ~B_WND31~ END  //prof20=0,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND02~ resource = ~B_WND32~ END  //prof20=1,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND03~ resource = ~B_WND33~ END  //prof20=2,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND04~ resource = ~B_WND34~ END  //prof20=3,  cast resource
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_WND05~ resource = ~B_WND35~ END  //prof20=4,  cast resource
+
+//The Actual Spells
+
+//1 rank
+
+COPY ~%mod_folder%/data/skills/spl/heal/B_WND01.spl~ ~override~   //1 rank, no con
+//Notification for IWDEE, BG2EE, EET:
+ACTION_IF GAME_IS ~iwdee bg2ee eet~ BEGIN //
+  COPY_EXISTING ~B_WND01.spl~ ~override~
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810 //  success notification
+      parameter1 = 14022    //healed
+  END
+END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND02.spl~     //1 ranks, +1 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 40    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND03.spl~     //1 ranks, +2 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 45    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND04.spl~     //1 ranks, +3 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 50    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND05.spl~     //1 ranks, +4 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 55    //healed
+  END
+
+//2 rank
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND06.spl~     //2 ranks, no con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 45    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND07.spl~     //2 ranks, +1 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 50    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND08.spl~     //2 ranks, +2 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 55    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND09.spl~     //2 ranks, +3 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 60    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND10.spl~     //2 ranks, +4 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 65    //healed
+  END
+
+//3 rank
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND11.spl~     //3 ranks, no con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 55    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND12.spl~     //3 ranks, 1 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 60    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND13.spl~     //3 ranks, 2 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 65    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND14.spl~     //3 ranks, 3 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 70    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND15.spl~     //3 ranks, 4 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 75    //healed
+  END
+
+//4 rank
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND16.spl~     //4 ranks, no con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 65    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND17.spl~     //4 ranks, 1 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 70    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND18.spl~     //4 ranks, 2 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 75    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND19.spl~     //4 ranks, 3 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 80    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND20.spl~     //4 ranks, 4 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 85    //healed
+  END
+
+//5 rank
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND21.spl~     //5 ranks, no con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 75    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND22.spl~     //5 ranks, 1 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 80    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND23.spl~     //5 ranks, 2 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 85    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND24.spl~     //5 ranks, 3 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 90    //healed
+  END
+
+COPY_EXISTING ~B_WND01.spl~ ~override/B_WND25.spl~     //5 ranks, 4 con
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 17 parameter1 = 95    //healed
+  END
+
+//6 rank
+
+COPY ~%mod_folder%/data/skills/spl/heal/B_WND26.spl~ ~override~   //6 rank, no con
+  LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002) multi_match = 1  //Any Poisons Purged!
+      probability1  = 59 probability2  = 0      // 60% success
+  END
+  LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003) multi_match = 1  //Poisons not Purged!
+      probability1  = 100 probability2  = 60      // 60% success
+  END
+//Notification for IWDEE, BG2EE, EET:
+ACTION_IF GAME_IS ~iwdee bg2ee eet~ BEGIN //
+  COPY_EXISTING ~B_WND26.spl~ ~override~
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810 //
+      parameter1 = 14022    //healed
+  END
+END
+
+
+COPY_EXISTING ~B_WND26.spl~ ~override/B_WND27.spl~     //6 ranks, 1 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 80    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 64 probability2  = 0      // 65% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240   //Remove poison icon
+      probability1  = 64 probability2  = 0      // 65% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 65      // 65% success
+  END
+
+COPY_EXISTING ~B_WND26.spl~ ~override/B_WND28.spl~     //6 ranks, 2 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 85    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 69 probability2  = 0      // 70% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240   //Remove poison icon
+      probability1  = 69 probability2  = 0      // 70% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 70      // 70% success
+  END
+
+COPY_EXISTING ~B_WND26.spl~ ~override/B_WND29.spl~     //6 ranks, 3 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 90    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 74 probability2  = 0      // 75% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240   //Remove poison icon
+      probability1  = 74 probability2  = 0      // 75% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 75      // 75% success
+  END
+
+COPY_EXISTING ~B_WND26.spl~ ~override/B_WND30.spl~     //6 ranks, 4 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 95    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 79 probability2  = 0      // 80% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240   //Remove poison icon
+      probability1  = 79 probability2  = 0      // 80% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 80      // 80% success
+  END
+
+//7 rank
+
+COPY ~%mod_folder%/data/skills/spl/heal/B_WND31.spl~ ~override~   //7 rank, no con
+  LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002) multi_match = 1  //Any Poisons Purged!
+      probability1  = 69 probability2  = 0      // 70% success
+  END
+  LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003) multi_match = 1  //Poisons not Purged!
+      probability1  = 100 probability2  = 70      // 70% success
+  END
+  LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820004) multi_match = 1  //Any Diseases Purged!
+      probability1  = 34 probability2  = 0      // 35% success
+  END
+  LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820005) multi_match = 1  //Diseases not Purged!
+      probability1  = 100 probability2  = 35      // 35% success
+  END
+//Notification for IWDEE, BG2EE, EET:
+ACTION_IF GAME_IS ~iwdee bg2ee eet~ BEGIN //
+  COPY_EXISTING ~B_WND26.spl~ ~override~
+  LPF ALTER_EFFECT     //heal notification notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810 //
+      parameter1 = 14022    //healed
+  END
+END
+
+COPY_EXISTING ~B_WND31.spl~ ~override/B_WND32.spl~     //7 ranks, 1 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 80    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 74 probability2  = 0      // 75% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 6 //Remove poison icon
+      probability1  = 74 probability2  = 0      // 75% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 75      // 75% success
+  END
+
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820004)     //Any Diseases Purged!
+      probability1  = 39 probability2  = 0      // 40% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 7 //Remove disease icon
+      probability1  = 39 probability2  = 0      // 40% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820005)     //Diseases not Purged!
+      probability1  = 100 probability2  = 40      // 40% success
+  END
+
+COPY_EXISTING ~B_WND31.spl~ ~override/B_WND33.spl~     //7 ranks, 2 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 85    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 79 probability2  = 0      // 80% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 6 //Remove poison icon
+      probability1  = 79 probability2  = 0      // 80% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 80      // 80% success
+  END
+
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820004)     //Any Diseases Purged!
+      probability1  = 44 probability2  = 0      // 45% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 7 //Remove disease icon
+      probability1  = 44 probability2  = 0      // 45% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820005)     //Diseases not Purged!
+      probability1  = 100 probability2  = 45      // 45% success
+  END
+
+COPY_EXISTING ~B_WND31.spl~ ~override/B_WND34.spl~     //7 ranks, 3 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 90    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 84 probability2  = 0      // 85% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 6 //Remove poison icon
+      probability1  = 84 probability2  = 0      // 85% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 85      // 85% success
+  END
+
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820004)     //Any Diseases Purged!
+      probability1  = 49 probability2  = 0      // 50% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 7 //Remove disease icon
+      probability1  = 49 probability2  = 0      // 50% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820005)     //Diseases not Purged!
+      probability1  = 100 probability2  = 50      // 50% success
+  END
+
+COPY_EXISTING ~B_WND31.spl~ ~override/B_WND35.spl~     //7 ranks, 4 con
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 17 parameter1 = 95    //healed
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002)     //Any Poisons Purged!
+      probability1  = 89 probability2  = 0      // 90% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 6 //Remove poison icon
+      probability1  = 89 probability2  = 0      //90% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820003)     //Poisons not Purged!
+      probability1  = 100 probability2  = 90      // 90% success
+  END
+
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820004)     //Any Diseases Purged!
+      probability1  = 54 probability2  = 0      // 55% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 240  match_parameter2 = 7 //Remove disease icon
+      probability1  = 54 probability2  = 0      // 55% success
+  END
+  LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820005)     //Diseases not Purged!
+      probability1  = 100 probability2  = 55      // 55% success
+  END
+
 /*
-COPY ~%mod_folder%/data/skills/spl/b_wind3.spl~ ~override~   // Endurance revised Second Wind
-        SAY NAME1 @7
-	SAY NAME2 @7
-	SAY UNIDENTIFIED_DESC @810054  //
-	SAY IDENTIFIED_DESC @810054  //
 
-COPY ~%mod_folder%/data/skills/spl/b_wind4.spl~ ~override~   // Endurance revised Second Wind
-        SAY NAME1 @7
-	SAY NAME2 @7
-	SAY UNIDENTIFIED_DESC @810055  //
-	SAY IDENTIFIED_DESC @810055  //
-
-COPY ~%mod_folder%/data/skills/spl/b_wind5.spl~ ~override~   // Endurance revised Second Wind
-        SAY NAME1 @7
-	SAY NAME2 @7
-	SAY UNIDENTIFIED_DESC @810056  //
-	SAY IDENTIFIED_DESC @810056  //
-
-COPY ~%mod_folder%/data/skills/spl/b_wind6.spl~ ~override~   // Endurance revised Second Wind
-        SAY NAME1 @7
-	SAY NAME2 @7
-	SAY UNIDENTIFIED_DESC @810057  //
-	SAY IDENTIFIED_DESC @810057  //
-
-COPY ~%mod_folder%/data/skills/spl/b_wind7.spl~ ~override~   // Endurance revised Second Wind
-        SAY NAME1 @7
-	SAY NAME2 @7
-	SAY UNIDENTIFIED_DESC @810057  //
-	SAY IDENTIFIED_DESC @810057  //
-
-COPY ~%mod_folder%/data/skills/spl/b_wind8.spl~ ~override~   // Endurance revised Second Wind
-        SAY NAME1 @7
-	SAY NAME2 @7
-	SAY UNIDENTIFIED_DESC @810058  //
-	SAY IDENTIFIED_DESC @810058  //
-
-COPY ~%mod_folder%/data/skills/spl/b_wind9.spl~ ~override~   // Endurance revised Second Wind
-        SAY NAME1 @7
-	SAY NAME2 @7
-	SAY UNIDENTIFIED_DESC @810059  //
-	SAY IDENTIFIED_DESC @810059  //
 	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

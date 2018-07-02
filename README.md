@@ -23,7 +23,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | --- | --- | :--- |  
 | Simple | Club, Dagger, Staff, Sling, Dart | Repair and Construct; Combat Bonuses; Varies |
 | Sword | Longsword, Short Sword, Wakizashi, Ninja-to, Scimitar | Repair and Construct; Combat Bonuses; Bleeding |
-| Martial Arts | Unarmed, Unarmored, Touch Spells | Defense Bonuses (unarmored), Combat Bonuses (unarmed; Touch Spells) |
+| Unarmed/Misc. | Unarmed, Unarmored, Touch Spells | Defense Bonuses (unarmored), Combat Bonuses (unarmed; Touch Spells) |
 | Axe | Axe, Throwing Axe | Repair and Construct; Combat Bonuses; Bleeding |
 | Greatsword | Bastard Sword, Two-Handed Sword | Repair and Construct; Combat Bonuses; Bleeding |
 | Polearm | Halberd, Spear | Repair and Construct; Combat Bonuses; Knockback |
@@ -77,7 +77,6 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
 | -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 | 0 |
 | -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 5 | 3 |
-| -  Hospitaller° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 3 | 2 | 3 |
 | -  Savage° | 5 | 0 | 3 | 0 | 0 | 5 | 5 | 5 | 1 | 3 |
 | -  Marksman° | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 5 | 2 | 5 |
 | Ranger | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
@@ -87,7 +86,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Paladin | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 | - U. Hunter | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 | - Cavalier | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 | 0 |
-| - Inquisitor | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 | 3 |
+| - Inquisitor | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 | - B. Guard | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 
 

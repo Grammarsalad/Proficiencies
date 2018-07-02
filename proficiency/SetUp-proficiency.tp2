@@ -1,11 +1,13 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.04.00~
+VERSION ~0.04.01~
 
 
 ALWAYS
         OUTER_SPRINT ~mod_folder~ ~proficiency~    //Folder Var
+        
+        INCLUDE ~proficiency/lib/splprot_append.tpa~
 
 	INCLUDE ~proficiency/lib/alter_effect.tpa~
 

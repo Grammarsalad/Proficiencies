@@ -41,9 +41,9 @@ STRING_SET 25031 @700805
 //War Hammer --> Armor prob stref 25008, 25032 (description)-BGEE
 STRING_SET 25008 @700904
 STRING_SET 25032 @700905
-//club --> Alchemy stref 25009, 25033 (description)-BGEE
-STRING_SET 25009 @701000
-STRING_SET 25033 @701001
+//club --> Ranged Fighting Style(was Alchemy)
+STRING_SET 25009 @705000
+STRING_SET 25033 @705001
 //Spear --> Endurance stref 25010, 25034 (description)-BGEE
 STRING_SET 25010 @702000
 STRING_SET 25034 @702001
@@ -53,9 +53,9 @@ STRING_SET 25035 @703001
 //Flail --> Herbalism stref 25012, 25036 (description)-BGEE
 STRING_SET 25012 @704000
 STRING_SET 25036 @704001
-//Mace -->??? stref 25013, 25037 (description)-BGEE  Nature
-STRING_SET 25013 @705000
-STRING_SET 25037 @705001
+//Mace --> Alchemy (was randed)
+STRING_SET 25013 @701000
+STRING_SET 25037 @701001
 //Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
 STRING_SET 25014 @706000
 STRING_SET 25038 @706001
@@ -108,9 +108,9 @@ STRING_SET 34153 @700805
 //War Hammer --> Armor prob stref 25008, 25032 (description)
 STRING_SET 31121 @700904 //Don't know this num...
 STRING_SET 34156 @700905
-//club --> Alchemy stref 25009, 25033 (description)
-STRING_SET 35445 @701000 //Don't know this num...
-STRING_SET 35442 @701001
+//club --> Randed fighting style (Was Alchemy)
+STRING_SET 35445 @705000
+STRING_SET 35442 @705001
 //Spear --> Endurance stref 25010, 25034 (description)-BGEE
 STRING_SET 31122 @702000
 STRING_SET 34157 @702001
@@ -120,9 +120,9 @@ STRING_SET 34158 @703001
 //Flail --> Herbalism stref 25012, 25036 (description)-BGEE
 STRING_SET 31124 @704000
 STRING_SET 34159 @704001
-//Mace -->??? stref 25013, 25037 (description)-BGEE  Nature
-STRING_SET 31125 @705000
-STRING_SET 34160 @705001
+//Mace --> Alchemy (was hunter)
+STRING_SET 31125 @701000
+STRING_SET 34160 @701001
 //Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
 STRING_SET 31126 @706000
 STRING_SET 34161 @706001
@@ -173,9 +173,9 @@ STRING_SET 36814 @700805
 //War Hammer --> Armor prob stref 25008, 25032 (description)
 STRING_SET 36815 @700904 //Don't know this num...
 STRING_SET 36816 @700905
-//club --> Alchemy stref 25009, 25033 (description)
-STRING_SET 36817 @701000 //Don't know this num...
-STRING_SET 36818 @701001
+//club --> Ranged FS (was Alchemy)
+STRING_SET 36817 @705000
+STRING_SET 36818 @705001
 //Spear --> Endurance stref 25010, 25034 (description)-BGEE
 STRING_SET 36819 @702000
 STRING_SET 36820 @702001
@@ -185,9 +185,9 @@ STRING_SET 36822 @703001
 //Flail --> Herbalism stref 25012, 25036 (description)-BGEE
 STRING_SET 37711 @704000
 STRING_SET 37712 @704001
-//Mace -->??? stref 25013, 25037 (description)-BGEE  Nature 
-STRING_SET 37713 @705000
-STRING_SET 37714 @705001
+//Mace --> Alch (was hunt)
+STRING_SET 37713 @701000
+STRING_SET 37714 @701001
 //Staff --> ??? stref 25014, 25038 (description)-BGEE   Magic Implements
 STRING_SET 37715 @706000
 STRING_SET 37716 @706001
@@ -876,11 +876,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged AP
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Alch
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -902,11 +902,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -928,11 +928,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 4 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -954,11 +954,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 1 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -980,11 +980,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 0 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1006,11 +1006,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 2 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 3 //LONGBOW         -->Animal Handling
@@ -1032,11 +1032,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
@@ -1058,11 +1058,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
@@ -1084,11 +1084,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
@@ -1110,11 +1110,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
@@ -1136,11 +1136,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
@@ -1162,11 +1162,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1188,11 +1188,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1214,11 +1214,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1240,11 +1240,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 2 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1266,11 +1266,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 2 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1292,11 +1292,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1318,11 +1318,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1344,11 +1344,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1370,11 +1370,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1396,11 +1396,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1422,11 +1422,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1448,11 +1448,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1474,11 +1474,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1500,11 +1500,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 6 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 2 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1526,11 +1526,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1552,11 +1552,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1578,11 +1578,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1604,11 +1604,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1630,11 +1630,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1656,11 +1656,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1682,11 +1682,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1708,11 +1708,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1734,11 +1734,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -1760,11 +1760,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
@@ -1786,11 +1786,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 2 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
@@ -1812,11 +1812,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
@@ -1838,11 +1838,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 4 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 7 //LONGBOW         -->Animal Handling
@@ -1864,11 +1864,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1890,11 +1890,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1916,11 +1916,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 1 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 1 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -1942,11 +1942,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 1 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 1 //LONGBOW         -->Animal Handling
@@ -1968,11 +1968,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 4 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 1 //LONGBOW         -->Animal Handling
@@ -1994,11 +1994,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2020,11 +2020,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2046,11 +2046,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2072,11 +2072,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2098,11 +2098,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2124,11 +2124,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2150,11 +2150,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2176,11 +2176,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2202,11 +2202,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2228,11 +2228,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 0 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2254,11 +2254,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 3 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -2280,11 +2280,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -2306,11 +2306,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -2332,11 +2332,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 5 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -2358,11 +2358,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 1 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 1 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 1 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
@@ -2384,11 +2384,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -2410,11 +2410,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 1 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 1 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 2 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 5 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -2436,11 +2436,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 6 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 3 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 5 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
@@ -2462,11 +2462,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 5 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 5 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 5 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 2 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 7 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 3 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 2 //LONGBOW         -->Animal Handling
@@ -2488,11 +2488,11 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 2 //SCIMITAR        -->Blunt
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 3 //WARHAMMER       -->Armor
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 4 //CLUB            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 3 //CLUB            -->Ranged Fighting Style
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 5 //HALBERD         -->Heal
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 5 //FLAIL           -->Herbalism
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 5 //MACE            -->Hunting
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 4 //MACE            -->Alchemy
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 4 //QUARTERSTAFF    -->Implements
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 5 //LONGBOW         -->Animal Handling
@@ -2548,11 +2548,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 4  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Hunting 
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 4  //MACE            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Handle Animal
@@ -2569,6 +2569,7 @@ BUT_ONLY
 									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
 									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
 									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //ranged
 									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
 									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 2  //hunting
 									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
@@ -2576,22 +2577,22 @@ BUT_ONLY
 					END		 
 					PATCH_IF class = 14 OR //mg cleric
 					         class = 17 BEGIN //ftr cleric mage
-							         SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 5  //Alchemy
-									 SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //Implements
-									 SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //Spellcraft
-					END		 
+							         	 SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //Alchemy
+									 SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 5  //Implements
+                                                                         SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //Spellcraft
+					END
 					PATCH_IF class = 15 BEGIN //th cleric
 							         SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //ma
 									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
-									 SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //Implements
 									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
 					END		 
 					PATCH_IF class = 18 BEGIN //ran cleric
 							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 2  //simple
 									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
 									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //blunt
+									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //ranged
 									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
-									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //hunting
+                                                                         SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //hunting
 									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //H.Animal
 					END		 
 					/*
@@ -2645,11 +2646,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 4  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 6  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Nature 
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 5  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
@@ -2667,6 +2668,7 @@ BUT_ONLY
 									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
 									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
 									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //range
 									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
 									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
 									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
@@ -2730,11 +2732,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 0  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 5  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 0  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //MACE            -->alch
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
@@ -2755,6 +2757,7 @@ BUT_ONLY
 									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
 									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
 									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
+									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //range
 									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
 									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
 									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
@@ -2771,7 +2774,8 @@ BUT_ONLY
 									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
 									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
 									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //range
+                                                                         SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
 									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
 									 SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //herbalism
 									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
@@ -2841,11 +2845,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 0  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 4  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 1  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 4  //MACE            -->alch
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 1  //LONGBOW         -->Nature
@@ -2911,11 +2915,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 1  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->alch
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
@@ -2936,7 +2940,8 @@ BUT_ONLY
 									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
 									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
 									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
+									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  // Ranged
+                                                                         SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
 									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
 									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //a. handle
 					END		 
@@ -2994,11 +2999,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 1  //MACE            -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->alch
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 6  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 2  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Nature
@@ -3063,11 +3068,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 2  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //MACE            -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->alch
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
@@ -3133,11 +3138,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 2  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 0  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 2  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Nature
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 1  //MACE            -->Alch
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Nature
@@ -3200,11 +3205,11 @@ BUT_ONLY
 					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //SCIMITAR        -->Blunt
 					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //DAGGER          -->Ranged
 					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 0  //CLUB            -->Alchemy
+					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Ranged Fighting Style
 					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
 					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
 					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 1  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 2  //MACE            -->Hunting
+					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Alchemy
 					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 0  //QUARTERSTAFF    -->Implements
 					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //CROSSBOW        -->Mechanics
 					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Animal Handling
@@ -3847,23 +3852,26 @@ INCLUDE ~%mod_folder%/lib/weap_prof.tpa~
 INCLUDE ~%mod_folder%/lib/armor_prof.tpa~
 
 //MARTIAL ARTS
+//Will break, so.
+/*
+INCLUDE ~%mod_folder%/lib/martial_arts.tpa~
 
 
 //NONWEAPON PROFS
 
 //ALCHEMY
 
-//Will break, so.
-/*
 INCLUDE ~%mod_folder%/lib/alchemy.tpa~
 */
-//Endurance
-
-INCLUDE ~%mod_folder%/lib/endure.tpa~
 
 //Heal
 
 INCLUDE ~%mod_folder%/lib/heal.tpa~
+
+//Endurance
+
+INCLUDE ~%mod_folder%/lib/endure.tpa~
+
 
 //Herbalism
 //NOT READY

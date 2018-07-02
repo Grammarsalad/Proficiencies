@@ -834,7 +834,7 @@ DEFINE_PATCH_MACRO ~cd_immunity_spell_level_1_arrays~ BEGIN
   END
   DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_extras BEGIN
     206, "-1", "-10", "sppr105", "-10", "-10", "same" => 1 // protection from spell
-//    206, "-1", "-10", "LEV_ONE", "-10", "-10", "same" => 1 // protection from spell not nec, apparently...
+    206, "-1", "-10", "LEV_ONE", "-10", "-10", "same" => 1 // protection from spell not nec, apparently...
     206, "-1", "-10", "b_po010", "-10", "-10", "same" => 1 // protection from Cure minor wounds cantrip
 //    206, "-1", "-10", "b_po020", "-10", "-10", "same" => 1 // protection from Canticle cantrip
     206, "-1", "-10", "b_po030", "-10", "-10", "same" => 1 // protection from Maladiction cantrip
@@ -2302,6 +2302,17 @@ DEFINE_PATCH_MACRO ~b_blood_rage_arrays~ BEGIN
   DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_delete BEGIN END // nothing to delete
 END
 
+// Entropy shield special
+DEFINE_PATCH_MACRO ~b_entropy_shield_arrays~ BEGIN
+  DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_key BEGIN
+    318,  "-10", "-10", "SPPR984",  "-10",  "-10", "same" => 1 // Protection from charm...seems legit
+  END
+  DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_extras BEGIN
+    318, "-10", "-10", "ENT_P", "-10","-10", "same" => 1 // protect spell: generic
+    83, "-10", 314, "", "-10","-10", "same" => 1 // protect pro: generic
+  END
+  DEFINE_ASSOCIATIVE_ARRAY cd_immunity_batches_delete BEGIN END // nothing to delete
+END
 
 /////                                                  \\\\\
 ///// the batch... err... patch                        \\\\\

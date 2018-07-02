@@ -21,7 +21,7 @@ TO DO 6: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell f
 
 TO DO 7: ADD CURE BONUS FOR HEAL
 
-TO DO 8: Armor proficiency should assume normal armor rules as a default.  Also, should give more (passive) bonuses
+TO DO 8:
 
 TO DO 9: Add shields to Armor Prof
 
@@ -39,9 +39,39 @@ TO DO 15: ADD 7 PROF BACK IN  NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!
 
 TO DO 16: TAKE A FRESH LOOK AT TREAT INJURY AND TREAT AFFLICTION... There MAY be Target issues (i.e. 'self' vs. 'pre-target')
 
-TO DO 17: Make second wind match the description.  
+TO DO 17: ENDURANCE: BONUS HIT POINTS
 
-TO DO 18: Decide on a proper description...
+TO DO 18: Change creature natural attacks to misc category and give creatures proficiency in misc.
+
+TO DO 19: Need to revise armor proficiency to not set misc proficiency to zero (among other things)
+
+TO DO 20: 
+
+TO DO 21: Revise Class descriptions (Ranged Fighting style instead of Hunting and Bows/Crossbows instead of Ranged.
+
+TO DO 22: Unarmed/Misc. weapon prof (change name to Unarmed/Miscellaneous) will give bonuses from mfist, fist and all weapons if no or light armor (AC and such)
+
+TO DO 23: Alchemy items: Give Unarmed/misc prof (so, only really good with light armor and some Alch prof).
+
+Version 0.04.01
+
+2018-07-01
+
+- Exported splplot appendings to own tpa file in lib
+
+- Copied over effect batches fnp from B_spells
+
+2018-06-30
+
+- Finished Second wind (need to test instal and abiltiy)
+
+- Switched alch with hunting/ranged weapon style (Replace strref)
+
+2018-06-25
+
+- Changed Martial Arts to Misc weapon category (to cover more weapons, spells, natural attacks, etc.)
+
+- Continued with Endurance.  Have checks in place. Need to create secondary spells (i.e. spells that cast the final) and final spells
 
 2018-06-24
 
