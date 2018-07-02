@@ -33,7 +33,7 @@ COPY ~%mod_folder%/data/skills/spl/endure/B_S201.spl~ ~override~   // Endurance 
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2017~ END  //7 rank heal, cast B_S2017.spl
 
 //The Spells: Rank
-COPY ~%mod_folder%/data/skills/spl/heal/B_S2011.spl~ ~override~   //1 rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1021.spl~ ~override/B_S2011.spl~   //1 rank
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW01~ resource = ~B_WND01~ END  //no con (prof20 =0), cast B_WND01.spl
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW02~ resource = ~B_WND02~ END  //16 con (prof20 =1), cast B_WND02.spl
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW03~ resource = ~B_WND03~ END  //17 con (prof20 =2), cast B_WND03.spl
@@ -86,7 +86,7 @@ COPY_EXISTING ~B_S2011.spl~ ~override/B_S2017.spl~     //7 rank
 
 //1 rank
 
-COPY ~%mod_folder%/data/skills/spl/heal/B_WND01.spl~ ~override~   //1 rank, no con
+COPY ~%mod_folder%/data/skills/spl/endure/B_WND01.spl~ ~override~   //1 rank, no con
 //Notification for IWDEE, BG2EE, EET:
 ACTION_IF GAME_IS ~iwdee bg2ee eet~ BEGIN //
   COPY_EXISTING ~B_WND01.spl~ ~override~
@@ -226,7 +226,7 @@ COPY_EXISTING ~B_WND01.spl~ ~override/B_WND25.spl~     //5 ranks, 4 con
 
 //6 rank
 
-COPY ~%mod_folder%/data/skills/spl/heal/B_WND26.spl~ ~override~   //6 rank, no con
+COPY ~%mod_folder%/data/skills/spl/endure/B_WND26.spl~ ~override~   //6 rank, no con
   LPF CLONE_EFFECT     //
       INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002) multi_match = 1  //Any Poisons Purged!
       probability1  = 59 probability2  = 0      // 60% success
@@ -315,7 +315,7 @@ COPY_EXISTING ~B_WND26.spl~ ~override/B_WND30.spl~     //6 ranks, 4 con
 
 //7 rank
 
-COPY ~%mod_folder%/data/skills/spl/heal/B_WND31.spl~ ~override~   //7 rank, no con
+COPY ~%mod_folder%/data/skills/spl/endure/B_WND31.spl~ ~override~   //7 rank, no con
   LPF CLONE_EFFECT     //
       INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820002) multi_match = 1  //Any Poisons Purged!
       probability1  = 69 probability2  = 0      // 70% success

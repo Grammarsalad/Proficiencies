@@ -53,6 +53,10 @@ TO DO 22: Unarmed/Misc. weapon prof (change name to Unarmed/Miscellaneous) will 
 
 TO DO 23: Alchemy items: Give Unarmed/misc prof (so, only really good with light armor and some Alch prof).
 
+Version 0.04.02
+
+- Bug fixes in prof.tra and endure.tpa
+
 Version 0.04.01
 
 2018-07-01

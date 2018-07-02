@@ -745,7 +745,7 @@ Effect: Heals 25% of target's max hit points, +10% per rank, plus Constitution M
 
 Chance of Success: 
 Poison (6 ranks) 10% per rank + Constitution Modifier.
-Disease (7 ranks) 5% per rank + Constitution Modifier.~
+Disease (7 ranks) 5% per rank + Constitution Modifier.
 
 This ability can be used one time per day.  It can be used an additional time if the character has 3 ranks in Endurance and <PRO_HESHE> can use this ability a third time if <PRO_HESHE> has 6 ranks in Endurance.~
 
@@ -753,7 +753,7 @@ This ability can be used one time per day.  It can be used an additional time if
 @820003 = ~Poisons not Purged!~
 
 @820004 = ~Any Diseases Purged!~
-@820005 = Diseases not Purged!~
+@820005 = ~Diseases not Purged!~
 
 /*
 @810060 = ~Sprint
