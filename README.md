@@ -41,7 +41,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Spellcraft | Scrolls | Use and Create Scrolls |
 | Ritual | Varies | Varies by Class and Kit |
 | Standard Fighting Styles | Varies | Unchanged |
-| Ranged Fighting Style | Ranged Items | Craft Ammunition; Ranged Bonuses; Skill Bonuses |
+| Ranged Fighting Style | Ranged Items | Ranged Bonuses; Defense Bonuses |
 
 ### Proficiency points by class 
 | Class | 1st Level | Rate | Multiclass | 1st Level | Rate |
@@ -73,7 +73,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
 | -  Barbarian | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
 | -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 0 |
-| -  Kensai | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 0 | 0 | 0 |
+| -  Kensai | 7^ | 7^ | 5 | 7^ | 7^ | 7^ | 7^ | 0 | 0 | 0 |
 | -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
 | -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 | 0 |
 | -  Warmain° | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 5 | 3 |
@@ -100,6 +100,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Delver° | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
 
 ° New (optional) kit
+^ See individual class or kit description for further details.
 
 #### Non-Weapon Proficiencies
 
