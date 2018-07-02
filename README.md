@@ -255,5 +255,8 @@ Healers that can also cast cure spells (any spell with the word “cure” in it
 
 
 
+## **Known Issues**
 
+Because of the way that they are implemented, it is possible that some of the passive bonuses, such as the HP bonus from Endurance, will not be properly applied.  
 
+You should be able to fix this by using the innate ability, "Use and Manage Proficiencies".  

@@ -53,9 +53,20 @@ TO DO 22: Unarmed/Misc. weapon prof (change name to Unarmed/Miscellaneous) will 
 
 TO DO 23: Alchemy items: Give Unarmed/misc prof (so, only really good with light armor and some Alch prof).
 
+TO DO 24: Passive abilities: Apply passive abilities at level up, though also check them with 'use and manage proficiencies' special ability mon summon.
+
+Version 0.05.00
+
+- Finished first draft of Endurance
+
+- Added files for Craft (just the cre for now.)
+
+- Added 'known issues' in readme (both) about passive abilities
+
 Version 0.04.02
 
 - Bug fixes in prof.tra and endure.tpa
+
 
 Version 0.04.01
 

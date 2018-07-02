@@ -461,6 +461,51 @@ COPY_EXISTING ~B_WND31.spl~ ~override/B_WND35.spl~     //7 ranks, 4 con
       probability1  = 100 probability2  = 55      // 55% success
   END
 
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+////////////////////Bonus HP
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+//
+//1 rank
+COPY ~%mod_folder%/data/skills/spl/endure/B_S202A.spl~ ~override~   // (1 rank) +1HP
+
+//2 rank
+COPY_EXISTING ~B_S202A.spl~ ~override/B_S202B.spl~     //(2 rank) +2HP
+ LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 18 parameter1 = 2
+  END
+
+//3 rank
+COPY_EXISTING ~B_S202A.spl~ ~override/B_S202C.spl~     //(3 rank) +3HP
+ LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 18 parameter1 = 3
+ END
+
+//4 rank
+COPY_EXISTING ~B_S202A.spl~ ~override/B_S202D.spl~     //(4 rank) +4HP
+ LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 18 parameter1 = 4
+ END
+
+//5 rank
+COPY_EXISTING ~B_S202A.spl~ ~override/B_S202E.spl~     //(5 rank) +5HP
+ LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 18 parameter1 = 5
+ END
+
+//6 rank
+COPY_EXISTING ~B_S202A.spl~ ~override/B_S202F.spl~     //(6 rank) +6HP
+ LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 18 parameter1 = 6
+ END
+
+//7 rank
+COPY_EXISTING ~B_S202A.spl~ ~override/B_S202G.spl~     //(7 rank) +7HP
+ LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 18 parameter1 = 7
+ END
+
 /*
 
 	
