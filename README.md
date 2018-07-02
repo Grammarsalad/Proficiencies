@@ -72,7 +72,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |  
 | Fighter | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
 | -  Barbarian | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 |
-| -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 0 |
+| -  Berserker | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 1 | 5 | 0 |
 | -  Kensai | 7^ | 7^ | 5 | 7^ | 7^ | 7^ | 7^ | 0 | 0 | 0 |
 | -  Wizard Slayer | 5 | 5 | 2 | 5 | 5 | 5 | 5 | 5 | 5 | 3 |
 | -  Defender | 2 | 2 | 2 | 4 | 2 | 2 | 4 | 2 | 5 | 0 |
@@ -82,7 +82,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | Ranger | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 | - Archer | 1 | 1 | 2 | 1 | 1 | 1 | 1 | 5 | 1 | 5 |
 | - B. Master | 2 | 0 | 2 | 0 | 0 | 2 | 2 | 0 | 1 | 3 |
-| - Stalker | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
+| - Stalker | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 1 | 3 |
 | Paladin | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 | - U. Hunter | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 3 |
 | - Cavalier | 2 | 2 | 2 | 2 | 2 | 2 | 2 | 0 | 3 | 0 |
@@ -100,6 +100,7 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 | - Delver° | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
 
 ° New (optional) kit
+
 ^ See individual class or kit description for further details.
 
 #### Non-Weapon Proficiencies
