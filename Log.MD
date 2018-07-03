@@ -55,6 +55,22 @@ TO DO 23: Alchemy items: Give Unarmed/misc prof (so, only really good with light
 
 TO DO 24: Passive abilities: Apply passive abilities at level up, though also check them with 'use and manage proficiencies' special ability mon summon.
 
+TO DO 25: Alchemy mishap: Summon cre that removes item from equip slot
+
+Version 0.05.02
+
+2017-07-03
+
+- Started Rod of Wonder (need to add animations and account for IWDEE strrefs)
+
+2018-07-02
+
+Version 0.05.01
+
+- Added wand of polymorph
+
+- Created list of missing wands and a few I'll add
+
 Version 0.05.00
 
 - Finished first draft of Endurance

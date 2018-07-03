@@ -1,7 +1,7 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.05.00~
+VERSION ~0.05.02~
 
 
 ALWAYS
@@ -29,7 +29,7 @@ END
 /* Language Settings */
 AUTO_TRA ~skills/tra/%s~
 LANGUAGE ~English~ ~english~ ~proficiency/tra/english/prof.tra~
-
+                             ~proficiency/tra/english/craft.tra~
 //___________________________________________________________________________________
 
 
