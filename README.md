@@ -257,6 +257,29 @@ Healers that can also cast cure spells (any spell with the word “cure” in it
 ### **Magical Implements** (Varies) 
 **Requirements**: Recharge Wand: Spellcaster or Recharge Wand HLA.  Craft Wand: Spellcaster or Craft Wand HLA
 
+This proficiency allows characters to use, recharge and create wands.   This proficiency works differently for different classes, and generally speaking, casting classes can make the most use of this proficiency (though, thieves can do almost everything a caster can do if they take the ‘Craft Wand’ High Level Ability.)
+
+**Use Magical Implements**
+Characters can use wands of a tier value equal to the number of ranks they have in this proficiency. Wizards and Sorcerers are naturals when it comes to using arcane wands.  As such, they can use any wand of any tier of an arcane nature.  Similarly, clerics, druids and shaman can use divine wands with equal efficiency (This does not apply to Bards, Rangers or Paladins.  They need this proficiency to use wands normally).  This application of the Magical Implements proficiency allows them to use wands of the other magical type, however.  
+
+**Recharge Magical Implements**
+Characters can recharge magical implements using this proficiency, as well.  Except for characters with the Recharge Wand high level ability, or non-casters with the right scroll and Read Magic Proficiency, only spellcasters can recharge wands, however.  Typically, clerics, druids, shaman, wizards and sorcerers can recharge a wand even without proficiency in Magical Implements, but only if they have a particular spell memorized as determined by the wand creation chart below. With ranks in this proficiency, however, spellcasters need only have a spell memorized of a level equivalent to the specified spell.  Further, arcane casters can recharge divine wands, and divine casters can recharge arcane wands if they have the requisite wisdom, or intelligence or if they have the required charisma.  Specifically, non-divine casters must have a wisdom or charisma of 10 + the tier of the wand to recharge divine wands.  Similarly, divine casters need an intelligence or charisma of 10 + the tier of the wand to recharge arcane wands.  If they have the requisite ability score, and a spell of the requisite level, casters can recharge wands in this way equal to a tier equal to the number of ranks in this proficiency that they have.  Any character can recharge a wand if they have a scroll that casts the correct spell (again, as per the chart below) that they can use.  
+
+Non-casters can recharge wands if and only if they have the Recharge Wand High Level Ability.  Such characters need only spend the required experience points to recharge a wand.  
+
+To recharge a wand, characters need the right materials (see below), and they need to expend an amount of experience points equal to 1/2 the required xp total that would be required to create the wand in the first place.  Characters cannot recharge a wand if they don't have the required materials or xp.  
+
+**Craft Magical Implements**
+Spellcasting characters, and non-spellcasters with the Craft Wand High Level Ability, can craft magical implements using this proficiency, as well.  Characters can craft a wand of a tier equal to the number of ranks they have in Magical Implements, though they cannot actually craft wands until they have 4 ranks in the Implements Proficiency.  In order to create a wand, the characer has to meet the requirements as per the table below:
+
+| Wand | Tier | Required Spell(s) (Craft) | Material (Craft) | Material (Recharge) | XP (Craft) | XP (Recharge) | 
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Wand of Missiles | 1 | Magic Missile | * Something Cheapish * | * Something Cheapish * | 10 | 5 | 
+
+
+
+
+
 
 ## **Known Issues**
 
