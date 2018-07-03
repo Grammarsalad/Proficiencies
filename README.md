@@ -106,36 +106,36 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 #### Non-Weapon Proficiencies
 
 
-| Warriors | End | Heal | Herb | Alch | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
+| Warriors | End | Heal | Herb | Alch | Imp | Mech | A. Handle | Spell | Per | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| Fighter | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Barbarian | 5 | 2 | 3 | 0 | 0 | 0 | 3 | 5 | 0 | 5 |
-| - Berserker | 5 | 5 | 1 | 0 | 0 | 1 | 2 | 5 | 0 | 1 |
-| - Kensai | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 5 |
-| - W. Slayer | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Defender | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Warmain° | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
+| Fighter | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 0 | 5 | 1 |
+| - Barbarian | 5 | 2 | 3 | 0 | 0 | 0 | 3 | 0 | 5 | 5 |
+| - Berserker | 5 | 5 | 1 | 0 | 0 | 1 | 2 | 0 | 5 | 1 |
+| - Kensai | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 5 |
+| - W. Slayer | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 0 | 5 | 1 |
+| - Defender | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 0 | 5 | 1 |
+| - Warmain° | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 0 | 5 | 1 |
 | - Savage° | 5 | 5 | 5 | 0 | 0 | 0 | 5 | 0 | 0 | 5 |
-| - Marksman° | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Marksman° | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 0 | 5 | 1 |
 | Ranger | 5 | 5 | 5 | 3 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - Archer | 5 | 5 | 5 | 3 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - B. Master | 7 | 5 | 5 | 3 | 1 | 0 | 5 | 0 | 0 | 0 |
 | - Stalker | 5 | 5 | 5 | 3 | 1 | 0 | 5 | 0 | 0 | 0 |
-| Paladin | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - U. Hunter | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - Cavalier | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - Inquisitor | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - B. Guard | 5 | 5 | 5 | 4 | 1 | 0 | 2 | 5 | 0 | 4 |
+| Paladin | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 0 | 5 | 4 |
+| - U. Hunter | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 0 | 5 | 4 |
+| - Cavalier | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 0 | 5 | 4 |
+| - Inquisitor | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 0 | 5 | 4 |
+| - B. Guard | 5 | 5 | 5 | 4 | 1 | 0 | 2 | 0 | 5 | 4 |
 
 
-| Rogues |  | End | Heal | Herb | Alch | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| Thief          | 3 | 2 | 1 | 5 | 3 | 4 | 5 | 0 | 5 | 5 | 0 |
-| - Assassin     | 5 | 2 | 1 | 5 | 5 | 4 | 5 | 0 | 5 | 5 | 0 |
-| - Swashbuckler | 3 | 2 | 1 | 5 | 3 | 4 | 5 | 0 | 5 | 5 | 0 |
-| - B. Hunter    | 3 | 2 | 1 | 5 | 3 | 4 | 5 | 0 | 5 | 5 | 0 |
-| - S. Dancer    | 3 | 2 | 1 | 5 | 3 | 4 | 0 | 0 | 5 | 5 | 0 |
-| - Delver°      | 3 | 2 | 5 | 5 | 3 | 5 | 5 | 0 | 0 | 5 | 0 |
+| Rogues | End | Heal | Herb | Alch | Imp | Mech | A. Handle | Spell | Per | Ritual |
+| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
+| Thief          | 2 | 1 | 5 | 3 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - Assassin     | 2 | 1 | 5 | 5 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - Swashbuckler | 2 | 1 | 5 | 3 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - B. Hunter    | 2 | 1 | 5 | 3 | 4 | 5 | 0 | 5 | 5 | 0 |
+| - S. Dancer    | 2 | 1 | 5 | 3 | 4 | 0 | 0 | 5 | 5 | 0 |
+| - Delver°      | 2 | 5 | 5 | 3 | 5 | 5 | 0 | 5 | 0 | 0 |
 
 ° New (optional) kit
 
