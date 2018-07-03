@@ -106,30 +106,29 @@ Characters must select both weapon proficiencies and non-weapon proficiencies fr
 #### Non-Weapon Proficiencies
 
 
-| Warriors | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
+| Warriors |  | End | Heal | Herb | Alch | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| Fighter | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Barbarian | 0 | 5 | 2 | 3 | 5 | 0 | 0 | 3 | 5 | 0 | 5 |
-| - Berserker | 0 | 5 | 5 | 1 | 2 | 0 | 1 | 2 | 5 | 0 | 1 |
-| - Kensai | 0 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 5 |
-| - W. Slayer | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Defender | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Warmain° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Hospitaller° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| - Savage° | 0 | 5 | 5 | 5 | 5 | 0 | 0 | 5 | 0 | 0 | 5 |
-| - Marksman° | 0 | 5 | 5 | 1 | 2 | 0 | 3 | 2 | 5 | 0 | 1 |
-| Ranger | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
-| - Archer | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
-| - B. Master | 3 | 7 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
-| - Stalker | 3 | 5 | 5 | 5 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
-| Paladin | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - U. Hunter | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - Cavalier | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - Inquisitor | 1 | 5 | 5 | 2 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
-| - B. Guard | 4 | 5 | 5 | 5 | 2 | 1 | 0 | 2 | 5 | 0 | 4 |
+| Fighter |  | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Barbarian |  | 5 | 2 | 3 | 0 | 0 | 0 | 3 | 5 | 0 | 5 |
+| - Berserker |  | 5 | 5 | 1 | 0 | 0 | 1 | 2 | 5 | 0 | 1 |
+| - Kensai |  | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 5 | 0 | 5 |
+| - W. Slayer |  | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Defender |  | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Warmain° |  | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
+| - Savage° |  | 5 | 5 | 5 | 0 | 0 | 0 | 5 | 0 | 0 | 5 |
+| - Marksman° |  | 5 | 5 | 1 | 0 | 0 | 3 | 2 | 5 | 0 | 1 |
+| Ranger | 3 | 5 | 5 | 5 | 3 | 1 | 0 | 5 | 0 | 0 | 0 |
+| - Archer | 3 | 5 | 5 | 5 | 3 | 1 | 0 | 5 | 0 | 0 | 0 |
+| - B. Master | 3 | 7 | 5 | 3 | 5 | 1 | 0 | 5 | 0 | 0 | 0 |
+| - Stalker | 3 | 5 | 5 | 5 | 3 | 1 | 0 | 5 | 0 | 0 | 0 |
+| Paladin | 1 | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - U. Hunter | 1 | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - Cavalier | 1 | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - Inquisitor | 1 | 5 | 5 | 2 | 1 | 1 | 0 | 2 | 5 | 0 | 4 |
+| - B. Guard | 4 | 5 | 5 | 5 | 4 | 1 | 0 | 2 | 5 | 0 | 4 |
 
 
-| Rogues | Alch | End | Heal | Herb | Hunt | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
+| Rogues |  | End | Heal | Herb | Alch | Imp | Mech | A. Handle | Per | S. Craft | Ritual |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | Thief          | 3 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
 | - Assassin     | 5 | 2 | 1 | 5 | 0 | 4 | 5 | 0 | 5 | 5 | 0 |
