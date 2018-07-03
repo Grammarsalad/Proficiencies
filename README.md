@@ -193,7 +193,7 @@ Characters without the required skill level have a 50% chance of spilling some a
 CONTINUE
 
 **Brew Concoction**
-Spell casters, and (if special conditions are met) other characters, can use this skill to brew concoctions.  Concoctions are similar to potions in that they are magic liquids that can be used by anybody.  However, drinking them is not generally recommended as they often have explosive properties.  
+Spell casters, and (if special conditions are met) other characters, can use this skill to brew concoctions.  Concoctions are similar to potions in that they are magic liquids that can be used by anybody.  However, drinking them is not generally recommended as they often have explosive properties.  While 
 
 **Endurance** (Constitution)
 **Requirements**: None
@@ -254,6 +254,8 @@ Treating such afflictions is tricky, however, and the treatment is not always ef
 **Cure Bonus**
 Healers that can also cast cure spells (any spell with the word “cure” in its title, except Cure Disease) are more capable if they are also trained in healing.  Specifically, they cure an additional 2 points of damage for every rank they possess in in Heal. 
 
+### **Magical Implements** (Varies) 
+**Requirements**: Recharge Wand: Spellcaster or Recharge Wand HLA.  Craft Wand: Spellcaster or Craft Wand HLA
 
 
 ## **Known Issues**
