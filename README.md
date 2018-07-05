@@ -274,7 +274,7 @@ Spellcasting characters, and non-spellcasters with the Craft Wand High Level Abi
 
 | Wand | Tier | Required Spell(s) (Craft) | Material (Craft) | Material (Recharge) | XP (Craft) | XP (Recharge) | 
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Wand of Missiles | 1 | Magic Missile | * Something Cheapish * | * Something Cheapish * | 10 | 5 | 
+| Wand of Missiles | 1 | Magic Missile | * Something Cheapish * | * Something Cheapish * | 50 | 25 | 
 
 
 
