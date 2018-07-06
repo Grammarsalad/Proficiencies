@@ -3896,9 +3896,9 @@ INCLUDE ~%mod_folder%/lib/talky.tpa~
 
 
 //Now, to actually USE the many--often crafting--skills:
-/*
+
 INCLUDE ~%mod_folder%/lib/crafting.tpa~
-*/
+
 //CONTINUE FROM HERE (Old alchemy, herbalism, healing stuff below)
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

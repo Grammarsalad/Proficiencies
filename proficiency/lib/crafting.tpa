@@ -1,5 +1,5 @@
 //Need to create the summon spell, cre, script and d files
-COPY ~%mod_folder%/data/arcane_crafting/B_CRAFT.cre~ ~override~
+//COPY ~%mod_folder%/data/arcane_crafting/B_CRAFT.cre~ ~override~
 
 //Account for any missing items
 
@@ -18,40 +18,108 @@ ACTION_IF !FILE_EXISTS_IN_GAME ~WAND09.ITM~ BEGIN  //wand of polymorph
 	SAY DESC @116002
   COPY ~%mod_folder%/data/arcane_crafting/wand/SQUIRP.itm~ ~override~    //squ claw!! Grrr
   COPY ~%mod_folder%/data/arcane_crafting/wand/ISQUIRL.bam~ ~override~    //squ claw!! Grrr
+//Icon
+  COPY ~%mod_folder%/data/arcane_crafting/wand/IWAND09.bam~ ~override~
 END
 
 //WAND12.itm Wand of wonder (in bg2ee as WAND12.itm, but in IWDEE and BGEE is another wand of missles...)
 
 ACTION_IF !FILE_EXISTS_IN_GAME ~WAND12.ITM~ BEGIN  //Req NRD, of course...
-  COPY ~%mod_folder%/data/arcane_crafting/wand/WAND09.ITM~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/WAND12.ITM~ ~override~
         SAY NAME2 @116003
 	SAY DESC @116004
-
-//CONTINUE
-
 //ADD ANIMATIONS
-  ACTION_IF GAME_IS ~bgee~ THEN BEGIN   //  ACTION_IF GAME_IS ~bgee sod~ THEN BEGIN
+  COPY ~%mod_folder%/data/arcane_crafting/wand/SPFLSRIN.bam~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/SPFLESHS.bam~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/MAGRES.vvc~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/SPARMOUR.bam~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/ICSTRENI.vvc~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/SPSTRENI.bam~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/WONDER.vvc~ ~override~
+  COPY ~%mod_folder%/data/arcane_crafting/wand/SPWRDFLD.bam~ ~override~
+//Icon
+  COPY ~%mod_folder%/data/arcane_crafting/wand/IWAND12.bam~ ~override~
+
+  ACTION_IF GAME_IS ~bgee~ THEN BEGIN   //
       COPY_EXISTING ~WAND12.ITM~ ~override~
-        ALTER_ITEM_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 14667  parameter1 = 26019 //haste notification
-//      ALTER_ITEM_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 14042  parameter1 = 14090  //str notification   works in BGEE
-        ALTER_ITEM_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 39326  parameter1 = 25954 //Stoneskin notification  NOt best option, check gibberlings
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 14667  parameter1 = 26019 END //haste notification
+//      LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 14042  parameter1 = 14090 END //str notification   works in BGDEE
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 39326  parameter1 = 25954 END //Stoneskin notification  NOt best option, check gibberlings
+  END
+
+  ACTION_IF GAME_IS ~iwdee~ THEN BEGIN   //
+      COPY_EXISTING ~WAND12.ITM~ ~override~
+        LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 14667  parameter1 = 14023 END //haste notification
+//      LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 14042  parameter1 = 14090 END //str notification   works in IWDEE
+//      LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 39326  parameter1 = 25954 END //Stoneskin notification  Works in IWDEE
   END
 
 END
 
+
 //WAND13.itm  Wand of Cloudkill (in BGEE and BG2EE; not in IWDEE)
+ACTION_IF !FILE_EXISTS_IN_GAME ~WAND13.ITM~ BEGIN  //Req NRD, of course...
+  COPY ~%mod_folder%/data/arcane_crafting/wand/WAND13.ITM~ ~override~
+        SAY NAME2 @116003
+	SAY DESC @116004
+//Icon
+  COPY ~%mod_folder%/data/arcane_crafting/wand/IWAND13.bam~ ~override~
+
+END
 
 //WAND14.itm Web sack??? IN BG2EE , but not in other two?  Monster item???
+//Not going to include for now.  Doesn't seem like it's needed
 
-//WAND15.itm Wand of Apprenti Wand created for you by your apprentices in BG2EE...Rechargable, but should stay in that game only
+//WAND15.itm Wand of Apprenti Wand created for you by your apprentices in BG2EE...
+//Rechargable, but should stay in that game only. I'm going to include it in all games, but not make it creatable in any game (you get it from your apprentices, so...)
+
+ACTION_IF !FILE_EXISTS_IN_GAME ~WAND15.ITM~ BEGIN  //Req NRD, of course...
+  COPY ~%mod_folder%/data/arcane_crafting/wand/WAND15.ITM~ ~override~
+//No frills.  Only here to avoid duplicating script and d files
+END
 
 //WAND16.itm and WAND17.itm are 'potions of icedust' in BG2EE...
+//Not adding for now
 
 //Wand99.itm Wand of magic missile in BGEE and BG2EE, not IWDEE...Not sure how to handle yet. Does more damage than typical wand of mm and description is off...
+//not adding for now
 
 //WANDARM.itm Wand of Armory IWDEE only
+ACTION_IF !FILE_EXISTS_IN_GAME ~WANDARM.ITM~ BEGIN  //Req NRD, of course...
+  COPY ~%mod_folder%/data/arcane_crafting/wand/WANDARM.ITM~ ~override~
+        SAY NAME2 @116005
+	SAY DESC @116006
+
+//Icon
+  COPY ~%mod_folder%/data/arcane_crafting/wand/IWANDARM.bam~ ~override~
+//Tooltip by engine
+  ACTION_IF GAME_IS ~bgee~ THEN BEGIN   //
+   APPEND ~TOOLTIP.2da~ ~WANDARM%TAB%26366%TAB%26429%TAB%-1~
+  END
+  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN   //
+   APPEND ~TOOLTIP.2da~ ~WANDARM%TAB%12053%TAB%12129%TAB%-1~
+  END
+END
 
 //WANDCOR.itm Wand of Corrosion IWDEE only
+ACTION_IF !FILE_EXISTS_IN_GAME ~WANDCOR.ITM~ BEGIN  //Req NRD, of course...
+  COPY ~%mod_folder%/data/arcane_crafting/wand/WANDCOR.ITM~ ~override~
+        SAY NAME2 @116007
+	SAY DESC @116008
+
+
+//Icon
+  COPY ~%mod_folder%/data/arcane_crafting/wand/IWANDCOR.bam~ ~override~
+//CONTINUE
+
+//Tooltip by engine
+  ACTION_IF GAME_IS ~bgee~ THEN BEGIN   //
+   APPEND ~TOOLTIP.2da~ ~WANDARM%TAB%26366%TAB%26429%TAB%-1~
+  END
+  ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN   //
+   APPEND ~TOOLTIP.2da~ ~WANDARM%TAB%12053%TAB%12129%TAB%-1~
+  END
+END
 
 //WANDFAK.itm A second wand of lightning only in IWDEE
 
@@ -487,3 +555,4 @@ END
 					END
 				END
 			END 
+*/

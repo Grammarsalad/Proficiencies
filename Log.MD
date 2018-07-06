@@ -7,6 +7,8 @@ NOTE 2: Thinking about giving the Thief 5 max ranks in alchemy
 
 NOTE 3: SHOULD HEAL GIVE A BONUS TO INFLICT/CAUSE WOUND SPELLS?  I"M SERIOUSLY THINKING "YES"
 
+Note 4: Crazy idea: Wands have different effects based on user's intelligence (if wiz wand) or Wisdom (if cle wand)...Higher attributes = better effects...
+
 TO DO 1: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IWDEE DESCRIPTIONS
 
 TO DO 2: DO CLASS TEXT REVISIONS FOR BG2EE/EET AND IWDEE
@@ -59,9 +61,21 @@ TO DO 25: Alchemy mishap: Summon cre that removes item from equip slot
 
 Version 0.05.02
 
-2017-07-03
+2018-07-04
+
+- Added Wand of Armory
+
+- Fixed a number of install bugs
+
+- Started Wand of Corrosion
+
+2018-07-03
 
 - Started Rod of Wonder (need to add animations and account for IWDEE strrefs)
+
+- Finished Rod of Wonder
+
+- Added Wand of Cloudkill
 
 2018-07-02
 
