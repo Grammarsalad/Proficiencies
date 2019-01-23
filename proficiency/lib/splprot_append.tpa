@@ -1,6 +1,123 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                 ATTRIBUTES              //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+APPEND ~splprot.2da~ ~B_CON_GR%TAB%41%TAB%-1%TAB%3~  //con Greater than
+APPEND ~splprot.2da~ ~B_CON_EQ%TAB%41%TAB%-1%TAB%1~  //con equal to
+APPEND ~splprot.2da~ ~B_CON_LS%TAB%41%TAB%-1%TAB%2~  //con Less than
+APPEND ~splprot.2da~ ~B_WIS_GR%TAB%39%TAB%-1%TAB%3~  //Wisdom Greater than
+APPEND ~splprot.2da~ ~B_WIS_EQ%TAB%39%TAB%-1%TAB%1~  //Wisdom equal to
+APPEND ~splprot.2da~ ~B_WIS_LS%TAB%39%TAB%-1%TAB%2~  //Wisdom Less than
+APPEND ~splprot.2da~ ~B_INT_EQ%TAB%38%TAB%-1%TAB%1~  //Intelligence equal to
+APPEND ~splprot.2da~ ~B_INT_LS%TAB%38%TAB%-1%TAB%2~  //Int Less than
+APPEND ~splprot.2da~ ~B_INT_GR%TAB%38%TAB%-1%TAB%3~  //Int Greater than
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_EQ~ BEGIN  //int equal to
+         SET int_eq = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_LS~ BEGIN  //int equal to
+         SET int_ls = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_GR~ BEGIN  //int equal to
+         SET int_gr = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_EQ~ BEGIN  //con equal to
+         SET con_eq = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_LS~ BEGIN  //con less than
+         SET con_ls = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_GR~ BEGIN  //wisdom greater than
+         SET wis_gr = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_EQ~ BEGIN  //wisdom equal to
+         SET wis_eq = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_LS~ BEGIN  //wisdom less than
+         SET wis_ls = %row%
+      END
+   END
+BUT_ONLY
+
+COPY_EXISTING ~splprot.2da~ ~override~
+   COUNT_2DA_COLS cols // amount of columns
+   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
+   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
+      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_GR~ BEGIN  //con greater than
+         SET con_gr = %row%
+      END
+   END
+BUT_ONLY
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
 /////////////////////////////////////          WEAPON PROFICIENCIES           //////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -103,32 +220,10 @@ BUT_ONLY
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-APPEND ~splprot.2da~ ~B_CON_GR%TAB%41%TAB%-1%TAB%3~  //con Greater than
-APPEND ~splprot.2da~ ~B_CON_EQ%TAB%41%TAB%-1%TAB%1~  //con equal to
-APPEND ~splprot.2da~ ~B_CON_LS%TAB%41%TAB%-1%TAB%2~  //con Less than
 APPEND ~splprot.2da~ ~B_END_EQ%TAB%98%TAB%-1%TAB%1~  //spear/endurance equal to
+APPEND ~splprot.2da~ ~B_END_GR%TAB%98%TAB%-1%TAB%3~  //spear/endurance greater than
 
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_GR~ BEGIN  //con greater than
-         SET con_gr = %row%
-      END
-   END
-BUT_ONLY
 
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_EQ~ BEGIN  //con equal to
-         SET con_eq = %row%
-      END
-   END
-BUT_ONLY
 
 COPY_EXISTING ~splprot.2da~ ~override~
    COUNT_2DA_COLS cols // amount of columns
@@ -141,17 +236,17 @@ COPY_EXISTING ~splprot.2da~ ~override~
    END
 BUT_ONLY
 
-
 COPY_EXISTING ~splprot.2da~ ~override~
    COUNT_2DA_COLS cols // amount of columns
    READ_2DA_ENTRIES_NOW rows cols // read all file into memory
    FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
       READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_LS~ BEGIN  //con less than
-         SET con_ls = %row%
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_END_GR~ BEGIN  //con greater than
+         SET end_gr = %row%
       END
    END
 BUT_ONLY
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -162,37 +257,11 @@ BUT_ONLY
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //for heal use
-APPEND ~splprot.2da~ ~B_WIS_GR%TAB%39%TAB%-1%TAB%3~  //Wisdom Greater than
-APPEND ~splprot.2da~ ~B_WIS_EQ%TAB%39%TAB%-1%TAB%1~  //Wisdom equal to
-APPEND ~splprot.2da~ ~B_WIS_LS%TAB%39%TAB%-1%TAB%2~  //Wisdom Less than
 APPEND ~splprot.2da~ ~B_HEA_EQ%TAB%99%TAB%-1%TAB%1~  //Heal (halberd) equal to
-APPEND ~splprot.2da~ ~B_HRB_EQ%TAB%134%TAB%-1%TAB%1~  //Herb (flail) equal to
-APPEND ~splprot.2da~ ~B_HRB_LS%TAB%39%TAB%-1%TAB%2~  //Herb (flail) Less than
 APPEND ~splprot.2da~ ~B_BJK_EQ%TAB%134%TAB%-1%TAB%1~  //Blackjack equal to
 APPEND ~splprot.2da~ ~B_EXP_EQ%TAB%134%TAB%-1%TAB%1~  //Extraprof equal to
 //value found in parameter1 of 326 effect
 
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_GR~ BEGIN  //wisdom greater than
-         SET wis_gr = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_EQ~ BEGIN  //wisdom equal to
-         SET wis_eq = %row%
-      END
-   END
-BUT_ONLY
 
 COPY_EXISTING ~splprot.2da~ ~override~
    COUNT_2DA_COLS cols // amount of columns
@@ -205,17 +274,6 @@ COPY_EXISTING ~splprot.2da~ ~override~
    END
 BUT_ONLY
 
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_HRB_EQ~ BEGIN  //herbalism equal to
-         SET hrb_eq = %row%
-      END
-   END
-BUT_ONLY
 
 COPY_EXISTING ~splprot.2da~ ~override~
    COUNT_2DA_COLS cols // amount of columns
@@ -239,13 +297,27 @@ COPY_EXISTING ~splprot.2da~ ~override~
    END
 BUT_ONLY
 
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////                 HERBALISM               //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+APPEND ~splprot.2da~ ~B_HRB_EQ%TAB%134%TAB%-1%TAB%1~  //Herb (flail) equal to
+APPEND ~splprot.2da~ ~B_HRB_LS%TAB%39%TAB%-1%TAB%2~  //Herb (flail) Less than
+//value found in parameter1 of 326 effect
+
 COPY_EXISTING ~splprot.2da~ ~override~
    COUNT_2DA_COLS cols // amount of columns
    READ_2DA_ENTRIES_NOW rows cols // read all file into memory
    FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
       READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_LS~ BEGIN  //wisdom less than
-         SET wis_ls = %row%
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_HRB_EQ~ BEGIN  //herbalism equal to
+         SET hrb_eq = %row%
       END
    END
 BUT_ONLY
@@ -260,4 +332,3 @@ COPY_EXISTING ~splprot.2da~ ~override~
       END
    END
 BUT_ONLY
-

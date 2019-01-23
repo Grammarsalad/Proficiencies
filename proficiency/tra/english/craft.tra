@@ -2,6 +2,7 @@
 //General Craft 115003 to 116000
 //Craft Wand 116001 to 117000
 
+//DO NOT GO BEYOND @499999
 //General
 
 @115003 = ~Scribe Scrolls~

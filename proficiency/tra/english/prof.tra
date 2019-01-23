@@ -512,10 +512,16 @@ Proficiency (armor mastery) (5 slots):~
 
 
 //Heal Skill
-@800000 = ~Treat Injury~
-@800001 = ~The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max 30% at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 50% +5% per rank, plus your Wisdom Bonus (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The exception is that a character can always potentially be helped by any healer with more skill than a previous healer.
+@800000 = ~Healing Proficiency~
+@800001 = ~The healer can treat the injuries and afflictions of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank, + <PRO_HISHER> wisdom bonus (max 30% + wisdom bonus at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that <PRO_HESHE> cannot help <PRO_HISHER> ally.  The chance of success with a heal check is equal to 50% +5% per rank, plus <PRO_HISHER> Wisdom Bonus (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The exception is that a character can always potentially be helped by any healer with more skill than a previous healer.
 
-Effect: Heals 5% of target's max hit points, +5% per rank.
+Additionally, the healer collects various natural medicines in their travels that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 5 ranks in Heal, <PRO_HESHE> can effectively Treat Afflictions.  If <PRO_HESHE> is successful, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 5 ranks in Heal.  If <PROHESHE> has 6 ranks in Heal, <PRO_HESHE> has a chance to remove any disease from the target.  Finally, if <PRO_HESHE> possesses 7 ranks in Heal, <PRO_HESHE> has a chance to remove any paralysis or hold effect from the target.
+
+Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 10% +5% per rank in healing plus their wisdom bonus. Experts in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism if they have at least 5 ranks in herbalism. (max 95%)
+
+Treat Wounds
+
+Effect: Heals 5% of target's max hit points, +5% per rank, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
 
 Chance of Success: 50%, +5% per rank, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
 
@@ -524,7 +530,26 @@ Special: Accelerated Healing rate:
 2 ranks: 1 hit point per 8 turns
 3 ranks: 1 hit point per 4 turns
 4 ranks: 1 hit point per 2 turns
-5 ranks: 1 hit point per turn.~
+5+ ranks: 1 hit point per turn.
+
+Untrained: A character can use this skill untrained, though it isn't recommended as they have a chance to harm the target. Note that characters treated by untrained allies do not see an increase in their healing rate.
+
+Effects: Heals 5% of target's max hit points, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Chance of Success: 50%, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Mishap: 1d8 points of non-lethal damage.
+
+Chance of Mishap: 30%, - the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Treat Affliction
+
+Chance of Success: 10%, +5% per rank in Heal, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus), + 5% per rank in Herbalism (if the healer has at least 5 ranks in herbalism).
+
+Effect:
+5 Ranks: Treat Intoxication, Poison, Blindness and Deafness.
+6 Ranks: Treat Diseases.
+7 Ranks: Treat Paralysis and Hold.~
 
 //2 additional hit points healed!
 @800002 = ~2 additional hit points healed!~
@@ -536,6 +561,10 @@ Special: Accelerated Healing rate:
 @800005 = ~8 additional hit points healed!~
 
 @800006 = ~10 additional hit points healed!~
+
+@800007 = ~12 additional hit points healed!~
+
+@800008 = ~14 additional hit points healed!~
 
 //Treat Affliction check successful!
 @800015 = ~Treat Affliction check successful!~
@@ -553,16 +582,30 @@ Special: Accelerated Healing rate:
 @800018 = ~Treat Injury check failed!~
 
 @800019 = ~Treat Affliction~
-@800020 = ~In their travels, the healer collects various natural medicines that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 3 ranks in Heal, <PRO_HESHE> gains the ability to Treat Afflictions.  <PRO_HESHE> can gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.
+@800020 = ~In their travels, the healer collects various natural medicines that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 3 ranks in Heal, <PRO_HESHE> can effectively Treat Afflictions.  <PRO_HESHE> can gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.
 To use Treat Affliction, the heal must make a healing check (see success rate below).  If <PRO_HESHE> succeeds, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 3 ranks in Heal.  If <PROHESHE> has 4 ranks in Heal, <PRO_HESHE> can also remove any disease from the target.  Finally, if <PRO_HESHE> possesses 5 ranks in Heal, <PRO_HESHE> removes any paralysis or hold effect from the target.
 
-Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 20% +5% per rank in healing. Characters trained in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism.
+Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 20% +5% per rank in healing. Experts in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism if they have at least 3 ranks in herbalism.
 Chance of Success: 20%, +5% per rank in Heal, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus), + 5% per rank in Herbalism (if the healer has at least 3 ranks in herbalism).
 
 Effect:
 3 Ranks: Treat Intoxication, Poison, Blindness and Deafness.
 4 Ranks: Treat Diseases.
 5 Ranks: Treat Paralysis and Hold.~
+
+//Herbalism Skill
+@800021 = ~Prepare Concoction~
+@800022 = ~Herbalists gather numerous natural medicines in their travels that can be combined in numerous ways when the occasion calls to heal the sick, benefit recipients, or even harm enemies. These items degrade quickly, and last a maximum of 1 hour per rank. A herbalist can prepare one concoction per day per rank <PRO_HESHE> has in Herbalism, plus <PRO_HISHER> ranks in intelligence.
+
+Concoctions cannot be prepared in combat. However, once prepared, a concoction can be employed in combat.
+
+The herbalist can create the following concoctions based on proficiency:
+
+~
+@800023 = ~Relaxant~
+@800024 = ~This simple clay removes fatigue sooths the muscles of any creature it is applied to, effectively halving the target's fatigue level.
+
+Also, it heals 2 hit points per rank the herbalist has in heal.~
 
 /*
 
@@ -737,24 +780,28 @@ Upon using this ability, the character takes a moment to catch <PRO_HISHER> brea
 
 At 6 ranks, the character can try to purge their body of deleterious poisons.  <PRO_HISHER> chance of success is 10% per rank <PRO_HESHE> has in Endurance plus <PRO_HISHER> Constitution modifier.
 
-At 7 ranks, the character can try to purge their body of disease when they use Second Wind. <PRO_HISHER> chance of success is 5% per rank <PRO_HESHE> has in Endurance plus <PRO_HISHER> Constitution modifier.
+At 7 ranks, the character can try to purge their body of disease when they use Second Wind. <PRO_HISHER> chance of success is 35% plus <PRO_HISHER> Constitution modifier.
 
-This ability cannot be used in combat unless a character has attained 7 ranks in Endurance.
+This ability cannot be used in combat.
 
 Effect: Heals 25% of target's max hit points, +10% per rank, plus Constitution Modifier.
 
 Chance of Success: 
 Poison (6 ranks) 10% per rank + Constitution Modifier.
-Disease (7 ranks) 5% per rank + Constitution Modifier.
+Disease (7 ranks) 35% + Constitution Modifier.
 
-This ability can be used one time per day.  It can be used an additional time if the character has 3 ranks in Endurance and <PRO_HESHE> can use this ability a third time if <PRO_HESHE> has 6 ranks in Endurance.~
+This ability can be used one time per 24 hour period, if the character has 1 or 2 ranks in endurance.
 
-@820002 = ~Any Poisons Purged!~
+If <PRO_HESHE> has 3-5 ranks in endurance, Second Wind can be used once per 16 hour period.
+
+If <PRO_HESHE> has 6 or 7 ranks in endurance, Second Wind can be used once per 8 hour period.~
+
+@820002 = ~Poisons Purged!~
 @820003 = ~Poisons not Purged!~
 
-@820004 = ~Any Diseases Purged!~
+@820004 = ~Diseases Purged!~
 @820005 = ~Diseases not Purged!~
-
+@820006 = ~Second Wind can only be used once per day~
 /*
 @810060 = ~Sprint
 Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.~

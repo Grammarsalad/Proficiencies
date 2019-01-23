@@ -24,13 +24,33 @@ COPY ~%mod_folder%/data/skills/spl/endure/B_S201.spl~ ~override~   // Endurance 
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %con_eq% STR_VAR match_resource = ~B_S102D~ END  //con equal to 18 prof20=3
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %con_gr% STR_VAR match_resource = ~B_S102E~ END  //con greater than 18  prof20=4
 //Ranks
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2011~ END  //1 rank heal, cast B_S2011.spl
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2012~ END  //2 rank heal, cast B_S2012.spl
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2013~ END  //3 rank heal, cast B_S2013.spl
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2014~ END  //4 rank heal, cast B_S2014.spl
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2015~ END  //5 rank heal, cast B_S2015.spl
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2016~ END  //6 rank heal, cast B_S2016.spl
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2017~ END  //7 rank heal, cast B_S2017.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2011~ END  //1 rank end, cast B_S2011.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2012~ END  //2 rank end, cast B_S2012.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2013~ END  //3 rank end, cast B_S2013.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2014~ END  //4 rank end, cast B_S2014.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2015~ END  //5 rank end, cast B_S2015.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2016~ END  //6 rank end, cast B_S2016.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %end_eq% STR_VAR match_resource = ~B_S2017~ END  //7 rank end, cast B_S2017.spl
+//prot  1-2 ranks (1x/24 hrs)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %end_eq% STR_VAR match_resource = ~B_S203A~ END  //1 rank end, 1/24 hrs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %end_eq% STR_VAR match_resource = ~B_S203A~ END  //2 rank end, 1/24 hrs
+//3-5 ranks 1x/16 hrs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %end_eq% STR_VAR match_resource = ~B_S203B~ END  //3 rank end, 1/16 hrs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %end_eq% STR_VAR match_resource = ~B_S203B~ END  //4 rank end, 1/16 hrs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %end_eq% STR_VAR match_resource = ~B_S203B~ END  //5 rank end, 1/16 hrs
+//6-7 ranks 1x/8 hrs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %end_eq% STR_VAR match_resource = ~B_S203C~ END  //4 rank end, 1/16 hrs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %end_eq% STR_VAR match_resource = ~B_S203C~ END  //5 rank end, 1/16 hrs
+
+//actual prot spells (prot 24 hrs)
+COPY ~%mod_folder%/data/skills/spl/endure/B_S203A.spl~ ~override~   // Endurance Second Wind
+ LPF ALTER_EFFECT INT_VAR match_opcode = 206 parameter1 = RESOLVE_STR_REF (@820006) STR_VAR  END  //
+//prot 16 hrs
+COPY ~%mod_folder%/data/skills/spl/endure/B_S203B.spl~ ~override~   // Endurance Second Wind
+ LPF ALTER_EFFECT INT_VAR match_opcode = 206 parameter1 = RESOLVE_STR_REF (@820006) STR_VAR  END  //
+//prot 8 hrs
+COPY ~%mod_folder%/data/skills/spl/endure/B_S203C.spl~ ~override~   // Endurance Second Wind
+ LPF ALTER_EFFECT INT_VAR match_opcode = 206 parameter1 = RESOLVE_STR_REF (@820006) STR_VAR  END  //
 
 //The Spells: Rank
 COPY ~%mod_folder%/data/skills/spl/heal/B_S1021.spl~ ~override/B_S2011.spl~   //1 rank
@@ -460,6 +480,8 @@ COPY_EXISTING ~B_WND31.spl~ ~override/B_WND35.spl~     //7 ranks, 4 con
       INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@820005)     //Diseases not Purged!
       probability1  = 100 probability2  = 55      // 55% success
   END
+//ability that applies second wind
+COPY ~%mod_folder%/data/skills/spl/endure/B_END00.spl~ ~override~   // (1 rank) +3HP
 
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
@@ -468,47 +490,37 @@ COPY_EXISTING ~B_WND31.spl~ ~override/B_WND35.spl~     //7 ranks, 4 con
 //////////////////////////////////////////////////////////////////
 //
 //1 rank
-COPY ~%mod_folder%/data/skills/spl/endure/B_S202A.spl~ ~override~   // (1 rank) +1HP
+COPY ~%mod_folder%/data/skills/spl/endure/B_END01.spl~ ~override~   // (1 rank) +3HP
 
 //2 rank
-COPY_EXISTING ~B_S202A.spl~ ~override/B_S202B.spl~     //(2 rank) +2HP
- LPF ALTER_EFFECT     //
-      INT_VAR match_opcode = 18 parameter1 = 2
-  END
+COPY_EXISTING ~B_END01.spl~ ~override/B_END02.spl~     //(2 rank) +3HP
+   LPF ALTER_EFFECT  INT_VAR match_opcode = 206 STR_VAR resource = ~B_END02~  END  //after applied, prot vs self so doesn't get applied multiple times
 
 //3 rank
-COPY_EXISTING ~B_S202A.spl~ ~override/B_S202C.spl~     //(3 rank) +3HP
- LPF ALTER_EFFECT     //
-      INT_VAR match_opcode = 18 parameter1 = 3
- END
+COPY_EXISTING ~B_END01.spl~ ~override/B_END03.spl~     //(3 rank) +3HP
+   LPF ALTER_EFFECT  INT_VAR match_opcode = 206 STR_VAR resource = ~B_END03~  END  //after applied, prot vs self so doesn't get applied multiple times
 
 //4 rank
-COPY_EXISTING ~B_S202A.spl~ ~override/B_S202D.spl~     //(4 rank) +4HP
- LPF ALTER_EFFECT     //
-      INT_VAR match_opcode = 18 parameter1 = 4
- END
+COPY_EXISTING ~B_END01.spl~ ~override/B_END04.spl~     //(4 rank) +3HP
+   LPF ALTER_EFFECT  INT_VAR match_opcode = 206 STR_VAR resource = ~B_END04~  END  //after applied, prot vs self so doesn't get applied multiple times
 
 //5 rank
-COPY_EXISTING ~B_S202A.spl~ ~override/B_S202E.spl~     //(5 rank) +5HP
- LPF ALTER_EFFECT     //
-      INT_VAR match_opcode = 18 parameter1 = 5
- END
+COPY_EXISTING ~B_END01.spl~ ~override/B_END05.spl~     //(5 rank) +3HP
+   LPF ALTER_EFFECT  INT_VAR match_opcode = 206 STR_VAR resource = ~B_END05~  END  //after applied, prot vs self so doesn't get applied multiple times
 
 //6 rank
-COPY_EXISTING ~B_S202A.spl~ ~override/B_S202F.spl~     //(6 rank) +6HP
- LPF ALTER_EFFECT     //
-      INT_VAR match_opcode = 18 parameter1 = 6
- END
+COPY_EXISTING ~B_END01.spl~ ~override/B_END06.spl~     //(6 rank) +3HP
+   LPF ALTER_EFFECT  INT_VAR match_opcode = 206 STR_VAR resource = ~B_END06~  END  //after applied, prot vs self so doesn't get applied multiple times
 
 //7 rank
-COPY_EXISTING ~B_S202A.spl~ ~override/B_S202G.spl~     //(7 rank) +7HP
- LPF ALTER_EFFECT     //
-      INT_VAR match_opcode = 18 parameter1 = 7
- END
+COPY_EXISTING ~B_END01.spl~ ~override/B_END07.spl~     //(7 rank) +3HP
+   LPF ALTER_EFFECT  INT_VAR match_opcode = 206 STR_VAR resource = ~B_END07~ END   //after applied, prot vs self so doesn't get applied multiple times
+
+
 
 /*
 
-	
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////

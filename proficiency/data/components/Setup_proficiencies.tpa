@@ -10,7 +10,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Rename proficiencies, and provide descriptions...
+/////////////////////////////////////////////////
+////// Rename proficiencies, descriptions  //////
+/////////////////////////////////////////////////
+
 /////////////////////////////////////////////////
 //BGEE
 /////////////////////////////////////////////////
@@ -212,15 +215,7 @@ END//End IWDEE Only
 //////      Update Class descriptions      //////
 /////////////////////////////////////////////////
 
-//Mike and Adarnis are awesome
-/*
-ACTION_GET_STRREF 9562 bard_description
-
-OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
-  REPLACE_TEXTUALLY ~The bard is also a rogue~ ~The bard is also a banana~
-END
-STRING_SET_EVALUATE 9562 ~%bard_description%~
-*/
+//Mike and Adarnis are awesome  --see below the 'line'
 
 /////////////////////////////////////////////////
 //BGEE
@@ -293,7 +288,6 @@ END
 
 STRING_SET_EVALUATE 24286 ~%fighter_description%~
 
-
 /////////////////////////////////////////////////
 //Dwarven defender
 /////////////////////////////////////////////////
@@ -310,6 +304,20 @@ OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
 END
 
 STRING_SET_EVALUATE 31975 ~%fighter_description%~
+
+/////////////////////////////////////////////////
+//BARBARIAN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721100//old text
+ OUTER_SPRINT new1 @721101//new text
+
+ACTION_GET_STRREF 24235 barb_description
+
+OUTER_PATCH_SAVE ranger_description ~%barb_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24235 ~%barb_description%~
 
 /////////////////////////////////////////////////
 //Ranger
@@ -463,6 +471,25 @@ END
 
 STRING_SET_EVALUATE 24230 ~%cleric_description%~
 
+/////////////////////////////////////////////////
+//Cleric of Lathander
+/////////////////////////////////////////////////
+//--TO DO
+
+/////////////////////////////////////////////////
+//Cleric of Helm
+/////////////////////////////////////////////////
+//--TO DO
+
+/////////////////////////////////////////////////
+//Cleric of Talos
+/////////////////////////////////////////////////
+//--TO DO
+
+/////////////////////////////////////////////////
+//Cleric of Tyr
+/////////////////////////////////////////////////
+//--TO DO
 
 /////////////////////////////////////////////////
 //Druid
@@ -552,7 +579,7 @@ END
 
 STRING_SET_EVALUATE 9563 ~%mage_description%~
 
-//No changes for specialists
+//No changes needed for specialists
 
 /////////////////////////////////////////////////
 //Thief
@@ -760,48 +787,84 @@ STRING_SET_EVALUATE 31981 ~%monk_description%~
 
 //Sun Soul not needed
 
-/////////////////////////////////////////////////
-//BARBARIAN
-/////////////////////////////////////////////////
- OUTER_SPRINT old1 @721100//old text
- OUTER_SPRINT new1 @721101//new text
-
-ACTION_GET_STRREF 24235 barb_description
-
-OUTER_PATCH_SAVE ranger_description ~%barb_description%~ BEGIN
-  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
-END
-
-STRING_SET_EVALUATE 24235 ~%barb_description%~
 
 
 END  //END BGEE class descriptions
 
 /////////////////////////////////////////////////
+//BG2EE/EET
+/////////////////////////////////////////////////
+//BG2EE CLASS DESCRIPTIONS --TO DO
+//
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN //BG2EE ONLY STRINGS
+
+END  //END BG2EE class descriptions
+
+/////////////////////////////////////////////////
+//IWDEE
+/////////////////////////////////////////////////
+//IWDEE CLASS DESCRIPTIONS --TO DO
+ACTION_IF GAME_IS ~iwdee~ BEGIN //IWDEE ONLY STRINGS
+
+END  //END IWDEE class descriptions
+
+/////////////////////////////////////////////////
+//CUSTOM KITS
+/////////////////////////////////////////////////
+//CUSTOM KIT DESCRIPTIONS --TO DO
+
+/////////////////////////////////////////////////
 //////         Update profsmax.2da         //////
 /////////////////////////////////////////////////
 COPY_EXISTING ~profsmax.2da~ ~override~
-  SET_2DA_ENTRY_LATER ~profmax~ 3 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 4 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 5 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 6 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 7 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 8 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 9 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 10 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 11 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 12 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 13 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 14 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 15 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 16 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 17 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 18 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 19 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 20 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 21 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 22 2  7   //
-  SET_2DA_ENTRY_LATER ~profmax~ 23 2  7   //
+//extend rows
+  SET_2DA_ENTRY_LATER ~profmax~ 2 4  ~9%TAB%12%TAB%15~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 2 0  ~%TAB%FIRST_LEVEL~   //
+//second row
+  SET_2DA_ENTRY_LATER ~profmax~ 3 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 4 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 5 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 6 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 7 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 8 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 9 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 10 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 11 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 12 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 13 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 14 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 15 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 16 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 17 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 18 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 19 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 20 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 21 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 22 2  2   //
+  SET_2DA_ENTRY_LATER ~profmax~ 23 2  2   //
+//extended rows
+  SET_2DA_ENTRY_LATER ~profmax~ 3 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 4 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 5 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 6 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 7 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 8 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 9 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 10 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 11 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 12 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 13 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 14 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 15 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 16 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 17 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 18 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 19 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 20 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 21 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 22 5  ~5%TAB%6%TAB%7~   //
+  SET_2DA_ENTRY_LATER ~profmax~ 23 5  ~5%TAB%6%TAB%7~  //
+//set
   SET_2DA_ENTRIES_NOW ~profmax~ 1
 BUT_ONLY
 
@@ -1017,6 +1080,32 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 5 //DART            -->Persuasion
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 5 //SLING           -->Ritual
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
+		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 34 (col + 1) 3 //2WEAPON
+		END
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~GRIZZLY_BEAR~) BEGIN    //grizzley
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 11 (col + 1) 0 //BASTARDSWORD    -->simple
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 12 (col + 1) 0 //LONGSWORD       -->sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 13 (col + 1) 5 //SHORTSWORD      -->Martial Arts
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 14 (col + 1) 0 //AXE             -->Axe
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 15 (col + 1) 0 //TWOHANDEDSWORD  -->Great Sword
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 16 (col + 1) 0 //KATANA          -->Polearm
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 17 (col + 1) 0 //SCIMITAR        -->Blunt
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 18 (col + 1) 0 //DAGGER          -->Ranged
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 19 (col + 1) 0 //WARHAMMER       -->Armor
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 20 (col + 1) 0 //CLUB            -->Ranged Fighting Style
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 21 (col + 1) 5 //SPEAR           -->Endurance
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 22 (col + 1) 0 //HALBERD         -->Heal
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 23 (col + 1) 0 //FLAIL           -->Herbalism
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 24 (col + 1) 0 //MACE            -->Alchemy
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 25 (col + 1) 0 //QUARTERSTAFF    -->Implements
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 26 (col + 1) 0 //CROSSBOW        -->Mechanics
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 27 (col + 1) 0 //LONGBOW         -->Animal Handling
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 28 (col + 1) 0 //SHORTBOW        -->Read Magic
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 29 (col + 1) 0 //DART            -->Persuasion
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 30 (col + 1) 1 //SLING           -->Ritual
 		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 31 (col + 1) 2 //2HANDED
 		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 32 (col + 1) 2 //SWORDANDSHIELD
 		//	SET_2DA_ENTRY_LATER ~s2el_mng~ 33 (col + 1) 2 //SINGLEWEAPON
@@ -2508,7 +2597,7 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 	SET_2DA_ENTRIES_NOW ~s2el_mng~ 1
 BUT_ONLY
 
-
+//should this go BEFORE the above?  Is the above REALLY needed????
 //PROFICIENCIES FOR MOD CLERICS_____________________________________________________
 //
 	OUTER_SET count = 0
@@ -3237,6 +3326,9 @@ BUT_ONLY
 	BUT_ONLY
 
 
+/////////////////////////////////////////////////
+//////              Usability              //////
+/////////////////////////////////////////////////
 
 //TO DO: Add Usability to All classes (based on proficiencies...)
 //This is a start.  It gives f/m usability to everybody.  May not need to alter usability, thinking about it...
@@ -3267,9 +3359,10 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 */
 
-//TO DO: GIve bonuses/penalties w/ weapons (and armor) based on proficiency (e.g. bleeding, etc.)
+/////////////////////////////////////////////////
+//////      Change prof by itemtype        //////
+/////////////////////////////////////////////////
 
-//Change prof by itemtype (etc.)
 COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~ //All items
  PATCH_IF (~%SOURCE_SIZE%~ > ~0x71~) BEGIN
  READ_SHORT 0x1c ~itemtype~                    //check for itemtype
@@ -3463,7 +3556,7 @@ PATCH_IF  (~itemtype~ = 15) OR                                  //bow item
 END
 //Armors(97)   (should Add proficiency to description, And change using unique types...)
 
-//What about helmets?  What about robes?
+//What about helmets?  What about robes?  Shields?
 
  PATCH_IF GAME_IS ~bgee~ BEGIN  //BGEE SPecific armor text
 //'light' armors...bgee
@@ -3554,7 +3647,7 @@ END    //end magic leathers only
            (~res_un~ = 6675) OR     // full plate
            (~res_un~ = 6642) BEGIN     // full plate
                WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate' (0x41) (now 'heavy')
  SPRINT old @700900//old text (just 'requires')
  SPRINT new @700903//new text (added heavy prof)
   READ_STRREF 0x54 ~desc_id~
@@ -3599,250 +3692,24 @@ END    //end magic leathers only
 //Scale 69544, (heavy?)
 //red dragon scale 6141 (heavy?)
 
-//CONTINUE HERE
+//See Below 'line'  second to bottom
 
-/* change to detect bg2ee strings
-//'light' armors...bgee
-  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
-  PATCH_IF (~res_un~ = 29066) OR      // leather
-           (~res_un~ = 30189) OR      // leather
-           (~res_un~ = 2891) OR      // leather
-           (~res_un~ = 2890) OR      // leather
-           (~res_un~ = 6666) OR      //Studded leather
-           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700901//new text (added light prof)
-  READ_STRREF 0x54 ~desc_id~
-	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x54 ~%new_desc_id%~
-  END
-END    //end magic leathers only
-//non-magic leathers (and unidentified of magic)
-  PATCH_IF (~res_un~ = 29066) OR      // leather
-           (~res_un~ = 30189) OR      // leather
-           (~res_un~ = 2891) OR      // leather
-           (~res_un~ = 2890) OR      // leather
-           (~res_un~ = 6666) OR      //Studded leather
-           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700901//new text (added light prof)
-  READ_STRREF 0x50 ~desc~
-	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x50 ~%new_desc%~
-  END
-
-//'medium' armors...bgee
-  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
-  PATCH_IF (~res_un~ = 22714) OR      // Hide
-           (~res_un~ = 6672) OR      // Chain
-           (~res_un~ = 25550) OR      // Chain
-           (~res_un~ = 25551) OR      // Elven Chain
-           (~res_un~ = 6677) OR      // Splint
-           (~res_un~ = 6678) OR      // Splint
-           (~res_un~ = 214) BEGIN     // Chain
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700902//new text (added med prof)
-  READ_STRREF 0x54 ~desc_id~
-	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x54 ~%new_desc_id%~
-  END
-  END //end magic only
-  PATCH_IF (~res_un~ = 22714) OR      // Hide
-           (~res_un~ = 6672) OR      // Chain
-           (~res_un~ = 25550) OR      // Chain
-           (~res_un~ = 25551) OR      // Elven Chain
-           (~res_un~ = 6677) OR      // Splint
-           (~res_un~ = 6678) OR      // Splint
-           (~res_un~ = 214) BEGIN     // Chain
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700902//new text (added med prof)
-  READ_STRREF 0x50 ~desc~
-	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x50 ~%new_desc%~
-  END  //end medium
-
-//'heavy' armors...bgee
-  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
-  PATCH_IF (~res_un~ = 267) OR      // plate
-           (~res_un~ = 6669) OR     // plate
-           (~res_un~ = 29069) OR     // plate
-           (~res_un~ = 6686) OR     //Ankheg plate
-           (~res_un~ = 6687) OR     //Ankheg plate
-           (~res_un~ = 6675) OR     // full plate
-           (~res_un~ = 6642) BEGIN     // full plate
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700903//new text (added heavy prof)
-  READ_STRREF 0x54 ~desc_id~
-	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x54 ~%new_desc_id%~
-  END
-  END//End magic only 
-
-  PATCH_IF (~res_un~ = 267) OR      // plate
-           (~res_un~ = 6669) OR     // plate
-           (~res_un~ = 29069) OR     // plate
-           (~res_un~ = 6686) OR     //Ankheg plate
-           (~res_un~ = 6687) OR     //Ankheg plate
-           (~res_un~ = 6675) OR     // full plate
-           (~res_un~ = 6642) BEGIN     // full plate
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700903//new text (added heavy prof)
-  READ_STRREF 0x50 ~desc~
-	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x50 ~%new_desc%~
-  END  //end heavy
-*/
  END//end bg2ee/eet specific armor text
  
 //iwdee armor text
  PATCH_IF GAME_IS ~iwdee~ BEGIN  //iwdee SPecific armor text
 
-//CONTINUE HERE
+//Seel below 'line' very bottom
 
- /* change to detect iwdee strings
-//'light' armors...bgee
-  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
-  PATCH_IF (~res_un~ = 29066) OR      // leather
-           (~res_un~ = 30189) OR      // leather
-           (~res_un~ = 2891) OR      // leather
-           (~res_un~ = 2890) OR      // leather
-           (~res_un~ = 6666) OR      //Studded leather
-           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700901//new text (added light prof)
-  READ_STRREF 0x54 ~desc_id~
-	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x54 ~%new_desc_id%~
-  END
-END    //end magic leathers only
-//non-magic leathers (and unidentified of magic)
-  PATCH_IF (~res_un~ = 29066) OR      // leather
-           (~res_un~ = 30189) OR      // leather
-           (~res_un~ = 2891) OR      // leather
-           (~res_un~ = 2890) OR      // leather
-           (~res_un~ = 6666) OR      //Studded leather
-           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700901//new text (added light prof)
-  READ_STRREF 0x50 ~desc~
-	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x50 ~%new_desc%~
-  END
-
-//'medium' armors...bgee
-  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
-  PATCH_IF (~res_un~ = 22714) OR      // Hide
-           (~res_un~ = 6672) OR      // Chain
-           (~res_un~ = 25550) OR      // Chain
-           (~res_un~ = 25551) OR      // Elven Chain
-           (~res_un~ = 6677) OR      // Splint
-           (~res_un~ = 6678) OR      // Splint
-           (~res_un~ = 214) BEGIN     // Chain
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700902//new text (added med prof)
-  READ_STRREF 0x54 ~desc_id~
-	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x54 ~%new_desc_id%~
-  END
-  END //end magic only
-  PATCH_IF (~res_un~ = 22714) OR      // Hide
-           (~res_un~ = 6672) OR      // Chain
-           (~res_un~ = 25550) OR      // Chain
-           (~res_un~ = 25551) OR      // Elven Chain
-           (~res_un~ = 6677) OR      // Splint
-           (~res_un~ = 6678) OR      // Splint
-           (~res_un~ = 214) BEGIN     // Chain
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700902//new text (added med prof)
-  READ_STRREF 0x50 ~desc~
-	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x50 ~%new_desc%~
-  END  //end medium
-
-//'heavy' armors...bgee
-  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
-  PATCH_IF (~res_un~ = 267) OR      // plate
-           (~res_un~ = 6669) OR     // plate
-           (~res_un~ = 29069) OR     // plate
-           (~res_un~ = 6686) OR     //Ankheg plate
-           (~res_un~ = 6687) OR     //Ankheg plate
-           (~res_un~ = 6675) OR     // full plate
-           (~res_un~ = 6642) BEGIN     // full plate
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700903//new text (added heavy prof)
-  READ_STRREF 0x54 ~desc_id~
-	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x54 ~%new_desc_id%~
-  END
-  END//End magic only 
-
-  PATCH_IF (~res_un~ = 267) OR      // plate
-           (~res_un~ = 6669) OR     // plate
-           (~res_un~ = 29069) OR     // plate
-           (~res_un~ = 6686) OR     //Ankheg plate
-           (~res_un~ = 6687) OR     //Ankheg plate
-           (~res_un~ = 6675) OR     // full plate
-           (~res_un~ = 6642) BEGIN     // full plate
-               WRITE_BYTE  0x31 97                           //Change prof to warhammer
-               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
- SPRINT old @700900//old text (just 'requires')
- SPRINT new @700903//new text (added heavy prof)
-  READ_STRREF 0x50 ~desc~
-	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
-	REPLACE_TEXTUALLY ~%old%~ ~%new%~
-	END
-  SAY_EVALUATED 0x50 ~%new_desc%~
-  END  //end heavy
-*/
 
  END//end iwdee specific armor text
 
 END //END all
 BUT_ONLY//But only if it changes
+
+/////////////////////////////////////////////////
+//////    Make Proficiencies Meaningful    //////
+/////////////////////////////////////////////////
 
 //WEAPONS (see if it is possible to make penalties etc. apply faster, and be removed faster...)
 
@@ -3852,7 +3719,7 @@ INCLUDE ~%mod_folder%/lib/weap_prof.tpa~
 INCLUDE ~%mod_folder%/lib/armor_prof.tpa~
 
 //MARTIAL ARTS
-//Will break, so.
+//Will break, so, for now...
 /*
 INCLUDE ~%mod_folder%/lib/martial_arts.tpa~
 
@@ -3865,19 +3732,23 @@ INCLUDE ~%mod_folder%/lib/alchemy.tpa~
 */
 
 //Heal
-
+//Done
 INCLUDE ~%mod_folder%/lib/heal.tpa~
+//Heal skill (for treat wounds and afflictions): B_S102.spl
+//Cure Boni: takes care of itself
 
 //Endurance
-
+//Done
 INCLUDE ~%mod_folder%/lib/endure.tpa~
+//Second Wind innate: B_S201.spl
+//HP Boni: added to B_PAS00 by rank
 
 
 //Herbalism
 //NOT READY
-/*
-INCLUDE ~%mod_folder%/lib/herb.tpa~ 
 
+INCLUDE ~%mod_folder%/lib/herb.tpa~ 
+/*
 
 //Hunting
 
@@ -3896,9 +3767,43 @@ INCLUDE ~%mod_folder%/lib/talky.tpa~
 
 
 //Now, to actually USE the many--often crafting--skills:
+//apply passive proficiency bonuses (start with B_END00.spl and B_END01.spl in the BD_BG2EE override folder) 
 
+//apply main spell (i.e. 'AP_B_PAS00') to all clabs
+
+//create main spell, that applies spells based on prof, and skill manangement ability
+COPY ~%mod_folder%/data/skills/B_PAS00.spl~ ~override~   // 
+//endurance
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %end_gr% STR_VAR match_resource = ~B_END01~ END  //rank >0, apply B_END01.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %end_gr% STR_VAR match_resource = ~B_END02~ END  //rank >1, apply B_END02.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %end_gr% STR_VAR match_resource = ~B_END03~ END  //rank >2, apply B_END03.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %end_gr% STR_VAR match_resource = ~B_END04~ END  //rank >3, apply B_END04.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %end_gr% STR_VAR match_resource = ~B_END05~ END  //rank >4, apply B_END05.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %end_gr% STR_VAR match_resource = ~B_END06~ END  //rank >5, apply B_END06.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %end_gr% STR_VAR match_resource = ~B_END07~ END  //rank >6, apply B_END07.spl
+//endurance--second wind ability
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %end_gr% STR_VAR match_resource = ~B_END00~ END  //rank >0, apply B_END00.spl, which adds the second wind ability
+//Heal
+//heal--treat wounds ability not needed unless it gets added for 1+ ranks 
+// LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_HEA00~ END  //rank >0, apply B_END00.spl, which adds the second wind ability
+
+//survival
+
+//
+
+//create manage skill ability
+
+//crafting (ultimately from manage skill ability)
 INCLUDE ~%mod_folder%/lib/crafting.tpa~
 
+
+//
+/*
+//EVERYTHING BELOW THIS LINE IS FOR REFERENCE ONLY
+//--------------------------------------------------//
+/////////////////////////////////////////////////
+//////      Update Class descriptions      //////
+/////////////////////////////////////////////////
 //CONTINUE FROM HERE (Old alchemy, herbalism, healing stuff below)
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -6621,10 +6526,16 @@ COPY_EXISTING ~b_s113a.itm~ ~override/b_s113f.itm~
 
 
 */
-//
+//Mike and Adarnis are awesome
 /*
-//EVERYTHING BELOW THIS LINE IS FOR REFERENCE ONLY
-//--------------------------------------------------//
+ACTION_GET_STRREF 9562 bard_description
+
+OUTER_PATCH_SAVE bard_description ~%bard_description%~ BEGIN
+  REPLACE_TEXTUALLY ~The bard is also a rogue~ ~The bard is also a banana~
+END
+STRING_SET_EVALUATE 9562 ~%bard_description%~
+*/
+
 
 //Experament using Rod 0xD or 13 food items type for priest wands
 //Step 1: Give usabilty to classes   (Give it to all classes)
@@ -6749,4 +6660,235 @@ COPY_EXISTING ~splprot.2da~ ~override~
 BUT_ONLY
 COPY_EXISTING ~SPWI102.spl~ ~override~
   LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter2 = %int_eq_row% END
+*/
+/* change to detect bg2ee strings
+//'light' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+END    //end magic leathers only
+//non-magic leathers (and unidentified of magic)
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END
+
+//'medium' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END //end magic only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end medium
+
+//'heavy' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END//End magic only 
+
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end heavy
+*/
+
+ /* change to detect iwdee strings
+//'light' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic leathers only
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+END    //end magic leathers only
+//non-magic leathers (and unidentified of magic)
+  PATCH_IF (~res_un~ = 29066) OR      // leather
+           (~res_un~ = 30189) OR      // leather
+           (~res_un~ = 2891) OR      // leather
+           (~res_un~ = 2890) OR      // leather
+           (~res_un~ = 6666) OR      //Studded leather
+           (~res_un~ = 6664) BEGIN   //Studded leather text in bgee
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 60                           //Change type 'leather' (0x3c) (now 'light')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700901//new text (added light prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END
+
+//'medium' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END //end magic only
+  PATCH_IF (~res_un~ = 22714) OR      // Hide
+           (~res_un~ = 6672) OR      // Chain
+           (~res_un~ = 25550) OR      // Chain
+           (~res_un~ = 25551) OR      // Elven Chain
+           (~res_un~ = 6677) OR      // Splint
+           (~res_un~ = 6678) OR      // Splint
+           (~res_un~ = 214) BEGIN     // Chain
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 62                           //Change type 'chain' (0x3e) (now 'medium')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700902//new text (added med prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end medium
+
+//'heavy' armors...bgee
+  PATCH_IF  NOT (~res_nil~ < 1) BEGIN  //magic  only
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x54 ~desc_id~
+	INNER_PATCH_SAVE new_desc_id ~%desc_id%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x54 ~%new_desc_id%~
+  END
+  END//End magic only 
+
+  PATCH_IF (~res_un~ = 267) OR      // plate
+           (~res_un~ = 6669) OR     // plate
+           (~res_un~ = 29069) OR     // plate
+           (~res_un~ = 6686) OR     //Ankheg plate
+           (~res_un~ = 6687) OR     //Ankheg plate
+           (~res_un~ = 6675) OR     // full plate
+           (~res_un~ = 6642) BEGIN     // full plate
+               WRITE_BYTE  0x31 97                           //Change prof to warhammer
+               WRITE_SHORT 0x1c 65                           //Change type 'full plate) (0x41) (now 'heavy')
+ SPRINT old @700900//old text (just 'requires')
+ SPRINT new @700903//new text (added heavy prof)
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //end heavy
 */

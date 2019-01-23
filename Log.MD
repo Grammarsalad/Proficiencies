@@ -5,8 +5,6 @@ NOTE 1: Seriously thinking about renaming Animal Handling to "Nature" to incorpo
 
 NOTE 2: Thinking about giving the Thief 5 max ranks in alchemy
 
-NOTE 3: SHOULD HEAL GIVE A BONUS TO INFLICT/CAUSE WOUND SPELLS?  I"M SERIOUSLY THINKING "YES"
-
 Note 4: Crazy idea: Wands have different effects based on user's intelligence (if wiz wand) or Wisdom (if cle wand)...Higher attributes = better effects...
 
 TO DO 1: GO OVER REVISED DESCRIPTIONS ONE MORE TIME BEFORE ADDING BG2EE/EET AND IWDEE DESCRIPTIONS
@@ -21,15 +19,15 @@ TO DO 5: Alchemy: CREATE Spl to craft alchemy items
 
 TO DO 6: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
 
-TO DO 7: ADD CURE BONUS FOR HEAL
+TO DO 7:
 
 TO DO 8:
 
 TO DO 9: Add shields to Armor Prof
 
-TO DO 10: Add HP bonus to Endurance proficiency
+TO DO 10:
 
-TO DO 11: Spellcraft to treat magical afflictions(?) 
+TO DO 11:
 
 TO DO 12: Make 7 weapon proficiency meaningful if possible-INVESTIGATE! POSSIBLE (NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!  ALSO NEED TO CHANGE UI CHAR CREATION
 
@@ -41,13 +39,13 @@ TO DO 15: ADD 7 PROF BACK IN  NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!
 
 TO DO 16: TAKE A FRESH LOOK AT TREAT INJURY AND TREAT AFFLICTION... There MAY be Target issues (i.e. 'self' vs. 'pre-target')
 
-TO DO 17: ENDURANCE: BONUS HIT POINTS
+TO DO 17:
 
 TO DO 18: Change creature natural attacks to misc category and give creatures proficiency in misc.
 
 TO DO 19: Need to revise armor proficiency to not set misc proficiency to zero (among other things)
 
-TO DO 20: 
+TO DO 20:
 
 TO DO 21: Revise Class descriptions (Ranged Fighting style instead of Hunting and Bows/Crossbows instead of Ranged.
 
@@ -58,6 +56,72 @@ TO DO 23: Alchemy items: Give Unarmed/misc prof (so, only really good with light
 TO DO 24: Passive abilities: Apply passive abilities at level up, though also check them with 'use and manage proficiencies' special ability mon summon.
 
 TO DO 25: Alchemy mishap: Summon cre that removes item from equip slot
+
+TO DO 26: Continue with Heal.tpa (cure spells, especially Sr compatibility assuming Add_ids
+
+TO DO 27: Make enemies immune to beneficial spls like treat wounds to keep all ducks in a row
+
+TO DO 28: Increase efficiency.  Can prot vs. subspells that cast final versions (e.g. heal) and use fewer final spells when at max effect
+
+TO DO 29: There are stat checks in splprot (Gr or eq and less than).  USE THEM!
+
+Version 0.05.03
+
+2018-12-29
+
+- Updated Heal skill to 7 ranks
+
+- Started back up with Herb.2da.  Can now test the concept (I THINK!) CONTINUE
+
+2018-12-25
+
+- Added abilty that applies second wind to B_PAS00.spl
+
+- Added ability that applies treat wound to B_PAS00.spl
+
+- Updated profsmax.2da, so max proficiency at level 15
+
+2018-12-23
+
+- Created endurance hp bonus spls (B_END01-07) all just adding 3 boni hp
+
+- created passive prof boni spl (B_PAS00.spl) and made it so it applies boni hp based on endurance prof
+
+- added endurance greater than value to splprot_append.tpa
+
+2018-12-22
+
+- Started with Endurance HP bonus.  Have proof of concept (for +3HP per rank)
+
+2018-12-19
+
+- Heal cure boni SR compatibility
+
+- Changed Second Wind use frequency (per 24 hrs/per 16 hrs/per 8 hrs) Need to text
+
+2018-12-16
+
+- Included ADD_IDS for SR Compatibility
+
+2018-12-15
+
+- Merged Treat Injury and Treat Affliction
+
+2018-12-14
+
+- Make treat injury actually heal more for higher wisdom
+
+2018-12-12
+
+- Added 0 ranks to Treat Injury
+
+2018-12-09
+
+- Organized Setup_Proficiencies.tpa so I can actually start working on it again...
+
+2018-07-26
+
+- Upgraded weidu to v246
 
 Version 0.05.02
 

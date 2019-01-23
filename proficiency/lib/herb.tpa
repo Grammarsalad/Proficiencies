@@ -1,3 +1,5 @@
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
@@ -5,8 +7,84 @@
 /////////////////////////////////////                                         //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//select innate based on herbalism proficiency
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S301.spl~ ~override~   //
+	SAY NAME1 @800021
+	SAY NAME2 @800021
+	SAY UNIDENTIFIED_DESC @800022  //
+	SAY IDENTIFIED_DESC @800022  //
+//Ranks
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_S3011~ END  //1 rank in herbalism, cast B_S3011.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_S3012~ END  //2 rank in herbalism, cast B_S3012.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_S3013~ END  //3 rank in herbalism, cast B_S3013.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_S3014~ END  //4 rank in herbalism, cast B_S3014.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_S3015~ END  //5 rank in herbalism, cast B_S3015.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_S3016~ END  //6 rank in herbalism, cast B_S3016.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_S3017~ END  //7 rank in herbalism, cast B_S3017.spl
+//Select spell 2da that assigns innate  (NEED TO Actually update 2das and create B_HRB02-B_HRBnn
+COPY ~%mod_folder%/data/skills/2da/Herb/B_HRB01.2da~ ~override~   //
+COPY ~%mod_folder%/data/skills/2da/Herb/B_HRB02.2da~ ~override~   //
+/*       //don't have these yet
+COPY ~%mod_folder%/data/skills/2da/Herb/B_HRB03.2da~ ~override~   //
+COPY ~%mod_folder%/data/skills/2da/Herb/B_HRB04.2da~ ~override~   //
+COPY ~%mod_folder%/data/skills/2da/Herb/B_HRB05.2da~ ~override~   //
+COPY ~%mod_folder%/data/skills/2da/Herb/B_HRB06.2da~ ~override~   //
+COPY ~%mod_folder%/data/skills/2da/Herb/B_HRB07.2da~ ~override~   //
+*/
+//spell that adds innate abilities - heals according to heal prof
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3011.spl~ ~override~   //
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3011.spl~ ~override/B_S3012.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 214 STR_VAR resource = ~B_HRB02~ END  //new innates
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3011.spl~ ~override/B_S3013.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 214 STR_VAR resource = ~B_HRB03~ END  //new innates
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3011.spl~ ~override/B_S3014.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 214 STR_VAR resource = ~B_HRB04~ END  //new innates
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3011.spl~ ~override/B_S3015.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 214 STR_VAR resource = ~B_HRB05~ END  //new innates
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3011.spl~ ~override/B_S3016.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 214 STR_VAR resource = ~B_HRB06~ END  //new innates
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3011.spl~ ~override/B_S3017.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 214 STR_VAR resource = ~B_HRB07~ END  //new innates
+//spells to add temp innates
+//adds relaxant 1 rank
+COPY ~%mod_folder%/data/skills/Spl/herb/B_A3101.spl~ ~override~   //  1 rank
+	SAY NAME1 @800023
+	SAY NAME2 @800023
+COPY ~%mod_folder%/data/skills/Spl/herb/B_A3101.spl~ ~override/B_A3102.spl~   //  2 rank
+	SAY NAME1 @800023
+	SAY NAME2 @800023
+ LPF ALTER_EFFECT INT_VAR match_opcode = 171 duration = 600 STR_VAR END  //new innates
+
+//Innates --casts spell via 326 according to heal proficiency (and may cast spell by intelligence) 
+//Relaxant 1/2 fatigue
+COPY ~%mod_folder%/data/skills/Spl/herb/B_S3101.spl~ ~override~   //
+	SAY NAME1 @800023
+	SAY NAME2 @800023
+	SAY UNIDENTIFIED_DESC @800024  //
+	SAY IDENTIFIED_DESC @800024  //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S103A~ END  //1 rank heal 2 hp
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S103B~ END  //2 rank heal 4 hp
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S103C~ END  //3 rank heal 6 hp
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S103D~ END  //4 rank heal 8 hp
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S103E~ END  //5 rank heal 10 hp
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S103F~ END  //6 rank heal 12 hp
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S103G~ END  //7 rank heal 14 hp
+
+//(for # of abilities...)
+/*
+//int
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %int_ls% STR_VAR match_resource = ~B_S301A~ END  //<16 int
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %int_eq% STR_VAR match_resource = ~B_S301B~ END  //16 int
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 17 parameter2 = %int_eq% STR_VAR match_resource = ~B_S301C~ END  //17 int
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %int_eq% STR_VAR match_resource = ~B_S301D~ END  //18 int
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %int_gr% STR_VAR match_resource = ~B_S301E~ END  //>18 int
+*/
+//old stuff below this line
+//-------------------------------------------------------------------------------------------------------------------
+/*
 //Antidote
-COPY ~skills/data/skills/itm/herb/b_s111a.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/herb/b_s111a.itm~ ~override~   //
 	SAY NAME1 @810000
 	SAY NAME2 @810000
 	SAY UNIDENTIFIED_DESC @810001  //
@@ -74,36 +152,37 @@ COPY_EXISTING ~b_s111a.itm~ ~override/b_s111d.itm~
 
 //Bandages
 //BAM
-COPY ~skills/data/skills/bam/herb/b_sk112.bam~ ~override~   //
+*/
+COPY ~%mod_folder%/data/skills/bam/herb/b_sk112.bam~ ~override~   //
 //Items
-COPY ~skills/data/skills/itm/herb/b_s112a.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/herb/b_s112a.itm~ ~override~   //
 	SAY NAME1 @810007
 	SAY NAME2 @810007
 	SAY UNIDENTIFIED_DESC @810008  //
 	SAY IDENTIFIED_DESC @810008  //
-COPY ~skills/data/skills/itm/herb/b_s112b.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/herb/b_s112b.itm~ ~override~   //
 	SAY NAME1 @810007
 	SAY NAME2 @810007
 	SAY UNIDENTIFIED_DESC @810009  //
 	SAY IDENTIFIED_DESC @810009  //
-COPY ~skills/data/skills/itm/herb/b_s112c.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/herb/b_s112c.itm~ ~override~   //
 	SAY NAME1 @810007
 	SAY NAME2 @810007
 	SAY UNIDENTIFIED_DESC @810010  //
 	SAY IDENTIFIED_DESC @810010  //
-COPY ~skills/data/skills/itm/herb/b_s112d.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/herb/b_s112d.itm~ ~override~   //
 	SAY NAME1 @810007
 	SAY NAME2 @810007
 	SAY UNIDENTIFIED_DESC @810011  //
 	SAY IDENTIFIED_DESC @810011  //
-COPY ~skills/data/skills/itm/herb/b_s112e.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/herb/b_s112e.itm~ ~override~   //
 	SAY NAME1 @810007
 	SAY NAME2 @810007
 	SAY UNIDENTIFIED_DESC @810012  //
 	SAY IDENTIFIED_DESC @810012  //
 
 //Remedy
-COPY ~skills/data/skills/itm/herb/b_s113a.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/herb/b_s113a.itm~ ~override~   //
 	SAY NAME1 @810013
 	SAY NAME2 @810013
 	SAY UNIDENTIFIED_DESC @810014  //

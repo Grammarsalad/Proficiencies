@@ -1,12 +1,16 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.05.02~
+VERSION ~0.05.03~
 
 
 ALWAYS
         OUTER_SPRINT ~mod_folder~ ~proficiency~    //Folder Var
         
+        ACTION_IF ((!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_OBSCURING_MIST~)) AND (FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~)) BEGIN
+	   INCLUDE ~proficiency/lib/add_ids.tpa~
+        END
+
         INCLUDE ~proficiency/lib/splprot_append.tpa~
 
 	INCLUDE ~proficiency/lib/alter_effect.tpa~
