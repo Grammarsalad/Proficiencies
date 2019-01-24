@@ -195,7 +195,7 @@ CONTINUE
 **Brew Concoction**
 Spell casters, and (if special conditions are met) other characters, can use this skill to brew concoctions.  Concoctions are similar to potions in that they are magic liquids that can be used by anybody.  However, drinking them is not generally recommended as they often have explosive properties.  While 
 
-**Endurance** (Constitution)
+**Endurance** (Constitution). 
 **Requirements**: None
 
 Endurance represents training to withstand heavy exertion and physical punishment.  It is probably *the* quintessential proficiency of warriors, though a smattering of other classes can specialize in endurance.  Characters trained in endurance can go farther, faster, and for longer periods than others.  This nonweapon proficiency allows characters to take a ‘break’ to recover hit points and stamina.  In addition, characters receive bonus maximum hit points equal to the number of ranks they possess in Endurance for each of their first five levels.  
