@@ -227,8 +227,7 @@ This skill represents training in the medical arts.  Individuals trained in heal
 This skill has a natural synergy with herbalism, and herbalists are able to create more effective remedies if they are trained healers (see the herbalism skill for details).  Conversely, healers trained in herbalism are more effective at treating afflictions.  
 
 **Treat Injury**
-The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max 30% at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that you cannot help your ally.  The chance that you will succeed with a heal check is equal to 50% +5% per rank, plus your Wisdom Bonus (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The exception is that a character can always potentially be helped by any healer with more skill than a previous healer.
-
+The healer can treat the injuries of <PRO_HISHER> allies on the fly with a healing kit.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank (max 30% at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that <PRO_HESHE> cannot help <PRO_HISHER> ally.  The chance of success with a heal check is equal to 50% +5% per rank, plus <PRO_HISHER> Wisdom Bonus (max 95%).  
 **Effect**: Heals 5% of target's max hit points, +5% per rank.
 **Chance of Success**: 50%, +5% per rank, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
 **Special**: Accelerated Healing rate:
@@ -239,17 +238,17 @@ The healer can treat the injuries of <PRO_HISHER> allies on the fly.  <PRO_HESHE
 5 ranks: 1 hit point per turn.
 
 **Treat Affliction**
-In their travels, the healer collects various natural medicines that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 3 ranks in Heal, <PRO_HESHE> gains the ability to Treat Afflictions.  <PRO_HESHE> can gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.
+Especially skilled healers can use a healer's kit to treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 5 ranks in Heal, <PRO_HESHE> gains the ability to Treat Afflictions.  
 
-To use Treat Affliction, the heal must make a healing check (see success rate below).  If <PRO_HESHE> succeeds, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 3 ranks in Heal.  If <PROHESHE> has 4 ranks in Heal, <PRO_HESHE> can also remove any disease from the target.  Finally, if <PRO_HESHE> possesses 5 ranks in Heal, <PRO_HESHE> removes any paralysis or hold effect from the target.
+To use Treat Affliction, the healer must make a healing check (see success rate below), when using a healing kit as normal.  If <PRO_HESHE> succeeds, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 5 ranks in Heal.  If <PROHESHE> has 6 ranks in Heal, <PRO_HESHE> can also remove any disease from the target.  Finally, if <PRO_HESHE> possesses 7 ranks in Heal, <PRO_HESHE> removes any paralysis or hold effect from the target.
   
-Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 20% +5% per rank in healing. Characters trained in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism.
+Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 10% +5% per rank in healing. Experts in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism if they have 5 or more ranks in Herbalism.
 
-**Chance of Success**: 20%, +5% per rank in Heal, + 5% per rank in Herbalism.
+**Chance of Success**: 10%, +5% per rank in Heal, + 5% per rank in Herbalism (5+ ranks).
 **Effect**: 
-3 Ranks: Treat Intoxication, Poison, Blindness and Deafness.
-4 Ranks: Treat Diseases.
-5 Ranks: Treat Paralysis and Hold.
+5 Ranks: Treat Intoxication, Poison, Blindness and Deafness.
+6 Ranks: Treat Diseases.
+7 Ranks: Treat Paralysis and Hold.
 
 **Cure Bonus**
 Healers that can also cast cure spells (any spell with the word “cure” in its title, except Cure Disease) are more capable if they are also trained in healing.  Specifically, they cure an additional 2 points of damage for every rank they possess in in Heal. 
