@@ -513,9 +513,9 @@ Proficiency (armor mastery) (5 slots):~
 
 //Heal Skill
 @800000 = ~Healing Proficiency~
-@800001 = ~The healer can treat the injuries and afflictions of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank, + <PRO_HISHER> wisdom bonus (max 30% + wisdom bonus at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that <PRO_HESHE> cannot help <PRO_HISHER> ally.  The chance of success with a heal check is equal to 50% +5% per rank, plus <PRO_HISHER> Wisdom Bonus (max 95%).  Whether or not the check was successful, a character will not benefit from further uses of Treat Injury for the rest of the day. The exception is that a character can always potentially be helped by any healer with more skill than a previous healer.
+@800001 = ~The healer can use a healer's kit to treat the injuries and afflictions of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank, + <PRO_HISHER> wisdom bonus (max 30% + wisdom bonus at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that <PRO_HESHE> cannot help <PRO_HISHER> ally.  The chance of success with a heal check is equal to 50% +5% per rank, plus <PRO_HISHER> Wisdom Bonus (max 95%).  
 
-Additionally, the healer collects various natural medicines in their travels that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 5 ranks in Heal, <PRO_HESHE> can effectively Treat Afflictions.  If <PRO_HESHE> is successful, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 5 ranks in Heal.  If <PROHESHE> has 6 ranks in Heal, <PRO_HESHE> has a chance to remove any disease from the target.  Finally, if <PRO_HESHE> possesses 7 ranks in Heal, <PRO_HESHE> has a chance to remove any paralysis or hold effect from the target.
+Especially skilled healers can use a healer's kit to treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 5 ranks in Heal, <PRO_HESHE> gains the ability to Treat Afflictions.
 
 Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 10% +5% per rank in healing plus their wisdom bonus. Experts in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism if they have at least 5 ranks in herbalism. (max 95%)
 
@@ -581,7 +581,7 @@ Effect:
 
 @800018 = ~Treat Injury check failed!~
 
-@800019 = ~Treat Affliction~
+@800019 = ~Healer's Kit~
 @800020 = ~In their travels, the healer collects various natural medicines that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 3 ranks in Heal, <PRO_HESHE> can effectively Treat Afflictions.  <PRO_HESHE> can gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.
 To use Treat Affliction, the heal must make a healing check (see success rate below).  If <PRO_HESHE> succeeds, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 3 ranks in Heal.  If <PROHESHE> has 4 ranks in Heal, <PRO_HESHE> can also remove any disease from the target.  Finally, if <PRO_HESHE> possesses 5 ranks in Heal, <PRO_HESHE> removes any paralysis or hold effect from the target.
 

@@ -3784,9 +3784,7 @@ COPY ~%mod_folder%/data/skills/B_PAS00.spl~ ~override~   //
 //endurance--second wind ability
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %end_gr% STR_VAR match_resource = ~B_END00~ END  //rank >0, apply B_END00.spl, which adds the second wind ability
 //Heal
-//heal--treat wounds ability not needed unless it gets added for 1+ ranks 
-// LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_HEA00~ END  //rank >0, apply B_END00.spl, which adds the second wind ability
-
+  //heal--treat wounds ability not needed
 //survival
 
 //

@@ -152,7 +152,6 @@ COPY_EXISTING ~b_s111a.itm~ ~override/b_s111d.itm~
 
 //Bandages
 //BAM
-*/
 COPY ~%mod_folder%/data/skills/bam/herb/b_sk112.bam~ ~override~   //
 //Items
 COPY ~%mod_folder%/data/skills/itm/herb/b_s112a.itm~ ~override~   //
@@ -242,3 +241,4 @@ COPY_EXISTING ~b_s113a.itm~ ~override/b_s113f.itm~
       INT_VAR match_opcode = 240            //
             probability1 = 85
   END
+*/

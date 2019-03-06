@@ -12,11 +12,15 @@
 ////////////////////////////////////////////////////////////////
 //spl that applies treat wound
 COPY ~%mod_folder%/data/skills/spl/heal/B_HEA00.spl~ ~override~   //
+//bam
+COPY ~%mod_folder%/data/skills/bam/heal/B_S102.bam~ ~override~   //
 
-//Base spell
-COPY ~%mod_folder%/data/skills/spl/heal/B_S102.spl~ ~override~   //
-	SAY NAME1 @800000
+//Healer's Kit
+COPY ~%mod_folder%/data/skills/itm/heal/B_S102.itm~ ~override~   //
+	SAY NAME1 @800019
+	SAY NAME2 @800019
 	SAY UNIDENTIFIED_DESC @800001  //
+	SAY IDENTIFIED_DESC @800001   //
 //Ranks
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1020~ END  //0 rank heal, cast B_S1020.spl
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1021~ END  //1 rank heal, cast B_S1021.spl
@@ -47,7 +51,7 @@ COPY ~%mod_folder%/data/skills/spl/heal/B_S1020.spl~ ~override~   //0 rank
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW27~ END  //prof20=1, cast B_TW27
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW28~ END  //prof20=2, cast B_TW28
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW29~ END  //prof20=3, cast B_TW29
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW30~ END  //prof20=3, cast B_TW30
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW30~ END  //prof20=4, cast B_TW30
 COPY ~%mod_folder%/data/skills/spl/heal/B_S1021.spl~ ~override~   //1 rank
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW01~ END  //prof20=0, cast B_TW01
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW02~ END  //prof20=1, cast B_TW02
@@ -264,21 +268,6 @@ COPY_EXISTING ~B_TW01.spl~ ~override/B_TW06.spl~     //2 rank, no wis
  LPF ALTER_EFFECT     // failure notification
       INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 60      // failure strref
  END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW01~ resource = ~B_TW06~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW02~ resource = ~B_TW07~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW03~ resource = ~B_TW08~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW04~ resource = ~B_TW09~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW05~ resource = ~B_TW10~      // immunity to further attempts
- END
 //2 ranks, +1 wis
 
 COPY_EXISTING ~B_TW06.spl~ ~override/B_TW07.spl~     //2 rank, +1 wis
@@ -356,21 +345,6 @@ END
 LPF ALTER_EFFECT     // failure notification
       INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 65      // failure strref
 END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW01~ resource = ~B_TW11~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW02~ resource = ~B_TW12~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW03~ resource = ~B_TW13~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW04~ resource = ~B_TW14~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW05~ resource = ~B_TW15~      // immunity to further attempts
-END
 
 COPY_EXISTING ~B_TW11.spl~ ~override/B_TW12.spl~     //3 rank, +1 wis
 LPF ALTER_EFFECT     // Healing
@@ -446,21 +420,6 @@ COPY_EXISTING ~B_TW11.spl~ ~override/B_TW16.spl~     //4 rank, no wis
  END
  LPF ALTER_EFFECT     // failure notification
       INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 70      // failure strref
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW01~ resource = ~B_TW16~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW02~ resource = ~B_TW17~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW03~ resource = ~B_TW18~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW04~ resource = ~B_TW19~      // immunity to further attempts
- END
- LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW05~ resource = ~B_TW20~      // immunity to further attempts
  END
 
 COPY_EXISTING ~B_TW16.spl~ ~override/B_TW17.spl~     //4 rank, +1 wis
@@ -538,21 +497,6 @@ END
 LPF ALTER_EFFECT     // failure notification
       INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 75      // failure strref
 END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW01~ resource = ~B_TW21~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW02~ resource = ~B_TW22~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW03~ resource = ~B_TW23~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW04~ resource = ~B_TW24~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW05~ resource = ~B_TW25~      // immunity to further attempts
-END
 
 COPY_EXISTING ~B_TW21.spl~ ~override/B_TW22.spl~     //5 rank, +1 wis
 LPF ALTER_EFFECT     // Healing
@@ -629,21 +573,6 @@ END
 LPF ALTER_EFFECT     // failure notification
       INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // failure strref
 END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW01~ resource = ~B_TW31~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW02~ resource = ~B_TW32~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW03~ resource = ~B_TW33~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW04~ resource = ~B_TW34~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW05~ resource = ~B_TW35~      // immunity to further attempts
-END
 
 COPY_EXISTING ~B_TW31.spl~ ~override/B_TW32.spl~     //6 rank, +1 wis
 LPF ALTER_EFFECT     // Healing
@@ -719,21 +648,6 @@ END
 LPF ALTER_EFFECT     // failure notification
       INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // failure strref
 END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW01~ resource = ~B_TW36~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW02~ resource = ~B_TW37~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW03~ resource = ~B_TW38~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW04~ resource = ~B_TW39~      // immunity to further attempts
-END
-LPF CLONE_EFFECT     // immunity to further attempts
-      INT_VAR match_opcode = 318   STR_VAR match_resource = ~B_TW05~ resource = ~B_TW40~      // immunity to further attempts
-END
 
 COPY_EXISTING ~B_TW36.spl~ ~override/B_TW37.spl~     //7 rank, +1 wis
 LPF ALTER_EFFECT     // Healing
@@ -798,27 +712,27 @@ END
 ////////////////////////////////////////////////////////////////
 //Treat Affliction____________________________________________
 ////////////////////////////////////////////////////////////////
-//Rank 3, Intoxication, Poison, Blindess, Deafness
-//Rank 4: Disease
-//Rank 5: Hold, paralysis
+//Rank 5, Intoxication, Poison, Blindess, Deafness
+//Rank 6: Disease
+//Rank 7: Hold, paralysis
 
 
 //Spells to cast the spells that cast the actual spell
-COPY ~%mod_folder%/data/skills/spl/heal/B_S1013.spl~ ~override~   // 3 ranks heal, checking for herbs
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM31~ END  //Herb <3, cast  B_HM01
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM33~ END  //Herb =3, cast  B_HM03
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM34~ END  //Herb =4, cast  B_HM03
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM35~ END  //Herb =5, cast  B_HM03
-COPY ~%mod_folder%/data/skills/spl/heal/B_S1014.spl~ ~override~   // 4 ranks heal, checking for herbs
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM41~ END  //Herb <3, cast  B_HM01
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM43~ END  //Herb =3, cast  B_HM03
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM44~ END  //Herb =4, cast  B_HM03
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM45~ END  //Herb =5, cast  B_HM03
-COPY ~%mod_folder%/data/skills/spl/heal/B_S1015.spl~ ~override~   // 5 ranks heal, checking for herbs
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM51~ END  //Herb <3, cast  B_HM01
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM53~ END  //Herb =3, cast  B_HM03
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM54~ END  //Herb =3, cast  B_HM03
- LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM55~ END  //Herb =3, cast  B_HM03
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1013.spl~ ~override~   // 5 ranks heal, checking for herbs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM31~ END  //Herb <5, cast  B_HM01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM33~ END  //Herb =5, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM34~ END  //Herb =6, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM35~ END  //Herb =7, cast  B_HM03
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1014.spl~ ~override~   // 6 ranks heal, checking for herbs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM41~ END  //Herb <5, cast  B_HM01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM43~ END  //Herb =5, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM44~ END  //Herb =6, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM45~ END  //Herb =7, cast  B_HM03
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1015.spl~ ~override~   // 7 ranks heal, checking for herbs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM51~ END  //Herb <5, cast  B_HM01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM53~ END  //Herb =5, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM54~ END  //Herb =6, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM55~ END  //Herb =7, cast  B_HM03
 
 //Now, check for Wis
 COPY ~%mod_folder%/data/skills/spl/heal/B_HM31.spl~ ~override~   // 5 ranks heal, <5 Herbs, checking for Wis
@@ -904,7 +818,7 @@ COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM55.spl~   // 5 ranks heal, 5 Herbs, ch
 
  //CONTINUE
 //Actual spells
-//3 ranks
+//5 ranks
 
 COPY ~%mod_folder%/data/skills/spl/heal/B_TA01.spl~ ~override~   //   3 ranks, no herbalism, no wis
 LPF ALTER_EFFECT     //success notification
@@ -1080,162 +994,6 @@ LPF ALTER_EFFECT     //Failure notification
       parameter1 = RESOLVE_STR_REF (@800016)    //Treat Affliction check failed!
 END
 
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA02~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA03~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA04~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA05~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA06~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA07~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA08~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA09~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA10~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA11~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA12~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA13~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA14~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA15~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA16~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA17~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA18~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA19~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA20~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA21~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA22~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA23~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA24~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA25~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA26~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA27~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA28~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA29~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA30~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA31~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA32~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA33~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA34~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA35~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA36~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA37~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA38~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA39~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA40~
-END
 
 COPY_EXISTING ~B_TA21.spl~ ~override/B_TA22.spl~     // 6 ranks, no herbalism, +1 wis
 LPF ALTER_EFFECT     // All, just need to fix failure notification
@@ -1402,242 +1160,6 @@ LPF ALTER_EFFECT     //Failure notification
       parameter1 = RESOLVE_STR_REF (@800016)    //Treat Affliction check failed!
 END
 
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA02~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA03~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA04~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA05~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA06~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA07~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA08~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA09~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA10~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA11~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA12~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA13~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA14~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA15~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA16~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA17~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA18~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA19~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA20~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA21~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA22~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA23~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA24~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA25~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA26~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA27~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA28~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA29~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA30~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA31~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA32~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA33~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA34~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA35~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA36~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA37~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA38~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA39~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA40~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA41~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA42~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA43~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA44~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA45~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA46~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA47~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA48~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA49~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA50~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA51~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA52~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA53~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA54~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA55~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA56~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA57~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA58~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA59~
-END
-LPF CLONE_EFFECT     //Failure notification
-    INT_VAR match_opcode = 318  multi_match = 1
-    STR_VAR resource = ~B_TA60~
-END
 
 COPY_EXISTING ~B_TA41.spl~ ~override/B_TA42.spl~     // 5 ranks, no herbalism, +1 wis
 LPF ALTER_EFFECT     // All, just need to fix failure notification
@@ -2192,4 +1714,12 @@ LPF CLONE_EFFECT     //
       INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
       STR_VAR resource = ~B_S103G~ //if 1 rank in heal
 END
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         
+///////////////////////////////////// Add Medkit to Stores and Temples
+/////////////////////////////////////                                         
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

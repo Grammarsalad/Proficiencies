@@ -65,6 +65,24 @@ TO DO 28: Increase efficiency.  Can prot vs. subspells that cast final versions 
 
 TO DO 29: There are stat checks in splprot (Gr or eq and less than).  USE THEM!
 
+TO DO 31: Replace potion of cure light wounds with healers kit, and add to certain stores.
+
+TO DO 32: Add med kits to stores and temples (with option to replace potion of healing)
+
+Version 0.05.04
+
+2019-03-06
+
+- Removed Immunity to further treat wound checks
+
+- Updated heal description (in readme and tra)
+
+- Added bams to med kit
+
+2019-03-05
+
+- Convert Heal Wound to med kit
+
 Version 0.05.03
 
 2018-12-29
