@@ -19,7 +19,7 @@ TO DO 5: Alchemy: CREATE Spl to craft alchemy items
 
 TO DO 6: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell for non-proficient)
 
-TO DO 7:
+TO DO 7: Tra'd the main tp2
 
 TO DO 8:
 
@@ -33,9 +33,7 @@ TO DO 12: Make 7 weapon proficiency meaningful if possible-INVESTIGATE! POSSIBLE
 
 TO DO 13: TEST TREAT AFFLICTION
 
-TO DO 14: Comment out all of the stuff from the newly added tpa's (as of 2018-06-22), so mod will install.
-
-TO DO 15: ADD 7 PROF BACK IN  NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!
+TO DO 14:
 
 TO DO 16: TAKE A FRESH LOOK AT TREAT INJURY AND TREAT AFFLICTION... There MAY be Target issues (i.e. 'self' vs. 'pre-target')
 
@@ -68,6 +66,16 @@ TO DO 29: There are stat checks in splprot (Gr or eq and less than).  USE THEM!
 TO DO 31: Replace potion of cure light wounds with healers kit, and add to certain stores.
 
 TO DO 32: Add med kits to stores and temples (with option to replace potion of healing)
+
+Version 0.05.05
+
+2019-03-10
+
+- Added code to replace healing potion with healer's kit
+
+- Added store revisions functions (Thanks Adarnis)
+
+- Added healing kits to Candlekeep inn
 
 Version 0.05.04
 

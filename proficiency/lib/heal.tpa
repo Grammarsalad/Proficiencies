@@ -8,19 +8,49 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////
-//Treat Wound___________________________________________________
+//Healing Kit___________________________________________________
 ////////////////////////////////////////////////////////////////
-//spl that applies treat wound
-COPY ~%mod_folder%/data/skills/spl/heal/B_HEA00.spl~ ~override~   //
-//bam
-COPY ~%mod_folder%/data/skills/bam/heal/B_S102.bam~ ~override~   //
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~B_HKIT_P.itm~ BEGIN
+
+ OUTER_SPRINT ~heal_kit~ ~B_S102~    //Not eplace Potion of healing with healer's kit
+
+END
+
+//Healer's kit bam
+COPY ~%mod_folder%/data/skills/bam/heal/B_S102.bam~ ~override/%heal_kit%.bam~   //
 
 //Healer's Kit
-COPY ~%mod_folder%/data/skills/itm/heal/B_S102.itm~ ~override~   //
+COPY ~%mod_folder%/data/skills/itm/heal/B_S102.itm~ ~override/%heal_kit%.itm~   //
 	SAY NAME1 @800019
 	SAY NAME2 @800019
 	SAY UNIDENTIFIED_DESC @800001  //
 	SAY IDENTIFIED_DESC @800001   //
+
+////////////////////////////////////////////////////////////////
+//Healing Kit Placement_________________________________________
+////////////////////////////////////////////////////////////////
+LAM buy_group  //so I can add potions if I need to
+
+//def the candlekeep inn
+ACTION_IF FILE_EXISTS_IN_GAME ~INN2616.sto~ BEGIN  //If CKI is in game
+ COPY_EXISTING ~INN2616.STO~ ~override~
+  LPF buy INT_VAR weap=1 armor=1 rang=1 potn=1 jewel=1 misc=1 END
+  ADD_STORE_ITEM ~%heal_kit%~ #1 #0 #0 ~IDENTIFIED~ #5
+ BUT_ONLY
+END
+
+//if not replace cure potions, then copy all stores and sell where potion of healing is sold
+
+
+
+
+////////////////////////////////////////////////////////////////
+//Treat Wound___________________________________________________
+////////////////////////////////////////////////////////////////
+//spl that applies treat wound
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA00.spl~ ~override~   //
+
+
 //Ranks
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1020~ END  //0 rank heal, cast B_S1020.spl
  LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1021~ END  //1 rank heal, cast B_S1021.spl

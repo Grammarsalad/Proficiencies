@@ -1,7 +1,7 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.05.04~
+VERSION ~0.05.05~
 
 
 ALWAYS
@@ -12,6 +12,8 @@ ALWAYS
         END
 
         INCLUDE ~proficiency/lib/splprot_append.tpa~
+
+        INCLUDE ~proficiency/lib/store_rev_macros.tpa~
 
 	INCLUDE ~proficiency/lib/alter_effect.tpa~
 
@@ -36,8 +38,14 @@ LANGUAGE ~English~ ~english~ ~proficiency/tra/english/prof.tra~
                              ~proficiency/tra/english/craft.tra~
 //___________________________________________________________________________________
 
+BEGIN @10 //replace potion of healing with healer's kit?
+//marker:
+COPY ~%mod_folder%/compatibility/B_HKIT_P.itm~ ~override~   //
 
-BEGIN ~B_Proficiency~
+OUTER_SPRINT ~heal_kit~ ~POTN08~    //Replace Potion of healing with healer's kit
+
+
+BEGIN @9
 
 INCLUDE ~%mod_folder%/data/components/Setup_proficiencies.tpa~
 
