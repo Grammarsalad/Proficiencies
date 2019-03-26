@@ -1,0 +1,308 @@
+
+
+//Class descriptions  @720100 to @730000
+
+//Fighter
+
+@720100 = ~May wear any armor and use any weapon.~
+@720101 = ~May wear any armor and use any weapon.
+- Proficiency slots: eight at first level.  Gains one proficiency point every two levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Specialization (two slots) in martial arts.
+- May achieve Grand Mastery (five slots) in armor proficiency.~
+
+//other fighter kits to be more accurately filled in when all profs are straight
+
+//Berserker
+
+@720102 = ~Gains one use at level 1 and an additional use every 4 levels thereafter.~
+@720103 = ~Gains one use at level 1 and an additional use every 4 levels thereafter.
+- May gain seven ranks in endurance.~
+@720104 = ~May not Specialize in ranged weapons.~
+@720105 = ~May not Specialize in ranged weapons.
+- Can only gain one rank in Mechanics.~
+
+//Wiz slayer
+
+//Kensai
+
+@720106 = ~bonus to Speed Factor every 4 levels.~
+@720107 = ~bonus to Speed Factor every 4 levels.
+- May achieve Superiority (7 slots) in all non-ranged Weapons.
+- May achieve Grand Mastery (five slots) in martial arts.
+- May gain five ranks in Ritual~
+@720108 = ~May not wear any armor.~
+@720109 = ~May not gain any ranks in armor proficiency.~
+@720110 = ~May not use missile weapons.~
+@720111 = ~May not gain any ranks in ranged weapons.~
+@720112 = ~May not wear gauntlets or bracers.~
+@720113 = ~May not wear gauntlets or bracers.
+- May not gain any ranks in armor proficiency.
+- May not gain any ranks in ranged weapons.
+- May not gain any ranks in heal.
+- May not gain any ranks in herbalism.
+- May not gain any ranks in hunting.
+- May not gain any ranks in mechanics.
+- May not gain any ranks in animal handling.~
+
+//Dwarven defender
+@720114 = ~May not exceed High Mastery (four slots) in axes and war hammers.~
+@720115 = ~May not exceed High Mastery (four slots) in axes and blunt weapons.~
+
+//Extras: base fighter
+@720116 = ~May wear helmets.~
+@720117 = ~May wear helmets.
+- Proficiency slots: eight at first level.  Gains one proficiency point every two levels.~
+
+
+//Ranger
+@720200 = ~May wear any armor and use any weapon.~
+@720201 = ~May wear any armor and use any weapon.
+- Proficiency slots: seven at first level.  Gains one proficiency point every three levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Specialization (two slots) in martial arts.
+- May achieve Specialization (two slots) in armor proficiency.~
+
+//other ranger kits to be more accurately filled in when all profs are straight
+
+//Archer
+@720202 = ~May achieve Grand Mastery (5 slots) in longbows, shortbows, and crossbows.~
+@720203 = ~May achieve Grand Mastery (5 slots) in ranged weapons.
+- May gain seven ranks in Hunting.~
+
+//Stalker
+@720204 = ~May not wear armor heavier than studded leather.~
+@720205 = ~May not wear armor heavier than studded leather.
+- May only become Proficient (1 slot) with armor.~
+
+//Beast Master
+@720206 = ~+15% to Move Silently and Hide In Shadows.~
+@720207 = ~+15% to Move Silently and Hide In Shadows.
+- May gain 7 ranks in the Endurance skill.
+- May gain 7 ranks in the Animal Handling skill~
+
+//Extras: archer
+@720208 = ~May only wear leather, studded leather, and hide armor.~
+@720209 = ~May only wear leather, studded leather, and hide armor.
+- May only become Proficient (1 slot) with armor.~
+//Beast Master
+@720210 = ~May not use any metal weapons (for example: swords, halberds, war hammers, or morning stars).~
+@720211 = ~May not use any metal weapons (for example: swords, halberds, war hammers, or morning stars).
+- May not gain proficiency with swords, axes, greatswords, or ranged weapons.~
+//Base Ranger
+@720212 = ~Proficiency slots: seven at first level.  Gains one proficiency point every three levels.~
+
+//Paladin
+@720300 = ~May wear any armor and use any weapon.~
+@720301 = ~May wear any armor and use any weapon.
+- Proficiency slots: seven at first level.  Gains one proficiency point every three levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Specialization (two slots) in martial arts.
+- May achieve Expertise (three slots) in armor proficiency.~
+
+//other paladin kits to be more accurately filled in when all profs are straight
+
+//Inquisitor
+@720302 = ~Immune to hold and charm.~
+@720303 = ~Immune to hold and charm.
+- May gain five ranks in Persuasion~
+@720304 = ~May not cast priest spells.~
+@720305 = ~May not cast priest spells.
+- May not gain ranks in implements.~
+
+//Cavalier
+@720306 = ~May not use missile weapons.~
+@720307 = ~May not use missile weapons.
+- May not gain proficiency with ranged weapons.~
+
+//Blackguard
+@720306 = ~May turn undead as a Paladin of the same level.~
+@720307 = ~May turn undead as a Paladin of the same level.
+- May take five ranks in the Herbalism skill.~
+
+//Extra: Base Paladin
+@720308 = ~Proficiency slots: seven at first level.  Gains one proficiency point every three levels.~
+
+
+//Cleric
+@720400 = ~May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).~
+@720401 = ~May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
+- Proficiency slots: six at first level.  Gains one proficiency point every three levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Expertise (three slots) in armor proficiency.
+- May achieve Proficiency (one slot) in martial arts.~
+@720402 = ~Proficiency slots: six at first level.  Gains one proficiency point every three levels.~
+@720403 = ~May wear any armor.~
+@720404 = ~Non-Weapon Proficiencies: Alchemy (four slots), Endurance (two slots), Heal (five slots), Herbalism (five slots), Implements (four slots), Spellcraft (seven slots), Persuasion (two slots) and Ritual (seven slots).~
+
+//Talos 24307 not needed
+//Helm 24308 not needed
+//Lathander 24308 not needed
+
+//Should be no changes based on kits
+
+//Druid
+@720500 = ~May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.~
+@720501 = ~May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.
+- Non-Weapon Proficiencies: FILL IN LATER
+- Non-Weapon Proficiencies: Alchemy (three slots), Endurance (two slots), Heal (four slots), Herbalism (six slots), Hunting (two slots), Implements (five slots), Animal Handling (seven slots), Spellcraft (four slots) and Ritual (five slots).
+- May achieve Specialization (two slots) in armor proficiency.~
+
+//other paladin kits to be more accurately filled in when all profs are straight
+
+
+//Shapeshifter
+@720502 = ~May not wear any armor.~
+@720503 = ~May not wear any armor.
+- May not put any ranks in Armor.~
+
+//Avenger
+@720504 = ~May not wear heavier armor than leather.~
+@720505 = ~May not wear heavier armor than leather.
+- May only put one rank in Armor.~
+
+//Totemic
+@720506 = ~Advantages:~
+@720507 = ~Advantages:
+- May put seven ranks in Ritual.~
+
+//Shaman
+@720508 = ~May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and shortbow.~
+@720509 = ~May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and shortbow.
+- Non-Weapon Proficiencies: FILL IN LATER
+- Non-Weapon Proficiencies: Alchemy (three slots), Endurance (three slots), Heal (four slots), Herbalism (five slots), Hunting (three slots), Implements (four slots), Animal Handling (seven slots), and Ritual (seven slots).
+- May achieve Specialization (two slots) in armor proficiency.~
+
+
+//Mage
+@720600 = ~May only use the following weapons: dagger, quarterstaff, dart, sling.~
+@720601 = ~May only use the following weapons: dagger, quarterstaff, dart, sling.
+- Proficiency slots: four at first level.  Gains one proficiency point every four levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- Mages gain two free ranks in Spellcraft at 1st level. They gain an additional rank at 4th level and every four levels until they reach 20th level.~
+
+@720602 = ~May only become Proficient (one slot) in any weapon class.~
+@720603 = ~May only become Proficient (one slot) in simple weapons.~
+ 
+ //Thief
+@720700 = ~club, quarterstaff, crossbow, shortbow, dart, sling.~
+@720701 = ~club, quarterstaff, crossbow, shortbow, dart, sling.
+- Proficiency slots: six at first level. Gains one proficiency point every three levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Proficiency (one slot) in martial arts.
+- May achieve Proficiency (one slot) in armor proficiency.~
+
+//other thief kits to be more accurately filled in when all profs are straight
+
+//Assassin
+@720702 = ~+1 bonus to hit and damage rolls.~
+@720703 = ~+1 bonus to hit and damage rolls.
+- May put seven ranks in Herbalism.~
+
+//Bounty Hunter
+@720704 = ~+15% bonus to Set Traps.~
+@720705 = ~+15% bonus to Set Traps.
+- May put seven ranks in Mechanics.~
+
+//Swashbuckler
+@720706 = ~+1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.~
+@720707 = ~+1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.
+- May put two ranks in Martial Arts.~
+
+//Extra: Base Thief
+@720708 = ~May only become Proficient (one slot) in any weapon class.~
+@720709 = ~May only become Proficient (one slot) in simple weapons, swords, blunt and ranged weapons.~
+
+//Extra: Swash
+@720710 = ~May Specialize (two slots) in any melee weapon available to Thieves.~
+@720711 = ~May Specialize (two slots) in Simple, Sword and Blunt weapons.~
+
+//Shadowdancer
+@720712 = ~May not use the Set Snare ability.~
+@720713 = ~May not use the Set Snare ability.
+- May not gain ranks in the Mechanics skill.~
+
+
+//Bard
+@720801 = ~May not equip shields larger than bucklers.~
+@720802 = ~May not equip shields larger than bucklers.
+- Proficiency slots: six at first level. Gains one proficiency point every two levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Proficiency (one slot) in martial arts.
+- May achieve Specialization (two slots) in armor proficiency.~
+
+//other thief kits to be more accurately filled in when all profs are straight
+
+//Blade
+@720803 = ~May place 3 slots in Two-Weapon Style.~
+@720804 = ~May place 3 slots in Two-Weapon Style.
+- May achieve Specialization (two slots) in martial arts.
+- May place five ranks in Ritual.~
+
+//Jester
+@720805 = ~Advantages:~
+@720806 = ~Advantages:
+- May put seven ranks in Persuasion.~
+
+//Skald
+@720807 = ~+1 bonus to hit and damage rolls.~
+@720808 = ~+1 bonus to hit and damage rolls.
+- May put five ranks in Ritual.~
+
+//Extra: Bard
+@720809 = ~May not wear armor heavier than chain mail. (Spells cannot be cast while wearing armor.)~
+@720810 = ~May not wear armor heavier than chain mail.~
+
+//Skald
+@720811 = ~Disadvantages:~
+@720812 = ~Disadvantages:
+- May only put two ranks in Persuasion.~
+
+//Sorcerer
+@720901 = ~dagger, quarterstaff, dart, sling.~
+@720902 = ~dagger, quarterstaff, dart, sling.
+- Proficiency slots: six at first level. Gains one proficiency point every three levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Proficiency (one slot) in martial arts.~
+
+//other sor kits to be more accurately filled in when all profs are straight
+
+//D. Disciple
+@720903 = ~1st level: +1 bonus to AC.~
+@720904 = ~1st level: +1 bonus to AC
+- May put four ranks in Endurance.~
+
+//Extra: Sorcerer
+@720905 = ~May only become Proficient (one slot) in any weapon class.~
+@720906 = ~May only become Proficient (one slot) in simple weapons.~
+//Extra DD
+@720907 = ~May cast one fewer spell per level per day.~
+@720908 = ~May cast one fewer spell per level per day.
+- May only put four ranks in Ritual.~
+
+//Monk
+@721000 = ~May only use weapons available to the Thief class (except two-handed).~
+@721001 = ~May only use weapons available to the Thief class (except two-handed).
+- Proficiency slots: six at first level. Gains one proficiency point every two levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May grand mastery Proficiency (five slots) in martial arts.~
+@721002 = ~May only become Proficient (one slot) in any weapon class.~
+@721003 = ~May only become Proficient (one slot) in simple, swords, and blunt weapons.~
+
+//other monk kits to be more accurately filled in when all profs are straight
+
+//DARK MOON
+@721004 = ~May invest points into the Detect Illusion skill.~
+@721005 = ~May invest points into the Detect Illusion skill.
+- May put five ranks into alchemy, implements or spellcraft.~
+@721006 = ~May not use the Stunning Blow ability.~
+@721007 = ~May not use the Stunning Blow ability.
+- May only put one rank into ritual.~
+
+//Barbarian
+@721100 = ~May not wear armor heavier than splint mail.~
+@721101 = ~May not wear armor heavier than splint mail.
+- Proficiency slots: eight at first level. Gains one proficiency point every three levels.
+- Non-Weapon Proficiencies: FILL IN LATER
+- May achieve Specialization (two slot) in martial arts.
+- May achieve Specialization (two slots) in armor proficiency.~

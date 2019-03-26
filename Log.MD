@@ -65,7 +65,25 @@ TO DO 29: There are stat checks in splprot (Gr or eq and less than).  USE THEM!
 
 TO DO 31: Replace potion of cure light wounds with healers kit, and add to certain stores.
 
-TO DO 32: Add med kits to stores and temples (with option to replace potion of healing)
+TO DO 32: Add med kits to some rando stores
+
+Version 0.05.06
+
+2019-03-23
+
+- Added med kit to pomabs
+
+2019-03-16
+
+- Add medkit to all stores that sell healing
+
+2019-03-11
+
+- Created sep class description tra from prof description (to be used with my other mods)
+
+- Created sep setup tra to be used with my other mods (also for ease of translation)
+
+- Did fighter and kit description change for BG2EE
 
 Version 0.05.05
 

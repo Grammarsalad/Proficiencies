@@ -300,7 +300,6 @@ ACTION_GET_STRREF 31975 fighter_description
 
 OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
-  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
 END
 
 STRING_SET_EVALUATE 31975 ~%fighter_description%~
@@ -797,6 +796,103 @@ END  //END BGEE class descriptions
 //BG2EE CLASS DESCRIPTIONS --TO DO
 //
 ACTION_IF GAME_IS ~bg2ee eet~ BEGIN //BG2EE ONLY STRINGS
+
+/////////////////////////////////////////////////
+//Fighters
+/////////////////////////////////////////////////
+
+ OUTER_SPRINT old @720100//old text
+ OUTER_SPRINT new @720101//new text
+// OUTER_SPRINT old1 @720116//old text  //For Item use component
+// OUTER_SPRINT new1 @720117//new text   //7 points, +1/2 levels
+
+ACTION_GET_STRREF 9556 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+//  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~     //For Item use component
+END
+
+STRING_SET_EVALUATE 9556 ~%fighter_description%~
+/////////////////////////////////////////////////
+//Berserkers
+/////////////////////////////////////////////////
+
+ OUTER_SPRINT old1 @720102//old text
+ OUTER_SPRINT new1 @720103//new text
+ OUTER_SPRINT old2 @720104//old text
+ OUTER_SPRINT new2 @720105//new text
+
+ACTION_GET_STRREF 25201 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~
+END
+
+STRING_SET_EVALUATE 25201 ~%fighter_description%~
+
+/////////////////////////////////////////////////
+//Wizard Slayer
+/////////////////////////////////////////////////
+// STRING_SET 25203 @720003 //wis slayer   No change(?)
+
+/////////////////////////////////////////////////
+//Kensai
+/////////////////////////////////////////////////
+
+ OUTER_SPRINT old1 @720106//old text
+ OUTER_SPRINT new1 @720107//new text
+
+ OUTER_SPRINT old2 @720108//old text
+ OUTER_SPRINT new2 @720109//new text
+ OUTER_SPRINT old3 @720110//old text
+ OUTER_SPRINT new3 @720111//new text
+
+ OUTER_SPRINT old4 @720112//old text
+ OUTER_SPRINT new4 @720113//new text
+
+ACTION_GET_STRREF 25204 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+//  REPLACE_TEXTUALLY ~%old2%~ ~%new2%~ //For Item use component
+//  REPLACE_TEXTUALLY ~%old3%~ ~%new3%~
+  REPLACE_TEXTUALLY ~%old4%~ ~%new4%~
+END
+
+STRING_SET_EVALUATE 25204 ~%fighter_description%~
+
+/////////////////////////////////////////////////
+//Dwarven defender
+/////////////////////////////////////////////////
+// STRING_SET 31975 @720003 //Dwarven defender   No change(?)
+
+ OUTER_SPRINT old1 @720114//old text
+ OUTER_SPRINT new1 @720115//new text
+
+ACTION_GET_STRREF 74301 fighter_description
+
+OUTER_PATCH_SAVE fighter_description ~%fighter_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 74301 ~%fighter_description%~
+
+/////////////////////////////////////////////////
+//BARBARIAN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721100//old text
+ OUTER_SPRINT new1 @721101//new text
+
+ACTION_GET_STRREF 24235 barb_description
+
+OUTER_PATCH_SAVE ranger_description ~%barb_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24235 ~%barb_description%~
+
 
 END  //END BG2EE class descriptions
 

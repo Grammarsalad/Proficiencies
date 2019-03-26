@@ -1,0 +1,727 @@
+//skill descriptions  @800000 to 
+
+//Heal Skill
+@800000 = ~Healing Proficiency~
+@800001 = ~The healer can use a healer's kit to treat the injuries and afflictions of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank, + <PRO_HISHER> wisdom bonus (max 30% + wisdom bonus at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that <PRO_HESHE> cannot help <PRO_HISHER> ally.  The chance of success with a heal check is equal to 50% +5% per rank, plus <PRO_HISHER> Wisdom Bonus (max 95%).  
+
+Especially skilled healers can use a healer's kit to treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 5 ranks in Heal, <PRO_HESHE> gains the ability to Treat Afflictions.
+
+Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 10% +5% per rank in healing plus their wisdom bonus. Experts in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism if they have at least 5 ranks in herbalism. (max 95%)
+
+Treat Wounds
+
+Effect: Heals 5% of target's max hit points, +5% per rank, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Chance of Success: 50%, +5% per rank, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Special: Accelerated Healing rate:
+1 rank: 1 hit point per 16 turns
+2 ranks: 1 hit point per 8 turns
+3 ranks: 1 hit point per 4 turns
+4 ranks: 1 hit point per 2 turns
+5+ ranks: 1 hit point per turn.
+
+Untrained: A character can use this skill untrained, though it isn't recommended as they have a chance to harm the target. Note that characters treated by untrained allies do not see an increase in their healing rate.
+
+Effects: Heals 5% of target's max hit points, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Chance of Success: 50%, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Mishap: 1d8 points of non-lethal damage.
+
+Chance of Mishap: 30%, - the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus).
+
+Treat Affliction
+
+Chance of Success: 10%, +5% per rank in Heal, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus), + 5% per rank in Herbalism (if the healer has at least 5 ranks in herbalism).
+
+Effect:
+5 Ranks: Treat Intoxication, Poison, Blindness and Deafness.
+6 Ranks: Treat Diseases.
+7 Ranks: Treat Paralysis and Hold.~
+
+//2 additional hit points healed!
+@800002 = ~2 additional hit points healed!~
+
+@800003 = ~4 additional hit points healed!~
+
+@800004 = ~6 additional hit points healed!~
+
+@800005 = ~8 additional hit points healed!~
+
+@800006 = ~10 additional hit points healed!~
+
+@800007 = ~12 additional hit points healed!~
+
+@800008 = ~14 additional hit points healed!~
+
+//Treat Affliction check successful!
+@800015 = ~Treat Affliction check successful!~
+
+//Treat Affliction failed!
+
+@800016 = ~Treat Affliction check failed!~
+
+
+//Treat Injury check successful!
+@800017 = ~Treat Injury check successful!~
+
+//Treat Injury failed!
+
+@800018 = ~Treat Injury check failed!~
+
+@800019 = ~Healer's Kit~
+@800020 = ~In their travels, the healer collects various natural medicines that they can use treat any allies that have recently been afflicted with various toxic substances and debilitating magics.  Upon attaining 3 ranks in Heal, <PRO_HESHE> can effectively Treat Afflictions.  <PRO_HESHE> can gains a number of uses of this ability equal to <PRO_HISHER> healing ranks per day.
+To use Treat Affliction, the heal must make a healing check (see success rate below).  If <PRO_HESHE> succeeds, <PRO_HESHE> removes any poisons, intoxication, blindness or deafness from the target if <PRO_HESHE> has at least 3 ranks in Heal.  If <PROHESHE> has 4 ranks in Heal, <PRO_HESHE> can also remove any disease from the target.  Finally, if <PRO_HESHE> possesses 5 ranks in Heal, <PRO_HESHE> removes any paralysis or hold effect from the target.
+
+Treating such afflictions is tricky, however, and the treatment is not always effective.  The chance of success is equal to 20% +5% per rank in healing. Experts in herbalism are much more effective at treating afflictions.  They receive a +5% bonus to their check for every rank they have in herbalism if they have at least 3 ranks in herbalism.
+Chance of Success: 20%, +5% per rank in Heal, + the healer's wisdom bonus (i.e. <PRO_HISHER> percentage bonus), + 5% per rank in Herbalism (if the healer has at least 3 ranks in herbalism).
+
+Effect:
+3 Ranks: Treat Intoxication, Poison, Blindness and Deafness.
+4 Ranks: Treat Diseases.
+5 Ranks: Treat Paralysis and Hold.~
+
+//Herbalism Skill
+@800021 = ~Prepare Concoction~
+@800022 = ~Herbalists gather numerous natural medicines in their travels that can be combined in numerous ways when the occasion calls to heal the sick, benefit recipients, or even harm enemies. These items degrade quickly, and last a maximum of 1 hour per rank. A herbalist can prepare one concoction per day per rank <PRO_HESHE> has in Herbalism, plus <PRO_HISHER> ranks in intelligence.
+
+Concoctions cannot be prepared in combat. However, once prepared, a concoction can be employed in combat.
+
+The herbalist can create the following concoctions based on proficiency:
+
+~
+@800023 = ~Relaxant~
+@800024 = ~This simple clay removes fatigue sooths the muscles of any creature it is applied to, effectively halving the target's fatigue level.
+
+Also, it heals 2 hit points per rank the herbalist has in heal.~
+
+/*
+
+
+@800004 = ~Use or Select a Non-Weapon Proficiency~
+@800005 = ~Use or Select a Non-Weapon Proficiency
+Use this ability to use or select a non-weapon proficiency.~
+
+@810000 = ~Antidote~
+@810001 = ~Antidote
+This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Poison: 70%
+~
+@810002 = ~Antidote
+This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Poison: 75%
+~
+@810003 = ~Antidote
+This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Poison: 80%
+~
+@810004 = ~Antidote
+This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Poison: 85%
+~
+@810005 = ~Antidote
+This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Poison: 90%
+~
+@810006 = ~Antidote
+This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Poison: 95%
+~
+
+@810007 = ~Bandage~
+@810008 = ~Bandage
+Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
+-  Effects:
+o	Regenerate: 1 HP/Hour
+o	Movement: 75%
+~
+@810009 = ~Bandage
+Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
+-  Effects:
+o	Regenerate: 1 HP/Half Hour
+o	Movement: 75%
+~
+@810010 = ~Bandage
+Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
+-  Effects:
+o	Regenerate: 1 HP/15 Minutes
+o	Movement: 75%
+~
+@810011 = ~Bandage
+Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
+-  Effects:
+o	Regenerate: 1 HP/10 Minutes
+o	Movement: 75%
+~
+@810012 = ~Bandage
+Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
+-  Effects:
+o	Regenerate: 1 HP/5 Minutes
+o	Movement: 75%
+~
+@810013 = ~Remedy~
+@810014 = ~Remedy
+This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Disease: 60%
+~
+@810015 = ~Remedy
+This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Disease: 65%
+~
+@810016 = ~Remedy
+This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Disease: 70%
+~
+@810017 = ~Remedy
+This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Disease: 75%
+~
+
+@810018 = ~Remedy
+This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Disease: 80%
+~
+@810019 = ~Remedy
+This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
+-  Effects:
+o	Cure Disease: 85%
+~
+*/
+@810020 = ~Oops!~
+@810021 = ~Alchemist's Fire, Makeshift~
+@810022 = ~Alchemist's Fire, Makeshift
+The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+STATISTICS:
+
+Damage: 2d3 (save vs. wands for half)
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+Characters without the required skill level have a 50% chance of spilling some alchemist fine on themselves (suffering full damage with no save).~
+
+@810023 = ~2d3~
+
+@810024 = ~4d3~
+
+@810025 = ~6d3~
+
+@810026 = ~8d3~
+
+@810027 = ~10d3~
+
+@810028 = ~12d3~
+
+@810029 = ~14d3~
+
+@810030 = ~wands for half~
+
+@810031 = ~wands -1 for half~
+
+@810032 = ~wands -2 for half~
+
+@810033 = ~wands -3 for half~
+
+@810034 = ~wands -4 for half~
+
+@810047 = ~Acid, Makeshift~
+@810048 = ~Acid, Makeshift
+Acid burns, and can cause a lot of damage if left to burn over a period of time.  Like alchemist fire, acid is carefully packed it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open covering the target with burning acid.  When hit, a target takes 1d4 + the creator's intelligence modifier of acid damage for a number of rounds equal to the number of ranks the crafter has in alchemy.  Each round after the first, the target can save vs. wands to prevent further damage.
+STATISTICS:
+
+Damage: 1d4/round (save vs. wands each round to avoid damage)
+
+Duration: 1 round
+
+Weight: 1
+
+Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+Characters without the required skill level have a 50% chance of spilling some acid on themselves (suffering full damage with no save).~
+
+@810049 = ~1d4~
+@810050 = ~1d4+1~
+@810051 = ~1d4+2~
+@810052 = ~1d4+3~
+@810053 = ~1d4+4~
+@810054 = ~1 round~
+@810055 = ~2 rounds max~
+@810056 = ~3 rounds max~
+@810057 = ~4 rounds max~
+@810058 = ~5 rounds max~
+@810059 = ~6 rounds max~
+@810060 = ~7 rounds max~
+
+@820000 = ~Second Wind~
+@820001 = ~Second Wind
+Upon using this ability, the character takes a moment to catch <PRO_HISHER> breath.  When <PRO_HESHE> does this, <PRO_HESHE> recovers a number of hit points equal to 25% +10% per rank <PRO_HESHE> has in Endurance (max +50% at 5 ranks), plus <PRO_HISHER> constitution modifier to <PRO_HISHER> hit point total.  Additionally, <PRO_HISHER> fatigue level is reset to zero.
+
+At 6 ranks, the character can try to purge their body of deleterious poisons.  <PRO_HISHER> chance of success is 10% per rank <PRO_HESHE> has in Endurance plus <PRO_HISHER> Constitution modifier.
+
+At 7 ranks, the character can try to purge their body of disease when they use Second Wind. <PRO_HISHER> chance of success is 35% plus <PRO_HISHER> Constitution modifier.
+
+This ability cannot be used in combat.
+
+Effect: Heals 25% of target's max hit points, +10% per rank, plus Constitution Modifier.
+
+Chance of Success: 
+Poison (6 ranks) 10% per rank + Constitution Modifier.
+Disease (7 ranks) 35% + Constitution Modifier.
+
+This ability can be used one time per 24 hour period, if the character has 1 or 2 ranks in endurance.
+
+If <PRO_HESHE> has 3-5 ranks in endurance, Second Wind can be used once per 16 hour period.
+
+If <PRO_HESHE> has 6 or 7 ranks in endurance, Second Wind can be used once per 8 hour period.~
+
+@820002 = ~Poisons Purged!~
+@820003 = ~Poisons not Purged!~
+
+@820004 = ~Diseases Purged!~
+@820005 = ~Diseases not Purged!~
+@820006 = ~Second Wind can only be used once per day~
+/*
+@810060 = ~Sprint
+Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.~
+ */
+@810061 = ~Sprint
+Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.
+Because of your skill in running, you tire at 1/3 the rate from sprinting.~
+
+@810062 = ~Sprint
+Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however.
+Because of your skill in running, you tire at 1/3 the rate from sprinting.~
+
+@810063 = ~Sprint
+Sprinting allows you to move at 2x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however.
+Because of your skill in running, you tire at 1/3 the rate from sprinting.~
+
+@810064 = ~Demoralized~
+@810065 = ~Intimidate~
+@810066 = ~Intimidate
+Characters can demoralize an opponent if they fail to save vs. rod/staff/wand.  A demoralized opponent suffers a -1 penalty to hit rolls, as well as a -1 penalty to saves and AC.  A given opponent can only be affected by intimidate once per encounter (whether or not they save).  This ability affects only living creatures.  The effect lasts for 3 rounds plus <PRO_HISHER> ability modifier.  Each rank taken imposes a -1 penalty to the save, and increases the to hit penalty by -1.
+
+Half-orcs use their strength attribute to determine the requirement to take this skill, and to determine the duration of the ability.~
+
+
+
+
+
+/*
+@800000 = ~Prepare Bandage~
+@800001 = ~Prepare Bandage
+With this ability, you construct a bandage coated with various ointments collected in your travels that help in the healing process.~
+@800004 = ~Treat Injury~
+@800005 = ~Treat Injury
+Your training in the healing arts allows you to treat an ally of damage once per day.  This ability works on an ally only once per day.
+
+You heal 1d6 points per point invested in this skill, to a maximum of 5d6.
+
+For each point of wisdom above 14, you add 1 point to the amount of damage per die healed.~
+
+
+ */
+
+//ARCANE SPELLS
+@900000 = ~Alarm~
+@900001 = ~Alarm
+(Divination)
+
+Level: 1
+Range: 30 ft.
+Duration: 8 Hours
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+
+Alarm creates a subtle ward on an area you select. Once the spell effect is in place, it thereafter sounds a mental or audible alarm each time a hostile creature of Tiny or larger size enters the warded area or touches it. This alarm awakens the caster and <PRO_HISHER> allies, and makes them alert to all enemies, giving them a +2 bonus to weapon and casting speed for a single round.  This spell cannot be cast in the presence of enemies, and once the ward is set, it cannot be moved.~
+
+@900002   = ~Protective Shell~
+@900003   = ~Protective Shell
+(Abjuration)
+
+Level: 1
+Range: 0
+Duration: 3 turns
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
+
+This spell creates a thin magical shell that harmlessly absorbs the first physical strike that hits the caster.  This spell does not stack with stoneskin or similar spells.~
+
+@900004   = ~Frost Ray~
+@900005   = ~Frost Ray
+(Evocation)
+
+Level: 1 
+Range: Short
+Duration: Instant
+Casting Time: 3
+Area of Effect: 2-ft. by 40-ft. jet.
+Saving Throw: Breath for 1/2
+
+Upon casting this spell a ray of ice appears at the caster's fingertips and shoots toward a target of the caster's choice. The ray causes 2d4 points of cold damage to the target to anyone in the ray's path.  Targets can save vs. breath to take half damage.  
+
+Damage is increased by 1d4 at levels 2, 4, 6, 8 and 10.~
+
+@900006   = ~Repair Undead~
+
+~Repair Undead
+(Necromancy)
+
+Level: 1
+Range: Touch
+Duration: Instant
+Casting Time: 5
+Area of Effect: 1 undead creature
+Saving Throw: None
+
+By casting this spell and laying <PRO_HISHER> hand upon an undead ally, repairing 1d6 Hit Points to the creature's body, plus 1d6 per 2 levels (maximum 6d6 hit points. This spell has no effect on the living, constructs, or extraplanar creatures.~
+
+@900007 = ~Stone Fist
+(Alteration)
+
+Level: 3
+Range: Self
+Duration: 1 Turn
+Casting Time: 3
+Area of Effect: The caster
+
+When the caster completes this spell, <PRO_HISHER> hands become blocks of stone.  <PRO_HESHE> can make melee attacks with these hands inflicting 2d8 points of damage plus strength.  In addition, <PRO_HESHE> is infused with the power of the earth, and <PRO_HISHER> strength is increased by 2 for the duration of the spell.~
+
+
+//DIVINE SPELLS
+@1000000 = ~Forbiddance~
+@1000001 = ~Forbiddance
+(Enchantment/Charm)
+
+Level: 2
+Sphere: Charm
+Range: Visual range of the caster
+Duration: 2 round
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Special
+
+This spell enables the priest to forbid another creature to move, by commanding them to "stop".  A creature so commanded will stop in it's tracks, and will be unable to move if they do not make a successful save vs. spells. At the end of the second round, the creature regains the use of it's legs, and can move normally.~
+
+@1000002 = ~Remove Fatigue~
+
+@1000003 = ~Remove Fatigue
+(Alteration)
+
+Level: 1
+Sphere: Vigor
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 1
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+The priest extinguishes fatigue in the spell's recipients, making them feel completely refreshed and ready to continue. Recipients will not recover spells or hit points, as they would with a full nights rest, however.~
+
+@1000004 = ~Pacify the Dead~
+
+@1000005 = ~Pacify the Dead
+(Alteration)
+
+Level: 2
+Sphere: Death
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 3
+Area of Effect: one creature
+Saving Throw: None.
+
+Upon casting this spell, the priest causes one undead within range to be slowed to be slowed.  This effect negates Haste, but does not otherwise affect magically sped-up or slowed creatures. Slowed creatures suffer -4 penalties to attack and Armor Class. To make matters worse, creatures save at -4 against this spell.~
+
+@1000006 = ~Murderous Command~
+
+@1000007 = ~Murderous Command
+(Enchantment/Charm)
+
+Level: 3
+Sphere: Charm
+Range: Visual range of the caster
+Duration: 1 round per level (max 10 rounds)
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Spell
+
+With this spell, the priest commands the target to attack the nearest creature.  If the target doesn't save vs. spell, they will attack the nearest creature--friend or foe--that they can reach.~
+
+@1000008 = ~Animal Eyes~
+
+@1000009 = ~Animal Eyes
+(Divination)
+
+Level: 1
+Sphere: Animal
+Range: Touch
+Duration: 1 Turn
+Casting Time: 6
+Area of Effect: The caster
+
+When the caster completes this spell and touches an allied animal, <PRO_HESHE> gains the ability to see through that animal's eyes allowing <PRO_HIMHER> to see everything that that animal sees.  Additionally, <PRO_HESHE> has greater influence over the creature, urging it to be more aggressive in its attacks, granting it a +1 critical threat rolls.~
+
+@1000010 = ~Frost Fingers~
+
+@1000011 = ~Frost Fingers
+(Invocation)
+
+Level: 1
+Sphere: Elemental Water
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: none
+
+When the priest casts this spell, a jet of chilling frost shoots from <PRO_HISHER> fingertips. The priest's hands must be held so as to send forth a fanlike sheet of frost: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The spell sends out frost jets of 5 ft. length in a horizontal arc of about 120 degrees in front of the caster. Any creature in the area recieves 1d6 points ot cold damage, plus 1d6 per two levels to a maximum of 5d6 damage.~
+
+@1000012 = ~Eyes of the Dead~
+
+@1000013 = ~Eyes of the Dead
+(Necromancy)
+
+Level: 1
+Sphere: Death
+Range: Touch
+Duration: 1 Turn
+Casting Time: 6
+Area of Effect: The caster
+
+When the caster completes this spell and touches an allied undead ally, <PRO_HESHE> gains the ability to see through that creature's eyes allowing <PRO_HIMHER> to see everything that it sees.  Additionally, <PRO_HESHE> has greater influence over the creature, making it attack more effectively, granting it a +4 bonus to attack rolls.~
+
+@1000014 = ~Misfire~
+
+@1000015 = ~Misfire
+(Alteration)
+
+Level: 5
+Sphere: Dread
+Range: Long
+Duration: 1 Round/level
+Casting Time: 1
+Saving Throw: none
+
+When the caster completes this spell, and designates one opponent within sight, that opponent finds it almost impossible to hit with a ranged weapon suffering a -20 to THAC0 for the duration of the spell.~
+
+@1000016 = ~Stormwall~
+
+@1000017 = ~Stormwall
+(Invocation)
+
+Level: 4
+Sphere: Elemental Air
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 7
+Area of Effect: 20 ft. long, 5 ft. wide wall
+Saving Throw: None
+
+This spell invokes a wall of electric energy.  This wall is intangible, requiring no physical anchor, and can easily be passed through. However, all creatures that pass through the wall take 4d6 points of electric damage, and an additional 4d6 damage for every round they stay in the area.~
+
+@1000018 = ~Disrupt Undead~
+@1000019 = ~Disrupt Undead
+(Necromancy)
+
+Level: 1
+Sphere: Death
+Range: Visual range of the caster
+Casting Time: 3
+Area of Effect: One Undead Creature
+Saving Throw: None
+
+This spell disrupts the negative energy that sustains a target undead creature.  Any undead targeted by this spell suffers 2d6+2 points of magic damage, +2 points of damage per two levels to a maximum of 2d6+10 at 9th level.~
+@1000020 = ~Ice Blade~
+@1000021 = ~Ice Blade
+(Evocation)
+
+Level: 2
+Sphere: Elemental Water
+Range: 0
+Duration: 2 Turns
+Casting Time: 4
+Area of Effect: The caster
+Saving Throw: None
+
+With this spell, the caster causes a swirling sword-shaped formation of jagged ice shards to spring forth from <PRO_HISHER> hand. This blade-like ray is wielded as if proficient. If the caster successfully hits with the ice blade in melee combat, the creature struck suffers 1d8 points of cold damage, +1 point per level (to a maximum of 1d8+10). The blade is considered to be of +1 enchantment when determining what it can hit.~
+
+@1000022 = ~Assassin Vines~
+@1000023 = ~Assassin Vines
+(Alteration)
+
+Level: 6
+Sphere: Plant
+Range: Visual range of the caster
+Duration: 1 turn
+Casting Time: 4
+Area of Effect: 24-ft. radius
+Saving Throw: Special
+
+When this spell is cast, grasses, weeds, bushes, and even trees wrap, twist, and entwine about any creatures within the area of effect, holding them fast for the duration of the spell. Additionally, they try to squeeze the life out of any creature caught in their grasp, causing 4d6 points of crushing damage per round.  A successful Save vs. breath avoids entanglement, and halves the damage inflicted, though creatures in the area are still impeded, and find their movement halved. Entangled creatures can still attack, even though they cannot move.~
+
+@1000024 = ~Cloak of Darkness~
+@1000025 = ~Cloak of Darkness
+(Abjuration)
+
+Level: 3
+Sphere: Shadow
+Range: Touch
+Duration: 1 Turn
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell shrouds the recipient in darkness, protecting <PRO_HIMHER> from both attacks and spells.  They gain a +1 bonus to AC per four levels (maximum of +5), +2 bonus to save vs. spells, and infravision for the duration of this spell.  Additionally, if the recipeient can hide in shadows, they gain a +15% bonus to that ability.~
+@1000026 = ~Smite~
+@1000027 = ~Smite
+(Conjuration)
+
+Level: 1
+Sphere: Destruction
+Range: Self
+Duration: 1 round/level (max 5)
+Casting Time: 1
+Saving Throw: None
+This spell imbues the caster with pure destructive energy against the caster's enemies. melee attacks inflict an additional 2d6 points of crushing damage for 1 round per level (max 5 rounds at level 5).~
+
+@1000028  = ~Shatter~
+@1000029  = ~Shatter
+(Transmutation)
+
+Level: 2
+Sphere: Destruction
+Range: Medium
+Duration: Instant
+Casting Time: 9
+Area of Effect: One Creature
+Saving Throw: Polymorph 1/2
+
+When the priest cast's this spell, <PRO_HESHE> creates a vibrating pulse that increases in intensity in a nearby creature or object that is especially destructive against inorganic, solid constructs like doors and golems. The first round, a living or undead creature takes 2d6 crushing damage unless they save vs. polymorph (in which case, they take half damage and the spell ends). Every round that they do not save, they suffer the amount of damage that they received in the last round, plus an additional 2d6 points of damage for a maximum of 4 rounds. Any round that they do save, they suffer 1/2 damage and the spell ends.  The spell ends after 3 rounds.
+
+When cast on a door or locked container, it undermines the integrity of the object destroying all but the most sturdy or magically protected locks. Against constructs such as golems, and elementals it does double damage, and they cannot save to avoid its effects.~
+
+@1000030  = ~Shout~
+@1000031  = ~Shout
+(Invocation)
+
+Level: 4
+Sphere: Destruction
+Range: 0
+Duration: Instant
+Casting Time: 1
+Area of Effect: 35-ft. cone with 15-deg. arc
+Saving Throw: Special
+
+Shout grants the priest tremendous vocal powers, allowing <PRO_HIMHER> to emit an earsplitting roar from <PRO_HISHER> mouth in a cone-shaped area of effect. Any creature within this area is deafened for 9 rounds and suffers 4d6 points of magic damage. A successful Save vs. Spell negates the deafness and reduces the damage by half.~
+
+@1000032 = ~Waves of Agony~
+
+
+@1000033 = ~Waves of Agony
+(Necromancy)
+Level: 5
+Sphere: Affliction
+Range: 35 feet
+Duration: Special, maximum of 3 rounds
+Casting Time: 5
+Area of Effect: One Creature
+Saving Throw: Poison/Death -5 see below
+
+When the priest casts this spell, <PRO_HESHE> points to a single creature within 35 feet.  That creature is wracked with pain and must make a save vs death at -5 or be unable to move or act for a full round and they will take 2 points of non-lethal damage per level of the priest (max 30 at level 15). If he saves, he takes half damage and shakes off the spell.
+In the second round, any creature that failed their save must save again or be paralyzed for another round and take the same amount of damage as they took in round one.  If they save, they take half damage and shake off the spell.
+In the third round, any creature that has failed both of their previous saves must save again or remain paralyzed for another round and take the same amount of damage again.  A creature that makes a successful save will take half damage and is no longer paralyzed.
+The spell ends after three rounds and does not have any affect against creatures that cannot feel pain like golems or undead.~
+
+@1000034 = ~Racked with Agony~
+
+@1000035 = ~Stone Fist~
+@1000036 = ~Stone Fist
+(Alteration)
+
+Level: 3
+Sphere: Elemental Earth
+Range: Self
+Duration: 1 Turn
+Casting Time: 3
+Area of Effect: The caster
+
+When the caster completes this spell, <PRO_HISHER> hands become blocks of stone.  <PRO_HESHE> can make melee attacks with these hands inflicting 2d8 points of damage plus strength.  In addition, <PRO_HESHE> is infused with the power of the earth, and <PRO_HISHER> strength is increased by 2 for the duration of the spell.~
+
+@1000037 = ~Animal Horde~
+@1000038 = ~Animal Horde
+(Conjuration)
+
+Level: Quest
+Sphere: Animal
+Range: Visual range of the caster
+Duration: 9 hours
+Casting Time: 10
+Area of Effect: Special
+Saving Throw: None
+
+This spell initially summons a horde of enchanted animals ready to fight for the caster.  These creatures have 50% more hit die than normal, they are immune to all sleep, feeblemind, confusion, fear, hold, stun and beserk effects, they move twice as fast as normal, and their movement is unimpeded by any magical effects.  Additionally, the caster is able to see through their eyes, and can send them ahead to scout or fight.  These special summons do not count against the normal limit of summoned creatures.~
+
+@1000039 = ~Steal Soul~
+@1000040 = ~Steal Soul
+(Conjuration)
+
+Level: Quest
+Sphere: Death
+Range: Medium
+Duration: Instant; 8 hours
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: Death -3
+
+Much like the finger of death spell, this spell attempts to snuff the life out of it's target.  The caster utters the incantation, points <PRO_HISHER> index finger at the creature to be slain, and unless the victim makes a Save vs. Death -3, the victim dies instantly. Even if the save is successful, however, the brush with death still inflicts 15d6 points of magic damage. Characters slain by Extract Soul find that their soul is trapped by the spell, and they are bound to this world for a time as a ghost under the command of the caster.~
+
+@1000041 = ~Constitution Drain~
+
+@1000042 = ~Implosion~
+@1000043 = ~Implosion
+(Alteration)
+
+Level: Quest
+Range: Visual range of the caster
+Duration: 10 rounds maximum
+Casting Time: 1
+Area of Effect: one corporeal creature/round
+Saving Throw: special
+
+This spell causes a destructive resonance in a corporeal creature's body. Each round the caster concentrates (including the first), <PRO_HESHE> can cause one creature to collapse in on itself, causing their outsides to burst out in a gory explosion if they do not make a save vs. death -4.  The concentration required is so intense, that the  caster cannot cast another spell.  However, <PRO_HESHE> can break concentration, ending the spell immediately.~
+
+@1000044 = ~Implosion
+The priest concentrates on a target for a few seconds, and if they do not save vs. death -4, they explode in a bloody mess.~
+
+@1000045 = ~Break Concentration~
+@1000046 = ~Break Concentration
+Breaking concentration ends the implosion spell.~
+
+@1000060 = ~Undead Horde~
+@1000061 = ~Undead Horde
+(Necromancy)
+
+Level: Quest
+Sphere: Death
+Range: Medium
+Duration: 8 hours
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell creates a horde of skeleton warriors to defend the caster.  These creatures do not count against the normal limit of summoned creatures.~

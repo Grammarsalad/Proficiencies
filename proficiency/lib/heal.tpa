@@ -38,9 +38,25 @@ ACTION_IF FILE_EXISTS_IN_GAME ~INN2616.sto~ BEGIN  //If CKI is in game
   ADD_STORE_ITEM ~%heal_kit%~ #1 #0 #0 ~IDENTIFIED~ #5
  BUT_ONLY
 END
+//pomab's if in game
+ACTION_IF FILE_EXISTS_IN_GAME ~EHPOMAB.sto~ BEGIN  //If pomabs is in game
+ COPY_EXISTING ~EHPOMAB.STO~ ~override~
+  LPF buy INT_VAR weap=1 armor=1 rang=1 potn=1 jewel=1 misc=1 END
+  ADD_STORE_ITEM ~%heal_kit%~ #1 #0 #0 ~IDENTIFIED~ #5
+ BUT_ONLY
+END
 
 //if not replace cure potions, then copy all stores and sell where potion of healing is sold
 
+//check if not replace potion of healing; put where temples sell healing
+ACTION_IF !FILE_EXISTS_IN_GAME ~B_HKIT_P.itm~ BEGIN  //If not replace potion of healing
+ COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
+  READ_BYTE 0x10 "flags" ELSE 0
+  PATCH_IF (("%flags%" BAND 0b00010000) = 0b00010000) BEGIN // healing
+   ADD_STORE_ITEM ~%heal_kit%~ #1 #0 #0 ~IDENTIFIED~ #5
+  END
+ BUT_ONLY
+END
 
 
 

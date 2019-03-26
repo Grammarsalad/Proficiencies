@@ -1,7 +1,7 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.05.05~
+VERSION ~0.05.06~
 
 
 ALWAYS
@@ -34,8 +34,11 @@ END
 
 /* Language Settings */
 AUTO_TRA ~skills/tra/%s~
-LANGUAGE ~English~ ~english~ ~proficiency/tra/english/prof.tra~
+LANGUAGE ~English~ ~english~ ~proficiency/tra/english/setup.tra~
+                             ~proficiency/tra/english/prof.tra~
                              ~proficiency/tra/english/craft.tra~
+                             ~proficiency/tra/english/class_descriptions.tra~
+                             ~proficiency/tra/english/prof_skill_desc.tra~
 //___________________________________________________________________________________
 
 BEGIN @10 //replace potion of healing with healer's kit?
