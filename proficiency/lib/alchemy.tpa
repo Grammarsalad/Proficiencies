@@ -125,10 +125,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//TO DO: ADD NON-USABILITY FOR UNTRAINED CREATURES
-
-//Maybe add an int check to determine which kind of item is created in the spl, so can be created 'Spontaneously'.  
-
 //BEtter idea: if not sufficient ranks in alchemy, play 'oops' text and cause damage to self
 
 //TO DO: DON'T ADD COMPLETELY NEW DESCRIPTIONS, but RATHER REVISE SPECIFIC CHANGE IN NEW ITEM!!!
@@ -149,37 +145,37 @@ END
 COPY_EXISTING ~B_OOPS1.spl~ ~override/B_OOPS2.spl~    //  2 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //  Dice #
-      dicenumber = 4
+      dicenumber = 3
 END
 
 COPY_EXISTING ~B_OOPS1.spl~ ~override/B_OOPS3.spl~       //  3 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //  Dice #
-      dicenumber = 6
+      dicenumber = 4
 END
 
 COPY_EXISTING ~B_OOPS1.spl~ ~override/B_OOPS4.spl~       //  4 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //  Dice #
-      dicenumber = 8
+      dicenumber = 5
 END
 
 COPY_EXISTING ~B_OOPS1.spl~ ~override/B_OOPS5.spl~       //  5 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //  Dice #
-      dicenumber = 10
+      dicenumber = 6
 END
 
 COPY_EXISTING ~B_OOPS1.spl~ ~override/B_OOPS6.spl~       //  6 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //  Dice #
-      dicenumber = 12
+      dicenumber = 7
 END
 
 COPY_EXISTING ~B_OOPS1.spl~ ~override/B_OOPS7.spl~       //  7 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //  Dice #
-      dicenumber = 14
+      dicenumber = 8
 END
 
 //1 rank
@@ -253,7 +249,7 @@ SPRINT new @810033//new text
       INT_VAR match_opcode = 324            //
       STR_VAR resource = EVAL ~b_s014a~
   END
-  
+
 COPY_EXISTING ~b_s011a.itm~ ~override/b_s015a.itm~    //+4 int bonus 1 rank
 SPRINT old @810030//old text
 SPRINT new @810034//new text
@@ -288,8 +284,8 @@ READ_LONG 0x54 "valid"
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
  LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      dicenumber = 2
+      INT_VAR match_opcode = 12
+      dicenumber = 3
   END
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 324            //
@@ -316,7 +312,7 @@ READ_LONG 0x54 "valid"
    END  //
  LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 2
+      dicenumber = 3
       savebonus = (0 - 1)
   END
   LPF ALTER_EFFECT
@@ -344,7 +340,7 @@ READ_LONG 0x54 "valid"
    END  //
  LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 2
+      dicenumber = 3
       savebonus = (0 - 2)
   END
   LPF ALTER_EFFECT
@@ -372,7 +368,7 @@ READ_LONG 0x54 "valid"
    END  //
  LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 2
+      dicenumber = 3
       savebonus = (0 - 3)
   END
   LPF ALTER_EFFECT
@@ -400,7 +396,7 @@ READ_LONG 0x54 "valid"
    END  //
  LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 2
+      dicenumber = 3
       savebonus = (0 - 4)
   END
   LPF ALTER_EFFECT
@@ -427,7 +423,7 @@ SPRINT new @810025//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 3
+      dicenumber = 4
   END
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 324            //
@@ -454,7 +450,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 3
+      dicenumber = 4
       savebonus = (0 - 1)
   END
   LPF ALTER_EFFECT
@@ -482,7 +478,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 3
+      dicenumber = 4
       savebonus = (0 - 2)
   END
   LPF ALTER_EFFECT
@@ -510,7 +506,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 3
+      dicenumber = 4
       savebonus = (0 - 3)
   END
   LPF ALTER_EFFECT
@@ -538,7 +534,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 3
+      dicenumber = 4
       savebonus = (0 - 4)
   END
   LPF ALTER_EFFECT
@@ -565,7 +561,7 @@ SPRINT new @810026//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 4
+      dicenumber = 5
   END
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 324            //
@@ -592,7 +588,7 @@ SPRINT new1 @810031//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 4
+      dicenumber = 5
       savebonus = (0 - 1)
   END
   LPF ALTER_EFFECT
@@ -621,7 +617,7 @@ SPRINT new1 @810032//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 4
+      dicenumber = 5
       savebonus = (0 - 2)
   END
   LPF ALTER_EFFECT
@@ -649,7 +645,7 @@ SPRINT new1 @810033//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 4
+      dicenumber = 5
       savebonus = (0 - 3)
   END
   LPF ALTER_EFFECT
@@ -677,7 +673,7 @@ SPRINT new1 @810034//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 4
+      dicenumber = 5
       savebonus = (0 - 4)
   END
   LPF ALTER_EFFECT
@@ -704,7 +700,7 @@ SPRINT new @810027//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 5
+      dicenumber = 6
   END
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 324            //
@@ -731,7 +727,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 5
+      dicenumber = 6
       savebonus = (0 - 1)
   END
   LPF ALTER_EFFECT
@@ -758,7 +754,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 5
+      dicenumber = 6
       savebonus = (0 - 2)
   END
   LPF ALTER_EFFECT
@@ -785,7 +781,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 5
+      dicenumber = 6
       savebonus = (0 - 3)
   END
   LPF ALTER_EFFECT
@@ -813,7 +809,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 5
+      dicenumber = 6
       savebonus = (0 - 4)
   END
   LPF ALTER_EFFECT
@@ -836,7 +832,7 @@ SPRINT new @810028//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 6
+      dicenumber = 7
   END
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 324            //
@@ -863,7 +859,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 6
+      dicenumber = 7
       savebonus = (0 - 1)
   END
   LPF ALTER_EFFECT
@@ -891,7 +887,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 6
+      dicenumber = 7
       savebonus = (0 - 2)
   END
   LPF ALTER_EFFECT
@@ -919,7 +915,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 6
+      dicenumber = 7
       savebonus = (0 - 3)
   END
   LPF ALTER_EFFECT
@@ -947,7 +943,7 @@ READ_LONG 0x54 "valid"
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 6
+      dicenumber = 7
       savebonus = (0 - 4)
   END
   LPF ALTER_EFFECT
@@ -974,7 +970,7 @@ SPRINT new @810029//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 7
+      dicenumber = 8
   END
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 324            //
@@ -1001,7 +997,7 @@ SPRINT new1 @810031//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 7
+      dicenumber = 8
       savebonus = (0 - 1)
   END
   LPF ALTER_EFFECT
@@ -1029,7 +1025,7 @@ SPRINT new1 @810032//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 7
+      dicenumber = 8
       savebonus = (0 - 2)
   END
   LPF ALTER_EFFECT
@@ -1057,7 +1053,7 @@ SPRINT new1 @810033//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 7
+      dicenumber = 8
       savebonus = (0 - 3)
   END
   LPF ALTER_EFFECT
@@ -1085,7 +1081,7 @@ SPRINT new1 @810034//new text
    END  //
   LPF ALTER_EFFECT
       INT_VAR match_opcode = 12            //
-      dicenumber = 7
+      dicenumber = 8
       savebonus = (0 - 4)
   END
   LPF ALTER_EFFECT
@@ -1138,28 +1134,29 @@ LPF ALTER_EFFECT
       STR_VAR resource = ~B_AOPS04~
 END
 
-//+1 Int
-COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS00.spl~ ~override/B_AOPS10.spl~   //  Last round, +1 int
+//7th to last round
+COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS01.spl~ ~override/B_AOPS07.spl~   //  seventh to last round, no int
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
+      INT_VAR match_opcode = 146            //
+      STR_VAR resource = ~B_AOPS05~
 END
+
+//+1 Int
+//Last round, +1 int  (can cast B_AOPS00--no mods, so)
 
 //2nd to last round
 COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS01.spl~ ~override/B_AOPS11.spl~   //  second to last round, +1 int
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS10~
+      savebonus = (0 - 1)                  //-1 save
+      STR_VAR resource = ~B_AOPS00~
 END
 
 //3rd to last round
 COPY_EXISTING ~B_AOPS11.spl~ ~override/B_AOPS12.spl~    //third to last round, +1 int
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
+      savebonus = (0 - 1)                  //-1 save
       STR_VAR resource = ~B_AOPS11~
 END
 
@@ -1167,6 +1164,7 @@ END
 COPY_EXISTING ~B_AOPS11.spl~ ~override/B_AOPS13.spl~    //fourth to last round, +1 int
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
+      savebonus = (0 - 1)                  //-1 save
       STR_VAR resource = ~B_AOPS12~
 END
 
@@ -1174,6 +1172,7 @@ END
 COPY_EXISTING ~B_AOPS11.spl~ ~override/B_AOPS14.spl~    //fifth to last round, +1 int
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
+      savebonus = (0 - 1)                  //-1 save
       STR_VAR resource = ~B_AOPS13~
 END
 
@@ -1181,25 +1180,28 @@ END
 COPY_EXISTING ~B_AOPS11.spl~ ~override/B_AOPS15.spl~    //sixth to last round, +1 int
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
+      savebonus = (0 - 1)                  //-1 save
       STR_VAR resource = ~B_AOPS14~
 END
 
-//+2 Int
-COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS00.spl~ ~override/B_AOPS20.spl~   //  Last round, +2 int
+//7th to last round
+COPY_EXISTING ~B_AOPS11.spl~ ~override/B_AOPS16.spl~    //seventh to last round, +1 int
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+1 dam
+      INT_VAR match_opcode = 146            //
+      savebonus = (0 - 1)                  //-1 save
+      STR_VAR resource = ~B_AOPS15~
 END
+
+
+//+2 Int
+//Last round, +2 int  (can cast B_AOPS00--no mods, so)
 
 //2nd to last round
 COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS01.spl~ ~override/B_AOPS21.spl~   //  second to last round, +2 int
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+1 dam
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS20~
+      savebonus = (0 - 2)                  //-2 save
+      STR_VAR resource = ~B_AOPS00~
 END
 
 COPY_EXISTING ~B_AOPS21.spl~ ~override/B_AOPS22.spl~    //third to last round, +2 int
@@ -1226,23 +1228,23 @@ LPF ALTER_EFFECT
       STR_VAR resource = ~B_AOPS24~
 END
 
-//+3 Int
-COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS00.spl~ ~override/B_AOPS30.spl~   //  Last round, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+1 dam
-END
-
-//2nd to last round
-COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS01.spl~ ~override/B_AOPS31.spl~   //  second to last round, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+1 dam
-END
+COPY_EXISTING ~B_AOPS21.spl~ ~override/B_AOPS26.spl~    //7th to last round, +2 int
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS30~
+      STR_VAR resource = ~B_AOPS25~
 END
+
+//+3 Int
+//Last round, +3 int  (can cast B_AOPS00--no mods, so)
+
+//2nd to last round
+COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS00.spl~ ~override/B_AOPS31.spl~   //  Last round, +3 int
+LPF ALTER_EFFECT
+      INT_VAR match_opcode = 146            //
+      savebonus = (0 - 3)                  //-3 save
+      STR_VAR resource = ~B_AOPS00~
+END
+
 
 COPY_EXISTING ~B_AOPS31.spl~ ~override/B_AOPS32.spl~    //third to last round, +3 int
 LPF ALTER_EFFECT
@@ -1268,23 +1270,23 @@ LPF ALTER_EFFECT
       STR_VAR resource = ~B_AOPS34~
 END
 
-//+4 Int
-COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS00.spl~ ~override/B_AOPS40.spl~   //  Last round, +4 int
+COPY_EXISTING ~B_AOPS31.spl~ ~override/B_AOPS36.spl~    //7th to last round, +3 int
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+1 dam
+      INT_VAR match_opcode = 146            //
+      STR_VAR resource = ~B_AOPS35~
 END
+
+//+4 Int
+//Last round, +4 int  (can cast B_AOPS00--no mods, so)
 
 //2nd to last round
 COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS01.spl~ ~override/B_AOPS41.spl~   //  second to last round, +4 int
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+1 dam
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS40~
+      savebonus = (0 - 4)                  //-4 save
+      STR_VAR resource = ~B_AOPS00~
 END
+
 
 COPY_EXISTING ~B_AOPS41.spl~ ~override/B_AOPS42.spl~    //third to last round, +4 int
 LPF ALTER_EFFECT
@@ -1310,248 +1312,54 @@ LPF ALTER_EFFECT
       STR_VAR resource = ~B_AOPS44~
 END
 
+COPY_EXISTING ~B_AOPS41.spl~ ~override/B_AOPS46.spl~    //7th to last round, +4 int
+LPF ALTER_EFFECT
+      INT_VAR match_opcode = 146            //
+      STR_VAR resource = ~B_AOPS45~
+END
 
 //Mishaps
 
 //1 rank:
-COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS1.spl~ ~override~   //  1 rank, no int
+COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS1.spl~ ~override~   //  1 rank (all the same re: int)
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 139            // Ooops notification
       parameter1 = RESOLVE_STR_REF (@810020)
 END
-
-COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS1A.spl~   //  1 rank, +1 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-
-COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS1B.spl~   //  1 rank, +2 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+2 dam
-END
-
-COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS1C.spl~   //  1 rank, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+3 dam
-END
-
-COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS1D.spl~   //  1 rank, +4 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+4 dam
-END
-
-//2 rank
-COPY ~%mod_folder%/data/skills/spl/alch/B_AOPS2.spl~ ~override~   //  2 rank, no int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 139            //  oops notification
-      parameter1 = RESOLVE_STR_REF (@810020)
-END
+COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS2.spl~    //2 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS00~
+      STR_VAR resource = ~B_AOPS1~
 END
 
-COPY_EXISTING ~B_AOPS2.spl~ ~override/B_AOPS2A.spl~   //  2 rank, +1 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS10~
-END
-
-COPY_EXISTING ~B_AOPS2.spl~ ~override/B_AOPS2B.spl~   //  2 rank, +2 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+2 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS20~
-END
-
-COPY_EXISTING ~B_AOPS2.spl~ ~override/B_AOPS2C.spl~   //  2 rank, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+3 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS30~
-END
-
-COPY_EXISTING ~B_AOPS2.spl~ ~override/B_AOPS2D.spl~   //  2 rank, +4 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+3 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS30~
-END
-
-//3 rank
-COPY_EXISTING ~B_AOPS2.spl~  ~override/B_AOPS3.spl~   //  3 rank, no int
+COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS3.spl~    //3 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
       STR_VAR resource = ~B_AOPS2~
 END
 
-COPY_EXISTING ~B_AOPS2A.spl~  ~override/B_AOPS3A.spl~   //  3 rank, +1 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS2A~
-END
-
-COPY_EXISTING ~B_AOPS2B.spl~  ~override/B_AOPS3B.spl~   //  3 rank, +2 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS2B~
-END
-
-COPY_EXISTING ~B_AOPS2C.spl~  ~override/B_AOPS3C.spl~   //  3 rank, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS2C~
-END
-
-COPY_EXISTING ~B_AOPS2D.spl~  ~override/B_AOPS3D.spl~   //  3 rank, +4 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS2D~
-END
-
-//4 rank
-
-COPY_EXISTING ~B_AOPS3.spl~  ~override/B_AOPS4.spl~   //  4 rank, no int
+COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS4.spl~    //4 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
       STR_VAR resource = ~B_AOPS3~
 END
 
-COPY_EXISTING ~B_AOPS3A.spl~  ~override/B_AOPS4A.spl~   //  4 rank, +1 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS3A~
-END
-
-COPY_EXISTING ~B_AOPS3B.spl~  ~override/B_AOPS4B.spl~   //  4 rank, +2 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS3B~
-END
-
-COPY_EXISTING ~B_AOPS3C.spl~  ~override/B_AOPS4C.spl~   //  4 rank, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS3C~
-END
-
-COPY_EXISTING ~B_AOPS3D.spl~  ~override/B_AOPS4D.spl~   //  4 rank, +4 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS3D~
-END
-
-//5 rank
-
-COPY_EXISTING ~B_AOPS4.spl~  ~override/B_AOPS5.spl~   //  5 rank, no int
+COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS5.spl~    //5 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
       STR_VAR resource = ~B_AOPS4~
 END
 
-COPY_EXISTING ~B_AOPS4A.spl~  ~override/B_AOPS5A.spl~   //  5 rank, +1 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS4A~
-END
-
-COPY_EXISTING ~B_AOPS4B.spl~  ~override/B_AOPS5B.spl~   //  5 rank, +2 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS4B~
-END
-
-COPY_EXISTING ~B_AOPS4C.spl~  ~override/B_AOPS5C.spl~   //  5 rank, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS4C~
-END
-
-COPY_EXISTING ~B_AOPS4D.spl~  ~override/B_AOPS5D.spl~   //  5 rank, +4 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS4D~
-END
-
-//6 rank
-
-COPY_EXISTING ~B_AOPS5.spl~  ~override/B_AOPS6.spl~   //  6 rank, no int
+COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS6.spl~    //6 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
       STR_VAR resource = ~B_AOPS5~
 END
 
-COPY_EXISTING ~B_AOPS5A.spl~  ~override/B_AOPS6A.spl~   //  6 rank, +1 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS5A~
-END
-
-COPY_EXISTING ~B_AOPS5B.spl~  ~override/B_AOPS6B.spl~   //  6 rank, +2 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS5B~
-END
-
-COPY_EXISTING ~B_AOPS5C.spl~  ~override/B_AOPS6C.spl~   //  6 rank, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS5C~
-END
-
-COPY_EXISTING ~B_AOPS5D.spl~  ~override/B_AOPS6D.spl~   //  6 rank, +4 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS5D~
-END
-
-//7 rank
-
-COPY_EXISTING ~B_AOPS6.spl~  ~override/B_AOPS7.spl~   //  7 rank, no int
+COPY_EXISTING ~B_AOPS1.spl~ ~override/B_AOPS7.spl~    //7 rank
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
       STR_VAR resource = ~B_AOPS6~
-END
-
-COPY_EXISTING ~B_AOPS6A.spl~  ~override/B_AOPS7A.spl~   //  7 rank, +1 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS6A~
-END
-
-COPY_EXISTING ~B_AOPS6B.spl~  ~override/B_AOPS7B.spl~   //  7 rank, +2 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS6B~
-END
-
-COPY_EXISTING ~B_AOPS6C.spl~  ~override/B_AOPS7C.spl~   //  7 rank, +3 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS6C~
-END
-
-COPY_EXISTING ~B_AOPS6D.spl~  ~override/B_AOPS7D.spl~   //  7 rank, +4 int
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS6D~
 END
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1568,12 +1376,13 @@ COPY ~%mod_folder%/data/skills/itm/alch/b_s021a.itm~ ~override~       //1 rank n
 	SAY IDENTIFIED_DESC @810048  //
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%
-      STR_VAR resource = ~B_AOPS1~
+      STR_VAR resource = ~B_AOPS1~   //just fine for 1 rank (no save) --need to adjust for 2+
 END
+//146 casts B_AOPS00 with 6 delay with save vs. wands 
 
 COPY_EXISTING ~b_s021a.itm~  ~override/b_s021b.itm~       //1 rank +1 int
 SPRINT old @810049//old text
-SPRINT new @810050//new text                               //+1 dam text
+SPRINT new @810050//new text                               //-1 save text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1582,19 +1391,14 @@ SPRINT new @810050//new text                               //+1 dam text
 	END
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
-
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%
-      STR_VAR resource = ~B_AOPS1A~
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
+      INT_VAR match_opcode = 146            //
+      savebonus = (0 - 1)                   //-1 save actual
 END
 
 COPY_EXISTING ~b_s021a.itm~  ~override/b_s021c.itm~       //1 rank +2 int
 SPRINT old @810049//old text
-SPRINT new @810051//new text                               //+2 dam text
+SPRINT new @810051//new text                               //-2 save text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1603,19 +1407,14 @@ SPRINT new @810051//new text                               //+2 dam text
 	END
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
-
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%
-      STR_VAR resource = ~B_AOPS1B~
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+2 dam
+      INT_VAR match_opcode = 146            //
+      savebonus = (0 - 2)                   //-2 save actual
 END
 
 COPY_EXISTING ~b_s021a.itm~  ~override/b_s021d.itm~       //1 rank +3 int
 SPRINT old @810049//old text
-SPRINT new @810052//new text                               //+3 dam text
+SPRINT new @810052//new text                               //-3 save text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1624,19 +1423,15 @@ SPRINT new @810052//new text                               //+3 dam text
 	END
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
+LPF ALTER_EFFECT
+      INT_VAR match_opcode = 146            //
+      savebonus = (0 - 3)                   //-3 save actual
+END
 
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%
-      STR_VAR resource = ~B_AOPS1C~
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+3 dam
-END
 
 COPY_EXISTING ~b_s021a.itm~  ~override/b_s021e.itm~       //1 rank +4 int
 SPRINT old @810049//old text
-SPRINT new @810053//new text                               //+4 dam text
+SPRINT new @810053//new text                               //-4 save text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1645,25 +1440,16 @@ SPRINT new @810053//new text                               //+4 dam text
 	END
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
-
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%
-      STR_VAR resource = ~B_AOPS1D~
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+4 dam
+      INT_VAR match_opcode = 146            //
+      savebonus = (0 - 4)                   //-4 save actual
 END
 
 //2 rank
-//Base item
-COPY ~%mod_folder%/data/skills/itm/alch/b_s022a.itm~ ~override~       //2 rank no int
-	SAY NAME1 @810047
-	SAY NAME2 @810047
-	SAY UNIDENTIFIED_DESC @810048  //
-	SAY IDENTIFIED_DESC @810048  //
+//base item
+COPY_EXISTING ~b_s021a.itm~  ~override/b_s022a.itm~      //2 rank no int
 SPRINT old @810054//old text
-SPRINT new @810055//new text                               //extra duration
+SPRINT new @810055//new text                               //duration text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1674,16 +1460,16 @@ SPRINT new @810055//new text                               //extra duration
    END  //
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%
-      STR_VAR resource = ~B_AOPS2~
+      STR_VAR resource = ~B_AOPS2~  //extra round of oops
 END
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //
-      STR_VAR resource = ~B_AOPS01~
+      STR_VAR resource = ~B_AOPS01~         //+2 round (no save pen)
 END
 
 COPY_EXISTING ~b_s022a.itm~  ~override/b_s022b.itm~       //2 rank +1 int
 SPRINT old @810049//old text
-SPRINT new @810050//new text                               //extra damage notification
+SPRINT new @810050//new text                               //-1 save pen text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1693,21 +1479,14 @@ SPRINT new @810050//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS2A~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS10~
+      savebonus = (0 - 1)                   //-1 save actual
+      STR_VAR resource = ~B_AOPS11~         //+2 round (-1 save pen)
 END
 
 COPY_EXISTING ~b_s022a.itm~  ~override/b_s022c.itm~       //2 rank +2 int
 SPRINT old @810049//old text
-SPRINT new @810051//new text                               //extra damage notification
+SPRINT new @810051//new text                               //-2 save pen text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1717,21 +1496,14 @@ SPRINT new @810051//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+2 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS2B~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS20~
+      savebonus = (0 - 2)                   //-2 save actual
+      STR_VAR resource = ~B_AOPS21~         //+2 round (-2 save pen)
 END
 
 COPY_EXISTING ~b_s022a.itm~  ~override/b_s022d.itm~       //2 rank +3 int
 SPRINT old @810049//old text
-SPRINT new @810052//new text                               //extra damage notification
+SPRINT new @810052//new text                               //-3 save pen text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1741,21 +1513,14 @@ SPRINT new @810052//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+3 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS2C~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS30~
+      savebonus = (0 - 3)                   //-3 save actual
+      STR_VAR resource = ~B_AOPS31~         //+2 round (-3 save pen)
 END
 
 COPY_EXISTING ~b_s022a.itm~  ~override/b_s022d.itm~       //2 rank +4 int
 SPRINT old @810049//old text
-SPRINT new @810053//new text                               //extra damage notification
+SPRINT new @810053//new text                               //-4 save pen text
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1765,16 +1530,9 @@ SPRINT new @810053//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+4 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS2D~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS40~
+      savebonus = (0 - 4)                   //-4 save actual
+      STR_VAR resource = ~B_AOPS41~         //+2 round (-4 save pen)
 END
 
 //3 ranks
@@ -1792,24 +1550,18 @@ SPRINT new @810056//new text                               //extra duration noti
 	END
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
-/*
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-*/
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
       STR_VAR resource = ~B_AOPS3~
 END
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS01~
+      INT_VAR match_opcode = 146            //
+      STR_VAR resource = ~B_AOPS02~         //+3 round (no save pen)
 END
 
 COPY_EXISTING ~b_s023a.itm~  ~override/b_s023b.itm~       //3 rank +1 int
 SPRINT old @810049//old text
-SPRINT new @810050//new text                               //extra damage notification
+SPRINT new @810050//new text                               //-1 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1819,21 +1571,14 @@ SPRINT new @810050//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS3A~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS11~
+      savebonus = (0 - 1)                   //-1 save actual
+      STR_VAR resource = ~B_AOPS12~         //+3 round (-1 save pen)
 END
 
 COPY_EXISTING ~b_s023a.itm~  ~override/b_s023c.itm~       //3 rank +2 int
 SPRINT old @810049//old text
-SPRINT new @810051//new text                               //extra damage notification
+SPRINT new @810051//new text                               //-2 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1843,21 +1588,14 @@ SPRINT new @810051//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+2 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS3B~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS21~
+      savebonus = (0 - 2)                   //-2 save actual
+      STR_VAR resource = ~B_AOPS22~         //+3 round (-2 save pen)
 END
 
 COPY_EXISTING ~b_s023a.itm~  ~override/b_s023c.itm~       //3 rank +3 int
 SPRINT old @810049//old text
-SPRINT new @810052//new text                               //extra damage notification
+SPRINT new @810052//new text                               //-3 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1867,21 +1605,14 @@ SPRINT new @810052//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+3 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS3C~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS31~
+      savebonus = (0 - 3)                   //-3 save actual
+      STR_VAR resource = ~B_AOPS32~         //+3 round (-3 save pen)
 END
 
 COPY_EXISTING ~b_s023a.itm~  ~override/b_s023c.itm~       //3 rank +4 int
 SPRINT old @810049//old text
-SPRINT new @810053//new text                               //extra damage notification
+SPRINT new @810053//new text                               //-4 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1891,16 +1622,9 @@ SPRINT new @810053//new text                               //extra damage notifi
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+4 dam
-END
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS3D~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS41~
+      savebonus = (0 - 4)                   //-4 save actual
+      STR_VAR resource = ~B_AOPS42~         //+3 round (-4 save pen)
 END
 
 //4 ranks
@@ -1920,22 +1644,17 @@ SPRINT new1 @810057//new text                               //extra duration not
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 0                       //+0 dam
-END
-
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
       STR_VAR resource = ~B_AOPS4~
 END
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS02~
+      INT_VAR match_opcode = 146            //
+      STR_VAR resource = ~B_AOPS03~         //+4 round (no save pen)
 END
 
 COPY_EXISTING ~b_s024a.itm~  ~override/b_s024b.itm~       //4 rank +1 int
 SPRINT old @810049//old text
-SPRINT new @810050//new text                               //extra dam notification
+SPRINT new @810050//new text                               //-1 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1945,22 +1664,14 @@ SPRINT new @810050//new text                               //extra dam notificat
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS4A~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS12~
+      savebonus = (0 - 1)                   //-1 save actual
+      STR_VAR resource = ~B_AOPS13~         //+4 round (-1 save pen)
 END
 
 COPY_EXISTING ~b_s024a.itm~  ~override/b_s024c.itm~       //4 rank +2 int
 SPRINT old @810049//old text
-SPRINT new @810051//new text                               //extra dam notification
+SPRINT new @810051//new text                               //-2 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1970,22 +1681,14 @@ SPRINT new @810051//new text                               //extra dam notificat
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+2 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS4B~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS22~
+      savebonus = (0 - 2)                   //-2 save actual
+      STR_VAR resource = ~B_AOPS23~         //+4 round (-2 save pen)
 END
 
 COPY_EXISTING ~b_s024a.itm~  ~override/b_s024c.itm~       //4 rank +3 int
 SPRINT old @810049//old text
-SPRINT new @810052//new text                               //extra dam notification
+SPRINT new @810052//new text                                //-3 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -1995,22 +1698,14 @@ SPRINT new @810052//new text                               //extra dam notificat
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+2 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS4C~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS32~
+      savebonus = (0 - 3)                   //-3 save actual
+      STR_VAR resource = ~B_AOPS33~         //+4 round (-3 save pen)
 END
 
 COPY_EXISTING ~b_s024a.itm~  ~override/b_s024d.itm~       //4 rank +4 int
 SPRINT old @810049//old text
-SPRINT new @810053//new text                               //extra dam notification
+SPRINT new @810053//new text                              //-4 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2020,17 +1715,9 @@ SPRINT new @810053//new text                               //extra dam notificat
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+4 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS4D~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS42~
+      savebonus = (0 - 4)                   //-4 save actual
+      STR_VAR resource = ~B_AOPS43~         //+4 round (-4 save pen)
 END
 
 //5 ranks
@@ -2049,22 +1736,17 @@ SPRINT new1 @810058//new text                               //extra duration not
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 0                       //+0 dam
-END
-
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
       STR_VAR resource = ~B_AOPS5~
 END
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS03~
+      INT_VAR match_opcode = 146            //
+      STR_VAR resource = ~B_AOPS04~         //+5 round (no save pen)
 END
 
 COPY_EXISTING ~b_s025a.itm~  ~override/b_s025b.itm~       //5 rank +1 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810050//new text                               //extra dam notification
+SPRINT new1 @810050//new text                               //-1 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2074,22 +1756,14 @@ SPRINT new1 @810050//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+1 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS5A~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS13~
+      savebonus = (0 - 1)                   //-1 save actual
+      STR_VAR resource = ~B_AOPS14~         //+5 round (-1 save pen)
 END
 
 COPY_EXISTING ~b_s025a.itm~  ~override/b_s025c.itm~       //5 rank +2 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810051//new text                               //extra dam notification
+SPRINT new1 @810051//new text                            //-2 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2099,22 +1773,14 @@ SPRINT new1 @810051//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+1 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS5B~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS23~
+      savebonus = (0 - 2)                   //-2 save actual
+      STR_VAR resource = ~B_AOPS24~         //+5 round (-2 save pen)
 END
 
 COPY_EXISTING ~b_s025a.itm~  ~override/b_s025c.itm~       //5 rank +3 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810052//new text                               //extra dam notification
+SPRINT new1 @810052//new text                              //-3 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2124,22 +1790,14 @@ SPRINT new1 @810052//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+3 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS5C~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS33~
+      savebonus = (0 - 3)                   //-3 save actual
+      STR_VAR resource = ~B_AOPS34~         //+5 round (-3 save pen)
 END
 
 COPY_EXISTING ~b_s025a.itm~  ~override/b_s025c.itm~       //5 rank +4 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810053//new text                               //extra dam notification
+SPRINT new1 @810053//new text                             //-4 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2149,17 +1807,9 @@ SPRINT new1 @810053//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+4 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS5D~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS43~
+      savebonus = (0 - 4)                   //-4 save actual
+      STR_VAR resource = ~B_AOPS44~         //+5 round (-4 save pen)
 END
 
 //6 ranks
@@ -2178,22 +1828,17 @@ SPRINT new1 @810059//new text                               //extra duration not
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 0                       //+0 dam
-END
-
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
       STR_VAR resource = ~B_AOPS6~
 END
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS04~
+      INT_VAR match_opcode = 146            //
+      STR_VAR resource = ~B_AOPS05~         //+6 round (no save pen)
 END
 
 COPY_EXISTING ~b_s026a.itm~  ~override/b_s026b.itm~       //6 rank +1 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810050//new text                               //extra dam notification
+SPRINT new1 @810050//new text                               //-1 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2203,22 +1848,14 @@ SPRINT new1 @810050//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 1                       //+0 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS6A~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS14~
+      savebonus = (0 - 1)                   //-1 save actual
+      STR_VAR resource = ~B_AOPS15~         //+6 round (-1 save pen)
 END
 
 COPY_EXISTING ~b_s026a.itm~  ~override/b_s026b.itm~       //6 rank +2 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810051//new text                               //extra dam notification
+SPRINT new1 @810051//new text                              //-2 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2228,22 +1865,14 @@ SPRINT new1 @810051//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 2                       //+0 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS6B~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS24~
+      savebonus = (0 - 2)                   //-2 save actual
+      STR_VAR resource = ~B_AOPS25~         //+6 round (-2 save pen)
 END
 
 COPY_EXISTING ~b_s026a.itm~  ~override/b_s026b.itm~       //6 rank +3 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810052//new text                               //extra dam notification
+SPRINT new1 @810052//new text                               //-3 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2253,22 +1882,14 @@ SPRINT new1 @810052//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 3                       //+0 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS6C~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS34~
+      savebonus = (0 - 3)                   //-3 save actual
+      STR_VAR resource = ~B_AOPS35~         //+6 round (-3 save pen)
 END
 
 COPY_EXISTING ~b_s026a.itm~  ~override/b_s026c.itm~       //6 rank +4 int
 SPRINT old1 @810049//old text
-SPRINT new1 @810053//new text                               //extra dam notification
+SPRINT new1 @810053//new text                               //-4 text notification
    READ_LONG 0x54 "valid"
    PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
    READ_STRREF 0x54 ~desc~
@@ -2278,17 +1899,9 @@ SPRINT new1 @810053//new text                               //extra dam notifica
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 4                       //+0 dam
-END
-
-LPF ALTER_EFFECT
-      INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
-      STR_VAR resource = ~B_AOPS6D~
-END
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS44~
+      savebonus = (0 - 4)                   //-4 save actual
+      STR_VAR resource = ~B_AOPS45~         //+6 round (-4 save pen)
 END
 
 //7 ranks
@@ -2307,18 +1920,15 @@ SPRINT new1 @810060//new text                               //extra duration not
    SAY_EVALUATED 0x54 ~%new_desc%~
    END  //
 LPF ALTER_EFFECT
-      INT_VAR match_opcode = 12            //
-      parameter1 = 0                       //+0 dam
-END
-
-LPF ALTER_EFFECT
       INT_VAR match_opcode = 326  parameter1 = 1  parameter2 = %alc_ls%   //mishap
       STR_VAR resource = ~B_AOPS7~
 END
 LPF ALTER_EFFECT
       INT_VAR match_opcode = 146            //extra spell(s)
-      STR_VAR resource = ~B_AOPS05~
+      STR_VAR resource = ~B_AOPS07~
 END
+
+//CONTINUE 
 
 COPY_EXISTING ~b_s027a.itm~  ~override/b_s027b.itm~       //7 rank +1 int
 SPRINT old1 @810049//old text

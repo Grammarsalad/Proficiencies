@@ -67,6 +67,74 @@ TO DO 31: Replace potion of cure light wounds with healers kit, and add to certa
 
 TO DO 32: Add med kits to some rando stores
 
+TO DO 33: CREATE B_PAS01.SPL
+
+Version 0.05.08
+
+2020-01-04
+
+- Recovered lost tra file
+
+2020-01-02
+
+- Restructured mod to incorporate more skill-based components imported from B_Kits
+
+- Added zealot frenzy fatigue component in tp2 (but not actual component)
+
+- Added a few more components (matching w/ readme)
+
+2019-09-07
+
+- Heal: Added treat wounds/affliction to char sheet as skills iff EEEx is installed
+
+Version 0.05.07
+
+2019-08-24
+
+2019-08-17
+
+- Changed alchemical proficiency to short sword (misc)
+
+- Changed prof text to (tentatively) correct version  
+
+2019-08-16
+
+- Added Blunt (greater and lesser) and ranged (greater and lesser)
+
+- Changed Armor to club prof in splprot_prof.tpa (need to change elsewhere, I think) and added armor greater than
+
+2019-08-08
+
+- Greater and lesser splprot appends for misc, axe, greatesword and polearm 
+
+2019-08-07
+
+- created splprot_prof.tpa with just prof appends
+
+- Added simple/b.swd greater than and less than entries
+
+2019-08-07
+
+- Seperated splprot_append from attributes (and added attributes from b_kits)
+
+2019-08-02
+
+- Finished alchemy acid
+
+2019-07-18
+
+- Improved Alch fire (d6 +d6/rank save 1/2)
+
+- Started completed makeshift acid
+
+- All but 7th to last round (and 7 rnk) items to create/fix
+
+2019-07-17
+
+- Alch fire (weight 0), cleaned up text
+
+- Acid (got rid of int based dam bonus; added int based save pen)
+
 Version 0.05.06
 
 2019-03-23
@@ -597,6 +665,9 @@ SKILLS:
 - Added Set Snares                                                                                                 -DONE
 2016-10-30
 - Started Intimidate: CONTINUE NEXT TIME B_S121A, etc
+
+
+
 --------------------------------------------------TO DO-----------------------------------------------------------------------
 
 - Change readme to reflect light armor 3 ranks, no pen to missile weap

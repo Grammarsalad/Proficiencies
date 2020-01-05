@@ -1,31 +1,32 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.05.06~
+VERSION ~0.05.08~
 
 
 ALWAYS
-        OUTER_SPRINT ~mod_folder~ ~proficiency~    //Folder Var
+
+    OUTER_SPRINT ~mod_folder~ ~proficiency~    //Folder Var
         
-        ACTION_IF ((!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_OBSCURING_MIST~)) AND (FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~)) BEGIN
+    ACTION_IF ((!FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_OBSCURING_MIST~)) AND (FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~)) BEGIN
 	   INCLUDE ~proficiency/lib/add_ids.tpa~
-        END
+    END
 
-        INCLUDE ~proficiency/lib/splprot_append.tpa~
+    INCLUDE ~proficiency/lib/splprot_attributes.tpa~
 
-        INCLUDE ~proficiency/lib/store_rev_macros.tpa~
+    INCLUDE ~proficiency/lib/store_rev_macros.tpa~
 
-	INCLUDE ~proficiency/lib/alter_effect.tpa~
+    INCLUDE ~proficiency/lib/alter_effect.tpa~
 
-	INCLUDE ~proficiency/lib/remove_lines.tpa~
+    INCLUDE ~proficiency/lib/remove_lines.tpa~
 
-	INCLUDE ~proficiency/lib/spell_to_innate.tpa~
+    INCLUDE ~proficiency/lib/spell_to_innate.tpa~
 
-	INCLUDE ~proficiency/lib/spell_clone_effects.tpa~
+    INCLUDE ~proficiency/lib/spell_clone_effects.tpa~
 
-	INCLUDE ~proficiency/lib/bg2fp_effect_batches_fnp.tpa~
+    INCLUDE ~proficiency/lib/bg2fp_effect_batches_fnp.tpa~
 
-        INCLUDE ~proficiency/lib/bg2fp_effect_batches_prof.tpa~
+    INCLUDE ~proficiency/lib/splprot_prof.tpa~
 
 END
 //need to keep my options open
@@ -41,7 +42,550 @@ LANGUAGE ~English~ ~english~ ~proficiency/tra/english/setup.tra~
                              ~proficiency/tra/english/prof_skill_desc.tra~
 //___________________________________________________________________________________
 
-BEGIN @10 //replace potion of healing with healer's kit?
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//	                      101-105: Main Component
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 101: Weapon proficiency menu
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @20  //  Weapon proficiency menu
+SUBCOMPONENT @24 //Non-Weapon Proficiencies
+DESIGNATED 101
+GROUP @9 //Main Component
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//IN PROGRESS:
+//INCLUDE ~%mod_folder%/data/components/Setup_proficiencies.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 102: Dialog: Automatic Assignment (EEex recommended)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @25  // Dialog: Automatic Assignment (EEex recommended)
+SUBCOMPONENT @24 //Non-Weapon Proficiencies
+DESIGNATED 102
+GROUP @9 //Main Component
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 103: Dialog: Player Selection (EEex recommended)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @26  // Dialog: Player Selection (EEex recommended)
+SUBCOMPONENT @24 //Non-Weapon Proficiencies
+DESIGNATED 103
+GROUP @9 //Main Component
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 104: Skills as proficiencies: Automatic Assignment(EEex required)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @27  // Skills as proficiencies: Automatic Assignment (EEex required)
+SUBCOMPONENT @24 //Non-Weapon Proficiencies
+DESIGNATED 104
+GROUP @9 //Main Component
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 105: Skills as proficiencies: Player Assignment (EEex required)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @28  // Skills as proficiencies: Player Assignment (EEex required)
+SUBCOMPONENT @24 //Non-Weapon Proficiencies
+DESIGNATED 105
+GROUP @9 //Main Component
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1201-1207: Expanded Skills: Performance Fatigue
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+//________________________
+//
+// 1201: Bard Song Performance Fatigue
+//________________________ 
+
+BEGIN @152  //Performance Fatigue: Bard Song Fatigue
+SUBCOMPONENT @151 //Performance Fatigue
+DESIGNATED 1201
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+
+//________________________
+//
+// 1202: Shaman Dance Performance Fatigue
+//________________________
+
+BEGIN @153  //Performance Fatigue: Shaman Dance Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1202
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+
+//________________________
+//
+// 1203: Bard Song and Shaman Dance Performance Fatigue
+//________________________ 
+
+BEGIN @154  //Bard Song and Shaman Dance Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1203
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+
+//________________________
+//
+// 1204: Berserker Enage Fatigue
+//________________________
+
+BEGIN @181  //Berserker Enrage Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1204
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+
+//________________________
+//
+// 1205: Barbarian Rage Fatigue
+//________________________
+
+BEGIN @182  //Barbarian Rage Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1205
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+
+//________________________
+//
+// 1206: Zealot Frenzy Fatigue
+//________________________
+
+BEGIN @185  //Zealot Frenzy Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1206
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~ @30 // This component requires FnP Zealots
+//CONTINUE 
+
+//________________________
+//
+// 1207: Barbarian Rage, Berserker Enage, and (possibly) Zealot Frenzy Fatigue
+//________________________
+
+BEGIN @183  //Barbarian Rage, Berserker Enage, and (possibly) Zealot Frenzy Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1207
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+//Check for FnP zealots...
+ACTION_IF (MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~) BEGIN
+
+END //end if zealots installed 
+
+//________________________
+//
+// 1208: Everybody gets Fatigued
+//________________________
+
+BEGIN @184  //Everybody gets Fatigued
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 1208
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+//Check for FnP zealots...
+ACTION_IF (MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~) BEGIN
+//CONTINUE 
+
+
+END //end if zealots installed 
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1601-???: Expanded Skills: New Class Skills
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+//Appraisal
+//________________________
+
+//________________________
+//
+// 1601:Appraisal (requires EEex)
+//________________________
+
+BEGIN @197  // Appraisal (requires EEX)
+SUBCOMPONENT @198 //Class Skills - Appraisal
+DESIGNATED 1601
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+
+//Performance
+//________________________
+
+//________________________
+//
+// 1701:Performance - Bard only (requires EEex)
+//________________________ 
+
+
+BEGIN @192  // Performance- Bard Only (requires EEex)
+SUBCOMPONENT @190 //Class Skills - Performance
+DESIGNATED 1701
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//________________________
+//
+// 1702:Performance - Rogues only (requires EEex)
+//________________________ 
+
+
+BEGIN @199  // Performance- Rogues only (requires EEex)
+SUBCOMPONENT @190 //Class Skills - Performance
+DESIGNATED 1702
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+
+
+//Use Scroll
+//________________________
+
+//________________________
+//
+// 1901:Use Scroll - 10th level (requires EEex)
+//________________________ 
+
+
+BEGIN @202  // Use Scroll - 10th level (requires EEex)
+SUBCOMPONENT @203 //Class Skills - Use Scroll
+DESIGNATED 1901
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//________________________
+//
+// 1902:Use Scroll - No Restriction (requires EEex)
+//________________________ 
+
+
+BEGIN @204  // Use Scroll - No Restrictions (requires EEex)
+SUBCOMPONENT @203 //Class Skills - Use Scroll
+DESIGNATED 1902
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//________________________
+//
+// 1903:Use Scroll - Pseudo-skill
+//________________________ 
+
+
+BEGIN @205  // Use Scroll - Pseudo-skill
+SUBCOMPONENT @203 //Class Skills - Use Scroll
+DESIGNATED 1903
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//Set Natural Snares
+//________________________
+
+//________________________
+//
+// 2001: Set Natural Snares: Ranger, and Barbarian only
+//________________________
+
+
+BEGIN @207  // Set Natural Snares: Ranger and Barbarian Only
+SUBCOMPONENT @206 //Class Skills - Set Natural Snares
+DESIGNATED 2001
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
+//________________________
+//
+// 2002: Set Natural Snares: Druids, Rangers, and Barbarians only
+//________________________
+
+
+BEGIN @208  // Set Natural Snares: Druids, Rangers and Barbarians only
+SUBCOMPONENT @206 //Class Skills - Set Natural Snares
+DESIGNATED 2002
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+
+//________________________
+//
+// 2003: Set Natural Snares: Fighters, and Rangers only
+//________________________
+
+
+BEGIN @209  // Set Natural Snares: Fighters, and Rangers only
+SUBCOMPONENT @206 //Class Skills - Set Natural Snares
+DESIGNATED 2003
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//________________________
+//
+// 2004: Set Natural Snares: Fighters, Druids and Rangers only
+//________________________
+
+
+BEGIN @210  // Set Natural Snares: Fighters, Druids and Rangers only
+SUBCOMPONENT @206 //Class Skills - Set Natural Snares
+DESIGNATED 2004
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//Sense Evil Presence (requires EEex)
+//________________________
+
+//________________________
+//
+// 2101: Sense Evil Presence - Paladins Only
+//________________________
+
+
+BEGIN @186  // Sense Evil Presence - Paladins Only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2101
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2102: Sense Evil Presence: Paladins, and Barbarians only 
+//________________________
+
+
+BEGIN @187  // Sense Evil Presence - Paladins, and Barbarians only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2102
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2103: Sense Evil Presence: Paladins, and Rangers only 
+//________________________
+
+
+BEGIN @188  // Sense Evil Presence - Paladins, and Rangers only 
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2103
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2104: Sense Evil Presence: Paladins, and Priests only 
+//________________________
+
+
+BEGIN @189  // Sense Evil Presence - Paladins, and Priests only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2104
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2105: Sense Evil Presence: Paladins, Barbarians, and Rangers only 
+//________________________
+
+
+BEGIN @174  // Sense Evil Presence - Paladins, Barbarians, and Rangers only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2105
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2106: Sense Evil Presence: Paladins, Barbarians, and Priests only
+//________________________
+
+
+BEGIN @175  // Sense Evil Presence - Paladins, Barbarians, and Priests only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2106
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2107: Sense Evil Presence: Paladins, Rangers, and Priests only
+//________________________
+
+
+BEGIN @176  // Sense Evil Presence - Paladins, Rangers, and Priests only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2107
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2108: Sense Evil Presence: Paladins, Barbarians, Rangers, and Priests only
+//________________________
+
+
+BEGIN @177  // Sense Evil Presence - Paladins, Barbarians, Rangers, and Priests only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
+DESIGNATED 2108
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//Fletcher (requires EEex)
+//________________________
+
+//________________________
+//
+// 2201: Fletcher - Ranger Only
+//________________________
+
+
+BEGIN @178  // Fletcher - Ranger Only
+SUBCOMPONENT @212 //Class Skills - Fletcher (requires EEex)
+DESIGNATED 2201
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//________________________
+//
+// 2202: Fletcher: Rangers, base fighters and barbarians only 
+//________________________
+
+
+BEGIN @179  // Fletcher - Rangers, base fighters and barbarians only
+SUBCOMPONENT @212 //Class Skills - Fletcher (requires EEex)
+DESIGNATED 2201
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			3001: Everybody Can Search (requires EEX)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+//________________________
+//
+// 3001: Everybody Can Search
+//________________________ 
+
+
+BEGIN @191  //  Everybody Can Search (requires EEX)
+SUBCOMPONENT @191  //  Everybody Can Search (requires EEX)
+DESIGNATED 3001
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+INCLUDE ~%mod_folder%/data/components/Setup_all_search.tpa~
+
+
+
+//________________________
+//
+// 3101: Attribute bonus changes to all skills only
+//________________________ 
+
+//CONTINUE--Actually make the component!
+
+BEGIN @194  //  Variant Attribute Bonuses for base skills
+SUBCOMPONENT @196 //Variant Attribute Bonuses
+DESIGNATED 3101
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
+
+//CONTINUE--Actually make the component!
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 3201: Scroll Level Restrictions
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+
+BEGIN @194  //  Variant Attribute Bonuses for base skills
+SUBCOMPONENT @196 //Variant Attribute Bonuses
+DESIGNATED 3201
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+
+
+ /*
+BEGIN @19 //replace potion of healing with healer's kit?
 //marker:
 COPY ~%mod_folder%/compatibility/B_HKIT_P.itm~ ~override~   //
 
@@ -59,3 +603,4 @@ INCLUDE ~skills/data/components/Setup_skills.tpa~
  */
 //COPY ~skills/data/skills/b_skills.itm~ ~override~   //to detect this component
 
+*/

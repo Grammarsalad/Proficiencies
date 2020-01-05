@@ -1,5 +1,140 @@
-//Setup @0 to @1000
-@9 = ~Main Component~
-@10 = ~Replace Potion of Healing with Healer's Kit?~
+//@0 to @1000   EXCEPT @970 To @996
+//Tra Ref @0 to @1000
+@6   = ~...~
+@8   = ~skipping component~
+@9   = ~Main Component~
+@10  = ~Install All Revised and New Kits and Classes (Radical Version)~
+@11  = ~Install All Revised and New Kits and Classes (Conservative Version)~
+@12  = ~Install Only Revised Kits and Classes (Radical Version)~
+@13  = ~*Please be patient. This will take some time...*~
+@14  = ~Install Only New Kits (Conservative Version Only)~
+@15  = ~Install Only Revised Kits and Classes (Conservative Version)~
+@17  = ~EE games only!~
+@18  = ~Component has been depreciated~
+@19  = ~Replace Potion of Healing with Healer's Kit?~
+@20  = ~Weapon proficiency menu~
+
+@21  = ~EE games only!~
+@22  = ~Skipping EE content~
+@23  = ~EEX required!~
+@24  = ~Non-Weapon Proficiencies~
+@25  = ~Dialog: Automatic Assignment (EEex recommended)~
+@26  = ~Dialog: Player Selection (EEex recommended)~
+@27  = ~Skills as proficiencies: Automatic Assignment (EEex required)~
+@28  = ~Skills as proficiencies: Player Assignment (EEex required)~
+@29  = ~Expanded Skills~
+@30  = ~This component requires FnP Zealots~
+//
+@100  = ~Select an installation package~
+@101  = ~ALL the new kits, the kit selection dialogue, and the sphere system ('radical version')~
+@102  = ~all the new kits and the sphere system~
+@103  = ~choose components individually~
+@105  = ~no new kits - JUST install the sphere system~
+@110  = ~Change item usability for priests~
+
+@117= ~Cleric Revisions~
+
+@118= ~Class Revisions~
+
+@119= ~Bard Revisions~
+@120= ~Bard Revisions: Conservative~
+@121= ~Bard Revisions: Radical~
+
+@122= ~Cleric Revisions: Conservative~
+@123= ~Cleric Revisions: Radical~
+
+@124= ~Ranger Revisions: Conservative~
+@125= ~Ranger Revisions~
+@126= ~Ranger Revisions: Radical~
+
+@127= ~Thief Revisions~
+@128= ~Thief Revisions: Conservative~
+@129= ~Thief Revisions: Radical~
+
+@130= ~Fighter Revisions~
+@131= ~Fighter Revisions: Conservative~
+@132= ~Fighter Revisions: Radical~
+
+@133= ~Paladin Revisions~
+@134= ~Paladin Revisions: Conservative~
+@135= ~Paladin Revisions: Radical~
+
+@136= ~Druid Revisions~
+@137= ~Druid Revisions: Conservative~
+@138= ~Druid Revisions: Radical~
+
+@139= ~Mage Revisions~
+@140= ~Mage Revisions: Conservative~
+@141= ~Mage Revisions: Radical~
+
+@142= ~Sorcerer Revisions~
+@143= ~Sorcerer Revisions: Conservative~
+@144= ~Sorcerer Revisions: Radical~
+
+@145= ~Shaman Revisions~
+@146= ~Shaman Revisions: Conservative~
+@147= ~Shaman Revisions: Radical~
+
+@148= ~Monk Revisions~
+@149= ~Monk Revisions: Conservative~
+@150= ~Monk Revisions: Radical~
+
+@151= ~Performance Fatigue~
+@152= ~Performance Fatigue: Bard Song Fatigue~
+@153= ~Performance Fatigue: Shaman Dance Fatigue~
+@154= ~Performance Fatigue: Bard Song and Shaman Dance Fatigue~
+
+@161= ~Class 'Extras': Unique Arcane Spell Selection~
+@162= ~Class 'Extras'~
+
+@170= ~All Priests and Paladins: Turn bonus by charisma~
+@171= ~Turn bonus by charisma~
+@172  = ~Clerics only: Turn bonus by charisma~
+@173  = ~Paladins only: Turn bonus by charisma~
+@174 = ~Sense Evil Presence - Paladins, Barbarians, and Rangers only~
+@175 = ~Sense Evil Presence - Paladins, Barbarians, and Priests only~
+@176 = ~Sense Evil Presence - Paladins, Rangers, and Priests only~
+@177 = ~Sense Evil Presence - Paladins, Barbarians, Rangers, and Priests only~
+@178 = ~Fletcher - Ranger Only~
+@179 = ~Fletcher - Rangers, base fighters and barbarians only~
+@180 = ~Add Spontaneous Casting for clerics and druids (by Pecca)~
+@181 = ~Berserker Enrage Fatigue~
+@182 = ~Barbarian Rage Fatigue~
+@183 = ~Barbarian Rage, Berserker Enrage, and (possibly) Zealot Frenzy Fatigue~
+@184 = ~Everybody gets Fatigued~
+@185 = ~Zealot Frenzy Fatigue~
+@186 = ~Sense Evil Presence - Paladins only~
+@187 = ~Sense Evil Presence - Paladins, and Barbarians only~
+@188 = ~Sense Evil Presence - Paladins, and Rangers only~
+@189 = ~Sense Evil Presence - Paladins, and Priests only~
+@190 = ~Class Skills - Performance~
+@191 = ~Everybody Can Search (requires EEex)~
+@192 = ~Performance - Bard only (requires EEex)~
+@193 = ~Only New Thief Skills (requires EEex)~
+@194 = ~Variant Attribute Bonuses for base skills.~
+@195 = ~All New Skills.~
+@196 = ~Variant Attribute Bonuses.~
+@197 = ~Appraisal (requires EEex)~
+@198 = ~Class Skills - Appraisal~
+@199 = ~Performance - Rogues only (requires EEex)~
+@200 = ~Barter (requires EEex)~
+@201 = ~Class Skills - Barter~
+@202 = ~Use Scroll - 10th level (requires EEex)~
+@203 = ~Class Skills - Use Scroll~
+@204 = ~Use Scroll - No Restrictions (requires EEex)~
+@205 = ~Use Scroll - Pseudo-skill~
+@206 = ~Class Skills - Set Natural Snares~
+@207 = ~Set Natural Snares: Ranger, and Barbarian Only~
+@208 = ~Set Natural Snares: Druids, Rangers, and Barbarians only~
+@209 = ~Set Natural Snares: Fighters, and Rangers only~
+@210 = ~Set Natural Snares: Fighters, Druids and Rangers only~
+@211 = ~Class Skills - Sense Evil Presence (requires EEex)~
+@212 = ~Class Skills - Fletcher (requires EEex)~
+
+
+
+
+
+
 
 

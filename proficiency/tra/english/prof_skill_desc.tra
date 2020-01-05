@@ -1,4 +1,4 @@
-//skill descriptions  @800000 to 
+//skill descriptions  @800000 to
 
 //Heal Skill
 @800000 = ~Healing Proficiency~
@@ -96,135 +96,42 @@ The herbalist can create the following concoctions based on proficiency:
 
 Also, it heals 2 hit points per rank the herbalist has in heal.~
 
-/*
+@800025 = ~Treat Injury~
+@800026 = ~Treat Affliction~
 
 
-@800004 = ~Use or Select a Non-Weapon Proficiency~
-@800005 = ~Use or Select a Non-Weapon Proficiency
-Use this ability to use or select a non-weapon proficiency.~
-
-@810000 = ~Antidote~
-@810001 = ~Antidote
-This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Poison: 70%
-~
-@810002 = ~Antidote
-This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Poison: 75%
-~
-@810003 = ~Antidote
-This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Poison: 80%
-~
-@810004 = ~Antidote
-This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Poison: 85%
-~
-@810005 = ~Antidote
-This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Poison: 90%
-~
-@810006 = ~Antidote
-This is a mixture mixtures that (usually) slows or eliminate the effects of poison in anybody that imbibes it.  The chance that the poison is treated is 65% +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Poison: 95%
-~
-
-@810007 = ~Bandage~
-@810008 = ~Bandage
-Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
--  Effects:
-o	Regenerate: 1 HP/Hour
-o	Movement: 75%
-~
-@810009 = ~Bandage
-Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
--  Effects:
-o	Regenerate: 1 HP/Half Hour
-o	Movement: 75%
-~
-@810010 = ~Bandage
-Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
--  Effects:
-o	Regenerate: 1 HP/15 Minutes
-o	Movement: 75%
-~
-@810011 = ~Bandage
-Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
--  Effects:
-o	Regenerate: 1 HP/10 Minutes
-o	Movement: 75%
-~
-@810012 = ~Bandage
-Bandages are heavy wrappings coated with ointments that speed the recovery process.  They do restrict movement, however, and it is impossible to wear any heavy armor over them, so they are primarily, though not exclusively, used to aid recovery during bed rest.
--  Effects:
-o	Regenerate: 1 HP/5 Minutes
-o	Movement: 75%
-~
-@810013 = ~Remedy~
-@810014 = ~Remedy
-This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Disease: 60%
-~
-@810015 = ~Remedy
-This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Disease: 65%
-~
-@810016 = ~Remedy
-This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Disease: 70%
-~
-@810017 = ~Remedy
-This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Disease: 75%
-~
-
-@810018 = ~Remedy
-This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Disease: 80%
-~
-@810019 = ~Remedy
-This concoction has a chance to remove any diseases ravaging the body.  Diseases are much more complicated than poisons, and so the chance of success is 55%, +5% per rank.  If the herbalist also has at least one rank in heal, this bonus increases by +5%.  The only way to determine whether the potion is effective is to drink it.
--  Effects:
-o	Cure Disease: 85%
-~
-*/
 @810020 = ~Oops!~
 @810021 = ~Alchemist's Fire, Makeshift~
-@810022 = ~Alchemist's Fire, Makeshift
-The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 2d3 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
+@810022 = ~Alchemist's Fire, Makeshift: The paradigmatic alchemist's substance, Alchemist's Fire bursts into flames when exposed to air.  The alchemist carefully packs it into a breakable, usually glass, container.  When thrown, the glass bursts open, and the substance explodes damaging all nearby creatures in a mini explosion.  Alchemists fire does fire damage equal to 1d5 per rank the character has in alchemy (save vs. wands for half damage with a penalty equal to the creator's intelligence bonus).
 STATISTICS:
 
-Damage: 2d3 (save vs. wands for half)
+THAC0: +4
+Damage: See Combat abilities
+Combat abilities:
+  Target takes 2d6 points of fire damage (save vs. wands for half).
+Speed Factor: 1
+Proficiency Type: Alchemy
+Type: One-handed
 
-Weight: 1
+Weight: 0
 
 Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+
 Characters without the required skill level have a 50% chance of spilling some alchemist fine on themselves (suffering full damage with no save).~
 
-@810023 = ~2d3~
+@810023 = ~2d6~
 
-@810024 = ~4d3~
+@810024 = ~3d6~
 
-@810025 = ~6d3~
+@810025 = ~4d6~
 
-@810026 = ~8d3~
+@810026 = ~5d6~
 
-@810027 = ~10d3~
+@810027 = ~6d6~
 
-@810028 = ~12d3~
+@810028 = ~7d6~
 
-@810029 = ~14d3~
+@810029 = ~8d6~
 
 @810030 = ~wands for half~
 
@@ -238,30 +145,61 @@ Characters without the required skill level have a 50% chance of spilling some a
 
 @810047 = ~Acid, Makeshift~
 @810048 = ~Acid, Makeshift
-Acid burns, and can cause a lot of damage if left to burn over a period of time.  Like alchemist fire, acid is carefully packed it into a breakable, usually glass, container.  When <PRO_HESHE> throws it, the glass bursts open covering the target with burning acid.  When hit, a target takes 1d4 + the creator's intelligence modifier of acid damage for a number of rounds equal to the number of ranks the crafter has in alchemy.  Each round after the first, the target can save vs. wands to prevent further damage.
+Acid burns, and can cause a lot of damage if left to burn over a period of time.  Like alchemist fire, acid is carefully packed it into a breakable, usually glass, container.  When thrown it, the glass bursts open covering the target with burning acid.  On the first round hit, the target takes 1d4 acid damage for a number of rounds equal to the number of ranks the crafter has in alchemy.  Each round after the first, the target can save vs. wands (with a penalt equal to the creator's intelligence bonus) to prevent further damage.
+
 STATISTICS:
 
-Damage: 1d4/round (save vs. wands each round to avoid damage)
+THAC0: +4
+Damage: See Combat abilities
+Combat abilities:
+  Target takes 1d4 points of acid damage.
+  The target must Save vs wands or take 1d4 points of acid damage over the next round.  
+Speed Factor: 1
+Proficiency Type: Alchemy
+Type: One-handed
 
-Duration: 1 round
-
-Weight: 1
+Weight: 0
 
 Special: Only safely usable by characters that have at least 1 rank in Alchemy.
+
 Characters without the required skill level have a 50% chance of spilling some acid on themselves (suffering full damage with no save).~
 
-@810049 = ~1d4~
-@810050 = ~1d4+1~
-@810051 = ~1d4+2~
-@810052 = ~1d4+3~
-@810053 = ~1d4+4~
-@810054 = ~1 round~
-@810055 = ~2 rounds max~
+@810049 = ~vs wands~
+@810050 = ~vs wands -1~
+@810051 = ~vs wands -2~
+@810052 = ~vs wands -3~
+@810053 = ~vs wands -4~
+@810054 = ~over the next round~
+@810055 = ~each round over the next two rounds~
 @810056 = ~3 rounds max~
 @810057 = ~4 rounds max~
 @810058 = ~5 rounds max~
 @810059 = ~6 rounds max~
 @810060 = ~7 rounds max~
+
+
+/*
+@810060 = ~Sprint
+Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.~
+ */
+@810061 = ~Sprint
+Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.
+Because of your skill in running, you tire at 1/3 the rate from sprinting.~
+
+@810062 = ~Sprint
+Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however.
+Because of your skill in running, you tire at 1/3 the rate from sprinting.~
+
+@810063 = ~Sprint
+Sprinting allows you to move at 2x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however.
+Because of your skill in running, you tire at 1/3 the rate from sprinting.~
+
+@810064 = ~Demoralized~
+@810065 = ~Intimidate~
+@810066 = ~Intimidate
+Characters can demoralize an opponent if they fail to save vs. rod/staff/wand.  A demoralized opponent suffers a -1 penalty to hit rolls, as well as a -1 penalty to saves and AC.  A given opponent can only be affected by intimidate once per encounter (whether or not they save).  This ability affects only living creatures.  The effect lasts for 3 rounds plus <PRO_HISHER> ability modifier.  Each rank taken imposes a -1 penalty to the save, and increases the to hit penalty by -1.
+
+Half-orcs use their strength attribute to determine the requirement to take this skill, and to determine the duration of the ability.~
 
 @820000 = ~Second Wind~
 @820001 = ~Second Wind
@@ -291,30 +229,6 @@ If <PRO_HESHE> has 6 or 7 ranks in endurance, Second Wind can be used once per 8
 @820004 = ~Diseases Purged!~
 @820005 = ~Diseases not Purged!~
 @820006 = ~Second Wind can only be used once per day~
-/*
-@810060 = ~Sprint
-Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.~
- */
-@810061 = ~Sprint
-Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however, and you suffer a -2 to AC while sprinting.
-Because of your skill in running, you tire at 1/3 the rate from sprinting.~
-
-@810062 = ~Sprint
-Sprinting allows you to move at 1.75x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however.
-Because of your skill in running, you tire at 1/3 the rate from sprinting.~
-
-@810063 = ~Sprint
-Sprinting allows you to move at 2x your base movement rate for 2 rounds.  Additionally, the momentum created from sprinting gives you a +1 bonus to melee damage.  Sprinting constantly will tire you out, however.
-Because of your skill in running, you tire at 1/3 the rate from sprinting.~
-
-@810064 = ~Demoralized~
-@810065 = ~Intimidate~
-@810066 = ~Intimidate
-Characters can demoralize an opponent if they fail to save vs. rod/staff/wand.  A demoralized opponent suffers a -1 penalty to hit rolls, as well as a -1 penalty to saves and AC.  A given opponent can only be affected by intimidate once per encounter (whether or not they save).  This ability affects only living creatures.  The effect lasts for 3 rounds plus <PRO_HISHER> ability modifier.  Each rank taken imposes a -1 penalty to the save, and increases the to hit penalty by -1.
-
-Half-orcs use their strength attribute to determine the requirement to take this skill, and to determine the duration of the ability.~
-
-
 
 
 

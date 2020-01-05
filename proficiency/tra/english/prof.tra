@@ -8,8 +8,8 @@
 @700102 = ~Proficiency Type: Sling~
 @700103 = ~Proficiency Type: Quarterstaff~
 @700104 = ~Proficiency Type: Club~
-@700105 = ~Simple~
-@700106 = ~SIMPLE: This weapon class allows the character to use Daggers, Clubs, Slings, Darts and the Staff effectively.
+@700105 = ~Weapon Proficiency: Simple~
+@700106 = ~WEAPON PROFICIENCY: SIMPLE: This weapon class allows the character to use Daggers, Clubs, Slings, Darts and the Staff effectively.
 
 <DOTS1>
 
@@ -27,8 +27,8 @@
 @700202 = ~Proficiency Type: Scimitar/Wakizashi/NinjatÅ~
 @700203 = ~Proficiency Type: Katana~
 @700204 = ~Proficiency Type: Short Sword~
-@700205 = ~Sword~
-@700206 = ~SWORD: This weapon class allows the character to use Longswords, Wakizashi, Ninjat-to, Scimitar and Short Swords.
+@700205 = ~Weapon Proficiency: Sword~
+@700206 = ~WEAPON PROFICIENCY: SWORD: This weapon class allows the character to use one-handed swords: Longswords, Wakizashi, Ninja-to, Scimitar and Short Swords.
 
 <DOTS1>
 
@@ -40,8 +40,10 @@
 
 <DOTS5>~
 //Miscellaneous
-@700300 = ~Miscellaneous~
-@700301 = ~MISCELLANEOUS: The Miscellaneous Weapon Proficiency covers odd, unusual, or exotic items and attack forms.  Thus, it covers unarmed attacks, spell attacks that require a to hit roll, thrown alchemical items, stones, natural weapons, and anything else not specifically covered by another weapon proficiency.
+@700300 = ~Weapon Proficiency: Miscellaneous~
+@700301 = ~WEAPON PROFICIENCY: MISCELLANEOUS: The Miscellaneous Weapon Proficiency covers odd, unusual, or exotic items and attack forms.  Thus, it covers unarmed attacks, spell attacks that require a to hit roll, thrown alchemical items, stones, natural weapons, and anything else not specifically covered by another weapon proficiency.
+
+Additionally, this proficiency is special in that it represents training in (generally unarmored) defence.  Generally, armor restricts movement necessary to utilize this proficiency effectively (though, see armor proficiency for exceptions).
 
 <DOTS1> +1 Melee Defense
 
@@ -55,11 +57,11 @@
 
 //axe
 //great swords
-@700500 = ~Proficiency Type: Great Sword~
+@700500 = ~Proficiency Type: Greatsword~
 @700501 = ~Proficiency Type: Two-handed Sword~
 @700502 = ~Proficiency Type: Bastard Sword~
-@700503 = ~Great Sword~
-@700504 = ~GREAT SWORD: The hallmark of the traditional musclebound warrior is the two-handed sword. This proficiency class allows your character to use these heavy swords to mangle your opponents.  Characters are also proficient with the Bastard Sword.
+@700503 = ~Weapon Proficiency: Greatsword~
+@700504 = ~WEAPON PROFICIENCY: GREATSWORD: The hallmark of the traditional musclebound warrior is the two-handed sword. This proficiency class allows your character to use these heavy swords to mangle your opponents.  Characters are also proficient with the Bastard Sword.
 
 <DOTS1>
 
@@ -75,8 +77,8 @@
 @700600 = ~Proficiency Type: Polearm~
 @700601 = ~Proficiency Type: Halberd~
 @700602 = ~Proficiency Type: Spear~
-@700603 = ~Polearm~
-@700604 = ~POLEARM: These long weapons are often carried by Fighters working as guards. The reach of the weapons allows crowds to be pushed back without much danger to the guard. Polearms include all Halberds and Spears.
+@700603 = ~Weapon Proficiency: Polearm~
+@700604 = ~WEAPON PROFICIENCY: POLEARM: These long weapons are often carried by Fighters working as guards. The reach of the weapons allows crowds to be pushed back without much danger to the guard. Polearms include all Halberds and Spears.
 
 <DOTS1>
 
@@ -93,8 +95,8 @@
 @700701 = ~Proficiency Type: Mace~
 @700702 = ~Proficiency Type: War Hammer~
 @700703 = ~Proficiency Type: Flail/Morning Star~
-@700704 = ~Blunt~
-@700705 = ~BLUNT: Use blunt weapons to knock your enemies senseless. They are difficult to use but with skill and practice these weapons are very useful. Proficiency includes Maces, War Hammers, and Flails.
+@700704 = ~Weapon Proficiency: Blunt~
+@700705 = ~WEAPON PROFICIENCY: BLUNT: Use blunt weapons to knock your enemies senseless. They are difficult to use but with skill and practice these weapons are very useful. Proficiency includes Maces, War Hammers, and Flails.
 
 <DOTS1>
 
@@ -111,8 +113,8 @@
 @700801 = ~Proficiency Type: Longbow~
 @700802 = ~Proficiency Type: Shortbow~
 @700803 = ~Proficiency Type: Crossbow~
-@700804 = ~Bows/Crossbows~
-@700805 = ~BOWS/CROSSBOWS: This weapon class allows the character to use short bows, crossbows, and longbows, both normal and composite. These weapons allow you to do maximum damage at range.
+@700804 = ~Weapon Proficiency: Bows/Crossbows~
+@700805 = ~WEAPON PROFICIENCY: BOWS/CROSSBOWS: This weapon class allows the character to use short bows, crossbows, and longbows, both normal and composite. These weapons allow you to do maximum damage at range.
 
 <DOTS1>
 
@@ -150,8 +152,8 @@ No Ranks: -50% movement, -3 Dex, No Stealth, 100% Casting Failure, -5 Missile, -
 **** -20% Stealth, -2 Casting Time, -1 missile, 20% Physical and Energy Resistance
 ***** -15% Stealth, -1 Casting Time, 25% Physical and Energy Resistance
 Requires:~
-@700904 = ~Armor~
-@700905 = ~ARMOR: Proficiency with armor allows characters to wear armor with few hindrances.
+@700904 = ~Armor Proficiency~
+@700905 = ~ARMOR PROFICIENCY: Proficiency with armor allows characters to wear armor with few hindrances.
 
 Proficiency (light) (1 slot): 
 
@@ -164,36 +166,39 @@ Proficiency (armor specialization) (4 slots):
 Proficiency (armor mastery) (5 slots):~
 
 //Alchemy
-@701000 = ~Alchemy~
-@701001 = ~ALCHEMY: This skill ~
+@701000 = ~Nonweapon Proficiency: Alchemy~
+@701001 = ~NONWEAPON PROFICIENCY: ALCHEMY: This skill ~
 //Endurance
-@702000 = ~Endurance~
-@702001 = ~ENDURANCE: This skill ~
+@702000 = ~Nonweapon Proficiency: Endurance~
+@702001 = ~NONWEAPON PROFICIENCY: ENDURANCE: This skill ~
 //Heal
-@703000 = ~Heal~
-@703001 = ~HEAL: This skill ~
+@703000 = ~Nonweapon Proficiency: Heal~
+@703001 = ~NONWEAPON PROFICIENCY: HEAL: This skill ~
 //Herbalism
-@704000 = ~Herbalism~
-@704001 = ~HERBALISM: This skill ~
+@704000 = ~Nonweapon Proficiency: Herbalism~
+@704001 = ~NONWEAPON PROFICIENCY: HERBALISM: This skill ~
 //Ranged Fighting Style
 @705000 = ~Ranged~
 @705001 = ~RANGED: This skill ~
 //Magic Implements
-@706000 = ~Magic Implements~
-@706001 = ~MAGIC IMPLEMENTS: This skill ~
+@706000 = ~Nonweapon Proficiency: Magic Implements~
+@706001 = ~NONWEAPON PROFICIENCY: MAGIC IMPLEMENTS: This skill ~
 //Mechanics
-@707000 = ~Mechanics~
-@707001 = ~MECHANICS: This skill ~
+@707000 = ~Nonweapon Proficiency: Mechanics~
+@707001 = ~NONWEAPON PROFICIENCY: MECHANICS: This skill ~
 //Nature
-@708000 = ~Animal Handling~
-@708001 = ~ANIMAL HANDLING: This skill ~
+@708000 = ~Nonweapon Proficiency: Nature~
+@708001 = ~NONWEAPON PROFICIENCY: NATURE: This skill ~
 //Spellcraft
-@709000 = ~Spellcraft~
-@709001 = ~SPELLCRAFT: This skill ~
+@709000 = ~Nonweapon Proficiency: Spellcraft~
+@709001 = ~NONWEAPON PROFICIENCY: SPELLCRAFT: This skill ~
 //Persuasion
-@710000 = ~Persuasion~
-@710001 = ~PERSUASION: This skill ~
+@710000 = ~Nonweapon Proficiency: Persuasion~
+@710001 = ~NONWEAPON PROFICIENCY: PERSUASION: This skill ~
 //Ritual
-@711000 = ~Ritual~
-@711001 = ~RITUAL: This skill ~
+@711000 = ~Nonweapon Proficiency: Religion~
+@711001 = ~NONWEAPON PROFICIENCY: RELIGION: This skill ~
+//Survival
+@712000 = ~Nonweapon Proficiency: Survival~
+@712001 = ~NONWEAPON PROFICIENCY: SURVIVAL: This skill ~
 

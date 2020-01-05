@@ -1,119 +1,32 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////                                         //////////////////////////////////////
-/////////////////////////////////////                 ATTRIBUTES              //////////////////////////////////////
-/////////////////////////////////////                                         //////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Values
+//Simple (PROFICIENCYBASTARDSWORD)   (equals) %sim_eq%
+//Simple (PROFICIENCYBASTARDSWORD)   (greater)%sim_gr%
+//Simple (PROFICIENCYBASTARDSWORD)   (lesser) %sim_ls%
+//Sword (PROFICIENCYLONGSWORD)       (equals) %swd_eq%
+//Sword (PROFICIENCYLONGSWORD)       (greater)%swd_gr%
+//Sword (PROFICIENCYLONGSWORD)       (lesser) %swd_ls%
+//misc (PROFICIENCYSHORTSWORD)       (equals) %misc_eq%
+//misc (PROFICIENCYSHORTSWORD)       (less)   %misc_ls%
+//misc (PROFICIENCYSHORTSWORD)       (greater)%misc_gr%
+//Axe (PROFICIENCYAXE)               (equals) %axe_eq%
+//Axe (PROFICIENCYAXE)               (less)   %axe_ls%
+//Axe (PROFICIENCYAXE)               (greater)%axe_gr%
+//G.sword (PROFICIENCYTWOHANDEDSWORD)(equals) %gsd_eq%
+//G.sword (PROFICIENCYTWOHANDEDSWORD)(greater)%gsd_gr%
+//G.sword (PROFICIENCYTWOHANDEDSWORD)(less)   %gsd_ls%
+//Polearm (PROFICIENCYKATANA)		 (equals) %pam_eq%
+//Polearm (PROFICIENCYKATANA)		 (less)   %pam_ls%
+//Polearm (PROFICIENCYKATANA)		 (greater)%pam_gr%
+//Blunt   (PROFICIENCYSCIMITAR...)   (equals) %bnt_eq%
+//Blunt   (PROFICIENCYSCIMITAR...)	 (greater)%bnt_gr%
+//Blunt   (PROFICIENCYSCIMITAR...)	 (less)   %bnt_ls%
+//Ranged  (PROFICIENCYDAGGER)		 (equals) %rng_eq%
+//Ranged  (PROFICIENCYDAGGER)		 (greater)%rng_gr%
+//Ranged  (PROFICIENCYDAGGER)		 (lesser) %rng_ls%
 
-APPEND ~splprot.2da~ ~B_CON_GR%TAB%41%TAB%-1%TAB%3~  //con Greater than
-APPEND ~splprot.2da~ ~B_CON_EQ%TAB%41%TAB%-1%TAB%1~  //con equal to
-APPEND ~splprot.2da~ ~B_CON_LS%TAB%41%TAB%-1%TAB%2~  //con Less than
-APPEND ~splprot.2da~ ~B_WIS_GR%TAB%39%TAB%-1%TAB%3~  //Wisdom Greater than
-APPEND ~splprot.2da~ ~B_WIS_EQ%TAB%39%TAB%-1%TAB%1~  //Wisdom equal to
-APPEND ~splprot.2da~ ~B_WIS_LS%TAB%39%TAB%-1%TAB%2~  //Wisdom Less than
-APPEND ~splprot.2da~ ~B_INT_EQ%TAB%38%TAB%-1%TAB%1~  //Intelligence equal to
-APPEND ~splprot.2da~ ~B_INT_LS%TAB%38%TAB%-1%TAB%2~  //Int Less than
-APPEND ~splprot.2da~ ~B_INT_GR%TAB%38%TAB%-1%TAB%3~  //Int Greater than
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_EQ~ BEGIN  //int equal to
-         SET int_eq = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_LS~ BEGIN  //int equal to
-         SET int_ls = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_INT_GR~ BEGIN  //int equal to
-         SET int_gr = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_EQ~ BEGIN  //con equal to
-         SET con_eq = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_LS~ BEGIN  //con less than
-         SET con_ls = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_GR~ BEGIN  //wisdom greater than
-         SET wis_gr = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_EQ~ BEGIN  //wisdom equal to
-         SET wis_eq = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_WIS_LS~ BEGIN  //wisdom less than
-         SET wis_ls = %row%
-      END
-   END
-BUT_ONLY
-
-COPY_EXISTING ~splprot.2da~ ~override~
-   COUNT_2DA_COLS cols // amount of columns
-   READ_2DA_ENTRIES_NOW rows cols // read all file into memory
-   FOR (row = 1; row < rows; ++row) BEGIN // iterate over rows
-      READ_2DA_ENTRY_FORMER rows row 0 ~stat~ // read column value
-      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_CON_GR~ BEGIN  //con greater than
-         SET con_gr = %row%
-      END
-   END
-BUT_ONLY
+//Armors (PROFICIENCYCLUB)           (equals) %arm_eq%
+//Armors (PROFICIENCYCLUB)           (less)   %arm_ls%
+//Armors (PROFICIENCYCLUB)           (greater)%arm_gr%
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,13 +36,30 @@ BUT_ONLY
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-APPEND ~splprot.2da~ ~B_SIM_EQ%TAB%89%TAB%-1%TAB%1~  //Simple weapons (equals)
-APPEND ~splprot.2da~ ~B_SWD_EQ%TAB%90%TAB%-1%TAB%1~  //Sword (equals)
-APPEND ~splprot.2da~ ~B_AXE_EQ%TAB%92%TAB%-1%TAB%1~  //Axe (equals)
-APPEND ~splprot.2da~ ~B_GSD_EQ%TAB%93%TAB%-1%TAB%1~  //Greatsword (equals)
-APPEND ~splprot.2da~ ~B_PAM_EQ%TAB%94%TAB%-1%TAB%1~  //Polearm (equals)
-APPEND ~splprot.2da~ ~B_BNT_EQ%TAB%95%TAB%-1%TAB%1~  //Blunt (equals)
-APPEND ~splprot.2da~ ~B_RNG_EQ%TAB%96%TAB%-1%TAB%1~  //Ranged (equals)
+APPEND ~splprot.2da~ ~B_SIM_EQ%TAB%89%TAB%-1%TAB%1~  //Simple (PROFICIENCYBASTARDSWORD)   (equals) %sim_eq%
+APPEND ~splprot.2da~ ~B_SIM_GR%TAB%89%TAB%-1%TAB%3~  //Simple (PROFICIENCYBASTARDSWORD)   (greater)%sim_gr%
+APPEND ~splprot.2da~ ~B_SIM_LS%TAB%89%TAB%-1%TAB%2~  //Simple (PROFICIENCYBASTARDSWORD)   (lesser) %sim_ls%
+APPEND ~splprot.2da~ ~B_SWD_EQ%TAB%90%TAB%-1%TAB%1~  //Sword (PROFICIENCYLONGSWORD)       (equals) %swd_eq%
+APPEND ~splprot.2da~ ~B_SWD_GR%TAB%90%TAB%-1%TAB%3~  //Sword (PROFICIENCYLONGSWORD)       (greater)%swd_gr%
+APPEND ~splprot.2da~ ~B_SWD_LS%TAB%90%TAB%-1%TAB%2~  //Sword (PROFICIENCYLONGSWORD)       (lesser) %swd_ls%
+APPEND ~splprot.2da~ ~B_MISC_EQ%TAB%91%TAB%-1%TAB%1~ //misc (PROFICIENCYSHORTSWORD)       (equals) %misc_eq%
+APPEND ~splprot.2da~ ~B_MISC_LS%TAB%91%TAB%-1%TAB%2~ //misc (PROFICIENCYSHORTSWORD)       (less)   %misc_ls%
+APPEND ~splprot.2da~ ~B_MISC_GR%TAB%91%TAB%-1%TAB%3~ //misc (PROFICIENCYSHORTSWORD)       (greater)%misc_gr%
+APPEND ~splprot.2da~ ~B_AXE_EQ%TAB%92%TAB%-1%TAB%1~  //Axe (PROFICIENCYAXE)               (equals) %axe_eq%
+APPEND ~splprot.2da~ ~B_AXE_LS%TAB%92%TAB%-1%TAB%2~  //Axe (PROFICIENCYAXE)               (less)   %axe_ls%
+APPEND ~splprot.2da~ ~B_AXE_GR%TAB%92%TAB%-1%TAB%3~  //Axe (PROFICIENCYAXE)               (greater)%axe_gr%
+APPEND ~splprot.2da~ ~B_GSD_EQ%TAB%93%TAB%-1%TAB%1~  //G.sword (PROFICIENCYTWOHANDEDSWORD)(equals) %gsd_eq%
+APPEND ~splprot.2da~ ~B_GSD_GR%TAB%93%TAB%-1%TAB%3~  //G.sword (PROFICIENCYTWOHANDEDSWORD)(greater)%gsd_gr%
+APPEND ~splprot.2da~ ~B_GSD_LS%TAB%93%TAB%-1%TAB%2~  //G.sword (PROFICIENCYTWOHANDEDSWORD)(less)   %gsd_ls%
+APPEND ~splprot.2da~ ~B_PAM_EQ%TAB%94%TAB%-1%TAB%1~  //Polearm (PROFICIENCYKATANA)		  (equals) %pam_eq%
+APPEND ~splprot.2da~ ~B_PAM_LS%TAB%94%TAB%-1%TAB%2~  //Polearm (PROFICIENCYKATANA)		  (less)   %pam_ls%
+APPEND ~splprot.2da~ ~B_PAM_GR%TAB%94%TAB%-1%TAB%3~  //Polearm (PROFICIENCYKATANA)		  (greater)%pam_gr%
+APPEND ~splprot.2da~ ~B_BNT_EQ%TAB%95%TAB%-1%TAB%1~  //Blunt   (PROFICIENCYSCIMITAR...)	  (equals) %bnt_eq%
+APPEND ~splprot.2da~ ~B_BNT_GR%TAB%95%TAB%-1%TAB%3~  //Blunt   (PROFICIENCYSCIMITAR...)	  (greater)%bnt_gr%
+APPEND ~splprot.2da~ ~B_BNT_LS%TAB%95%TAB%-1%TAB%2~  //Blunt   (PROFICIENCYSCIMITAR...)	  (less)   %bnt_ls%
+APPEND ~splprot.2da~ ~B_RNG_EQ%TAB%96%TAB%-1%TAB%1~  //Ranged  (PROFICIENCYDAGGER)		  (equals) %rng_eq%
+APPEND ~splprot.2da~ ~B_RNG_GR%TAB%96%TAB%-1%TAB%3~  //Ranged  (PROFICIENCYDAGGER)		  (greater)%rng_gr%
+APPEND ~splprot.2da~ ~B_RNG_LS%TAB%96%TAB%-1%TAB%2~  //Ranged  (PROFICIENCYDAGGER)		  (lesser) %rng_ls%
 
 
 COPY_EXISTING ~splprot.2da~ ~override~
@@ -140,23 +70,74 @@ COPY_EXISTING ~splprot.2da~ ~override~
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_SIM_EQ~ BEGIN  //simple equal
          SET sim_eq = %row%
       END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_SIM_GR~ BEGIN  //simple greater
+         SET sim_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_SIM_LS~ BEGIN  //simple less
+         SET sim_ls = %row%
+      END
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_SWD_EQ~ BEGIN //sword equal
          SET swd_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_SWD_GR~ BEGIN //sword greater
+         SET swd_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_SWD_LS~ BEGIN //sword greater
+         SET swd_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_MISC_EQ~ BEGIN //misc equal
+         SET misc_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_MISC_LS~ BEGIN //misc less
+         SET misc_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_MISC_GR~ BEGIN //misc greater
+         SET misc_gr = %row%
       END
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_AXE_EQ~ BEGIN  //axe equal
          SET axe_eq = %row%
       END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_AXE_LS~ BEGIN  //axe less
+         SET axe_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_AXE_GR~ BEGIN  //axe less
+         SET axe_gr = %row%
+      END
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_GSD_EQ~ BEGIN  //greatsword equal
          SET gsd_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_GSD_GR~ BEGIN  //greatsword greater
+         SET gsd_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_GSD_LS~ BEGIN  //greatsword less
+         SET gsd_ls = %row%
       END
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_PAM_EQ~ BEGIN  //polearm equal
          SET pam_eq = %row%
       END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_PAM_LS~ BEGIN  //polearm less
+         SET pam_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_PAM_GR~ BEGIN  //polearm greater
+         SET pam_gr = %row%
+      END
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_BNT_EQ~ BEGIN  //blunt equal
          SET bnt_eq = %row%
       END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_BNT_GR~ BEGIN  //blunt greater
+         SET bnt_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_BNT_LS~ BEGIN  //blunt lesser
+         SET bnt_ls = %row%
+      END
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_RNG_EQ~ BEGIN  //ranged equal
          SET rng_eq = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_RNG_GR~ BEGIN  //ranged greater
+         SET rng_gr = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_RNG_LS~ BEGIN  //ranged lesser
+         SET rng_ls = %row%
       END
    END
 BUT_ONLY
@@ -170,8 +151,9 @@ BUT_ONLY
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-APPEND ~splprot.2da~ ~B_ARMOR_EQ%TAB%97%TAB%-1%TAB%1~  //Armors (equals)
-APPEND ~splprot.2da~ ~B_ARMOR_LS%TAB%97%TAB%-1%TAB%2~  //Armors (less than)
+APPEND ~splprot.2da~ ~B_ARMOR_EQ%TAB%115%TAB%-1%TAB%1~  //Armors (PROFICIENCYCLUB) (equals)   %arm_eq%
+APPEND ~splprot.2da~ ~B_ARMOR_LS%TAB%115%TAB%-1%TAB%2~  //Armors (PROFICIENCYCLUB) (less than)%arm_ls%
+APPEND ~splprot.2da~ ~B_ARMOR_GR%TAB%115%TAB%-1%TAB%3~  //Armors (PROFICIENCYCLUB) (greater than)%arm_gr%
 
 COPY_EXISTING ~splprot.2da~ ~override~
    COUNT_2DA_COLS cols // amount of columns
@@ -183,6 +165,9 @@ COPY_EXISTING ~splprot.2da~ ~override~
       END
       PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ARMOR_LS~ BEGIN
          SET arm_ls = %row%
+      END
+      PATCH_IF ~%stat%~ STRING_EQUAL_CASE ~B_ARMOR_GR~ BEGIN
+         SET arm_gr = %row%
       END
    END
 BUT_ONLY
