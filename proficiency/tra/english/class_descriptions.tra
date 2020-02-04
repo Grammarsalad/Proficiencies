@@ -62,6 +62,13 @@
 - Non-Weapon Proficiencies: FILL IN LATER
 - May achieve Specialization (two slots) in martial arts.
 - May achieve Specialization (two slots) in armor proficiency.~
+@720202 = ~May wear any armor and use any weapon.
+– May use the Set Natural Snare ability once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+SET NATURAL SNARE: Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the Ranger's level and can only be triggered by enemies.
+Set Natural Snare only works in natural environments.~
+
+@720203 = ~May wear any armor and use any weapon.~
 
 //other ranger kits to be more accurately filled in when all profs are straight
 
@@ -306,3 +313,18 @@
 - Non-Weapon Proficiencies: FILL IN LATER
 - May achieve Specialization (two slot) in martial arts.
 - May achieve Specialization (two slots) in armor proficiency.~
+
+@721102 = ~May not wear armor heavier than splint mail.
+– May use the Set Natural Snare ability once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+SET NATURAL SNARE: Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the Barbarian's level and can only be triggered by enemies.
+Set Natural Snare only works in natural environments.~
+
+@721103 = ~Immune to backstab.~
+@721104 = ~Immune to backstab.
+
+– May use the Set Natural Snare ability once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+
+SET NATURAL SNARE: Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the Barbarian's level and can only be triggered by enemies.
+Set Natural Snare only works in natural environments.
+~

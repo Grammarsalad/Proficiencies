@@ -1,0 +1,1879 @@
+//DONE First Draft
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////             TREAT WOUND SKILL           //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////
+//Healing Kit___________________________________________________
+////////////////////////////////////////////////////////////////
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~B_HKIT_P.itm~ BEGIN
+
+ OUTER_SPRINT ~heal_kit~ ~B_S102~    //Not eplace Potion of healing with healer's kit
+
+END
+
+//Healer's kit bam
+COPY ~%mod_folder%/data/skills/bam/heal/B_S102.bam~ ~override/%heal_kit%.bam~   //
+
+//Healer's Kit
+COPY ~%mod_folder%/data/skills/itm/heal/B_S102.itm~ ~override/%heal_kit%.itm~   //
+	SAY NAME1 @800019
+	SAY NAME2 @800019
+	SAY UNIDENTIFIED_DESC @800001  //
+	SAY IDENTIFIED_DESC @800001   //
+
+////////////////////////////////////////////////////////////////
+//Healing Kit Placement_________________________________________
+////////////////////////////////////////////////////////////////
+LAM buy_group  //so I can add potions if I need to
+
+//def the candlekeep inn
+ACTION_IF FILE_EXISTS_IN_GAME ~INN2616.sto~ BEGIN  //If CKI is in game
+ COPY_EXISTING ~INN2616.STO~ ~override~
+  LPF buy INT_VAR weap=1 armor=1 rang=1 potn=1 jewel=1 misc=1 END
+  ADD_STORE_ITEM ~%heal_kit%~ #1 #0 #0 ~IDENTIFIED~ #5
+ BUT_ONLY
+END
+//pomab's if in game
+ACTION_IF FILE_EXISTS_IN_GAME ~EHPOMAB.sto~ BEGIN  //If pomabs is in game
+ COPY_EXISTING ~EHPOMAB.STO~ ~override~
+  LPF buy INT_VAR weap=1 armor=1 rang=1 potn=1 jewel=1 misc=1 END
+  ADD_STORE_ITEM ~%heal_kit%~ #1 #0 #0 ~IDENTIFIED~ #5
+ BUT_ONLY
+END
+
+//if not replace cure potions, then copy all stores and sell where potion of healing is sold
+
+//check if not replace potion of healing; put where temples sell healing
+ACTION_IF !FILE_EXISTS_IN_GAME ~B_HKIT_P.itm~ BEGIN  //If not replace potion of healing
+ COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
+  READ_BYTE 0x10 "flags" ELSE 0
+  PATCH_IF (("%flags%" BAND 0b00010000) = 0b00010000) BEGIN // healing
+   ADD_STORE_ITEM ~%heal_kit%~ #1 #0 #0 ~IDENTIFIED~ #5
+  END
+ BUT_ONLY
+END
+
+
+
+////////////////////////////////////////////////////////////////
+//Treat Wound___________________________________________________
+////////////////////////////////////////////////////////////////
+//spl that applies treat wound
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA00.spl~ ~override~   //
+
+
+//Ranks
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1020~ END  //0 rank heal, cast B_S1020.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1021~ END  //1 rank heal, cast B_S1021.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1022~ END  //2 rank heal, cast B_S1022.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1023~ END  //3 rank heal, cast B_S1023.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1024~ END  //4 rank heal, cast B_S1024.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1025~ END  //5 rank heal, cast B_S1025.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1026~ END  //6 rank heal, cast B_S1026.spl
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %hea_eq% STR_VAR match_resource = ~B_S1027~ END  //7 rank heal, cast B_S1027.spl
+//Wis
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %wis_ls% STR_VAR match_resource = ~B_S102A~ END  //wis less than 16  prof20=0
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 16 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102B~ END  //wis equal to 16  prof20=1
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 17 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102C~ END  //wis equal to 17 prof20=2
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %wis_eq% STR_VAR match_resource = ~B_S102D~ END  //wis equal to 18 prof20=3
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 18 parameter2 = %wis_gr% STR_VAR match_resource = ~B_S102E~ END  //wis greater than 18  prof20=4
+//Ranks in herbalism
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %hrb_ls% STR_VAR match_resource = ~B_H1010~ END  //<5 herb, 108 PROFICIENCYBLACKJACK 0
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_H1013~ END  //5 = herb, 108 PROFICIENCYBLACKJACK 3
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_H1014~ END  //6 = herb, 108 PROFICIENCYBLACKJACK 4
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %hrb_eq% STR_VAR match_resource = ~B_H1015~ END  //7 = herb, 108 PROFICIENCYBLACKJACK 5
+//Cast cure affliction
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %hea_eq% STR_VAR match_resource = ~B_H1013~ END  //5 = heal, cast cure affliction
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 6 parameter2 = %hea_eq% STR_VAR match_resource = ~B_H1014~ END  //6 = heal, cast cure affliction
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 7 parameter2 = %hea_eq% STR_VAR match_resource = ~B_H1015~ END  //7 = heal, cast cure affliction
+//The Spells: Rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1020.spl~ ~override~   //0 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW26~ END  //prof20=0, cast B_TW26
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW27~ END  //prof20=1, cast B_TW27
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW28~ END  //prof20=2, cast B_TW28
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW29~ END  //prof20=3, cast B_TW29
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW30~ END  //prof20=4, cast B_TW30
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1021.spl~ ~override~   //1 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW01~ END  //prof20=0, cast B_TW01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW02~ END  //prof20=1, cast B_TW02
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW03~ END  //prof20=2, cast B_TW03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW04~ END  //prof20=3, cast B_TW04
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TW05~ END  //prof20=3, cast B_TW05
+COPY_EXISTING ~B_S1021.spl~ ~override/B_S1022.spl~     //2 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW01~ resource = ~B_TW06~ END  //prof20=0, cast B_TW06
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW02~ resource = ~B_TW07~ END  //prof20=1, cast B_TW07
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW03~ resource = ~B_TW08~ END  //prof20=2, cast B_TW08
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW04~ resource = ~B_TW09~ END  //prof20=3, cast B_TW09
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW05~ resource = ~B_TW10~ END  //prof20=4, cast B_TW10
+COPY_EXISTING ~B_S1021.spl~ ~override/B_S1023.spl~     //3 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW01~ resource = ~B_TW11~ END  //prof20=0, cast B_TW11
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW02~ resource = ~B_TW12~ END  //prof20=1, cast B_TW12
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW03~ resource = ~B_TW13~ END  //prof20=2, cast B_TW13
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW04~ resource = ~B_TW14~ END  //prof20=3, cast B_TW14
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW05~ resource = ~B_TW15~ END  //prof20=4, cast B_TW15
+COPY_EXISTING ~B_S1021.spl~ ~override/B_S1024.spl~     //4 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW01~ resource = ~B_TW16~ END  //prof20=0, cast B_TW16
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW02~ resource = ~B_TW17~ END  //prof20=1, cast B_TW17
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW03~ resource = ~B_TW18~ END  //prof20=2, cast B_TW18
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW04~ resource = ~B_TW19~ END  //prof20=3, cast B_TW19
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW05~ resource = ~B_TW20~ END  //prof20=4, cast B_TW20
+COPY_EXISTING ~B_S1021.spl~ ~override/B_S1025.spl~     //5 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW01~ resource = ~B_TW21~ END  //prof20=0, cast B_TW21
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW02~ resource = ~B_TW22~ END  //prof20=1, cast B_TW22
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW03~ resource = ~B_TW23~ END  //prof20=2, cast B_TW23
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW04~ resource = ~B_TW24~ END  //prof20=3, cast B_TW24
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW05~ resource = ~B_TW25~ END  //prof20=4, cast B_TW25
+COPY_EXISTING ~B_S1021.spl~ ~override/B_S1026.spl~     //6 rank
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW01~ resource = ~B_TW31~ END  //prof20=0, cast B_TW31
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW02~ resource = ~B_TW32~ END  //prof20=1, cast B_TW32
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW03~ resource = ~B_TW33~ END  //prof20=2, cast B_TW33
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW04~ resource = ~B_TW34~ END  //prof20=3, cast B_TW34
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 STR_VAR match_resource = ~B_TW05~ resource = ~B_TW35~ END  //prof20=4, cast B_TW35
+//The Spells: Wis
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102A.spl~ ~override~   //Wis<16
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102B.spl~ ~override~   //Wis=16
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102C.spl~ ~override~   //Wis=17
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102D.spl~ ~override~   //Wis=18
+COPY ~%mod_folder%/data/skills/spl/heal/B_S102E.spl~ ~override~   //Wis>18
+//Herbal assignment spells
+COPY ~%mod_folder%/data/skills/spl/heal/B_H1010.spl~ ~override~   //   Assigns prof 108 to 0 if herbalism <5
+COPY ~%mod_folder%/data/skills/spl/heal/B_H1013.spl~ ~override~   //   Assigns prof 108 to 3 if herbalism =5
+COPY ~%mod_folder%/data/skills/spl/heal/B_H1014.spl~ ~override~   //   Assigns prof 108 to 4 if herbalism =6
+COPY ~%mod_folder%/data/skills/spl/heal/B_H1015.spl~ ~override~   //   Assigns prof 108 to 5 if herbalism =7
+
+//THE ACTUAL SPLs
+//Zero Rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_TW26.spl~ ~override~   //0 rank, no Wis
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810 //  success notification
+      parameter1 = RESOLVE_STR_REF (@800017)    //Treat Injury check successful!
+END
+LPF ALTER_EFFECT     //Failure notification
+      INT_VAR match_opcode = 139  match_parameter1    = 0          //  failure notification
+      parameter1 = RESOLVE_STR_REF (@800018)    //Treat Injury check failed!
+END
+LPF ALTER_EFFECT     //Failure notification
+      INT_VAR match_opcode = 139  match_parameter1    = 1          // mishap notification
+      parameter1 = RESOLVE_STR_REF (@810020)    //Oops!
+END
+COPY_EXISTING ~B_TW26.spl~ ~override/B_TW27.spl~     //0 rank, +1 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 10 probability1  = 54//
+END
+LPF ALTER_EFFECT     // mishap effect
+      INT_VAR match_opcode = 12   probability2  = 75//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 54      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability1  = 74 probability2  = 55      // failure strref
+END
+LPF ALTER_EFFECT     // mishap notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@810020)   probability2  = 75      // mishap strref
+END
+COPY_EXISTING ~B_TW26.spl~ ~override/B_TW28.spl~     //0 rank, +2 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 15 probability1  = 59//
+END
+LPF ALTER_EFFECT     // mishap effect
+      INT_VAR match_opcode = 12   probability2  = 80//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 59      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability1  = 79 probability2  = 60      // failure strref
+END
+LPF ALTER_EFFECT     // mishap notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@810020)   probability2  = 80      // mishap strref
+END
+COPY_EXISTING ~B_TW26.spl~ ~override/B_TW29.spl~     //0 rank, +3 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 20 probability1  = 64//
+END
+LPF ALTER_EFFECT     // mishap effect
+      INT_VAR match_opcode = 12   probability2  = 85//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 64      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability1  = 84 probability2  = 65      // failure strref
+END
+LPF ALTER_EFFECT     // mishap notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@810020)   probability2  = 85      // mishap strref
+END
+COPY_EXISTING ~B_TW26.spl~ ~override/B_TW30.spl~     //0 rank, +4 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 69//
+END
+LPF ALTER_EFFECT     // mishap effect
+      INT_VAR match_opcode = 12   probability2  = 90//
+END
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 69      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability1  = 89 probability2  = 70      // failure strref
+END
+LPF ALTER_EFFECT     // mishap notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@810020)   probability2  = 90      // mishap strref
+END
+
+//BASE SPELL
+//1 rank
+
+COPY ~%mod_folder%/data/skills/spl/heal/B_TW01.spl~ ~override~   //1 rank, no Wis
+  LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  match_parameter1    = 25810 //  success notification
+      parameter1 = RESOLVE_STR_REF (@800017)    //Treat Injury check successful!
+  END
+  LPF ALTER_EFFECT     //Failure notification
+      INT_VAR match_opcode = 139  match_parameter1    = 0          //  failure notification
+      parameter1 = RESOLVE_STR_REF (@800018)    //Treat Injury check failed!
+  END
+//1 rank +1 wis
+COPY_EXISTING ~B_TW01.spl~ ~override/B_TW02.spl~     //1 rank, +1 wis
+  LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 15 probability1  = 59//
+  END
+  LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 59//
+  END
+
+  LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 59      // success strref
+  END
+  LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 60      // failure strref
+  END
+//1 rank +2 wis
+COPY_EXISTING ~B_TW01.spl~ ~override/B_TW03.spl~     //1 rank, +2 wis
+  LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 20 probability1  = 64//
+  END
+  LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 64//
+  END
+
+  LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 64      // success strref
+  END
+  LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 65      // failure strref
+  END
+//1 rank +3 wis
+COPY_EXISTING ~B_TW01.spl~ ~override/B_TW04.spl~     //1 rank, +3 wis
+  LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 69//
+  END
+  LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 69//
+  END
+
+  LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 69      // success strref
+  END
+  LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 70      // failure strref
+  END
+//1 rank +4 wis
+COPY_EXISTING ~B_TW01.spl~ ~override/B_TW05.spl~     //1 rank, +4 wis
+  LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17  parameter1 = 30 probability1  = 74//
+  END
+  LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 74//
+  END
+
+  LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 74      // success strref
+  END
+  LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 75      // failure strref
+  END
+
+//2 ranks
+COPY_EXISTING ~B_TW01.spl~ ~override/B_TW06.spl~     //2 rank, no wis
+ LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 15 probability1  = 59//
+ END
+ LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   parameter1 = 480 probability1  = 59//
+ END
+
+ LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 59      // success strref
+ END
+ LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 60      // failure strref
+ END
+//2 ranks, +1 wis
+
+COPY_EXISTING ~B_TW06.spl~ ~override/B_TW07.spl~     //2 rank, +1 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 20 probability1  = 64//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 64//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 64      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 65      // failure strref
+END
+
+COPY_EXISTING ~B_TW06.spl~ ~override/B_TW08.spl~     //2 rank, +2 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 69//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 69//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 69      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 70      // failure strref
+END
+
+COPY_EXISTING ~B_TW06.spl~ ~override/B_TW09.spl~     //2 rank, +3 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 74//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 74//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 74      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 75      // failure strref
+END
+
+COPY_EXISTING ~B_TW06.spl~ ~override/B_TW10.spl~     //2 rank, +4 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 79//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 79      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // failure strref
+END
+
+//3 ranks
+COPY_EXISTING ~B_TW06.spl~ ~override/B_TW11.spl~     //3 rank, no wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 20 probability1  = 64//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   parameter1 = 240 probability1  = 64//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 64      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 65      // failure strref
+END
+
+COPY_EXISTING ~B_TW11.spl~ ~override/B_TW12.spl~     //3 rank, +1 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 69//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 69//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 69      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 70      // failure strref
+END
+
+COPY_EXISTING ~B_TW11.spl~ ~override/B_TW13.spl~     //3 rank, +2 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30  probability1  = 74//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 74//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 74      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 74      // failure strref
+END
+
+COPY_EXISTING ~B_TW11.spl~ ~override/B_TW14.spl~     //3 rank, +3 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 79//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 79      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // failure strref
+END
+
+COPY_EXISTING ~B_TW11.spl~ ~override/B_TW15.spl~     //3 rank, +4 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 40 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 84//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 84      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // failure strref
+END
+
+//4 ranks
+COPY_EXISTING ~B_TW11.spl~ ~override/B_TW16.spl~     //4 rank, no wis
+ LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 25 probability1  = 69//
+ END
+ LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   parameter1 = 120 probability1  = 69//
+ END
+
+ LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 69      // success strref
+ END
+ LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 70      // failure strref
+ END
+
+COPY_EXISTING ~B_TW16.spl~ ~override/B_TW17.spl~     //4 rank, +1 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 74//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 74//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 74      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 75      // failure strref
+END
+
+COPY_EXISTING ~B_TW16.spl~ ~override/B_TW18.spl~     //4 rank, +2 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 79//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 79      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // failure strref
+END
+
+COPY_EXISTING ~B_TW16.spl~ ~override/B_TW19.spl~     //4 rank, +3 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 40 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 84//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 84      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // failure strref
+END
+
+COPY_EXISTING ~B_TW16.spl~ ~override/B_TW20.spl~     //4 rank, +4 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 45 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 89//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 89      // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // failure strref
+END
+
+//5 ranks
+COPY_EXISTING ~B_TW16.spl~ ~override/B_TW21.spl~     //5 rank, no wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 74//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   parameter1 = 60 probability1  = 74//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 74     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 75      // failure strref
+END
+
+COPY_EXISTING ~B_TW21.spl~ ~override/B_TW22.spl~     //5 rank, +1 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 79//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 79     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // failure strref
+END
+
+COPY_EXISTING ~B_TW21.spl~ ~override/B_TW23.spl~     //5 rank, +2 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 40 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 84//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 84     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // failure strref
+END
+
+COPY_EXISTING ~B_TW21.spl~ ~override/B_TW24.spl~     //5 rank, +3 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 45 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 89//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 89     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // failure strref
+END
+
+COPY_EXISTING ~B_TW21.spl~ ~override/B_TW25.spl~     //5 rank, +4 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 50  probability1  = 94//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 94//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 94     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 95      // failure strref
+END
+
+//6 ranks
+COPY_EXISTING ~B_TW16.spl~ ~override/B_TW31.spl~     //6 rank, no wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 79//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   parameter1 = 60 probability1  = 79//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 79     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 80      // failure strref
+END
+
+COPY_EXISTING ~B_TW31.spl~ ~override/B_TW32.spl~     //6 rank, +1 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 84//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 84     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // failure strref
+END
+
+COPY_EXISTING ~B_TW31.spl~ ~override/B_TW33.spl~     //6 rank, +2 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 40 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 89//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 89     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // failure strref
+END
+
+COPY_EXISTING ~B_TW31.spl~ ~override/B_TW34.spl~     //6 rank, +3 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 45 probability1  = 94//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 94//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 94     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TW31.spl~ ~override/B_TW35.spl~     //6 rank, +4 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 50 probability1  = 94//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 94//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 94     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 95      // failure strref
+END
+//7 ranks
+COPY_EXISTING ~B_TW31.spl~ ~override/B_TW36.spl~     //7 rank, no wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 30 probability1  = 84//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   parameter1 = 60 probability1  = 84//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 84     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 85      // failure strref
+END
+
+COPY_EXISTING ~B_TW36.spl~ ~override/B_TW37.spl~     //7 rank, +1 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 35 probability1  = 89//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 89//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 89     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 90      // failure strref
+END
+
+COPY_EXISTING ~B_TW36.spl~ ~override/B_TW38.spl~     //7 rank, +2 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 40 probability1  = 94//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 94//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 94     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TW36.spl~ ~override/B_TW39.spl~     //7 rank, +3 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 45 probability1  = 94//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 94//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 94     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TW36.spl~ ~override/B_TW40.spl~     //7 rank, +4 wis
+LPF ALTER_EFFECT     // Healing
+      INT_VAR match_opcode = 17   parameter1 = 50 probability1  = 94//
+END
+LPF ALTER_EFFECT     // Regen
+      INT_VAR match_opcode = 98   probability1  = 94//
+END
+
+LPF ALTER_EFFECT     // Healing notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800017)  probability1  = 94     // success strref
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800018)   probability2  = 95      // failure strref
+END
+
+////////////////////////////////////////////////////////////////
+//Treat Affliction____________________________________________
+////////////////////////////////////////////////////////////////
+//Rank 5, Intoxication, Poison, Blindess, Deafness
+//Rank 6: Disease
+//Rank 7: Hold, paralysis
+
+
+//Spells to cast the spells that cast the actual spell
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1013.spl~ ~override~   // 5 ranks heal, checking for herbs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM31~ END  //Herb <5, cast  B_HM01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM33~ END  //Herb =5, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM34~ END  //Herb =6, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM35~ END  //Herb =7, cast  B_HM03
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1014.spl~ ~override~   // 6 ranks heal, checking for herbs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM41~ END  //Herb <5, cast  B_HM01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM43~ END  //Herb =5, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM44~ END  //Herb =6, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM45~ END  //Herb =7, cast  B_HM03
+COPY ~%mod_folder%/data/skills/spl/heal/B_S1015.spl~ ~override~   // 7 ranks heal, checking for herbs
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM51~ END  //Herb <5, cast  B_HM01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM53~ END  //Herb =5, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM54~ END  //Herb =6, cast  B_HM03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 5 parameter2 = %bjk_eq% STR_VAR match_resource = ~B_HM55~ END  //Herb =7, cast  B_HM03
+
+//Now, check for Wis
+COPY ~%mod_folder%/data/skills/spl/heal/B_HM31.spl~ ~override~   // 5 ranks heal, <5 Herbs, checking for Wis
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 0 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TA01~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 1 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TA02~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 2 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TA03~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 3 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TA04~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 4 parameter2 = %exp_eq% STR_VAR match_resource = ~B_TA05~ END  //Wis > 18, cast B_TA04
+COPY_EXISTING ~B_HM31.spl~ ~override/B_HM33.spl~     //3 ranks, 3 herbalism, checking for Wis
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA01~ resource = ~B_TA06~ END  //Wis <16, cast B_TA06
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA02~ resource = ~B_TA07~ END  //Wis = 16, cast B_TA07
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA03~ resource = ~B_TA08~ END  //Wis = 17, cast B_TA08
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA04~ resource = ~B_TA09~ END  //Wis = 18, cast B_TA09
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA05~ resource = ~B_TA10~ END  //Wis > 18, cast B_TA10
+COPY_EXISTING ~B_HM31.spl~ ~override/B_HM34.spl~     //3 ranks, 4 herbalism, checking for Wis
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA01~ resource = ~B_TA11~ END  //Wis <16, cast B_TA06
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA02~ resource = ~B_TA12~ END  //Wis = 16, cast B_TA07
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA03~ resource = ~B_TA13~ END  //Wis = 17, cast B_TA08
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA04~ resource = ~B_TA14~ END  //Wis = 18, cast B_TA09
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA05~ resource = ~B_TA15~ END  //Wis > 18, cast B_TA10
+COPY_EXISTING ~B_HM31.spl~ ~override/B_HM35.spl~     //3 ranks, 5 herbalism, checking for Wis
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA01~ resource = ~B_TA16~ END  //Wis <16, cast B_TA06
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA02~ resource = ~B_TA17~ END  //Wis = 16, cast B_TA07
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA03~ resource = ~B_TA18~ END  //Wis = 17, cast B_TA08
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA04~ resource = ~B_TA19~ END  //Wis = 18, cast B_TA09
+ LPF ALTER_EFFECT INT_VAR STR_VAR match_resource = ~B_TA05~ resource = ~B_TA20~ END  //Wis > 18, cast B_TA10
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM41.spl~   // 4 ranks heal, <3 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA21~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA22~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA23~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA24~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA25~ END  //Wis > 18, cast B_TA04
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM43.spl~   // 4 ranks heal, 3 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA26~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA27~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA28~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA29~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA30~ END  //Wis > 18, cast B_TA04
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM44.spl~   // 4 ranks heal, 4 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA31~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA32~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA33~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA34~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA35~ END  //Wis > 18, cast B_TA04
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM45.spl~   // 4 ranks heal, 5 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA36~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA37~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA38~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA39~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA40~ END  //Wis > 18, cast B_TA04
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM51.spl~   // 5 ranks heal, <3 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA41~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA42~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA43~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA44~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA45~ END  //Wis > 18, cast B_TA04
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM53.spl~   // 5 ranks heal, 3 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA46~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA47~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA48~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA49~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA50~ END  //Wis > 18, cast B_TA04
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM54.spl~   // 5 ranks heal, 4 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA51~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA52~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA53~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA54~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA55~ END  //Wis > 18, cast B_TA04
+
+COPY_EXISTING  ~B_HM31.spl~ ~override/B_HM55.spl~   // 5 ranks heal, 5 Herbs, checking for Wis
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA01~ resource = ~B_TA56~ END  //Wis <16, cast B_TA01
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA02~ resource = ~B_TA57~ END  //Wis = 16, cast B_TA02
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA03~ resource = ~B_TA58~ END  //Wis = 17, cast B_TA03
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA04~ resource = ~B_TA59~ END  //Wis = 18, cast B_TA04
+ LPF ALTER_EFFECT STR_VAR match_resource = ~B_TA05~ resource = ~B_TA60~ END  //Wis > 18, cast B_TA04
+
+ //CONTINUE
+//Actual spells
+//5 ranks
+
+COPY ~%mod_folder%/data/skills/spl/heal/B_TA01.spl~ ~override~   //   3 ranks, no herbalism, no wis
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  match_parameter1    = 0 //  success notification
+      parameter1 = RESOLVE_STR_REF (@800015)    //Treat Affliction check successful!
+END
+
+LPF ALTER_EFFECT     //Failure notification
+      INT_VAR match_opcode = 139  match_parameter1    = 1          //  failure notification
+      parameter1 = RESOLVE_STR_REF (@800016)    //Treat Affliction check failed!
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA02.spl~     //3 ranks, no herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 39//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 40      // failure strref
+END
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA03.spl~     //3 ranks, no herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 44//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 45      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA04.spl~     //3 ranks, no herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 49//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 50      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA05.spl~     //3 ranks, no herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 54//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 55      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA06.spl~     //5 ranks, 5 herbalism, no wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 59//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 60      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA07.spl~     //3 ranks, 3 herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 64//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 65      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA08.spl~     //3 ranks, 3 herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 69//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 70      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA09.spl~     //3 ranks, 3 herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 74//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 75      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA10.spl~     //3 ranks, 3 herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 79//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 80      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA11.spl~     //3 ranks, 4 herbalism, no wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 84//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 85      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA12.spl~     //3 ranks, 4 herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 89//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 90      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA13.spl~     //3 ranks, 4 herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA14.spl~     //3 ranks, 4 herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA15.spl~     //3 ranks, 4 herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA16.spl~     //3 ranks, 5 herbalism, no wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA17.spl~     //3 ranks, 5 herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA18.spl~     //3 ranks, 5 herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA19.spl~     //3 ranks, 5 herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA01.spl~ ~override/B_TA20.spl~     //3 ranks, 5 herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+//4 ranks
+COPY ~%mod_folder%/data/skills/spl/heal/B_TA07.spl~ ~override/B_TA21.spl~   //   6 ranks, no herbalism, no wis
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  match_parameter1    = 0 //  success notification
+      parameter1 = RESOLVE_STR_REF (@800015)    //Treat Affliction check successful!
+END
+
+LPF ALTER_EFFECT     //Failure notification
+      INT_VAR match_opcode = 139  match_parameter1    = 1          //  failure notification
+      parameter1 = RESOLVE_STR_REF (@800016)    //Treat Affliction check failed!
+END
+
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA22.spl~     // 6 ranks, no herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 44//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 45      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA23.spl~     // 4 ranks, no herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 49//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 50      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA24.spl~     // 4 ranks, no herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 54//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 55      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA25.spl~     // 4 ranks, no herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 59//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 60      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA26.spl~     // 6 ranks, 5 herbalism, no wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 64//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 65      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA27.spl~     // 4 ranks, 3 herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 69//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 70      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA28.spl~     // 4 ranks, 3 herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 74//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 75      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA29.spl~     // 4 ranks, 3 herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 79//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 80      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA30.spl~     // 4 ranks, 3 herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 84//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 85      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA31.spl~     // 4 ranks, 4 herbalism, no wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 89//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 90      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA32.spl~     // 4 ranks, 4 herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA33.spl~     // 4 ranks, 4 herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA34.spl~     // 4 ranks, 4 herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA35.spl~     // 4 ranks, 4 herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA36.spl~     // 4 ranks, 5 herbalism, no wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA37.spl~     // 4 ranks, 5 herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA38.spl~     // 4 ranks, 5 herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA39.spl~     // 4 ranks, 5 herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA21.spl~ ~override/B_TA40.spl~     // 4 ranks, 5 herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+//5 ranks
+
+COPY ~%mod_folder%/data/skills/spl/heal/B_TA14.spl~ ~override/B_TA41.spl~   //   7 ranks, no herbalism, no wis
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  match_parameter1    = 0 //  success notification
+      parameter1 = RESOLVE_STR_REF (@800015)    //Treat Affliction check successful!
+END
+
+LPF ALTER_EFFECT     //Failure notification
+      INT_VAR match_opcode = 139  match_parameter1    = 1          //  failure notification
+      parameter1 = RESOLVE_STR_REF (@800016)    //Treat Affliction check failed!
+END
+
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA42.spl~     // 5 ranks, no herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 49//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 50      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA43.spl~     // 5 ranks, no herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 54//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 55      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA44.spl~     // 5 ranks, no herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 59//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 60      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA45.spl~     // 5 ranks, no herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 64//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 65      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA46.spl~     // 7 ranks, 5 herbalism, no wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 69//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 70      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA47.spl~     // 5 ranks, 3 herbalism, +1 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 74//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 75      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA48.spl~     // 5 ranks, 3 herbalism, +2 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 79//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 80      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA49.spl~     // 5 ranks, 3 herbalism, +3 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 84//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 85      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA50.spl~     // 5 ranks, 3 herbalism, +4 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 89//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 90      // failure strref
+END
+
+COPY_EXISTING ~B_TA41.spl~ ~override/B_TA51.spl~     // 5 ranks, 4 herbalism, +0 wis
+LPF ALTER_EFFECT     // All, just need to fix failure notification
+      INT_VAR probability1  = 94//
+END
+LPF ALTER_EFFECT     // failure notification
+      INT_VAR match_opcode = 139   match_parameter1 = RESOLVE_STR_REF (@800016)   probability1  = 100 probability2  = 95      // failure strref
+END
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA52.spl~     // 5 ranks, 4 herbalism, +1 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA53.spl~     // 5 ranks, 4 herbalism, +2 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA54.spl~     // 5 ranks, 4 herbalism, +3 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA55.spl~     // 5 ranks, 4 herbalism, +4 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA56.spl~     // 5 ranks, 5 herbalism, +0 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA57.spl~     // 5 ranks, 5 herbalism, +1 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA58.spl~     // 5 ranks, 5 herbalism, +2 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA59.spl~     // 5 ranks, 5 herbalism, +3 wis
+
+COPY_EXISTING ~B_TA51.spl~ ~override/B_TA60.spl~     // 5 ranks, 5 herbalism, +4 wis
+
+////////////////////////////////////////////////////////////////
+//Cure Bonus___________________________________________________
+////////////////////////////////////////////////////////////////
+//Base spells
+//1 Rank
+COPY ~%mod_folder%/data/skills/spl/heal/B_S103A.spl~ ~override~   //
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800002)    //2 additional hit points healed!
+END
+
+//2 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103B.spl~     // 4 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 4    //4 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800003)    //4 additional hit points healed!
+END
+
+//3 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103C.spl~     // 6 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 6   //6additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800004)    //6 additional hit points healed!
+END
+
+//4 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103D.spl~     // 8 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 8   //8 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800005)    //8 additional hit points healed!
+END
+
+//5 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103E.spl~     // 10 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 10   //10 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800006)    //10 additional hit points healed!
+END
+
+//6 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103F.spl~     // 10 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 12   //12 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800007)    //12 additional hit points healed!
+END
+
+//7 Rank
+COPY_EXISTING ~B_S103A.spl~ ~override/B_S103G.spl~     // 10 additional hit points healed!
+LPF ALTER_EFFECT     //success notification
+      INT_VAR match_opcode = 17  parameter1 = 14   //12 additional hit points healed!
+END
+
+LPF ALTER_EFFECT     //
+      INT_VAR match_opcode = 139  parameter1 = RESOLVE_STR_REF (@800007)    //14 additional hit points healed!
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Innates
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//Innates
+ACTION_IF  FILE_EXISTS_IN_GAME ~SPIN200.spl~ BEGIN     //
+COPY_EXISTING ~SPIN200.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+END
+ACTION_IF  FILE_EXISTS_IN_GAME ~SPIN101.spl~ BEGIN     //
+COPY_EXISTING ~SPIN101.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+END
+
+ACTION_IF  FILE_EXISTS_IN_GAME ~SPIN958.spl~ BEGIN     //
+COPY_EXISTING ~SPIN958.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+END
+
+ACTION_IF  FILE_EXISTS_IN_GAME ~BDCAELA3.spl~ BEGIN     //
+COPY_EXISTING ~BDCAELA3.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Light wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//Cure Light wounds
+COPY_EXISTING ~SPPR103.spl~ ~override~     // Cure Light Wounds
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Moderate wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//Cure Moderate wounds
+//Need to check if it is present...
+ ACTION_IF (FILE_CONTAINS_EVALUATED(~spell.ids~ ~CLERIC_CURE_MODERATE_WOUNDS~)) BEGIN  //
+  LAF RES_NUM_OF_SPELL_NAME
+  STR_VAR spell_name = ~CLERIC_CURE_MODERATE_WOUNDS~   //May be mod added Doesn't matter
+  RET spell_res
+END
+COPY_EXISTING ~%spell_res%.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+ END //
+//SR CMW   Shouldn't be needed anymore
+/*
+ACTION_IF  FILE_EXISTS_IN_GAME ~dvimhere.mrk~ BEGIN
+ ACTION_IF  FILE_EXISTS_IN_GAME ~SPPR215.spl~ BEGIN  //Maybe that component not installed???
+COPY_EXISTING ~SPPR215.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+  END //maybe that component not installed
+END  //End SR
+*/
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Medium Wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR315.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Serious Wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR401.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Cure Critical Wounds
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR502.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+////////////Mass Cure
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+COPY_EXISTING ~SPPR514.spl~ ~override~   //
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 1 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103A~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 2 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103B~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 3 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103C~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 4 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103D~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 5 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103E~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 6 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103F~ //if 1 rank in heal
+END
+LPF CLONE_EFFECT     //
+      INT_VAR match_opcode = 17 opcode = 326  parameter1 = 7 parameter2 = %hea_eq% dicenumber =  99 dicesize = 0 target = 1 multi_match = 1
+      STR_VAR resource = ~B_S103G~ //if 1 rank in heal
+END
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         
+///////////////////////////////////// Add Medkit to Stores and Temples
+/////////////////////////////////////                                         
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         
+///////////////////////////////////// Add skills to char sheet IFF eeex is installed
+/////////////////////////////////////                                         
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ACTION_IF FILE_EXISTS_IN_GAME ~M__EEex.lua~ BEGIN
+//Function
+DEFINE_ACTION_FUNCTION ADD_EXTENDED_SKILL
+	INT_VAR
+		stat=~-1~ //ID of the stat (either from STATS.IDS, or some big number if you're using an extended stat).
+		name=~-1~ //Strref of the skill's name.
+		description=~-1~ //Strref of the skill's description.
+		opcode=401 //The opcode that will be used to modify the skill.
+		visibility=1 //Whether the skill will appear alongside other skills in the character record screen.
+						// 0: Always show
+						// 1: Show if character can put points in skill
+						// 2: Show if skill != 0
+						// 3: Show if skill != 0 and character can put points in skill
+						// 4: Don't show
+	STR_VAR
+		class_include=~{}~ //A character with one of these classes (from CLASS.IDS) can put points in the skill.
+		kit_include=~{}~ //A character with one of these kits can put points in the skill, even if their class is not in the "class_include" list.
+		kit_exclude=~{}~ //A character with one of these kits cannot put points in the skill, even if their class is in the "class_include" list.
+		stat_exclude=~{}~ //A character cannot put points in the skill if its stats meet any of these conditions.
+							//Each stat condition is represented by an inner list with 3 numbers: the stat, a value, and a method of comparing the stat to the value.
+							//The syntax is similar to a SPLPROT.2DA condition, and it accepts all the relations (0 - 11) that SPLPROT.2DA does.
+							//For example, if you set stat_exclude to ~{{41, 12, 0}}~, a character cannot put points in the skill if their Constitution <= 12.
+BEGIN
+	ACTION_IF stat = (0 - 1) BEGIN
+		FAIL ~ADD_EXTENDED_SKILL: You must choose a stat for the skill; otherwise the stat is -1, and that's not okay.~
+	END
+	COPY_EXISTING ~m__skill.lua~ ~override~
+		REPLACE_TEXTUALLY CASE_SENSITIVE ~extendedskilllist = {~ ~extendedskilllist = {
+	{
+		["stat"] = %stat%,
+		["name"] = %name%,
+		["description"] = %description%,
+		["opcode"] = %opcode%,
+		["visibility"] = %visibility%,
+		["class_include"] = %class_include%,
+		["kit_include"] = %kit_include%,
+		["kit_exclude"] = %kit_exclude%,
+		["stat_exclude"] = %stat_exclude%
+	},~
+END
+//Actual Skills
+APPEND ~STATS.ids~ ~3000%TAB%TREAT_WOUND~           //Treat Wound
+APPEND ~STATS.ids~ ~3001%TAB%TREAT_AFFLICTION~      //Treat Affliction
+
+//Treat Injury
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 3000 //
+	name = RESOLVE_STR_REF(@800025)         //Treat Injury
+	description = RESOLVE_STR_REF(@800025)  //Treat Injury
+	opcode = 401 //Modify stat
+	visibility = 2 // if value not 0
+STR_VAR
+	class_include = ~{}~ //Usable by thief, and bard
+	kit_include = ~{}~ //
+	kit_exclude = ~{}~ //Blade and skald excluded
+ 	stat_exclude = ~{}~ //stat 2002 at least 1, and int at least 9
+END
+
+//Treat Injury
+LAF ADD_EXTENDED_SKILL
+INT_VAR
+	stat = 3001 //
+	name = RESOLVE_STR_REF(@800026)         //Treat Affliction
+	description = RESOLVE_STR_REF(@800026)  //Treat Affliction
+	opcode = 401 //Modify stat
+	visibility = 2 // if value not 0
+STR_VAR
+	class_include = ~{}~ //Usable by thief, and bard
+	kit_include = ~{}~ //
+	kit_exclude = ~{}~ //Blade and skald excluded
+ 	stat_exclude = ~{}~ //stat 2002 at least 1, and int at least 9
+END
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////  
+/////////////////////////  Revise application spl (B_PAS00.spl)
+/////////////////////////
+
+//spl that applies the stat based on proficiency
+COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override~   //Set the skill by base heal skill (while herbalism/wisdom increments the skill)  (15%)
+COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override/B_SHL02.spl~   //Set the skill by base heal skill (while herbalism/wisdom increments the skill) (20%)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 401 parameter1 = 20 STR_VAR END  //
+COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override/B_SHL03.spl~   //Set the skill by base heal skill (while herbalism/wisdom increments the skill) (25%)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 401 parameter1 = 25 STR_VAR END  //
+COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override/B_SHL04.spl~   //Set the skill by base heal skill (while herbalism/wisdom increments the skill) (30%)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 401 parameter1 = 30 STR_VAR END  //
+COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override/B_SHL05.spl~   //Set the skill by base heal skill (while herbalism/wisdom increments the skill) (35%)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 401 parameter1 = 35 STR_VAR END  //
+COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override/B_SHL06.spl~   //Set the skill by base heal skill (while herbalism/wisdom increments the skill) (40%)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 401 parameter1 = 40 STR_VAR END  //
+COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override/B_SHL07.spl~   //Set the skill by base heal skill (while herbalism/wisdom increments the skill) (45%)
+ LPF ALTER_EFFECT INT_VAR match_opcode = 401 parameter1 = 45 STR_VAR END  //
+
+
+//increment based on herbalism skill and wisdom...THIS NEEDS TO BE MORE DYNAMIC, CHANGING AS WIS/HERBALISM CHANGE (wheras spells that give bonus to NWPs must themselves increment the stats--again iff EEEx is installed)
+//wis 16 + +5%
+END //End EEex installed

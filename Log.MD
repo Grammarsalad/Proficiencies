@@ -21,29 +21,17 @@ TO DO 6: ALCHEMY: ADD NON-USABILITY FOR UNTRAINED CREATURES (or 'mishap' spell f
 
 TO DO 7: Tra'd the main tp2
 
-TO DO 8:
-
 TO DO 9: Add shields to Armor Prof
-
-TO DO 10:
-
-TO DO 11:
 
 TO DO 12: Make 7 weapon proficiency meaningful if possible-INVESTIGATE! POSSIBLE (NEED TO CHANGE PROFMAX LEV 9 to 7 MAX PROF!!!  ALSO NEED TO CHANGE UI CHAR CREATION
 
 TO DO 13: TEST TREAT AFFLICTION
 
-TO DO 14:
-
 TO DO 16: TAKE A FRESH LOOK AT TREAT INJURY AND TREAT AFFLICTION... There MAY be Target issues (i.e. 'self' vs. 'pre-target')
-
-TO DO 17:
 
 TO DO 18: Change creature natural attacks to misc category and give creatures proficiency in misc.
 
 TO DO 19: Need to revise armor proficiency to not set misc proficiency to zero (among other things)
-
-TO DO 20:
 
 TO DO 21: Revise Class descriptions (Ranged Fighting style instead of Hunting and Bows/Crossbows instead of Ranged.
 
@@ -68,6 +56,103 @@ TO DO 31: Replace potion of cure light wounds with healers kit, and add to certa
 TO DO 32: Add med kits to some rando stores
 
 TO DO 33: CREATE B_PAS01.SPL
+
+TO DO 34: Treat wound needs to be automatic if it costs a medpack -- Change it! Unskilled use can still mishap.
+
+TO DO 35:
+
+Version 0.06.00
+
+2020-01-23
+
+- Added Thief skills for regular Joes group, and added everybody can search, bard lock pick, set natural snare and hide outdoors to it.  
+
+2020-01-19
+
+- Hide outdoors component added to tp2
+
+- Added additional sense evil presence components
+
+2020-01-17
+
+- Added druid turn/control animals and cleric channel energy components to tp2.
+
+2020-01-15
+
+- Set Natural Snares class text notification for all engines
+
+- Fixed barbi ref in proficiencies.tpa
+
+- Improved code to add skill progression for ranger kits (mod or otherwise)
+
+- Int pnp illusion immunity (imported attributes code)
+
+- Made shadow monster cres lev 6 (for illusion immunity prot vs. illus cres) and changed them to illusory creatures (admittedly, can be abused)
+
+- Made Demishadow monster cres lev 7 (for illusion immunity prot vs. illus cres) and changed them to illusory creatures (admittedly, can be abused)
+
+- Improved int 20 illusion immunity
+
+- Imporved int 21 illusion immunit
+
+- First pass at int 22 illusion immunity (but Shadow Monsters)
+
+- Updated splprot_attributes.tpa for all attributes
+
+- added work from sorcerer charisma spell power (likely very incompolete)
+
+- added new group: limitations 
+
+- rearranged tp2 around new group
+
+- Incorporated attributes charisma bonus to turn
+
+2020-01-14
+
+- Added bard cha req reduction components
+
+2020-01-11
+
+- Corrected mistake w/barbarian and ranger set nat snares clab assignment
+
+- Magical Defense adjustment for high wis Component in tp2 (But I am drunk so double check)
+
+2020-01-09
+
+- Added get_2da_row.tpa (may or may not use--looks useful, though)
+
+- Set Natural Snare: Added progression (for ranger) and class description for bgee (double check ranger version)
+
+2020-01-08
+
+- Set up stat and skill point system for play instrument skill
+
+- Set up stat and skill point system for use instrument (10th lev) skill
+
+- Imported performance fatigue components from b_kits (check!)
+
+- Imported set nat snares from b_kits (add barbarian)
+
+- Set Nat Snare used replace textually
+
+- Updated class descriptions in bgee
+
+2020-01-07
+
+- Readded EEex components (it's just a non-sod bgee issue that likely will be fixed)
+
+- Include Add_ex_skill (for eeex skills) 
+
+- First draft Appraisal skill
+
+- Performance skill --> Play Instrument skill
+
+
+2020-01-06
+
+- Removed all skill components that require EEex (can't get it to work reliably)
+
+- Added text to setup.tra for scroll restriction component
 
 Version 0.05.08
 

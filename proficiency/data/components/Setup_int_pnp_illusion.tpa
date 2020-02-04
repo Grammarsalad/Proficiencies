@@ -1,0 +1,259 @@
+//to do
+//LPF make_illusion ???
+//spells from other mods: phantasmal killer (ospells, maybe b_spells), illusory fireball B_spells,
+//looks like I need to apply protections to relevant spells, do a whole top down
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+/////////////////////////////////////        PNP INT ILLUSION IMMUNITY        //////////////////////////////////////
+/////////////////////////////////////                                         //////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////             Description          /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//to do
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////        Actual Modification       /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//applies spl in clab--thanks go to subtledoctor
+    COPY ~%mod_folder%/attribute/int/B_INT01.spl~  ~override~
+//eff
+    COPY ~%mod_folder%/attribute/int/B_INT01.eff~  ~override~
+
+    //B_INT02.spl applies int based bonuses
+    COPY ~%mod_folder%/attribute/int/B_INT02.spl~  ~override~
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 19 parameter2 = %int_eq% STR_VAR END  //=19 immune level 1
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 20 parameter2 = %int_eq% STR_VAR END  //=20 immune level 2
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 21 parameter2 = %int_gr% STR_VAR END  //=21 immune level 3
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 22 parameter2 = %int_gr% STR_VAR END  //=22 immune level 4
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 23 parameter2 = %int_gr% STR_VAR END  //=23 immune level 5
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 24 parameter2 = %int_gr% STR_VAR END  //=24 immune level 6
+         LPF ALTER_EFFECT INT_VAR match_opcode = 326 match_parameter1 = 25 parameter2 = %int_gr% STR_VAR END  //=25 immune level 7
+
+///////////////////////////////////////////////
+////////// Level 1 illusions
+///////////////////////////////////////////////
+//adding remove illusory prot projectile
+ADD_PROJECTILE ~%mod_folder%/attribute/int/B_IIRM.pro~   //projectile  10' removal pro
+
+//B_IIMU1 INT 19+, immune to lev 1 illusions
+    COPY ~%mod_folder%/attribute/int/B_IIRM1.spl~  ~override~    //Remove lev 1 illusioy prot
+         LPF ALTER_SPELL_HEADER INT_VAR projectile = %B_IIRM% STR_VAR  END
+
+    COPY ~%mod_folder%/attribute/int/B_IIMU1.spl~  ~override~    //Prot from blindness (bg(2)ee
+    ACTION_IF (GAME_IS ~iwdee~) OR  (FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~) BEGIN  //neithr use blindness
+        COPY_EXISTING ~B_IIMU1.spl~ ~override~
+          LPF ALTER_EFFECT INT_VAR match_opcode = 206   STR_VAR resource = EVAL ~SPWI125~ END         // Spook, not blindness in IWDEE or SR
+    END
+    ELSE BEGIN   // Spook, AND blindness in others
+        COPY_EXISTING ~B_IIMU1.spl~ ~override~
+          LPF CLONE_EFFECT INT_VAR match_opcode = 206   STR_VAR resource = EVAL ~SPWI125~ END
+    END
+
+
+///////////////////////////////////////////////
+////////// Level 2 illusions
+///////////////////////////////////////////////
+
+//spell that remove lev 2 illusory protections
+  COPY_EXISTING ~B_IIRM1.spl~ ~override/B_IIRM2.spl~
+      LPF ALTER_EFFECT INT_VAR parameter1 = 2 STR_VAR END   //level 2 spells
+
+//B_IIMU2 INT 20+, immune to lev 2 illusions
+    COPY ~%mod_folder%/attribute/int/B_IIMU1.spl~  ~override/B_IIMU2.spl~    //
+          LPF ALTER_EFFECT INT_VAR match_opcode = 100 dicenumber = 4  STR_VAR END //2nd lev illusory cres
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326   STR_VAR resource = EVAL ~B_IIRM2~ END //applies spell that removes protections
+          LPF ALTER_EFFECT INT_VAR match_opcode = 321   STR_VAR resource = EVAL ~B_IIMU2~ END //removes earlier versions of spl
+    ACTION_IF (GAME_IS ~iwdee~) AND (!FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~) BEGIN  // blindness spwi226 except if sr instlled (update when SR updated)
+        COPY_EXISTING ~B_IIMU2.spl~ ~override~
+          LPF CLONE_EFFECT INT_VAR match_opcode = 206   STR_VAR resource = EVAL ~SPWI226~ END         //
+    END
+    ACTION_IF !FILE_EXISTS_IN_GAME ~dvsrv4here.mrk~ BEGIN
+        COPY_EXISTING ~B_IIMU2.spl~ ~override~
+          LPF ALTER_EFFECT INT_VAR match_opcode = 206   STR_VAR resource = EVAL ~SPWI223~ END //deafness, but...
+    END
+    ELSE BEGIN
+        COPY_EXISTING ~B_IIMU2.spl~ ~override~
+          LPF DELETE_EFFECT INT_VAR match_opcode = 206  END
+    END
+
+
+//iwdee:
+//SR SPWI223 is soundburst (an evoc spell...)
+//SR SPWI226 is Summon monster II (a conj spell...)
+//B_Spells Illusory fireball (not yet created)
+
+///////////////////////////////////////////////
+////////// Level 3 illusions
+///////////////////////////////////////////////
+
+//spell that remove lev 3 illusory protections
+  COPY_EXISTING ~B_IIRM1.spl~ ~override/B_IIRM3.spl~
+      LPF ALTER_EFFECT INT_VAR parameter1 = 3 STR_VAR END   //level 3 spells
+
+//B_IIMU3 INT 21+, immune to lev 3 illusions
+    COPY ~%mod_folder%/attribute/int/B_IIMU1.spl~  ~override/B_IIMU3.spl~    //
+          LPF ALTER_EFFECT INT_VAR match_opcode = 100 dicenumber = 5  STR_VAR END //3rd lev illusory cres
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326   STR_VAR resource = EVAL ~B_IIRM3~ END //applies the remove protections spl
+          LPF ALTER_EFFECT INT_VAR match_opcode = 321   STR_VAR resource = EVAL ~B_IIMU3~ END //removes previous versions
+
+
+
+///////////////////////////////////////////////
+////////// Level 4 illusions
+///////////////////////////////////////////////
+
+//spell that remove up to lev 4 illusory protections
+  COPY_EXISTING ~B_IIRM1.spl~ ~override/B_IIRM4.spl~
+      LPF ALTER_EFFECT INT_VAR parameter1 = 4 STR_VAR END   //level 4 illus
+
+//B_IIMU4 INT 22+, immune to lev 4 illusions
+    COPY ~%mod_folder%/attribute/int/B_IIMU1.spl~  ~override/B_IIMU4.spl~    //
+          LPF ALTER_EFFECT INT_VAR match_opcode = 100 dicenumber = 6  STR_VAR END //4th lev illusory cres (need to account for shadow monsters...)
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326   STR_VAR resource = EVAL ~B_IIRM4~ END //applies the remove protections spl
+          LPF ALTER_EFFECT INT_VAR match_opcode = 321   STR_VAR resource = EVAL ~B_IIMU4~ END //removes previous versions
+
+//make shadow cre's illusory and lev 6:
+//Shad mon
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1Gob1.cre~ BEGIN
+  COPY_EXISTING ~SS1Gob1.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1Gob2.cre~ BEGIN
+  COPY_EXISTING ~SS1Gob2.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1Gob3.cre~ BEGIN
+  COPY_EXISTING ~SS1Gob3.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1liz3.cre~ BEGIN
+  COPY_EXISTING ~SS1liz3.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1liz4.cre~ BEGIN
+  COPY_EXISTING ~SS1liz4.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1trl6.cre~ BEGIN
+  COPY_EXISTING ~SS1trl6.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1trl7.cre~ BEGIN
+  COPY_EXISTING ~SS1trl7.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS1trl8.cre~ BEGIN
+  COPY_EXISTING ~SS1trl8.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 6
+END
+
+//SRspwi426 is prot from energy (i.e. not illusion)
+//B_Spells Phantasmal Killer (not created yet) --
+
+///////////////////////////////////////////////
+////////// Level 5 illusions
+///////////////////////////////////////////////
+
+//B_IIMU2 INT 23+, immune to lev 5 illusions
+//spell that remove up to lev 4 illusory protections
+  COPY_EXISTING ~B_IIRM1.spl~ ~override/B_IIRM5.spl~
+      LPF ALTER_EFFECT INT_VAR parameter1 = 5 STR_VAR END   //level 5 illus
+
+//B_IIMU4 INT 22+, immune to lev 4 illusions
+    COPY ~%mod_folder%/attribute/int/B_IIMU1.spl~  ~override/B_IIMU5.spl~    //
+          LPF ALTER_EFFECT INT_VAR match_opcode = 100 dicenumber = 7  STR_VAR END //5th lev illusory cres (need to account for d.shadow monsters...)
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326   STR_VAR resource = EVAL ~B_IIRM5~ END //applies the remove protections spl
+          LPF ALTER_EFFECT INT_VAR match_opcode = 321   STR_VAR resource = EVAL ~B_IIMU5~ END //removes previous versions
+//D-Shad Monsters (need to create new ones and alter the relevant 2da as they are duplicated in Stronger shad mon spell)
+
+ACTION_IF FILE_EXISTS_IN_GAME ~SS2gob1.cre~ BEGIN
+  COPY_EXISTING ~SS2gob1.cre~ ~override~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 7
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS2gob2.cre~ BEGIN
+  COPY_EXISTING ~SS2gob2.cre~ ~override/B_DSMGB1.cre~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 7
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS2gob3.cre~ BEGIN
+  COPY_EXISTING ~SS2gob3.cre~ ~override/B_DSMGB2.cre~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 7
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS2liz5.cre~ BEGIN
+  COPY_EXISTING ~SS2liz5.cre~ ~override/B_DSMLZ1.cre~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 7
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS2liz6.cre~ BEGIN
+  COPY_EXISTING ~SS2liz6.cre~ ~override/B_DSMLZ2.cre~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 7
+END
+ACTION_IF FILE_EXISTS_IN_GAME ~SS2liz7.cre~ BEGIN
+  COPY_EXISTING ~SS2liz7.cre~ ~override/B_DSMLZ3.cre~
+        LAUNCH_PATCH_FUNCTION make_illusion END
+        WRITE_BYTE 0x0234 7
+END
+
+//2da
+ACTION_IF FILE_EXISTS_IN_GAME ~DSMONST.2da~ BEGIN
+  COPY_EXISTING ~DSMONST.2da~ ~override~
+	REPLACE_TEXTUALLY ~SS2gob2~ ~B_DSMGB1~        //replacing old w new
+	REPLACE_TEXTUALLY ~SS2gob3~ ~B_DSMGB2~        //replacing old w new
+	REPLACE_TEXTUALLY ~SS2liz5~ ~B_DSMLZ1~        //replacing old w new
+	REPLACE_TEXTUALLY ~SS2liz6~ ~B_DSMLZ2~        //replacing old w new
+	REPLACE_TEXTUALLY ~SS2liz7~ ~B_DSMLZ3~        //replacing old w new
+END
+
+//CONTINUE 
+
+/* //Other RELEVANT SPELLS??? Double check IWDEE
+    COPY ~%mod_folder%/attribute/int/B_IIMU1.spl~  ~override/B_IIMU4.spl~    //
+          LPF ALTER_EFFECT INT_VAR match_opcode = 206   STR_VAR resource = EVAL ~SPWI223~ END //deafness, but...
+
+    ACTION_IF GAME_IS ~iwdee~ BEGIN  // blindness spwi226
+        COPY_EXISTING ~B_IIMU1.spl~ ~override~
+          LPF CLONE_EFFECT INT_VAR match_opcode = 206   STR_VAR resource = EVAL ~SPWI125~ END         //
+    END
+*/
+//Shadowdoor505/demishadowmon525????
+
+///////////////////////////////////////////////
+////////// Level 6 illusions
+///////////////////////////////////////////////
+
+///////////////////////////////////////////////
+////////// Level 7 illusions
+///////////////////////////////////////////////
+
+
+
+

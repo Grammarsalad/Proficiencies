@@ -24,6 +24,19 @@
 @28  = ~Skills as proficiencies: Player Assignment (EEex required)~
 @29  = ~Expanded Skills~
 @30  = ~This component requires FnP Zealots~
+@31  = ~Expanded Abilities and Attributes~
+@32  = ~Scroll Use Limitations~
+@33  = ~Magic Item Creation~
+@34  = ~Attributes: Intelligence~
+@35  = ~Attributes: Wisdom~
+@36  = ~Spell Power: Charisma~
+@37 = ~Attributes: Charisma: Reduce Bard Requirement~
+@38 = ~Attributes: Charisma: Reduce Druid Requirement~
+@39 = ~Limitations~
+@40 = ~Variant Turning (requires EEex)~
+@41 = ~Druid Turning (requires EEex)~
+@42  = ~Thief skills for regular Joes~
+
 //
 @100  = ~Select an installation package~
 @101  = ~ALL the new kits, the kit selection dialogue, and the sphere system ('radical version')~
@@ -67,25 +80,26 @@
 @140= ~Mage Revisions: Conservative~
 @141= ~Mage Revisions: Radical~
 
-@142= ~Sorcerer Revisions~
-@143= ~Sorcerer Revisions: Conservative~
-@144= ~Sorcerer Revisions: Radical~
+@142 = ~Sorcerer Revisions~
+@143 = ~Sorcerer Revisions: Conservative~
+@144 = ~Sorcerer Revisions: Radical~
 
-@145= ~Shaman Revisions~
-@146= ~Shaman Revisions: Conservative~
-@147= ~Shaman Revisions: Radical~
+@145 = ~Shaman Revisions~
+@146 = ~Shaman Revisions: Conservative~
+@147 = ~Shaman Revisions: Radical~
 
-@148= ~Monk Revisions~
-@149= ~Monk Revisions: Conservative~
-@150= ~Monk Revisions: Radical~
+@148 = ~Monk Revisions~
+@149 = ~Monk Revisions: Conservative~
+@150 = ~Monk Revisions: Radical~
 
-@151= ~Performance Fatigue~
-@152= ~Performance Fatigue: Bard Song Fatigue~
-@153= ~Performance Fatigue: Shaman Dance Fatigue~
-@154= ~Performance Fatigue: Bard Song and Shaman Dance Fatigue~
+@151 = ~Performance Fatigue~
+@152 = ~Performance Fatigue: Bard Song Fatigue~
+@153 = ~Performance Fatigue: Shaman Dance Fatigue~
+@154 = ~Performance Fatigue: Bard Song and Shaman Dance Fatigue~
 
-@161= ~Class 'Extras': Unique Arcane Spell Selection~
-@162= ~Class 'Extras'~
+@161 = ~Class 'Extras': Unique Arcane Spell Selection~
+@162 = ~Class 'Extras'~
+@163 = ~Craft Scroll Skill: Custom Version One (requires EEex)~
 
 @170= ~All Priests and Paladins: Turn bonus by charisma~
 @171= ~Turn bonus by charisma~
@@ -95,28 +109,28 @@
 @175 = ~Sense Evil Presence - Paladins, Barbarians, and Priests only~
 @176 = ~Sense Evil Presence - Paladins, Rangers, and Priests only~
 @177 = ~Sense Evil Presence - Paladins, Barbarians, Rangers, and Priests only~
-@178 = ~Fletcher - Ranger Only~
-@179 = ~Fletcher - Rangers, base fighters and barbarians only~
+@178 = ~Fletch - Ranger Only~
+@179 = ~Fletch - Rangers, base fighters and barbarians only~
 @180 = ~Add Spontaneous Casting for clerics and druids (by Pecca)~
 @181 = ~Berserker Enrage Fatigue~
 @182 = ~Barbarian Rage Fatigue~
 @183 = ~Barbarian Rage, Berserker Enrage, and (possibly) Zealot Frenzy Fatigue~
 @184 = ~Everybody gets Fatigued~
 @185 = ~Zealot Frenzy Fatigue~
-@186 = ~Sense Evil Presence - Paladins only~
-@187 = ~Sense Evil Presence - Paladins, and Barbarians only~
-@188 = ~Sense Evil Presence - Paladins, and Rangers only~
+@186 = ~Sense Evil Presence - Paladins (not blackguards) and monks Only~
+@187 = ~Sense Evil Presence - Paladins, Barbarians, and Wizard Slayers only~
+@188 = ~Sense Evil Presence - Paladins (not blackguards), monks, barbarians, and wizard slayers only~
 @189 = ~Sense Evil Presence - Paladins, and Priests only~
-@190 = ~Class Skills - Performance~
-@191 = ~Everybody Can Search (requires EEex)~
-@192 = ~Performance - Bard only (requires EEex)~
+@190 = ~Class Skills - Play Instrument (requires EEex)~
+@191 = ~Everybody Can Search (EEex recommended)~
+@192 = ~Play Instrument- Bard Only~
 @193 = ~Only New Thief Skills (requires EEex)~
 @194 = ~Variant Attribute Bonuses for base skills.~
 @195 = ~All New Skills.~
 @196 = ~Variant Attribute Bonuses.~
 @197 = ~Appraisal (requires EEex)~
 @198 = ~Class Skills - Appraisal~
-@199 = ~Performance - Rogues only (requires EEex)~
+@199 = ~Play Instrument - Rogues only~
 @200 = ~Barter (requires EEex)~
 @201 = ~Class Skills - Barter~
 @202 = ~Use Scroll - 10th level (requires EEex)~
@@ -128,13 +142,49 @@
 @208 = ~Set Natural Snares: Druids, Rangers, and Barbarians only~
 @209 = ~Set Natural Snares: Fighters, and Rangers only~
 @210 = ~Set Natural Snares: Fighters, Druids and Rangers only~
-@211 = ~Class Skills - Sense Evil Presence (requires EEex)~
-@212 = ~Class Skills - Fletcher (requires EEex)~
-
-
-
-
-
-
+@211 = ~Class Skills - Sense Evil Presence (EEex reccomended)~
+@212 = ~Class Skills - Fletch (requires EEex)~
+@213 = ~Custom Scroll Limits~
+@214 = ~PnP Scroll Limits~
+@215 = ~Combined Scroll Limits~
+@216 = ~Magic Item Creation - Craft Scroll~
+@217 = ~Intelligence: PnP illusion immunity~
+@218 = ~Wisdom: Magic defense adjustment for high wis~
+@219 = ~Charisma: Spell Power for high cha (all classes)~
+@220 = ~Charisma: Spell Power for high cha (bards and sorcerers only)~
+@221 = ~Charisma: Spell Power for high cha (sorcerers only)~
+@222 = ~Charisma: Spell Power for high cha (bards only)~
+//bard charisma
+@223 = ~Attributes: Charisma: Reduce Bard Requirement: 14~
+@224 = ~Attributes: Charisma: Reduce Bard Requirement: 13~
+@225 = ~Attributes: Charisma: Reduce Bard Requirement: 12~
+@226 = ~Attributes: Charisma: Reduce Bard Requirement: 9~
+@227 = ~Attributes: Charisma: Reduce Bard Requirement: No requirement~
+//druid charisma
+@228 = ~Attributes: Charisma: Reduce Druid Requirement: 14~
+@229 = ~Attributes: Charisma: Reduce Druid Requirement: 13~
+@230 = ~Attributes: Charisma: Reduce Druid Requirement: 12~
+@231 = ~Attributes: Charisma: Reduce Druid Requirement: 9~
+@232 = ~Attributes: Charisma: Reduce Druid Requirement: No requirement~
+//variant turning
+@233 = ~Variant Turning: Channel Energy~
+@234 = ~Druid Turning: Turn or Control Beasts~
+//hide outdoors
+@235 = ~Hide outdoors~
+//sense evil presence
+@236 = ~Sense Evil Presence - Paladins (not blackguards) Only~
+//pick locks for regular joes
+@237 = ~Lock Pick (EEex recommended)~
+@238 = ~Lock Pick: Bard Only~
+@239 = ~Lock Pick: Monk Only~
+@240 = ~Lock Pick: Monks and Bards Only~
+//set nat snares for reg joes
+@241 = ~Set Natural Snares~
+@242 = ~Set Natural Snares: Barbarian Only~
+@243  Set Natural Snares: Rangers Only
+//hide outdoors
+@244 = ~Hide outdoors: Barbarian only (EEex recommended)~
+@245 = ~Hide outdoors: Rangers only~
+@246 = ~Hide outdoors: Barbarian and Ranger only (EEex recommended)~
 
 

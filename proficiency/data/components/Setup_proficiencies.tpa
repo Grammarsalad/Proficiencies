@@ -312,7 +312,7 @@ STRING_SET_EVALUATE 31975 ~%fighter_description%~
 
 ACTION_GET_STRREF 24235 barb_description
 
-OUTER_PATCH_SAVE ranger_description ~%barb_description%~ BEGIN
+OUTER_PATCH_SAVE barb_description ~%barb_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
 END
 
@@ -885,13 +885,13 @@ STRING_SET_EVALUATE 74301 ~%fighter_description%~
  OUTER_SPRINT old1 @721100//old text
  OUTER_SPRINT new1 @721101//new text
 
-ACTION_GET_STRREF 24235 barb_description
+ACTION_GET_STRREF 45869 barb_description
 
-OUTER_PATCH_SAVE ranger_description ~%barb_description%~ BEGIN
+OUTER_PATCH_SAVE barb_description ~%barb_description%~ BEGIN
   REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
 END
 
-STRING_SET_EVALUATE 24235 ~%barb_description%~
+STRING_SET_EVALUATE 45869 ~%barb_description%~
 
 
 END  //END BG2EE class descriptions

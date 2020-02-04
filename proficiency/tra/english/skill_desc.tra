@@ -1,0 +1,33 @@
+//Tra Ref @970 To @996 --Ranger refs
+
+//Set Natural Snares @970 To @996
+@970 = ~Set Natural Snares only works in natural environments~
+@971 = ~Set Natural Snare~
+@972 = ~Set Natural Snares
+Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the character's level and can only be triggered by enemies.
+  1st Level: Deals 2d8+5 missile damage.
+  11th Level: Deals 2d8+5 missile damage, plus 2d6 poison damage per round for the next 3 rounds.
+  16th Level: Deals 3d8+5 missile damage, plus 4d8+2 fire damage.
+  21st Level: Deals 3d8+5 missile damage and 20 poison damage with no save; slays target if a Save vs. Death with a +4 bonus is failed.
+  
+  Set Natural Snare only works in natural environments.~
+@973 = ~Set Snare~
+@974 = ~failed.~
+@975 = ~failed.
+
+Set Natural Snare only works in natural environments.~
+
+//skill descriptions  @900001 to @1000000
+
+//Appraisal @900001 to @900100
+@900001 = ~Appraisal~
+@900002 = ~APPRAISAL: This skill works like Lore, and its value is identical to lore. Points added to this skill increment the lore skill.~
+
+//Play Instrument @900101 to @900200
+@900101 = ~Play Instrument~
+@900102 = ~PLAY INSTRUMENT: This skill allows characters to use magical instruments and the ability to create quasi-magical effects using normal instruments.~
+
+//Use Scrolls @900201 to @900300
+@900201 = ~Use Scrolls~
+@900202 = ~USE SCROLLS: The character's use read scrolls skill determines <PRO_HISHER> ability to read scrolls.
+At 10th level, if <PRO_HESHE> has an int of 9 or greater, <PRO_HESHE> gains the ability to use scrolls of all types (*If* they invest the skill points to do so).~

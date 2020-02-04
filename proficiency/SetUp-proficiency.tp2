@@ -1,7 +1,7 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.05.08~
+VERSION ~0.06.00~
 
 
 ALWAYS
@@ -22,11 +22,17 @@ ALWAYS
 
     INCLUDE ~proficiency/lib/spell_to_innate.tpa~
 
+    INCLUDE ~proficiency/lib/add_ex_skill.tpa~
+
+    INCLUDE ~proficiency/lib/get_2da_row.tpa~
+
     INCLUDE ~proficiency/lib/spell_clone_effects.tpa~
 
     INCLUDE ~proficiency/lib/bg2fp_effect_batches_fnp.tpa~
 
     INCLUDE ~proficiency/lib/splprot_prof.tpa~
+
+    INCLUDE ~proficiency/lib/splprot_kits.tpa~
 
 END
 //need to keep my options open
@@ -39,7 +45,8 @@ LANGUAGE ~English~ ~english~ ~proficiency/tra/english/setup.tra~
                              ~proficiency/tra/english/prof.tra~
                              ~proficiency/tra/english/craft.tra~
                              ~proficiency/tra/english/class_descriptions.tra~
-                             ~proficiency/tra/english/prof_skill_desc.tra~
+                             ~proficiency/tra/english/prof_skill_desc.tra~     //non-weapon prof descriptions
+                             ~proficiency/tra/english/skill_desc.tra~          //skill descriptions
 //___________________________________________________________________________________
 
 //__________________________________________________________________________________
@@ -52,7 +59,7 @@ LANGUAGE ~English~ ~english~ ~proficiency/tra/english/setup.tra~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 101: Weapon proficiency menu
+// 101: Weapon proficiency menu    - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -68,7 +75,7 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 102: Dialog: Automatic Assignment (EEex recommended)
+// 102: Dialog: Automatic Assignment (EEex recommended)    - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -82,7 +89,7 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 103: Dialog: Player Selection (EEex recommended)
+// 103: Dialog: Player Selection (EEex recommended)   - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -95,7 +102,7 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 104: Skills as proficiencies: Automatic Assignment(EEex required)
+// 104: Skills as proficiencies: Automatic Assignment(EEex required)   - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -108,7 +115,7 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 105: Skills as proficiencies: Player Assignment (EEex required)
+// 105: Skills as proficiencies: Player Assignment (EEex required)    - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -118,418 +125,402 @@ DESIGNATED 105
 GROUP @9 //Main Component
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			201: Attributes: Illusion immunity for high int
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @217 // Intelligence: PnP illusion immunity
+SUBCOMPONENT @34 //Attributes: Intelligence
+DESIGNATED 201
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1201-1207: Expanded Skills: Performance Fatigue
+//			301: Attributes: Magic defense adjustment for high wis
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @218 // Wisdom: Magic defense adjustment for high wis
+SUBCOMPONENT @35 //Attributes: Wisdom
+DESIGNATED 301
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			401: Attributes: Charisma: Spell Power (all classes)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @219 // Charisma: Spell Power for high cha (all classes)
+SUBCOMPONENT @36 //Spell Power: Charisma
+DESIGNATED 401
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_sorcerer_charisma.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			402: Attributes: Charisma: Spell Power (bards and sorcerers only)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @220 // Charisma: Spell Power for high cha (bards and sorcerers only)
+SUBCOMPONENT @36 //Spell Power: Charisma
+DESIGNATED 402
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //EXCLUDE BARD OR SOR BASED SPELL POWER COMPONENTS
+
+INCLUDE ~%mod_folder%/data/components/Setup_sorcerer_charisma.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			403: Attributes: Charisma: Spell Power (sorcerers only)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @221 // Charisma: Spell Power for high cha (sorcerers only)
+SUBCOMPONENT @36 //Spell Power: Charisma
+DESIGNATED 403
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //EXCLUDE OTHER SOR BASED SPELL POWER COMPONENTS
+
+INCLUDE ~%mod_folder%/data/components/Setup_sorcerer_charisma.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			403: Attributes: Charisma: Spell Power (bards only)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @222 // Charisma: Spell Power for high cha (bards only)
+SUBCOMPONENT @36 //Spell Power: Charisma
+DESIGNATED 403
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //EXCLUDE OTHER BARD BASED SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_sorcerer_charisma.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			501: Variant Turning: Channel Energy
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @233 // Variant Turning: Channel Energy
+SUBCOMPONENT @40 //Variant Turning (requires EEex)
+DESIGNATED 501
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_sorcerer_charisma.tpa~
+
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			551: Druid Turning: Turn or Control Beasts
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @234 // Druid Turning: Turn or Control Beasts
+SUBCOMPONENT @41 //Druid Turning (requires EEex)
+DESIGNATED 551
+GROUP @31    //Expanded Abilities
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_sorcerer_charisma.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			1401-1403: Turn bonus by charisma
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 //________________________
 //
-// 1201: Bard Song Performance Fatigue
+// 1401: All Priests and Paladins: Turn bonus by charisma
 //________________________ 
 
-BEGIN @152  //Performance Fatigue: Bard Song Fatigue
-SUBCOMPONENT @151 //Performance Fatigue
-DESIGNATED 1201
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
 
-INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+BEGIN @170  //  All Priests and Paladins: Turn bonus by charisma
+SUBCOMPONENT @171 //Turn bonus by charisma
+DESIGNATED 1401
+GROUP @31    //Expanded Abilities
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
-//________________________
-//
-// 1202: Shaman Dance Performance Fatigue
-//________________________
-
-BEGIN @153  //Performance Fatigue: Shaman Dance Fatigue
-SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
-DESIGNATED 1202
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
-
-INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_turn_charisma.tpa~
 
 //________________________
 //
-// 1203: Bard Song and Shaman Dance Performance Fatigue
+// 1402: Clerics: Turn Modification by charisma
 //________________________ 
 
-BEGIN @154  //Bard Song and Shaman Dance Fatigue
-SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
-DESIGNATED 1203
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+BEGIN @172  //  Clerics only: Turn bonus by charisma
+SUBCOMPONENT @171 //Turn bonus by charisma
+DESIGNATED 1402
+GROUP @31    //Expanded Abilities
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
-INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
-INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
-
-//________________________
-//
-// 1204: Berserker Enage Fatigue
-//________________________
-
-BEGIN @181  //Berserker Enrage Fatigue
-SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
-DESIGNATED 1204
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
-
-INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_turn_cha_pr.tpa~
 
 //________________________
 //
-// 1205: Barbarian Rage Fatigue
-//________________________
+// 1403: Paladins: Turn Modification by charisma
+//________________________ 
 
-BEGIN @182  //Barbarian Rage Fatigue
-SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
-DESIGNATED 1205
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @17 //~EE games only!~  for now
 
-INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+BEGIN @173  //  Paladins only: Turn bonus by charisma
+SUBCOMPONENT @171 //Turn bonus by charisma
+DESIGNATED 1403
+GROUP @31    //Expanded Abilities
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
-//________________________
-//
-// 1206: Zealot Frenzy Fatigue
-//________________________
-
-BEGIN @185  //Zealot Frenzy Fatigue
-SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
-DESIGNATED 1206
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
-REQUIRE_PREDICATE MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~ @30 // This component requires FnP Zealots
-//CONTINUE 
+INCLUDE ~%mod_folder%/data/components/Setup_turn_cha_pal.tpa~
 
 //________________________
 //
-// 1207: Barbarian Rage, Berserker Enage, and (possibly) Zealot Frenzy Fatigue
-//________________________
+// 1501: Variant Attribute Bonuses for base skills
+//________________________ 
 
-BEGIN @183  //Barbarian Rage, Berserker Enage, and (possibly) Zealot Frenzy Fatigue
-SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
-DESIGNATED 1207
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+//CONTINUE--Actually make the component!
 
-INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
-INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
-//Check for FnP zealots...
-ACTION_IF (MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~) BEGIN
+BEGIN @194  //  Variant Attribute Bonuses for base skills
+DESIGNATED 1501
+GROUP @31    //Expanded Abilities
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-END //end if zealots installed 
+//INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
 
-//________________________
-//
-// 1208: Everybody gets Fatigued
-//________________________
-
-BEGIN @184  //Everybody gets Fatigued
-SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
-DESIGNATED 1208
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
-
-INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
-INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
-INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
-INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
-//Check for FnP zealots...
-ACTION_IF (MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~) BEGIN
-//CONTINUE 
-
-
-END //end if zealots installed 
+//CONTINUE--Actually make the component!
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			1601-???: Expanded Skills: New Class Skills
+//			2101-???: Expanded Skills: New Class Skills
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 
-//Appraisal
+//Appraisal (CONTINUE- Class descriptions - TEST!)
 //________________________
 
 //________________________
 //
-// 1601:Appraisal (requires EEex)
+// 2101:Appraisal  (requires EEex)
 //________________________
 
-BEGIN @197  // Appraisal (requires EEX)
-SUBCOMPONENT @198 //Class Skills - Appraisal
-DESIGNATED 1601
+BEGIN @197  // Appraisal  (requires EEX)
+DESIGNATED 2101
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required! (NEED TO DETECT THE SKILL COMPONENT SPECIFICALLY!)  
+
+INCLUDE ~%mod_folder%/data/components/Setup_appraisal_skill.tpa~
+
+
+//Play Instrument - In progress CONTINUE
+//________________________
+
+//________________________
+//
+// 2111:Play Instrument - Bard only (requires EEex)
+//________________________ 
+
+
+BEGIN @192  // Play Instrument- Bard Only
+SUBCOMPONENT @190 //Class Skills - Play Instrument (requires EEex)
+DESIGNATED 2111
+GROUP @29    //Expanded Skills
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+OUTER_SPRINT ~classez~ ~5~   //Just Bard
+
+INCLUDE ~%mod_folder%/data/components/Setup_instrument_skill.tpa~
+
+//________________________
+//
+// 2112:Performance - Rogues only (requires EEex)
+//________________________ 
+
+
+BEGIN @199  // Play Instrument- Rogues only (requires EEex)
+SUBCOMPONENT @190 //Class Skills - Play Instrument (requires EEex)
+DESIGNATED 2112
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
+OUTER_SPRINT ~classez~ ~4, 5~   //Bard and thief
 
-//Performance
+INCLUDE ~%mod_folder%/data/components/Setup_instrument_skill.tpa~
+
+
+
+//Use Scroll - In progress CONTINUE
 //________________________
 
 //________________________
 //
-// 1701:Performance - Bard only (requires EEex)
-//________________________ 
-
-
-BEGIN @192  // Performance- Bard Only (requires EEex)
-SUBCOMPONENT @190 //Class Skills - Performance
-DESIGNATED 1701
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
-
-//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
-
-//________________________
-//
-// 1702:Performance - Rogues only (requires EEex)
-//________________________ 
-
-
-BEGIN @199  // Performance- Rogues only (requires EEex)
-SUBCOMPONENT @190 //Class Skills - Performance
-DESIGNATED 1702
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
-
-//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
-
-
-
-//Use Scroll
-//________________________
-
-//________________________
-//
-// 1901:Use Scroll - 10th level (requires EEex)
+// 2121:Use Scroll - 10th level (requires EEex)
 //________________________ 
 
 
 BEGIN @202  // Use Scroll - 10th level (requires EEex)
 SUBCOMPONENT @203 //Class Skills - Use Scroll
-DESIGNATED 1901
+DESIGNATED 2121
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+//COntinue this version and then expand to other components
+
+INCLUDE ~%mod_folder%/data/components/Setup_use_scroll_10.tpa~
 
 //________________________
 //
-// 1902:Use Scroll - No Restriction (requires EEex)
+// 2122:Use Scroll - No Restriction (requires EEex)
 //________________________ 
 
 
 BEGIN @204  // Use Scroll - No Restrictions (requires EEex)
 SUBCOMPONENT @203 //Class Skills - Use Scroll
-DESIGNATED 1902
+DESIGNATED 2122
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
+
 
 //________________________
 //
-// 1903:Use Scroll - Pseudo-skill
+// 2123:Use Scroll - Pseudo-skill
 //________________________ 
 
 
 BEGIN @205  // Use Scroll - Pseudo-skill
 SUBCOMPONENT @203 //Class Skills - Use Scroll
-DESIGNATED 1903
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
-
-//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
-
-//Set Natural Snares
-//________________________
-
-//________________________
-//
-// 2001: Set Natural Snares: Ranger, and Barbarian only
-//________________________
-
-
-BEGIN @207  // Set Natural Snares: Ranger and Barbarian Only
-SUBCOMPONENT @206 //Class Skills - Set Natural Snares
-DESIGNATED 2001
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
-
-//INCLUDE ~%mod_folder%/data/components/Setup_bard_skills.tpa~
-
-//________________________
-//
-// 2002: Set Natural Snares: Druids, Rangers, and Barbarians only
-//________________________
-
-
-BEGIN @208  // Set Natural Snares: Druids, Rangers and Barbarians only
-SUBCOMPONENT @206 //Class Skills - Set Natural Snares
-DESIGNATED 2002
+DESIGNATED 2123
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
 
-//________________________
-//
-// 2003: Set Natural Snares: Fighters, and Rangers only
-//________________________
 
 
-BEGIN @209  // Set Natural Snares: Fighters, and Rangers only
-SUBCOMPONENT @206 //Class Skills - Set Natural Snares
-DESIGNATED 2003
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
-//________________________
-//
-// 2004: Set Natural Snares: Fighters, Druids and Rangers only
-//________________________
-
-
-BEGIN @210  // Set Natural Snares: Fighters, Druids and Rangers only
-SUBCOMPONENT @206 //Class Skills - Set Natural Snares
-DESIGNATED 2004
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
-
-//Sense Evil Presence (requires EEex)
+//Sense Evil Presence (EEex reccomended)  - In progress CONTINUE
 //________________________
 
 //________________________
 //
-// 2101: Sense Evil Presence - Paladins Only
+// 2141: Sense Evil Presence - Paladins (not blackguards) Only
 //________________________
 
 
-BEGIN @186  // Sense Evil Presence - Paladins Only
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2101
+BEGIN @236  // Sense Evil Presence - Paladins (not blackguards) Only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (EEex reccomended)
+DESIGNATED 2141
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 //________________________
 //
-// 2102: Sense Evil Presence: Paladins, and Barbarians only 
+// 2142: Sense Evil Presence - Paladins (not blackguards), and monks Only
 //________________________
 
 
-BEGIN @187  // Sense Evil Presence - Paladins, and Barbarians only
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2102
+BEGIN @186  // Sense Evil Presence - Paladins (not blackguards) and monks Only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (EEex reccomended)
+DESIGNATED 2142
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 //________________________
 //
-// 2103: Sense Evil Presence: Paladins, and Rangers only 
+// 2143: Sense Evil Presence - Paladins (not blackguards), Barbarians, and Wizard Slayers only
 //________________________
 
 
-BEGIN @188  // Sense Evil Presence - Paladins, and Rangers only 
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2103
+BEGIN @187  // Sense Evil Presence - Paladins (not blackguards), barbarians, and wizard slayers only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (EEex reccomended)
+DESIGNATED 2143
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 //________________________
 //
-// 2104: Sense Evil Presence: Paladins, and Priests only 
+// 2144: Sense Evil Presence - Paladins (not blackguards), Monks, Barbarians, and Wizard Slayers only
 //________________________
 
 
-BEGIN @189  // Sense Evil Presence - Paladins, and Priests only
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2104
+BEGIN @188  // Sense Evil Presence - Paladins (not blackguards), monks, barbarians, and wizard slayers only
+SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (EEex reccomended)
+DESIGNATED 2144
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-//________________________
-//
-// 2105: Sense Evil Presence: Paladins, Barbarians, and Rangers only 
-//________________________
 
-
-BEGIN @174  // Sense Evil Presence - Paladins, Barbarians, and Rangers only
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2105
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
-
-//________________________
-//
-// 2106: Sense Evil Presence: Paladins, Barbarians, and Priests only
-//________________________
-
-
-BEGIN @175  // Sense Evil Presence - Paladins, Barbarians, and Priests only
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2106
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
-
-//________________________
-//
-// 2107: Sense Evil Presence: Paladins, Rangers, and Priests only
-//________________________
-
-
-BEGIN @176  // Sense Evil Presence - Paladins, Rangers, and Priests only
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2107
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
-
-//________________________
-//
-// 2108: Sense Evil Presence: Paladins, Barbarians, Rangers, and Priests only
-//________________________
-
-
-BEGIN @177  // Sense Evil Presence - Paladins, Barbarians, Rangers, and Priests only
-SUBCOMPONENT @211 //Class Skills - Sense Evil Presence (requires EEex)
-DESIGNATED 2108
-GROUP @29    //Expanded Skills
-REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
-
-//Fletcher (requires EEex)
+//Fletch (requires EEex)
 //________________________
 
 //________________________
 //
-// 2201: Fletcher - Ranger Only
+// 2151: Fletch - Ranger Only
 //________________________
 
 
 BEGIN @178  // Fletcher - Ranger Only
 SUBCOMPONENT @212 //Class Skills - Fletcher (requires EEex)
-DESIGNATED 2201
+DESIGNATED 2151
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 //________________________
 //
-// 2202: Fletcher: Rangers, base fighters and barbarians only 
+// 2152: Fletch: Rangers, base fighters and barbarians only
 //________________________
 
 
-BEGIN @179  // Fletcher - Rangers, base fighters and barbarians only
-SUBCOMPONENT @212 //Class Skills - Fletcher (requires EEex)
-DESIGNATED 2201
+BEGIN @179  // Fletch - Rangers, base fighters and barbarians only
+SUBCOMPONENT @212 //Class Skills - Fletch (requires EEex)
+DESIGNATED 2152
 GROUP @29    //Expanded Skills
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+
+
+///////////////////////////////////////////
+//////////////Thief skilsl for regular joes
+
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-//			3001: Everybody Can Search (requires EEX)
+//			3001: Everybody Can Search (EEex reccomended)
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
@@ -539,49 +530,484 @@ REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 //________________________ 
 
 
-BEGIN @191  //  Everybody Can Search (requires EEX)
-SUBCOMPONENT @191  //  Everybody Can Search (requires EEX)
+BEGIN @191  //  Everybody Can Search (EEex reccomended)
 DESIGNATED 3001
-GROUP @29    //Expanded Skills
+GROUP @42    //Thief skills for regular Joes
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 INCLUDE ~%mod_folder%/data/components/Setup_all_search.tpa~
 
+//________________________
+//
+// 3101: Lock Pick: Bard Only
+//________________________ 
+
+
+BEGIN @238 // Lock Pick: Bard Only
+SUBCOMPONENT @237 // ~Lock Pick (EEex recommended)
+DESIGNATED 3101
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
 
 //________________________
 //
-// 3101: Attribute bonus changes to all skills only
+// 3102: Lock Pick: Monks Only
 //________________________ 
 
-//CONTINUE--Actually make the component!
 
-BEGIN @194  //  Variant Attribute Bonuses for base skills
-SUBCOMPONENT @196 //Variant Attribute Bonuses
-DESIGNATED 3101
-GROUP @29    //Expanded Skills
+BEGIN @239 // Lock Pick: Monk Only
+SUBCOMPONENT @237 // ~Lock Pick (EEex recommended)
+DESIGNATED 3102
+GROUP @42    //Thief skills for regular Joes
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
-//INCLUDE ~%mod_folder%/data/components/Setup_thief_skills.tpa~
 
-//CONTINUE--Actually make the component!
+//________________________
+//
+// 3102: Lock Pick: Monks and Bards Only
+//________________________ 
 
+
+BEGIN @240 // Lock Pick: Monks and Bards Only
+SUBCOMPONENT @237 // ~Lock Pick (EEex recommended)
+DESIGNATED 3102
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//Set Natural Snares -- In progress CONTINUE
+//________________________
+
+//________________________
+//
+// 3201: Set Natural Snares: Barbarian only
+//________________________
+
+
+BEGIN @242  // Set Natural Snares: Barbarian Only
+SUBCOMPONENT @241 // Set Natural Snares
+DESIGNATED 3201
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//________________________
+//
+// 3202: Set Natural Snares: Rangers only
+//________________________
+
+
+BEGIN @243  // Set Natural Snares: Rangers Only
+SUBCOMPONENT @241 // Set Natural Snares
+DESIGNATED 3202
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//________________________
+//
+// 3203: Set Natural Snares: Ranger, and Barbarian only
+//________________________
+
+
+BEGIN @207  // Set Natural Snares: Ranger and Barbarian Only
+SUBCOMPONENT @241 // Set Natural Snares
+DESIGNATED 3203
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_natsnare_skill.tpa~
+
+//Hide outdoors
+//________________________
+
+//________________________
+//
+//Hide outdoors: Barbarian only (EEex reccomended))
+//________________________
+
+
+BEGIN @244  // Hide outdoors: Barbarian only (EEex reccomended)
+SUBCOMPONENT @235 // ~Hide outdoors 
+DESIGNATED 3301
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//INCLUDE ~%mod_folder%/data/components/Setup_natsnare_skill.tpa~
+
+//________________________
+//
+// 3302: Hide outdoors: Rangers only
+//________________________
+
+
+BEGIN @245  // Hide outdoors: Rangers only 
+SUBCOMPONENT @235 // ~Hide outdoors 
+DESIGNATED 3302
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//________________________
+//
+// 3303: Hide outdoors: Barbarian and Rangers only (EEex reccomended)
+//________________________
+
+
+BEGIN @246 // Hide outdoors: Barbarian and Ranger only (EEex recommended) 
+SUBCOMPONENT @235 // ~Hide outdoors 
+DESIGNATED 3303
+GROUP @42    //Thief skills for regular Joes
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+
+//Craft Scroll
+//________________________
+
+//________________________
+//
+// 4001: Craft Scroll Skill (requires EEex)
+//________________________
+
+
+BEGIN @163  // Craft Scroll Skill: Custom Version One (requires EEex)
+SUBCOMPONENT @216 //Magic Item Creation - Craft Scroll
+DESIGNATED 4001
+GROUP @33    //Magic Item Creation
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+
+//////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+////////////  Limits
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 3201: Scroll Level Restrictions
+//			6001: Attributes: Charisma: Reduce Bard Requirement: 14
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @223 // Attributes: Charisma: Reduce Bard Requirement:14
+SUBCOMPONENT @37 //Attributes: Charisma: Reduce Bard Requirement
+DESIGNATED 6001
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6002: Attributes: Charisma: Reduce Bard Requirement: 13
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @224 // Attributes: Charisma: Reduce Bard Requirement:13
+SUBCOMPONENT @37 //Attributes: Charisma: Reduce Bard Requirement
+DESIGNATED 6002
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6003: Attributes: Charisma: Reduce Bard Requirement: 12
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @225 // Attributes: Charisma: Reduce Bard Requirement:12
+SUBCOMPONENT @37 //Attributes: Charisma: Reduce Bard Requirement
+DESIGNATED 6003
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6004: Attributes: Charisma: Reduce Bard Requirement: 9
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @226 // Attributes: Charisma: Reduce Bard Requirement: 9
+SUBCOMPONENT @37 //Attributes: Charisma: Reduce Bard Requirement
+DESIGNATED 6004
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6005: Attributes: Charisma: Reduce Bard Requirement: No Requirements
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @227 // Attributes: Charisma: Reduce Bard Requirement: No requirement
+SUBCOMPONENT @37 //Attributes: Charisma: Reduce Bard Requirement
+DESIGNATED 6005
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6011: Attributes: Charisma: Reduce Druid Requirement: 14
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @228 // Attributes: Charisma: Reduce Druid Requirement:14
+SUBCOMPONENT @38 //Attributes: Charisma: Reduce Druid Requirement
+DESIGNATED 6011
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6012: Attributes: Charisma: Reduce Druid Requirement: 13
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @229 // Attributes: Charisma: Reduce Druid Requirement:13
+SUBCOMPONENT @38 //Attributes: Charisma: Reduce Druid Requirement
+DESIGNATED 6012
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6013: Attributes: Charisma: Reduce Druid Requirement: 12
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @230 // Attributes: Charisma: Reduce Druid Requirement:12
+SUBCOMPONENT @38 //Attributes: Charisma: Reduce Druid Requirement
+DESIGNATED 6013
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6014: Attributes: Charisma: Reduce Druid Requirement: 9
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @231 // Attributes: Charisma: Reduce Druid Requirement:9
+SUBCOMPONENT @38 //Attributes: Charisma: Reduce Druid Requirement
+DESIGNATED 6014
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6015: Attributes: Charisma: Reduce Druid Requirement: No requirements
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+BEGIN @232 // Attributes: Charisma: Reduce Druid Requirement: None
+SUBCOMPONENT @38 //Attributes: Charisma: Reduce Druid Requirement
+DESIGNATED 6015
+GROUP @39    //Limitations
+//REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //REQUIRE AT LEAST ONE BARD BASED CHARISMA SPELL POWER COMPONENTS
+
+//INCLUDE ~%mod_folder%/data/components/Setup_int_pnp_illusion.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 6021: Limitations: Custom Scroll Limits
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 
 
-BEGIN @194  //  Variant Attribute Bonuses for base skills
-SUBCOMPONENT @196 //Variant Attribute Bonuses
-DESIGNATED 3201
-GROUP @29    //Expanded Skills
+BEGIN @213  //  Custom Scroll Limits
+SUBCOMPONENT @32  // Scroll Use Limitations
+DESIGNATED 6021
+GROUP @39    //Limitations
 REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 6022: Limitations: PnP Scroll Limits
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+
+BEGIN @214  //  PnP Scroll Limits
+SUBCOMPONENT @32  // Scroll Use Limitations
+DESIGNATED 6022
+GROUP @39    //Limitations
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 6023: Limitations: Combined Scroll Limits
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+
+
+BEGIN @215  //  Combined Scroll Limits
+SUBCOMPONENT @32  // Scroll Use Limitations
+DESIGNATED 6023
+GROUP @39    //Limitations
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~M__EEex.lua~ @23 //EEX required!
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//			6031-6038: Limitations: Performance Fatigue
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+//________________________
+//
+// 6031: Bard Song Performance Fatigue   - CHECK CONTINUE
+//________________________ 
+
+BEGIN @152  //Performance Fatigue: Bard Song Fatigue
+SUBCOMPONENT @151 //Performance Fatigue
+DESIGNATED 6031
+GROUP @39    //Limitations
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+
+//________________________
+//
+// 6032: Shaman Dance Performance Fatigue - CHECK CONTINUE
+//________________________
+
+BEGIN @153  //Performance Fatigue: Shaman Dance Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 6032
+GROUP @39    //Limitations
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+
+//________________________
+//
+// 6033: Bard Song and Shaman Dance Performance Fatigue  - CHECK CONTINUE
+//________________________ 
+
+BEGIN @154  //Bard Song and Shaman Dance Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 6033
+GROUP @39    //Limitations
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+
+//________________________
+//
+// 6034: Berserker Enage Fatigue   - CHECK CONTINUE
+//________________________
+
+BEGIN @181  //Berserker Enrage Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 6034
+GROUP @39    //Limitations
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+
+//________________________
+//
+// 6035: Barbarian Rage Fatigue   - CHECK CONTINUE
+//________________________
+
+BEGIN @182  //Barbarian Rage Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 6035
+GROUP @39    //Limitations
+REQUIRE_PREDICATE (GAME_IS ~bgee bg2ee eet iwdee~) @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+
+//________________________
+//
+// 6036: Zealot Frenzy Fatigue  - CHECK CONTINUE
+//________________________
+
+BEGIN @185  //Zealot Frenzy Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 6036
+GROUP @39    //Limitations
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~ @30 // This component requires FnP Zealots
+//CONTINUE 
+
+//________________________
+//
+// 6037: Barbarian Rage, Berserker Enage, and (possibly) Zealot Frenzy Fatigue - CHECK CONTINUE
+//________________________
+
+BEGIN @183  //Barbarian Rage, Berserker Enage, and (possibly) Zealot Frenzy Fatigue
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 6037
+GROUP @39    //Limitations
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+//Check for FnP zealots...
+ACTION_IF (MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~) BEGIN
+
+END //end if zealots installed 
+
+//________________________
+//
+// 6038: Everybody gets Fatigued
+//________________________
+
+BEGIN @184  //Everybody gets Fatigued
+SUBCOMPONENT @151 //Class 'Extras': Performance Fatigue
+DESIGNATED 6038
+GROUP @39    //Limitations
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  for now
+
+INCLUDE ~%mod_folder%/data/components/Setup_extra_bard_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_sha_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_barbarian_fatigue.tpa~
+INCLUDE ~%mod_folder%/data/components/Setup_extra_berserk_fatigue.tpa~
+//Check for FnP zealots...
+ACTION_IF (MOD_IS_INSTALLED ~faiths_and_powers.tp2~ ~35~) BEGIN
+//CONTINUE 
+
+
+END //end if zealots installed 
 
 
  /*

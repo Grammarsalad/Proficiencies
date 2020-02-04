@@ -1,0 +1,222 @@
+///////////////////////////////////////////////////
+/////////////
+/////////////          NOTES
+//add skill progression if not advancement for barbarians
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////        Class Description         /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////
+//////      Update Class descriptions      //////
+/////////////////////////////////////////////////
+
+//Mike and Adarnis are awesome  --see below the 'line'
+
+/////////////////////////////////////////////////
+//BGEE
+/////////////////////////////////////////////////
+
+ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE ONLY STRINGS
+/////////////////////////////////////////////////
+//BARBARIAN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721103//old text
+ OUTER_SPRINT new1 @721104//new text
+
+ACTION_GET_STRREF 24235 barb_description
+
+OUTER_PATCH_SAVE barb_description ~%barb_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 24235 ~%barb_description%~
+
+/////////////////////////////////////////////////
+//Ranger
+/////////////////////////////////////////////////
+ OUTER_SPRINT old @720200//old text
+ OUTER_SPRINT new @720201//new text
+
+ACTION_GET_STRREF 9557 ranger_description
+
+OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
+
+STRING_SET_EVALUATE 9557 ~%ranger_description%~
+
+
+END  //END BGEE class descriptions
+//Now IWDEE and BG2EE.. CONTINUE
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN //BG2EE ONLY STRINGS
+
+/////////////////////////////////////////////////
+//BARBARIAN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721103//old text
+ OUTER_SPRINT new1 @721104//new text
+
+ACTION_GET_STRREF 45869 barb_description
+
+OUTER_PATCH_SAVE barb_description ~%barb_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 45869 ~%barb_description%~
+
+/////////////////////////////////////////////////
+//Ranger
+/////////////////////////////////////////////////
+ OUTER_SPRINT old @720200//old text
+ OUTER_SPRINT new @720201//new text
+
+ACTION_GET_STRREF 9557 ranger_description
+
+OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
+
+END  //END BG2EE class descriptions
+
+/////////////////////////////////////////////////
+//IWDEE
+/////////////////////////////////////////////////
+//IWDEE CLASS DESCRIPTIONS --TO DO
+ACTION_IF GAME_IS ~iwdee~ BEGIN //IWDEE ONLY STRINGS
+/////////////////////////////////////////////////
+//BARBARIAN
+/////////////////////////////////////////////////
+ OUTER_SPRINT old1 @721103//old text
+ OUTER_SPRINT new1 @721104//new text
+
+ACTION_GET_STRREF 37266 barb_description
+
+OUTER_PATCH_SAVE barb_description ~%barb_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old1%~ ~%new1%~
+END
+
+STRING_SET_EVALUATE 37266 ~%barb_description%~
+
+/////////////////////////////////////////////////
+//Ranger
+/////////////////////////////////////////////////
+ OUTER_SPRINT old @720200//old text
+ OUTER_SPRINT new @720201//new text
+
+ACTION_GET_STRREF 37106 ranger_description
+
+OUTER_PATCH_SAVE ranger_description ~%ranger_description%~ BEGIN
+  REPLACE_TEXTUALLY ~%old%~ ~%new%~
+END
+
+STRING_SET_EVALUATE 37106 ~%ranger_description%~
+
+END  //END IWDEE class descriptions
+
+//actual ability
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////         Set Natural Snares       /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////                    Set Snares Skill                 ///////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+COPY_EXISTING ~SPCL412.spl~ ~override/B_NTP01.spl~   //thief trap to set nat snares
+  LPF CLONE_EFFECT INT_VAR match_opcode = 252 opcode = 318 timing = 0 duration = 1 parameter1 = 8 parameter2 = %not_ar% STR_VAR resource = ~B_NTP01~ END  //Protection complete below
+  LPF CLONE_EFFECT INT_VAR match_opcode = 318 opcode = 326 STR_VAR resource = ~B_NTP02~ END  //For notifications
+        SAY NAME1 @971
+        SAY NAME2 @971
+ SPRINT old @973//old text - Set Snare
+ SPRINT new @971//new text - Set Natural Snare
+ SPRINT old1 @973//old text
+ SPRINT new1 @971//new text
+  READ_LONG 0x50 "valid"
+  PATCH_IF (%valid% >= 0) BEGIN // verify desc is valid
+  READ_STRREF 0x50 ~desc~
+	INNER_PATCH_SAVE new_desc ~%desc%~ BEGIN
+	REPLACE_TEXTUALLY ~%old%~ ~%new%~        //
+	REPLACE_TEXTUALLY ~%old1%~ ~%new1%~      //
+	END
+  SAY_EVALUATED 0x50 ~%new_desc%~
+  END  //
+
+ COPY ~%mod_folder%/class/ranger/B_NTP02.spl~ ~override~   //Set Natural Snares only works in natural environments
+  LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = RESOLVE_STR_REF (@970) STR_VAR END
+
+///////////////////////////////////////////////////////////
+//EEex if available
+///////////////////////////////////////////////////////////
+//Not really needed (was going to specifically put in a 'Set Natural Snares' skill, but too complicated
+
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+/////////////////////////////              Buttons             /////////////////////////////
+/////////////////////////////                                  /////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
+//not needed
+
+
+///////////////////////////////////////////////////////////
+//2das
+///////////////////////////////////////////////////////////
+//rangers automatically get progression.  But...need to check if already added by another component
+ACTION_IF (!FILE_CONTAINS_EVALUATED(~THIEFSKL.2da~ ~RANGER~)) BEGIN
+  APPEND ~THIEFSKL.2da~ ~RANGER%TAB%30%TAB%15~ //giving them an actual progression (30 at 1st, 15 at level up)
+  APPEND ~THIEFSKL.2da~ ~CLERIC_RANGER%TAB%30%TAB%15~ //giving them an actual progression (30 at 1st, 15 at level up)
+END
+//check for barbarian
+ACTION_IF (FILE_CONTAINS_EVALUATED(~CLABFI05.2da~ ~RANGER~)) BEGIN  //check barb clab for other skills...
+
+END
+//allocating points:
+//check for EEex
+ COPY_EXISTING ~THIEFSCL.2da~ ~override~   //to allow them to put points in set snare
+  SET_2DA_ENTRY_LATER ~trap~ 9 7   100   // Ranger
+  SET_2DA_ENTRY_LATER ~trap~ 9 18  100   // Ranger/Cleric
+  SET_2DA_ENTRY_LATER ~trap~ 9 33  100   // Archer
+  SET_2DA_ENTRY_LATER ~trap~ 9 34  100   // Stalker
+  SET_2DA_ENTRY_LATER ~trap~ 9 35  100   // Beast Master
+  SET_2DA_ENTRY_LATER ~trap~ 9 49  100   // Barbarian
+//set
+  SET_2DA_ENTRIES_NOW ~trap~ 1
+ BUT_ONLY
+
+ //clabs
+//barbarian and base ranger classes:
+APPEND ~CLABRN01.2da~ ~NAT_SNARE%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****~
+APPEND ~CLABFI05.2da~ ~NAT_SNARE%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****~
+
+//vanilla kits and mod added ranger kits:
+COPY_EXISTING ~kitlist.2da~ ~override~
+  READ_2DA_ENTRIES_NOW rows 4
+  FOR (row = 0; row < rows; ++row) BEGIN
+	READ_2DA_ENTRY_FORMER rows row 1 the_kit
+	READ_2DA_ENTRY_FORMER rows row 5 the_clab
+	READ_2DA_ENTRY_FORMER rows row 8 the_class
+//    PATCH_PRINT ~%the_clab% is the clab for class no %the_class%~   //just to be sure...
+	INNER_ACTION BEGIN    
+	     ACTION_IF ("%the_class%" STRING_COMPARE_CASE "12" = 0) BEGIN //if class = 12
+	          APPEND ~%the_clab%.2da~ ~NAT_SNARE%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****%TAB%GA_B_NTP01%TAB%****%TAB%****%TAB%****%TAB%****~
+	          APPEND ~THIEFSKL.2da~ ~%the_kit%%TAB%30%TAB%15~
+	     END
+	END//End inner action
+END // end for row
