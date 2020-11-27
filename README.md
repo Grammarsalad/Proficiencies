@@ -13,7 +13,7 @@ https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 | Seconds | 301 | 283 |
 
 
-This mod aims to expand the proficiency system in Infinity Engine games, allowing characters to do things like treat injuries and antitoxins with varying degrees of effectiveness.  But this mod does not merely add ‘non-weapon proficiencies’.  This is a top down revision of the proficiency system that allows characters to do things with their weapons previously impossible without specific magical weapons.  Skilled characters can stun enemies with their blunt weapons, cause grievous bleeding wounds with their bladed weapons, and so on. 
+This mod aims to expand the proficiency system in Infinity Engine games, allowing characters to do things like treat injuries and afflictions with varying degrees of effectiveness.  But this mod does not merely add ‘non-weapon proficiencies’.  This is a top down revision of the proficiency system that allows characters to do things with their weapons previously impossible without specific magical weapons.  Skilled characters can stun enemies with their blunt weapons, cause grievous bleeding wounds with their bladed weapons, and so on. 
 
 ## **Proficiency Tables**
 Characters must select both weapon proficiencies and non-weapon proficiencies from the same pool.  As such, characters receive many more proficiency points than in vanilla.  While this may seem to be a boon, characters will soon discover that they will have to make hard choices as they level up.
