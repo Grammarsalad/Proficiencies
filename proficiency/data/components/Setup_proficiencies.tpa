@@ -38,10 +38,10 @@ STRING_SET 25029 @700604
 //Scimitar (etc.)--> Blunt Probable stref 25006, 25030 (description)-BGEE
 STRING_SET 25006 @700704
 STRING_SET 25030 @700705
-//Dagger (etc.)--> Ranged Probable stref 25007, 25031 (description)-BGEE
+//Dagger (etc.)--> Bows/Crossbows Probable stref 25007, 25031 (description)-BGEE
 STRING_SET 25007 @700804
 STRING_SET 25031 @700805
-//War Hammer --> MEchanics/craft
+//War Hammer --> Craft
 STRING_SET 25008 @707000
 STRING_SET 25032 @707001
 //club --> Armor(was a lot of different things...)

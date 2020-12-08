@@ -55,7 +55,8 @@ Additionally, this proficiency is special in that it represents training in (gen
 
 <DOTS5> +4 Melee Defense, +4 Ranged Defense~
 
-//axe
+//axe - No change needed atm
+
 //great swords
 @700500 = ~Proficiency Type: Greatsword~
 @700501 = ~Proficiency Type: Two-handed Sword~
@@ -173,7 +174,21 @@ Proficiency (armor mastery) (5 slots):~
 @702001 = ~NONWEAPON PROFICIENCY: ENDURANCE: This skill ~
 //Heal
 @703000 = ~Nonweapon Proficiency: Heal~
-@703001 = ~NONWEAPON PROFICIENCY: HEAL: This skill ~
+@703001 = ~NONWEAPON PROFICIENCY: HEAL: This skill represents training in the medical arts. Individuals trained in healing are able to quickly diagnose and treat various injuries and sicknesses, whether caused by blade, poison or disease. This skill is most commonly taken by clerics and priests. While they can invoke the power of their faith to heal the sick and wounded, they often also study the more mundane, but natural sciences to heal their flock so they do not bother their deity with lesser illnesses and wounds. Warriors’ violent occupation also leads them to study the healing arts. Occasionally, characters from other professions will learn this skill, though they are typically not as skilled in the healing arts as a priest or warrior.
+This skill has a natural synergy with herbalism, and herbalists are able to create more effective remedies if they are trained healers (see the herbalism skill for details). Conversely, healers trained in herbalism are more effective at treating diseases and poisons.
+ 
+Treat Wounds
+The healer can treat the injuries of <PRO_HISHER> allies on the fly. When <PRO_HESHE> uses this skill, <PRO_HESHE> heals 1d3 points of damage per point <PRO_HESHE> has in Heal, plus <PRO_HISHER> wisdom modifier. In addition, creatures that receive treatment from a healer heal at an increased rate. This ability is not magical, and it can only help a patient so much; it will only be effective on a single individual once per day.
+
+The healer can make use of this ability 1 time per day if they have at least 1 rank in heal. This ability can be used an additional time per day for every two additional ranks <PRO_HESHE> has in heal.
+
+Treat Affliction
+Healers that are also trained in herbalism can use <PRO_HISHER> treat injury ability to treat poisons, and diseases, as well as wounds. This ability is not always effective, however, and the chance that the healer will successfully treat a poisoned individual is 50%, +5% per rank <PRO_HESHE> has in herbalism. Diseases are much more complicated than poisons, and so the chance of success is only 40% +5% per rank <PRO_HESHE> has in herbalism, plus <PRO_HISHER> wisdom modifier. Healers untrained in herbalism cannot treat disease or poison.
+
+Cure/Inflict Bonus
+Healers that can also cast cure spells (any spell with the word “cure” in it’s title) are more capable with those spells if they are also trained in healing. Practitioners heal an additional 2 points per rank they have in healing when using any cure wounds spells. This bonus only counts up to the level of the spell, however. That is, for example, because Cure Light Wounds is a 1st level spell, it only allows the caster to apply 1 rank of healing to the spell, and thus can only heal an additional 2 points of damage. Similarly, priests can use their skill in healing to better hurt their opponents with inflict spells if they are trained in heal. They inflict additional damage equal to the the amount they would heal for a spell of the given level.
+
+The Paladin can also apply this bonus to Lay on Hands.~
 //Herbalism
 @704000 = ~Nonweapon Proficiency: Herbalism~
 @704001 = ~NONWEAPON PROFICIENCY: HERBALISM: This skill ~
@@ -183,9 +198,9 @@ Proficiency (armor mastery) (5 slots):~
 //Magic Implements
 @706000 = ~Nonweapon Proficiency: Magic Implements~
 @706001 = ~NONWEAPON PROFICIENCY: MAGIC IMPLEMENTS: This skill ~
-//Mechanics
-@707000 = ~Nonweapon Proficiency: Mechanics~
-@707001 = ~NONWEAPON PROFICIENCY: MECHANICS: This skill ~
+//War Hammer--> ?
+@707000 = ~Nonweapon Proficiency: Craft~
+@707001 = ~NONWEAPON PROFICIENCY: CRAFT: This skill ~
 //Nature
 @708000 = ~Nonweapon Proficiency: Nature~
 @708001 = ~NONWEAPON PROFICIENCY: NATURE: This skill ~

@@ -1,4 +1,3 @@
-//DONE First Draft
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////                                         //////////////////////////////////////
@@ -6,6 +5,69 @@
 /////////////////////////////////////                                         //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////
+//Treat Wound___________________________________________________
+////////////////////////////////////////////////////////////////
+
+//spl that applies treat wound in the clab
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA00.spl~ ~override~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 0 parameter2 = %hea_gr% multi_match = 1 STR_VAR match_resource = ~B_HEA01~ END  //Heal 1 rank+, Apply B_HEA01.spl and make immune to B_HEA01.spl
+ LPF CLONE_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %hea_gr% multi_match = 1 STR_VAR resource = ~B_HEA02~ END  //Heal 3 rank+, Apply B_HEA02.spl and make immune to B_HEA02.spl
+ LPF CLONE_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %hea_gr% multi_match = 1 STR_VAR resource = ~B_HEA03~ END  //Heal 5 rank+, Apply B_HEA03.spl and make immune to B_HEA03.spl
+ LPF CLONE_EFFECT INT_VAR match_opcode = 326 parameter1 = 6 parameter2 = %hea_gr% multi_match = 1 STR_VAR resource = ~B_HEA04~ END  //Heal 7 rank+, Apply B_HEA04.spl and make immune to B_HEA04.spl
+
+//the spell that gives the treat injuries spl to char (based on prof # and then protecting against itself)
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA01.spl~ ~override~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 171 STR_VAR resource = ~B_HEA10~ END  //Give the heal innate (B_HEA10.spl) based on # ranks in heal prof
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA01.spl~ ~override/B_HEA02.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = ~B_HEA02~ END  //Give the heal innate (B_HEA10.spl) based on # ranks in heal prof
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA01.spl~ ~override/B_HEA03.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = ~B_HEA03~ END  //Give the heal innate (B_HEA10.spl) based on # ranks in heal prof
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA01.spl~ ~override/B_HEA04.spl~   //
+ LPF ALTER_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = ~B_HEA04~ END  //Give the heal innate (B_HEA10.spl) based on # ranks in heal prof
+
+//actual treat wound spl that is cast by the character
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA10.spl~ ~override~   //
+	SAY NAME1 @820007
+	SAY NAME2 @820007
+	SAY UNIDENTIFIED_DESC @820008  //
+	SAY IDENTIFIED_DESC @820008   //
+	//ranks
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 1 parameter2 = %hea_eq% multi_match = 1 STR_VAR resource = ~B_HEA11~ END  //1 rank, 1d3 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 2 parameter2 = %hea_eq% multi_match = 1 STR_VAR resource = ~B_HEA12~ END  //2 rank, 2d3 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 3 parameter2 = %hea_eq% multi_match = 1 STR_VAR resource = ~B_HEA13~ END  //3 rank, 3d3 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 4 parameter2 = %hea_eq% multi_match = 1 STR_VAR resource = ~B_HEA14~ END  //4 rank, 4d3 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 5 parameter2 = %hea_eq% multi_match = 1 STR_VAR resource = ~B_HEA15~ END  //5 rank, 5d3 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 6 parameter2 = %hea_eq% multi_match = 1 STR_VAR resource = ~B_HEA16~ END  //6 rank, 6d3 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 7 parameter2 = %hea_eq% multi_match = 1 STR_VAR resource = ~B_HEA17~ END  //7 rank, 7d3 heal
+	//wisdom
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 15 parameter2 = %wis_gr% multi_match = 1 STR_VAR resource = ~B_HEA18~ END  //wis16+, +1 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 16 parameter2 = %wis_gr% multi_match = 1 STR_VAR resource = ~B_HEA18~ END  //wis17+, +1 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 17 parameter2 = %wis_gr% multi_match = 1 STR_VAR resource = ~B_HEA18~ END  //wis18+, +1 heal
+          LPF ALTER_EFFECT INT_VAR match_opcode = 326 parameter1 = 18 parameter2 = %wis_gr% multi_match = 1 STR_VAR resource = ~B_HEA18~ END  //wis19+, +1 heal
+
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override~   // 1 rank
+           SET strref = RESOLVE_STR_REF(@820009)
+           LPF ALTER_EFFECT INT_VAR match_opcode = 139 parameter1 = %strref%   END      //
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override/B_HEA12.spl~   // 2 rank
+          LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 2 STR_VAR END  //2 rank, 2d3 heal
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override/B_HEA13.spl~   // 3 rank
+          LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 3 STR_VAR END  //3 rank, 3d3 heal
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override/B_HEA14.spl~   // 4 rank
+          LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 4 STR_VAR END  //4 rank, 4d3 heal
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override/B_HEA15.spl~   // 5 rank
+          LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 5 STR_VAR END  //5 rank, 5d3 heal
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override/B_HEA16.spl~   // 6 rank
+          LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 6 STR_VAR END  //6 rank, 6d3 heal
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override/B_HEA17.spl~   // 7 rank
+          LPF ALTER_EFFECT INT_VAR match_opcode = 17 dicenumber = 7 STR_VAR END  //7 rank, 7d3 heal
+COPY ~%mod_folder%/data/skills/spl/heal/B_HEA11.spl~ ~override/B_HEA18.spl~   // xtra h
+          LPF ALTER_EFFECT INT_VAR match_opcode = 17 parameter1 = 1 dicenumber = 0 STR_VAR END  //1 hp
+          LPF DELETE_EFFECT INT_VAR match_opcode = 139 STR_VAR END  //1 hp
+//cure affliction component (CONTINUE)
+
+/*
 
 ////////////////////////////////////////////////////////////////
 //Healing Kit___________________________________________________
@@ -1874,3 +1936,4 @@ COPY ~%mod_folder%/data/skills/spl/heal/B_SHL01.spl~ ~override/B_SHL07.spl~   //
 //increment based on herbalism skill and wisdom...THIS NEEDS TO BE MORE DYNAMIC, CHANGING AS WIS/HERBALISM CHANGE (wheras spells that give bonus to NWPs must themselves increment the stats--again iff EEEx is installed)
 //wis 16 + +5%
 END //End EEex installed
+*/

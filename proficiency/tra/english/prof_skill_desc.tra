@@ -1,6 +1,8 @@
 //skill descriptions  @800000 to @900000
 
 //Heal Skill
+
+
 @800000 = ~Healing Proficiency~
 @800001 = ~The healer can use a healer's kit to treat the injuries and afflictions of <PRO_HISHER> allies on the fly.  <PRO_HESHE> heals 5% of targets max hit points, +5% per rank, + <PRO_HISHER> wisdom bonus (max 30% + wisdom bonus at 5 ranks).  Additionally, successfully treated characters will find their healing rate improved (the rate depends upon the number of ranks of the healer; see below).  This ability is not magical, and there is a chance that <PRO_HESHE> cannot help <PRO_HISHER> ally.  The chance of success with a heal check is equal to 50% +5% per rank, plus <PRO_HISHER> Wisdom Bonus (max 95%).  
 
@@ -246,6 +248,24 @@ For each point of wisdom above 14, you add 1 point to the amount of damage per d
 
 
  */
+ 
+@820007 = ~Treat Injury~
+@820008 = ~Treat Injury
+
+This ability allows you to heal your allies, and possibly poisons and diseases if (and only if) you are trained in herbalism. Also, creatures under your care heal at an increased rate as per the table below.
+
+Heals 1d3 points/rank you have in healing, plus your wisdom modifier.
+Treat Poisons: 50% +5%/rank you have in herbalism, plus your wisdom modifier %.
+Treat Disease: 40% +5%/rank you have in herbalism, plus your wisdom modifier %.
+
+Increased Healing Rate:
+1 rank: 1 hit point per 16 turns.
+2 ranks: 1 hit point per 8 turns.
+3 ranks: 1 hit point per 4 turns.
+4 ranks: 1 hit point per 2 turns.
+5+ ranks: 1 hit point per turn.~
+@820009 = ~Healed~
+
 
 //ARCANE SPELLS
 @900000 = ~Alarm~

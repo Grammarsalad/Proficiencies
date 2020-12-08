@@ -181,7 +181,7 @@
 //set nat snares for reg joes
 @241 = ~Set Natural Snares~
 @242 = ~Set Natural Snares: Barbarian Only~
-@243  Set Natural Snares: Rangers Only
+@243 = ~Set Natural Snares: Rangers Only~
 //hide outdoors
 @244 = ~Hide outdoors: Barbarian only (EEex recommended)~
 @245 = ~Hide outdoors: Rangers only~
