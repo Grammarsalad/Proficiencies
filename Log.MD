@@ -61,7 +61,9 @@ TO DO 34: Treat wound needs to be automatic if it costs a medpack -- Change it! 
 
 TO DO 35:
 
-- Dummy UPdate
+2021-03-14
+
+- Skeleton for new version
 
 Version 0.06.01
 
