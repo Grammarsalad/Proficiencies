@@ -254,24 +254,24 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 0 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 5 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 7 // alchemy description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 0 // athletics description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 0 // endurance description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 0 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 1 // heal description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 3 // herbalism description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 7 // implements description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 1 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 1 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 0 // tumbling description
 		END
-        END
+    END
 	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter
 		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
 		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 5 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 5 // m armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 5 // h armor description
@@ -281,14 +281,204 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 1 // herbalism description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 0 // implements description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 2 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 1 // nature description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 5 // persuasion description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 4 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 2 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Cleric
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CLERIC~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 1 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 1 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 2 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 3 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description - Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Thief
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~THIEF~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 1 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 4 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 2 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 1 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 6 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 1 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 6 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Bard
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BARD~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 2 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 2 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 3 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 2 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 1 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 3 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 6 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 2 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 5 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 1 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 6 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 1 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 3 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Paladin
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~PALADIN~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 4 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 4 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 1 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 4 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 4 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 2 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 1 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 5 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 7 // religion description 
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 3 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Druid
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~DRUID~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 3 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 3 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 7 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description - Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 7 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 3 // spellcraft description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 3 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
 		END
-        END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Ranger
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~RANGER~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 5 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 5 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 1 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 7 // nature description 
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 5 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 7 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 2 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter/mage
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_MAGE~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 5 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 3 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 4 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 3 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 3 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 2 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 7 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 1 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 4 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 1 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 2 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter/Cleric
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_CLERIC~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 5 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 4 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 3 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 2 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 4 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 4 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 4 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 2 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 4 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description - Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 2 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+		END
+    END
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter/Thief
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_THIEF~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 3 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 2 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 5 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 4 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 4 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 3 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 1 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 5 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 1 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 3 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 5 // tumbling description
+		END
+    END
+
 ///////////////////
 //CONTINUE FROM HERE
 /////////////////////////////////////////////////
@@ -296,7 +486,7 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 BUT_ONLY
 
 
-//should this go BEFORE the above?  Is the above needed???
+//should this go BEFORE the above?  Is the above needed??? I think so...may not matter.  
 //PROFICIENCIES FOR MOD CLERICS_____________________________________________________
 //
 	OUTER_SET count = 0
