@@ -1,7 +1,7 @@
 BACKUP ~proficiency/backup~
 AUTHOR ~Grammarsalad~
 
-VERSION ~0.06.03~
+VERSION ~0.06.04~
 
 
 ALWAYS
@@ -49,64 +49,77 @@ LANGUAGE ~English~ ~english~ ~proficiency/tra/english/setup.tra~
                              ~proficiency/tra/english/skill_desc.tra~          //skill descriptions
 //___________________________________________________________________________________
 
-//__________________________________________________________________________________
-//__________________________________________________________________________________
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 //
-//	                      101-105: Main Component
-//__________________________________________________________________________________
-//__________________________________________________________________________________
+//	                      101-106: Main Component
+//___________________________________________________________________________________________
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 101: Weapon proficiency menu    - In progress CONTINUE
+// 101: Weapon proficiency menu and all skills    - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @20  //  Weapon proficiency menu
+BEGIN @5  //  Weapon proficiency menu and all skills
 SUBCOMPONENT @24 //Non-Weapon Proficiencies
 DESIGNATED 101
 GROUP @9 //Main Component
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
+OUTER_SET mod_version =	1
+
 //IN PROGRESS:
-//INCLUDE ~%mod_folder%/data/components/Setup_proficiencies.tpa~
+//
+INCLUDE ~%mod_folder%/comp/Setup_proficiencies.tpa~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 102: Dialog: Automatic Assignment (EEex recommended)    - In progress CONTINUE
+// 102: Weapon proficiency menu    - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @25  // Dialog: Automatic Assignment (EEex recommended)
+BEGIN @20  //  Weapon proficiency menu
 SUBCOMPONENT @24 //Non-Weapon Proficiencies
 DESIGNATED 102
 GROUP @9 //Main Component
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
+OUTER_SPRINT ~mod_version~ ~proficiency~
+
+
+//IN PROGRESS:
+//INCLUDE ~%mod_folder%/comp/Setup_proficiencies.tpa~
+
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 103: Dialog: Player Selection (EEex recommended)   - In progress CONTINUE
+// 103: Dialog: Automatic Assignment (EEex recommended)    - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @26  // Dialog: Player Selection (EEex recommended)
+BEGIN @25  // Dialog: Automatic Assignment (EEex recommended)
 SUBCOMPONENT @24 //Non-Weapon Proficiencies
 DESIGNATED 103
 GROUP @9 //Main Component
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
 
+
+
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 104: Skills as proficiencies: Automatic Assignment(EEex required)   - In progress CONTINUE
+// 104: Dialog: Player Selection (EEex recommended)   - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @27  // Skills as proficiencies: Automatic Assignment (EEex required)
+BEGIN @26  // Dialog: Player Selection (EEex recommended)
 SUBCOMPONENT @24 //Non-Weapon Proficiencies
 DESIGNATED 104
 GROUP @9 //Main Component
@@ -115,15 +128,38 @@ REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 //
-// 105: Skills as proficiencies: Player Assignment (EEex required)    - In progress CONTINUE
+// 105: Skills as proficiencies: Automatic Assignment(EEex required)   - In progress CONTINUE
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @27  // Skills as proficiencies: Automatic Assignment (EEex required)
+SUBCOMPONENT @24 //Non-Weapon Proficiencies
+DESIGNATED 105
+GROUP @9 //Main Component
+REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+// 106: Skills as proficiencies: Player Assignment (EEex required)    - In progress CONTINUE
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
 BEGIN @28  // Skills as proficiencies: Player Assignment (EEex required)
 SUBCOMPONENT @24 //Non-Weapon Proficiencies
-DESIGNATED 105
+DESIGNATED 106
 GROUP @9 //Main Component
 REQUIRE_PREDICATE GAME_IS ~bgee bg2ee eet iwdee~ @17 //~EE games only!~  ...for now
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+//
+//	                      201-???: Expanded Abilities and Attributes
+//___________________________________________________________________________________________
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________

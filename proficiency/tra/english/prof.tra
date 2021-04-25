@@ -167,11 +167,11 @@ Proficiency (armor specialization) (4 slots):
 Proficiency (armor mastery) (5 slots):~
 
 //Alchemy
-@701000 = ~Nonweapon Proficiency: Alchemy~
-@701001 = ~NONWEAPON PROFICIENCY: ALCHEMY: This skill ~
+@701000 = ~Alchemy~
+@701001 = ~ALCHEMY: This skill ~
 //Endurance
-@702000 = ~Nonweapon Proficiency: Endurance~
-@702001 = ~NONWEAPON PROFICIENCY: ENDURANCE: This skill ~
+@702000 = ~Endurance~
+@702001 = ~ENDURANCE: This skill ~
 //Heal
 @703000 = ~Nonweapon Proficiency: Heal~
 @703001 = ~NONWEAPON PROFICIENCY: HEAL: This skill represents training in the medical arts. Individuals trained in healing are able to quickly diagnose and treat various injuries and sicknesses, whether caused by blade, poison or disease. This skill is most commonly taken by clerics and priests. While they can invoke the power of their faith to heal the sick and wounded, they often also study the more mundane, but natural sciences to heal their flock so they do not bother their deity with lesser illnesses and wounds. Warriors’ violent occupation also leads them to study the healing arts. Occasionally, characters from other professions will learn this skill, though they are typically not as skilled in the healing arts as a priest or warrior.
@@ -189,31 +189,111 @@ Cure/Inflict Bonus
 Healers that can also cast cure spells (any spell with the word “cure” in it’s title) are more capable with those spells if they are also trained in healing. Practitioners heal an additional 2 points per rank they have in healing when using any cure wounds spells. This bonus only counts up to the level of the spell, however. That is, for example, because Cure Light Wounds is a 1st level spell, it only allows the caster to apply 1 rank of healing to the spell, and thus can only heal an additional 2 points of damage. Similarly, priests can use their skill in healing to better hurt their opponents with inflict spells if they are trained in heal. They inflict additional damage equal to the the amount they would heal for a spell of the given level.
 
 The Paladin can also apply this bonus to Lay on Hands.~
+
 //Herbalism
-@704000 = ~Nonweapon Proficiency: Herbalism~
-@704001 = ~NONWEAPON PROFICIENCY: HERBALISM: This skill ~
+@704000 = ~Herbalism~
+@704001 = ~HERBALISM: This skill ~
+
 //Ranged Fighting Style
 @705000 = ~Ranged~
 @705001 = ~RANGED: This skill ~
+
 //Magic Implements
-@706000 = ~Nonweapon Proficiency: Magic Implements~
-@706001 = ~NONWEAPON PROFICIENCY: MAGIC IMPLEMENTS: This skill ~
+@706000 = ~Magic Implements~
+@706001 = ~MAGIC IMPLEMENTS: This skill ~
+
 //War Hammer--> ?
 @707000 = ~Nonweapon Proficiency: Craft~
 @707001 = ~NONWEAPON PROFICIENCY: CRAFT: This skill ~
+
 //Nature
-@708000 = ~Nonweapon Proficiency: Nature~
-@708001 = ~NONWEAPON PROFICIENCY: NATURE: This skill ~
+@708000 = ~Nature~
+@708001 = ~NATURE: This skill ~
+
 //Spellcraft
-@709000 = ~Nonweapon Proficiency: Spellcraft~
-@709001 = ~NONWEAPON PROFICIENCY: SPELLCRAFT: This skill ~
+@709000 = ~Spellcraft~
+@709001 = ~SPELLCRAFT: This skill ~
+
 //Persuasion
-@710000 = ~Nonweapon Proficiency: Persuasion~
-@710001 = ~NONWEAPON PROFICIENCY: PERSUASION: This skill ~
+@710000 = ~Persuasion~
+@710001 = ~PERSUASION: This skill ~
+
 //Ritual
-@711000 = ~Nonweapon Proficiency: Religion~
-@711001 = ~NONWEAPON PROFICIENCY: RELIGION: This skill ~
+@711000 = ~Religion~
+@711001 = ~RELIGION: This skill ~
+
 //Survival
 @712000 = ~Nonweapon Proficiency: Survival~
 @712001 = ~NONWEAPON PROFICIENCY: SURVIVAL: This skill ~
 
+//Miscellaneous
+@712002 = ~Miscellaneous~
+@712003 = ~MISCELLANEOUS: The Miscellaneous Weapon Proficiency covers odd, unusual, or exotic items and attack forms.  Thus, it covers unarmed attacks, spell attacks that require a to hit roll, thrown alchemical items, stones, natural weapons, and anything else not specifically covered by another weapon proficiency.
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+//Light Armor
+@712004 = ~Light Armor~
+@712005 = ~LIGHT ARMOR: This proficiency
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+//Medium Armor
+@712006 = ~Medium Armor~
+@712007 = ~MEDIUM ARMOR: This proficiency
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+//Heavy Armor
+@712008 = ~Heavy Armor~
+@712009 = ~HEAVY ARMOR: This proficiency
+
+<DOTS1>
+
+<DOTS2>
+
+<DOTS3>
+
+<DOTS4>
+
+<DOTS5>~
+
+//Athletics
+@712010 = ~Athletics~
+@712011 = ~ATHLETICS: This proficiency ~
+
+//Heal
+@712012 = ~Heal~
+@712013 = ~HEAL: This proficiency ~
+
+//Survival
+@712014 = ~Survival~
+@712015 = ~SURVIVAL: This proficiency ~
+
+//Tumbling
+@712016 = ~Tumbling~
+@712017 = ~TUMBLING: This proficiency ~

@@ -59,7 +59,29 @@ TO DO 33: CREATE B_PAS01.SPL
 
 TO DO 34: Treat wound needs to be automatic if it costs a medpack -- Change it! Unskilled use can still mishap.
 
-TO DO 35:
+TO DO 35: Add a function that changes all spells that use Detectable Spells to use scripting states (change spls AND AI)
+
+TO DO 36: See about putting Prof Descriptions somewhere else on the char sheet and with "+" marks for each rank.  Maybe under a heading "Non-Weapon Proficiencies".
+
+
+NOTE 01: 2.6 allows kits to have proficiency where the base class does not have it!!! Revise in light of this
+
+Version 0.06.04
+
+2021-04-24
+
+- Forgrounding auto kit prof assignment (then will add in exceptions): Fighter_mage, Fighter_cleric, Paladin, Bard, Fighter, Thief, fighter/thief, rest of classes (not kit exceptions, however)
+
+2021-04-24
+
+- Forgrounding auto kit prof assignment (then will add in exceptions): Cleric, Druid, mage, sorcerer (not kits)
+
+- Kit: Assassin variant proficiencies (menu)
+
+
+2021-03-20
+
+- Endurance ref fix
 
 2021-03-14
 

@@ -1,4 +1,12 @@
 ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+/////////////////       MAIN COMPONENTS     ////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+
+ACTION_IF (%mod_version% < 3) BEGIN  // shared components 1 and 2 (menu selection)
+////////////////////////////////////////////////////////////////
 /////////////////       Proficiencies       ////////////////////
 ////////////////////////////////////////////////////////////////
 
@@ -136,8 +144,8 @@ OUTER_SET athletics = RESOLVE_STR_REF (@712010)
 OUTER_SET athletics_desc = RESOLVE_STR_REF (@712011)
 
 //Endurance
-OUTER_SET endurance = RESOLVE_STR_REF (@712010)
-OUTER_SET endurance_desc = RESOLVE_STR_REF (@712011)
+OUTER_SET endurance = RESOLVE_STR_REF (@702000)
+OUTER_SET endurance_desc = RESOLVE_STR_REF (@702001)
 
 //Heal
 OUTER_SET heal = RESOLVE_STR_REF (@712012)
@@ -174,6 +182,9 @@ OUTER_SET survive_desc = RESOLVE_STR_REF (@712015)
 //Tumbling
 OUTER_SET tumbling = RESOLVE_STR_REF (@712016)
 OUTER_SET tumbling_desc = RESOLVE_STR_REF (@712017)
+
+//should this go BEFORE the above?  Is the above needed??? I think so...may not matter.
+
 /////////////////////////////////////////////////
 //////        Update weapprof.2da          //////
 /////////////////////////////////////////////////
@@ -247,9 +258,34 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) %tumbling_desc% // tumbling description
 		END
         END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //mage
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~MAGE~) BEGIN
+	SET_2DA_ENTRIES_NOW ~s2el_mng~ 1
+BUT_ONLY
+
+//PROFICIENCIES WIZARD DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN MAGE BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 1 BEGIN	// mage
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 0 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
@@ -266,11 +302,38 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 0 // tumbling description
+				END
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER~) BEGIN
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES FIGHTERS DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN FIGHTER BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 2 BEGIN	// ranger/cleric
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 5 // m armor description
@@ -287,32 +350,86 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 4 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 2 // tumbling description
+				END
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Cleric
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~CLERIC~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 1 // athletics description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 1 // endurance description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 2 // nature description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 3 // persuasion description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description - Note: gained automatically
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES CLERIC DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN CLERIC BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 3 BEGIN	// ranger/cleric
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Thief
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~THIEF~) BEGIN
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+			        SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+        			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
+	        		SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+		        	SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
+			        SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+        			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 1 // athletics description
+	        		SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 1 // endurance description
+		        	SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
+			        SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
+        			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
+	        		SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 2 // nature description
+		        	SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 3 // persuasion description
+			        SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description - Note: gained automatically
+        			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
+	        		SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+		        	SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES THIEF DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN THIEF BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 4 BEGIN	// Thief
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 1 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
@@ -329,11 +446,38 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 1 // spellcraft description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 6 // tumbling description
+				END
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Bard
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~BARD~) BEGIN
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES BARD DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN BARD BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 5 BEGIN	// Bard
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 2 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 2 // m armor description
@@ -350,11 +494,38 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 6 // spellcraft description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 1 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 3 // tumbling description
+				END
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Paladin
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~PALADIN~) BEGIN
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES PALADIN DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN PALADIN BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 6 BEGIN	// Paladin
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 4 // m armor description
@@ -371,53 +542,38 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 3 // spellcraft description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+				END
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Druid
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~DRUID~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 3 // athletics description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 3 // endurance description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 7 // herbalism description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description - Note: gained automatically
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 7 // religion description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 3 // spellcraft description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 3 // survive description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES FIGHTER_MAGE DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN FIGHTER_MAGE BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 7 BEGIN	// Fighter/Mage
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Ranger
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~RANGER~) BEGIN
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 5 // athletics description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 5 // endurance description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 1 // implements description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 7 // nature description 
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 5 // religion description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 7 // survive description
-			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 2 // tumbling description
-		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter/mage
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_MAGE~) BEGIN
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 5 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
@@ -434,11 +590,38 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 2 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+				END
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter/Cleric
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_CLERIC~) BEGIN
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES FIGHTER_CLERIC DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN FIGHTER_CLERIC BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 8 BEGIN	// Fighter/cleric
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 5 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 4 // m armor description
@@ -455,11 +638,38 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 2 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
+				END
+			END
 		END
-    END
-	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Fighter/Thief
-		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
-		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~FIGHTER_THIEF~) BEGIN
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES FIGHTER_THIEF DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN FIGHTER_THIEF BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 9 BEGIN	// Fighter/thief
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
@@ -476,21 +686,16 @@ COPY_EXISTING ~weapprof.2da~ ~override~
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 1 // spellcraft description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 3 // survive description
 			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 5 // tumbling description
+				END
+			END
 		END
-    END
-
-///////////////////
-//CONTINUE FROM HERE
-/////////////////////////////////////////////////
-	SET_2DA_ENTRIES_NOW ~s2el_mng~ 1
-BUT_ONLY
-
-
-//should this go BEFORE the above?  Is the above needed??? I think so...may not matter.  
-//PROFICIENCIES FOR MOD CLERICS_____________________________________________________
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+//PROFICIENCIES FIGHTER_MAGE_THIEF DEFAULT_____________________________________________________
 //
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN cleric BEGIN
+	ACTION_FOR_EACH class IN FIGHTER_MAGE_THIEF BEGIN
 		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
@@ -499,12 +704,7 @@ BUT_ONLY
 		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 3 OR		// cleric
-					class = 8 OR		// fighter/cleric
-					class = 14 OR       // mage/cleric
-					class = 15 OR		// thief/cleric
-					class = 17 OR 		// fighter/mage/cleric
-					class = 18 BEGIN	// ranger/cleric
+			PATCH_IF class = 10 BEGIN	// Fighter/mage/thief
 				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
@@ -517,93 +717,42 @@ BUT_ONLY
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 4  //MACE            -->Alchemy
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Handle Animal
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 7  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 2  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Ritual
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
-					PATCH_IF class = 8 OR //ftr cleric
-					         class = 17 BEGIN //ftr cleric mage
-							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
-									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
-									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //ranged
-									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
-									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 2  //hunting
-									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
-									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
-					END		 
-					PATCH_IF class = 14 OR //mg cleric
-					         class = 17 BEGIN //ftr cleric mage
-							         	 SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //Alchemy
-									 SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 5  //Implements
-                                                                         SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //Spellcraft
-					END
-					PATCH_IF class = 15 BEGIN //th cleric
-							         SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
-									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
-					END		 
-					PATCH_IF class = 18 BEGIN //ran cleric
-							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 2  //simple
-									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //blunt
-									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //ranged
-									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
-                                                                         SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //hunting
-									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //H.Animal
-					END		 
-					/*
-                                      //fnp usability (need to account for SoB?  Probably give code to SD)
-                                        //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 4 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 2 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 2 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 5 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 3 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 3 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 3 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 3 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 7 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 1 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 4 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 1 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 2 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 4 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW C#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
 
-//PROFICIENCIES FOR MOD DRUIDS_______________________________________________________
-//
+//PROFICIENCIES DRUID DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN druid BEGIN
-		OUTER_SPRINT $druids("%count%") "%class%"
+	ACTION_FOR_EACH class IN DRUID BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 11 OR		// druid
-				     class = 16 BEGIN	// fighter/druid  do seperate
-				SPRINT $druids("%count%") "%label%"
+			PATCH_IF class = 11 BEGIN	// druid
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -611,85 +760,46 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH druids AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 0  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 4  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 6  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->Alchemy
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 5  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 4  //SHORTBOW        -->Spellcraft
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Ritual
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
-					PATCH_IF class = 16 BEGIN //ftr druid
-							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
-									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
-									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
-									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
-									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //range
-									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
-									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
-									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
-					END		 
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 3 // athletics description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 3 // endurance description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 7 // herbalism description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description - Note: gained automatically
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 7 // religion description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 3 // spellcraft description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 3 // survive description
+				SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW D#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
-	//I know the locations of default kits, so might as well just set them here
-//	SET_2DA_ENTRY value value value newEntry
-//CONTINUE FROM HERE DRUID KITS!!!! (SHIFTER no ranks in armor; avengers only 1 rank)
 
-//__________________________________________________________________________________
-
-
-//PROFICIENCIES FOR MOD WIZARDS_____________________________________________________
-//
+//PROFICIENCIES RANGER DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN wizard BEGIN
-		OUTER_SPRINT $wizards("%count%") "%class%"
+	ACTION_FOR_EACH class IN RANGER BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 3; row < kitlist; ++row) BEGIN
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 1 OR		// mage
-				  	class = 7 OR	// fighter/mage
-				    class = 10 OR		// ftr/mage/th
-					class = 13 BEGIN		//  mage/th
-				SPRINT $wizards("%count%") "%label%"
+			PATCH_IF class = 12 BEGIN	// ranger
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -697,112 +807,46 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH wizards AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 0  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 0  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 5  //MACE            -->alch
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Ritual
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
-					PATCH_IF class = 7 BEGIN //Fighter/mage
-							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
-									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
-									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //axe
-									 SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //greatsword
-									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
-									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
-									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
-									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //range
-									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
-									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
-									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //mechanics
-									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //a. handle
-									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
-					END		 
-					PATCH_IF class = 10 BEGIN //ftr/mage/thief
-							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
-									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
-									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //axe
-									 SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //greatsword
-									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
-									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
-									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
-									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //range
-                                                                         SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
-									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
-									 SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //herbalism
-									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
-									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
-					END		 
-					PATCH_IF class = 13 BEGIN //M/thief
-							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //simple
-									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //sword
-									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //blunt
-									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //ranged
-									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 1  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //endurance
-									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //heal
-									 SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //herb
-									 SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //mechanics
-									 SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //persuasion
-					END		 
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 5 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 5 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 1 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 7 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 5 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 7 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 2 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW W#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
 
-//PROFICIENCIES FOR MOD SORCERERS_____________________________________________________
-//
+//PROFICIENCIES MAGE_THIEF DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN wizard BEGIN
-		OUTER_SPRINT $wizards("%count%") "%class%"
+	ACTION_FOR_EACH class IN MAGE_THIEF BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 3; row < kitlist; ++row) BEGIN
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 19 BEGIN		// mage
-				//	class = 19 BEGIN	// sorcerer
-				SPRINT $wizards("%count%") "%label%"
+			PATCH_IF class = 13 BEGIN	// ranger
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -810,69 +854,46 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH wizards AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 0  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 0  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 0  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 0  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 1  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 0  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 4  //MACE            -->alch
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 7  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 1  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 5  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 5  //SLING           -->Blank
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 0  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 0  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 0  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 0  //2WEAPON
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 6 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 2 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 1 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 1 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 4 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 7 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 4 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 1 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 4 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW W#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
-//	SET_2DA_ENTRY value value value newEntry
-//CONTINUE FROM HERE KITS!!!! (DD 2 ranks in endurance)
-//__________________________________________________________________________________
 
-
-//PROFICIENCIES FOR MOD THIEVES_____________________________________________________
-//
+//PROFICIENCIES CLERIC_MAGE DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN thief BEGIN
-		OUTER_SPRINT $thiefs("%count%") "%class%"
+	ACTION_FOR_EACH class IN CLERIC_MAGE BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 4 OR		// thief
-					 class = 9 BEGIN		// ftr/thief
-				SPRINT $thiefs("%count%") "%label%"
+			PATCH_IF class = 14 BEGIN	// ranger
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -880,83 +901,46 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH thiefs AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 0  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 0  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 0  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 1  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->alch
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 4  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 5  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 0  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 5  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Ritual
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
-					PATCH_IF class = 9 BEGIN //Fighter/thief
-							         SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //simple
-									 SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //sword
-									 SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //ma
-									 SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //axe
-									 SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //greatsword
-									 SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //polearm
-									 SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //blunt
-									 SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //ranged
-									 SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //armor
-									 SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  // Ranged
-                                                                         SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //endurance
-									 SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //heal
-									 SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //a. handle
-					END		 
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 2 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 2 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 5 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 1 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 1 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 4 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 7 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 4 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 2 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 0 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW T#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
-//	SET_2DA_ENTRY value value value newEntry
-//CONTINUE FROM HERE KITS!!!! (b. hunter 7 ranks mechanics; assassin 7 ranks herbalism)
-//__________________________________________________________________________________
 
-
-//PROFICIENCIES FOR MOD BARDS_______________________________________________________
-//
+//PROFICIENCIES CLERIC_THIEF DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN bard BEGIN
-		OUTER_SPRINT $bards("%count%") "%class%"
+	ACTION_FOR_EACH class IN CLERIC_THIEF BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 5 BEGIN // bard
-				SPRINT $bards("%count%") "%label%"
+			PATCH_IF class = 15 BEGIN	// ranger
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -964,68 +948,46 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH bards AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 1  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 1  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 1  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 1  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 1  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 2  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 1  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 2  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 1  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 3  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->alch
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 6  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 2  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 6  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 3  //SLING           -->Ritual
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 1  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 1  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 1  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 1  //2WEAPON
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 2 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 2 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 1 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 3 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 4 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 1 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 5 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description - Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 4 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW B#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
-//	SET_2DA_ENTRY value value value newEntry
-//CONTINUE FROM HERE KITS!!!! (a few)
-//__________________________________________________________________________________
 
-
-//PROFICIENCIES FOR MOD RANGERS_____________________________________________________
-//
+//PROFICIENCIES FIGHTER_DRUID DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN ranger BEGIN
-		OUTER_SPRINT $rangers("%count%") "%class%"
+	ACTION_FOR_EACH class IN FIGHTER_DRUID BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 12 BEGIN		// ranger
-				SPRINT $rangers("%count%") "%label%"
+			PATCH_IF class = 16 BEGIN	// ranger
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -1033,69 +995,46 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH rangers AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 2  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 2  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 2  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 2  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 2  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 2  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 5  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 3  //MACE            -->alch
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 5  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 0  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 0  //SLING           -->Ritual
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 2 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 2 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 4 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 4 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 7 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 2 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description - Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 2 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 7 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 2 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 4 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW R#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
-//	SET_2DA_ENTRY value value value newEntry
-//CONTINUE FROM HERE KITS!!!! (a few)
-//__________________________________________________________________________________
 
-
-
-//PROFICIENCIES FOR MOD PALADINS____________________________________________________
-//
+//PROFICIENCIES FIGHTER_MAGE_CLERIC DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN paladin BEGIN
-		OUTER_SPRINT $paladins("%count%") "%class%"
+	ACTION_FOR_EACH class IN FIGHTER_MAGE_CLERIC BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 6 BEGIN // paladin
-				SPRINT $paladins("%count%") "%label%"
+			PATCH_IF class = 17 BEGIN	// ranger
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -1103,66 +1042,46 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH paladins AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 2  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 2  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 2  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 2  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 2  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 2  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 2  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 3  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 2  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 1  //MACE            -->Alch
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 1  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 0  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Nature
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 4  //SLING           -->Blank
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 3 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 5 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 2 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 2 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 4 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 7 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 1 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 4 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description - Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 2 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW P#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
-//__________________________________________________________________________________
 
-
-//PROFICIENCIES FOR MOD FIGHTERS____________________________________________________
-//
+//PROFICIENCIES CLERIC_RANGER DEFAULT_____________________________________________________
 	OUTER_SET count = 0
-	ACTION_FOR_EACH class IN fighter BEGIN
-		OUTER_SPRINT $fighters("%count%") "%class%"
+	ACTION_FOR_EACH class IN CLERIC_RANGER BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
 		OUTER_SET ++count
 	END
 	COPY_EXISTING kitlist.2da override
 		READ_2DA_ENTRIES_NOW kitlist 3
-		FOR (row = 31; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
 			READ_2DA_ENTRY_FORMER kitlist row 1 label
 			READ_2DA_ENTRY_FORMER kitlist row 8 class
-			PATCH_IF class = 2 BEGIN		// fighter
-				SPRINT $fighters("%count%") "%label%"
+			PATCH_IF class = 18 BEGIN	// cleric/ranger
+				SPRINT $clerics("%count%") "%label%"
 				++count
 			END
 		END
@@ -1170,49 +1089,239 @@ BUT_ONLY
 	COPY_EXISTING ~WEAPPROF.2DA~ override
 		READ_2DA_ENTRIES_NOW weapprof 3
 		COUNT_2DA_COLS cols
-		PHP_EACH fighters AS _ => name BEGIN
+		PHP_EACH clerics AS _ => name BEGIN
 			FOR (col = 0; col < cols - 1; ++col) BEGIN
 				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
 				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
-					SET_2DA_ENTRY_LATER C#weapprof 11 (col + 1) 5  //BASTARDSWORD    -->simple
-					SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 5  //LONGSWORD       -->sword
-					SET_2DA_ENTRY_LATER C#weapprof 13 (col + 1) 2  //SHORTSWORD      -->Martial Arts
-					SET_2DA_ENTRY_LATER C#weapprof 14 (col + 1) 5  //AXE             -->Axe
-					SET_2DA_ENTRY_LATER C#weapprof 15 (col + 1) 5  //TWOHANDEDSWORD  -->Great Sword
-					SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 5  //KATANA          -->Polearm
-					SET_2DA_ENTRY_LATER C#weapprof 17 (col + 1) 5  //SCIMITAR        -->Blunt
-					SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 5  //DAGGER          -->Ranged
-					SET_2DA_ENTRY_LATER C#weapprof 19 (col + 1) 5  //WARHAMMER       -->Armor   (exceptions, here)
-					SET_2DA_ENTRY_LATER C#weapprof 20 (col + 1) 3  //CLUB            -->Ranged Fighting Style
-					SET_2DA_ENTRY_LATER C#weapprof 21 (col + 1) 5  //SPEAR           -->Endurance
-					SET_2DA_ENTRY_LATER C#weapprof 22 (col + 1) 5  //HALBERD         -->Heal
-					SET_2DA_ENTRY_LATER C#weapprof 23 (col + 1) 1  //FLAIL           -->Herbalism
-					SET_2DA_ENTRY_LATER C#weapprof 24 (col + 1) 0  //MACE            -->Alchemy
-					SET_2DA_ENTRY_LATER C#weapprof 25 (col + 1) 0  //QUARTERSTAFF    -->Implements
-					SET_2DA_ENTRY_LATER C#weapprof 26 (col + 1) 3  //CROSSBOW        -->Mechanics
-					SET_2DA_ENTRY_LATER C#weapprof 27 (col + 1) 2  //LONGBOW         -->Animal Handling
-					SET_2DA_ENTRY_LATER C#weapprof 28 (col + 1) 0  //SHORTBOW        -->Read Magic
-					SET_2DA_ENTRY_LATER C#weapprof 29 (col + 1) 5  //DART            -->Persuasion
-					SET_2DA_ENTRY_LATER C#weapprof 30 (col + 1) 1  //SLING           -->Ritual
-				//	SET_2DA_ENTRY_LATER C#weapprof 31 (col + 1) 2  //2HANDED
-				//	SET_2DA_ENTRY_LATER C#weapprof 32 (col + 1) 2  //SWORDANDSHIELD
-				//	SET_2DA_ENTRY_LATER C#weapprof 33 (col + 1) 2  //SINGLEWEAPON
-				//	SET_2DA_ENTRY_LATER C#weapprof 34 (col + 1) 3  //2WEAPON
-					/*
-                    //fnp usability (need to account for SoB?  Probably give code to SD)
-                    //Also, think about FnP specialist kits...
-                    PATCH_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-					  SET_2DA_ENTRY_LATER C#weapprof 12 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 16 (col + 1) 1
-					  SET_2DA_ENTRY_LATER C#weapprof 18 (col + 1) 1
-					END
-                                       */
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 3 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 1 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 3 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 3 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 5 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 5 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 2 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 7 // nature description 
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 2 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description - Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 7 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 3 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 1 // tumbling description
 				END
 			END
 		END
-		SET_2DA_ENTRIES_NOW F#weapprof 1
+		SET_2DA_ENTRIES_NOW s2el_mng 1
 		PRETTY_PRINT_2DA
 	BUT_ONLY
+
+//PROFICIENCIES SORCERER DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN SORCERER BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 19 BEGIN	// mage
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 0 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 7 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 0 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 0 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 1 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 3 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 7 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 1 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 1 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 0 // tumbling description
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+
+//PROFICIENCIES MONK DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN MONK BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 20 BEGIN	// monk
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 0 // misc description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 0 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 5 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 5 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 3 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 3 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 1 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 1 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 3 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 7 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description-Note: gained automatically
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 2 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 7 // tumbling description
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+//PROFICIENCIES SHAMAN DEFAULT_____________________________________________________
+//
+	OUTER_SET count = 0
+	ACTION_FOR_EACH class IN SHAMAN BEGIN
+		OUTER_SPRINT $clerics("%count%") "%class%"
+		OUTER_SET ++count
+	END
+	COPY_EXISTING kitlist.2da override
+		READ_2DA_ENTRIES_NOW kitlist 3
+		FOR (row = 3; row < kitlist; ++row) BEGIN // Skip past the vanilla kits
+			READ_2DA_ENTRY_FORMER kitlist row 1 label
+			READ_2DA_ENTRY_FORMER kitlist row 8 class
+			PATCH_IF class = 21 BEGIN	// monk
+				SPRINT $clerics("%count%") "%label%"
+				++count
+			END
+		END
+	BUT_ONLY
+	COPY_EXISTING ~WEAPPROF.2DA~ override
+		READ_2DA_ENTRIES_NOW weapprof 3
+		COUNT_2DA_COLS cols
+		PHP_EACH clerics AS _ => name BEGIN
+			FOR (col = 0; col < cols - 1; ++col) BEGIN
+				READ_2DA_ENTRY_FORMER weapprof 0 col column_name
+				PATCH_IF "%column_name%" STRING_EQUAL_CASE "%name%" BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 2 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 4 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 2 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 5 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 2 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 3 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 6 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 7 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 3 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 5 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 0 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 7 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 5 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 0 // tumbling description
+				END
+			END
+		END
+		SET_2DA_ENTRIES_NOW s2el_mng 1
+		PRETTY_PRINT_2DA
+	BUT_ONLY
+	
+///////////////////////////KIT EXCEPTIONS
+
+//Assassin
+COPY_EXISTING ~weapprof.2da~ ~override~
+	COUNT_2DA_COLS num_cols
+	READ_2DA_ENTRIES_NOW ~r2en_mng~ (num_cols - 1)
+	FOR (col = 1; col < (num_cols - 1); col += 1) BEGIN  //Thief
+		READ_2DA_ENTRY_FORMER ~r2en_mng~ 0 col kitname
+		PATCH_IF (~%kitname%~ STRING_EQUAL_CASE ~ASSASIN~) BEGIN
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 35 (col + 1) 3 // misc description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 36 (col + 1) 5 // l armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 37 (col + 1) 0 // m armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 38 (col + 1) 0 // h armor description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 39 (col + 1) 3 // alchemy description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 40 (col + 1) 4 // athletics description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 41 (col + 1) 2 // endurance description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 42 (col + 1) 4 // heal description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 43 (col + 1) 7 // herbalism description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 44 (col + 1) 1 // implements description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 45 (col + 1) 0 // nature description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 46 (col + 1) 3 // persuasion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 47 (col + 1) 0 // religion description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 48 (col + 1) 0 // spellcraft description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 49 (col + 1) 0 // survive description
+			SET_2DA_ENTRY_LATER ~s2el_mng~ 50 (col + 1) 4 // tumbling description
+		END
+        END
+        BUT_ONLY
+//CONTINUE KIT EXCEPTIONS
+
+/////////////////////////////////////////////////
+////// Update character sheet descriptions //////
+/////////////////////////////////////////////////
+
+//TO DO: See about putting these somewhere else on the char sheet and with "+" marks for each rank.  Maybe under a heading "Non-Weapon Proficiencies".
+
+//if eeex is installed and display skills
+ACTION_IF FILE_EXISTS_IN_GAME ~m__skill.lua~ BEGIN  //
+
+  LAF ADD_EXTENDED_SKILL
+  INT_VAR
+	stat = 120 //alch
+	name = RESOLVE_STR_REF(@701000)
+	description = RESOLVE_STR_REF(@701001)
+	opcode = 401 //Modify Lore
+	visibility = 2 //2: Show if skill != 0
+  STR_VAR
+	class_include = ~{}~ //none, for display only
+	kit_include = ~{}~ //none
+	kit_exclude = ~{}~ //Blade excluded
+	stat_exclude = ~{}~ //No restrictions
+  END
+
+END
+
+
+END  //end menu
+
+
+
+        /*
+
+//CONTINUE 
 
 /////////////////////////////////////////////////
 //////      Update Class descriptions      //////
@@ -2409,4 +2518,4 @@ ACTION_IF FILE_EXISTS_IN_GAME ~M__EEex.lua~ BEGIN
 END //end iff EEex is installed
 
 
-
+*/
